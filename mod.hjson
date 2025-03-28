@@ -1,17 +1,17 @@
 #the mod name as displayed in-game
-displayName: "Java Mod Template"
+displayName: "Astherive: Genesis"
 
 #the internal name of your mod
-name: "example-java-mod"
+name: "astherive-gen"
 
 #your name
-author: "You"
+author: "Astherive Team"
 
 #the fully qualified main class of the mod
 main: "example.ExampleJavaMod"
 
 #the mod description as seen in the mod dialog
-description: "A Mindustry Java mod template."
+description: "uwu"
 
 #the mod version
 version: 1.0
