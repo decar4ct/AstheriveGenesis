@@ -1,23 +1,9 @@
-#the mod name as displayed in-game
 displayName: "Astherive: Genesis"
-
-#the internal name of your mod
 name: "astherive-gen"
-
-#your name
 author: "Astherive Team"
-
-#the fully qualified main class of the mod
-main: "example.ExampleJavaMod"
-
+main: "astherivegen.AstheriveGenMod"
 #the mod description as seen in the mod dialog
 description: "uwu"
-
-#the mod version
 version: 1.0
-
-#the minimum game build required to run this mod
 minGameVersion: 145
-
-#this is a java mod
 java: true
