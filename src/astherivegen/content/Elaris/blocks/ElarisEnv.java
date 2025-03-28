@@ -11,7 +11,7 @@ import static mindustry.type.ItemStack.with;
 public class ElarisEnv {
     public static Block
             //eonstone
-            eonstoneFloor
+            eonstoneFloor;
     public static void load() {
         {
             {
