@@ -11,7 +11,7 @@ import static mindustry.type.ItemStack.with;
 public class ElarisEnv {
     public static Block
             //eonstone
-            eonstoneFloor, eonstoneErodedFloor,
+            eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall;
     public static void load() {
         {
@@ -19,6 +19,7 @@ public class ElarisEnv {
                 //eonstone
                 //floor
                 eonstoneFloor = new Floor("eonstone-floor", 5);
+                eonstoneLightlyErodedFloor = new Floor("eonstone-lightly-eroded-floor", 5);
                 eonstoneErodedFloor = new Floor("eonstone-eroded-floor", 5);
                 //wall
                 eonstoneWall = new StaticWall("eonstone-wall"){{variants = 4;
