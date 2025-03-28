@@ -20,7 +20,7 @@ public class ElarisEnv {
                 //floor
                 eonstoneFloor = new Floor("eonstone-floor", 4);
                 //wall
-                eonstoneWall = new StaticWall("eadston-wall"){{variants = 2;
+                eonstoneWall = new StaticWall("eonstone-wall"){{variants = 2;
                     eonstoneFloor.asFloor().wall = this;}};
             }
         }
