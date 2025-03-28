@@ -12,7 +12,7 @@ public class ElarisEnv {
     public static Block
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
-            eonstoneWall;
+            eonstoneWall, eonstoneErodedWall;
     public static void load() {
         {
             {
@@ -24,6 +24,8 @@ public class ElarisEnv {
                 //wall
                 eonstoneWall = new StaticWall("eonstone-wall"){{variants = 4;
                     eonstoneFloor.asFloor().wall = this;}};
+                eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;
+                    eonstoneErodedFloor.asFloor().wall = this;}};
             }
         }
     }
