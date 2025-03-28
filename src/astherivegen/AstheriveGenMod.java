@@ -2,6 +2,7 @@ package astherivegen;
 
 import arc.*;
 import arc.util.*;
+import astherivegen.content.Elaris.blocks.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
