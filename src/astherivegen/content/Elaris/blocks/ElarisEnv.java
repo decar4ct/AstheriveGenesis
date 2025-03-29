@@ -49,7 +49,7 @@ public class ElarisEnv {
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
                 }};
-                sporfloreTree = new TreeBlock("sporflore-tree"){{
+                sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                     eonstoneFloor.asFloor().decoration = this;
                 }};
