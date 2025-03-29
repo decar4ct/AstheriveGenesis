@@ -25,7 +25,7 @@ public class ConnectedWall extends Wall {
     @Override
     public void load(){
         super.load();
-        for (int i=0;i<15;i++){
+        for (int i=0;i<16;i++){
             connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
         }
     }
@@ -48,7 +48,7 @@ public class ConnectedWall extends Wall {
         @Override
         public void draw(){
             super.draw();
-            Draw.rect(connectedRegions[blending-1], x, y, 0);
+            Draw.rect(connectedRegions[blending], x, y, 0);
         }
     }
 }
