@@ -12,7 +12,7 @@ import mindustry.gen.Building;
 import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.*;
-import mindustry.world.tile;
+import mindustry.world.Tile;
 
 public class ConnectedWall extends Wall {
     public TextureRegion sideRegion;
