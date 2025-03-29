@@ -11,6 +11,7 @@ import mindustry.gen.Building;
 import mindustry.graphics.Drawf;
 import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
+import mindustry.world.Tile;
 
 public class ConnectedWall extends Wall {
     public TextureRegion sideRegion;
