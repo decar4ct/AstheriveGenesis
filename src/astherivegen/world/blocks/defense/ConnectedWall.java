@@ -14,6 +14,8 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.Tile;
 
+import static mindustry.Vars.*;
+
 public class ConnectedWall extends Wall {
     public TextureRegion sideRegion;
     public ConnectedWall(String name){
@@ -32,7 +34,7 @@ public class ConnectedWall extends Wall {
             super.onProximityUpdate();
             blending = 0;
             for(int i = 0; i < 4; i++){
-                if(blends(World.tkle(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
+                if(blends(world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
                     blending |= (1 << i);
                 }
             }
