@@ -21,22 +21,37 @@ public class ConnectedWall extends Wall {
         super.load();
         sideRegion = Core.atlas.find(name+"-side");
     }
-    //permanently borrowed from payloadblock.java :troll:
-    public static boolean blends(Building build){
-        Building accept = build.nearby(Geometry.d4(direction).x, Geometry.d4(direction).y);
-        return accept != null &&
-            (accept.block.size == size
-            && Math.abs(accept.tileX() - build.tileX()) % size == 0 //check alignment
-            && Math.abs(accept.tileY() - build.tileY()) % size == 0);
-    }
+    //permanently borrowed from canvasblock.java :troll:
     public class ConnectedWallBuild extends WallBuild {
+        @Override
+        public void onProximityUpdate(){
+            super.onProximityUpdate();
+
+            blending = 0;
+            for(int i = 0; i < 4; i++){
+                if(blends(world.tile(tile.x + Geometry.d4[i].x * size, tile.y + Geometry.d4[i].y * size))) blending |= (1 << i);
+            }
+        }
+        boolean blends(Tile other){
+            return other != null && other.build != null && other.build.block == block && other.build.tileX() == other.x && other.build.tileY() == other.y;
+        }
         @Override
         public void draw(){
             super.draw();
             Draw.rect(region, x, y, 0);
-            for (int i=0;i<4;i++) {
-                if (blends(i)){
-                    Draw.rect(sideRegion, x, y, (i*90)-180);
+            for(int i = 0; i < 4; i ++){
+                if((blending & (1 << i)) == 0){
+                    Draw.rect(i >= 2 ? side2 : side1, x, y, i * 90);
+
+                    if((blending & (1 << ((i + 1) % 4))) != 0){
+                        Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
+                    }
+
+                    if((blending & (1 << (Mathf.mod(i - 1, 4)))) != 0){
+                        Draw.yscl = -1f;
+                        Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
+                        Draw.yscl = 1f;
+                    }
                 }
             }
         }
