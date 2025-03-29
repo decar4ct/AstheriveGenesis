@@ -15,7 +15,7 @@ public class ConnectedWall extends Wall {
     public TextureRegion sideRegion;
     public ConnectedWall(String name){
          super(name);
-    
+    }
     @Override
     public void load(){
         super.load();
