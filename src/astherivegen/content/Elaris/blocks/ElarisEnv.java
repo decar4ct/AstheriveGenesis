@@ -7,6 +7,7 @@ import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
+import mindustry.gen.Sounds;
 
 import static mindustry.type.ItemStack.with;
 
@@ -37,6 +38,11 @@ public class ElarisEnv {
                     albedo = 0.95f;
                     supportsOverlay = true;
                 }};
+                //prop
+                eonstoneBoulder = new Prop("eonstone-boulder"){{
+                    variants = 2;
+                    breakSound = Sounds.rock-crush;
+                }}
             }
         }
     }
