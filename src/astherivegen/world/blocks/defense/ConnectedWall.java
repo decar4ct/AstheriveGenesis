@@ -22,7 +22,6 @@ public class ConnectedWall extends Wall {
         public void load(){
             sideRegion = Core.atlas.find(name + "-side");
         }
-        @Override
         public void drawPlace(int x, int y, int rotation, boolean valid){
             drawPlace(x, y, rotation, valid);
         }
