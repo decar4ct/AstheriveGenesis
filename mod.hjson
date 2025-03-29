@@ -2,8 +2,7 @@ displayName: "Astherive: Genesis"
 name: "astherive-gen"
 author: "Astherive Team"
 main: "astherivegen.AstheriveGenMod"
-#the mod description as seen in the mod dialog
-description: "Grow, Consume, Conquer."
+description: "The Origin"
 version: 1.0
 minGameVersion: 145
 java: true
