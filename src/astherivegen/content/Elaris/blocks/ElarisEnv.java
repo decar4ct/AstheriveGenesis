@@ -22,10 +22,8 @@ public class ElarisEnv {
                 eonstoneLightlyErodedFloor = new Floor("eonstone-lightly-eroded-floor", 5);
                 eonstoneErodedFloor = new Floor("eonstone-eroded-floor", 5);
                 //wall
-                eonstoneWall = new StaticWall("eonstone-wall"){{variants = 4;
-                    eonstoneFloor.asFloor().wall = this;}};
-                eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;
-                    eonstoneErodedFloor.asFloor().wall = this;}};
+                eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5}};
+                eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4}};
             }
         }
     }
