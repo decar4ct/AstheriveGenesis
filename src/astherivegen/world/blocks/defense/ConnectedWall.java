@@ -24,7 +24,7 @@ public class ConnectedWall extends Wall {
         }
         @Override
         public void drawPlace(int x, int y, int rotation, boolean valid){
-            super.drawPlace(x, y, rotation, valid);
+            drawPlace(x, y, rotation, valid);
         }
         public void draw(){
             for(int i = 0; i < 4; i++){
