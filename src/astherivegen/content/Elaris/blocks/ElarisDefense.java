@@ -14,11 +14,11 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisDefense {
     public static Block
-            quartz-wall;
+            quartzWall;
     public static void load() {
         {
             {
-                quartzWall = new ConnectedWall("quartz-wall")
+                quartzWall = new ConnectedWall("quartz-wall");
             }
         }
     }
