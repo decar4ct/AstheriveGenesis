@@ -28,7 +28,7 @@ public class ElarisEnv {
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
                 //liquid
-                alyogel = new Floor("alyogel"){{
+                alyogelFloor = new Floor("alyogel-floor"){{
                     speedMultiplier = 0.4f;
                     variants = 4;
                     liquidDrop = Liquids.water;
