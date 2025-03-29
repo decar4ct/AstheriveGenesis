@@ -6,6 +6,7 @@ import arc.graphics.g2d.*;
 import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
+import arc.math.geom.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
 import mindustry.graphics.*;
@@ -23,6 +24,7 @@ public class ConnectedWall extends Wall {
     }
     //permanently borrowed from canvasblock.java :troll:
     public class ConnectedWallBuild extends WallBuild {
+        public int blending;
         @Override
         public void onProximityUpdate(){
             super.onProximityUpdate();
