@@ -3,7 +3,7 @@ name: "astherive-gen"
 author: "Astherive Team"
 main: "astherivegen.AstheriveGenMod"
 #the mod description as seen in the mod dialog
-description: "uwu"
+description: "Grow, Consume, Conquer."
 version: 1.0
 minGameVersion: 145
 java: true
