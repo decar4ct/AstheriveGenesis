@@ -17,20 +17,45 @@ import mindustry.world.Tile;
 import static mindustry.Vars.*;
 
 public class ConnectedWall extends Wall {
-    public TextureRegion sideRegion1;
-    public TextureRegion sideRegion2;
-    public TextureRegion cornerRegion1;
-    public TextureRegion cornerRegion2;
+    //AWFUL
+    public TextureRegion none
+    public TextureRegion r;
+    public TextureRegion d;
+    public TextureRegion l;
+    public TextureRegion u;
+    public TextureRegion ru;
+    public TextureRegion dr;
+    public TextureRegion ld;
+    public TextureRegion ul;
+    public TextureRegion rl;
+    public TextureRegion du;
+    public TextureRegion rud;
+    public TextureRegion drl;
+    public TextureRegion lud;
+    public TextureRegion url;
+    public TextureRegion rdlu;
     public ConnectedWall(String name){
          super(name);
     }
     @Override
     public void load(){
         super.load();
-        sideRegion1 = Core.atlas.find(name+"-side1");
-        sideRegion2 = Core.atlas.find(name+"-side2");
-        cornerRegion1 = Core.atlas.find(name+"-corner1");
-        cornerRegion2 = Core.atlas.find(name+"-corner2");
+        none = Core.atlas.find(name+"1");
+        r = Core.atlas.find(name+"2");
+        d = Core.atlas.find(name+"3");
+        l = Core.atlas.find(name+"4");
+        u = Core.atlas.find(name+"5");
+        ru = Core.atlas.find(name+"6");
+        dr = Core.atlas.find(name+"7");
+        ld = Core.atlas.find(name+"8");
+        ul = Core.atlas.find(name+"9");
+        rl = Core.atlas.find(name+"10");
+        du = Core.atlas.find(name+"11");
+        rud = Core.atlas.find(name+"12");
+        drl = Core.atlas.find(name+"13");
+        lud = Core.atlas.find(name+"14");
+        url = Core.atlas.find(name+"15");
+        rdlu = Core.atlas.find(name+"16");
     }
     //permanently borrowed from canvasblock.java :troll:
     public class ConnectedWallBuild extends WallBuild {
