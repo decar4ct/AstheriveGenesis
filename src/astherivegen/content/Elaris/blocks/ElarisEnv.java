@@ -43,7 +43,7 @@ public class ElarisEnv {
                 eonstoneBoulder = new Prop("eonstone-boulder"){{
                     variants = 2;
                     breakSound = Sounds.rock-crush;
-                }}
+                }};
             }
         }
     }
