@@ -26,6 +26,7 @@ public class ConnectedWall extends Wall {
         public void draw(){
             super.draw();
             Draw.rect(region, x, y, 0);
+            Draw.z(Layer.blockOver);
             for (int i=0;i<4;i++) {
                 Draw.rect(sideRegion, x, y, 90+i*90);
             }
