@@ -6,6 +6,7 @@ import arc.math.*;
 import arc.util.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.annotations.Annotations.*;
+import mindustry.entities.units.*;
 
 public class ConnectedWall extends Wall {
     public @Load("@-side") TextureRegion sideRegion;
