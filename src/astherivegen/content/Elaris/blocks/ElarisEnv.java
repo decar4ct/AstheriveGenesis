@@ -5,6 +5,8 @@ import mindustry.world.Block;
 import mindustry.world.blocks.environment.*;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
+import mindustry.content.*;
+import mindustry.graphics.*;
 
 import static mindustry.type.ItemStack.with;
 
