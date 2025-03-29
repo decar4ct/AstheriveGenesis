@@ -15,7 +15,7 @@ public class ElarisEnv {
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
-            alyogel;
+            alyogelFloor;
     public static void load() {
         {
             {
