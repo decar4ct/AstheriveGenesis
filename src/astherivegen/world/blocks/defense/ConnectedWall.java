@@ -17,14 +17,20 @@ import mindustry.world.Tile;
 import static mindustry.Vars.*;
 
 public class ConnectedWall extends Wall {
-    public TextureRegion sideRegion;
+    public TextureRegion sideRegion1;
+    public TextureRegion sideRegion2;
+    public TextureRegion cornerRegion1;
+    public TextureRegion cornerRegion2;
     public ConnectedWall(String name){
          super(name);
     }
     @Override
     public void load(){
         super.load();
-        sideRegion = Core.atlas.find(name+"-side");
+        sideRegion1 = Core.atlas.find(name+"-side1");
+        sideRegion2 = Core.atlas.find(name+"-side2");
+        cornerRegion1 = Core.atlas.find(name+"-corner1");
+        cornerRegion2 = Core.atlas.find(name+"-corner2");
     }
     //permanently borrowed from canvasblock.java :troll:
     public class ConnectedWallBuild extends WallBuild {
@@ -48,15 +54,15 @@ public class ConnectedWall extends Wall {
             Draw.rect(region, x, y, 0);
             for(int i = 0; i < 4; i ++){
                 if((blending & (1 << i)) == 0){
-                    Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
+                    Draw.rect(i >= 2 ? sideRegion2 : sideRegion1, x, y, i * 90);
 
                     if((blending & (1 << ((i + 1) % 4))) != 0){
-                        Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
+                        Draw.rect(i >= 2 ? cornerRegion2 : cornerRegion1, x, y, i * 90);
                     }
 
                     if((blending & (1 << (Mathf.mod(i - 1, 4)))) != 0){
                         Draw.yscl = -1f;
-                        Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
+                        Draw.rect(i >= 2 ? cornerRegion2 : cornerRegion1, x, y, i * 90);
                         Draw.yscl = 1f;
                     }
                 }
