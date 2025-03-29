@@ -19,7 +19,7 @@ public class ConnectedWall extends Wall {
     @Override
     public void load(){
         super.load();
-        sideRegion = Core.atlas.find(name);
+        sideRegion = Core.atlas.find(name+"-side");
     }
     public class ConnectedWallBuild extends WallBuild {
         @Override
