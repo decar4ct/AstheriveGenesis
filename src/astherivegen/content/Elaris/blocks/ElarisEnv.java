@@ -17,7 +17,8 @@ public class ElarisEnv {
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
             alyogelFloor,
-            eonstoneBoulder,eonstoneErodedBoulder;
+            eonstoneBoulder,eonstoneErodedBoulde,;
+            sporfloreTree;
     public static void load() {
         {
             {
@@ -47,6 +48,10 @@ public class ElarisEnv {
                 eonstoneErodedBoulder = new Prop("eonstone-eroded-boulder"){{
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
+                }};
+                sporfloreTree = new TreeBlock("sporflore-tree"){{
+                    variants = 2;
+                    eonstoneFloor.asFloor().decoration = this;
                 }};
             }
         }
