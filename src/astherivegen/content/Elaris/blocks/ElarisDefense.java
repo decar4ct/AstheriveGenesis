@@ -9,6 +9,7 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import astherivegen.world.blocks.defense.*;
+import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -18,7 +19,9 @@ public class ElarisDefense {
     public static void load() {
         {
             {
-                quartzWall = new ConnectedWall("quartz-wall");
+                quartzWall = new ConnectedWall("quartz-wall"){{
+                    requirements(Category.defense, with(Items.copper, 6));
+                }};
             }
         }
     }
