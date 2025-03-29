@@ -2,19 +2,23 @@ package astherivegen.world.blocks.defense;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
+import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
 import mindustry.world.blocks.defense.*;
-import mindustry.annotations.Annotations.*;
-import mindustry.entities.units.*;
 
 public class ConnectedWall extends Wall {
-    public @Load("@-side") TextureRegion sideRegion;
+    public TextureRegion sideRegion;
     public ConnectedWall(String name){
         super(name);
     }
 
     public class ConnectedWallBuild extends WallBuild {
+        public void load(){
+            super.load();
+            sideRegion = Core.atlas.find(name + "-side");
+        }
+        
         public void draw(){
             for(int i = 0; i < 4; i++){
                 Draw.rect(sideRegion, x, y, (i * 90) - 180);
