@@ -18,7 +18,7 @@ import static mindustry.Vars.*;
 
 public class ConnectedWall extends Wall {
     //AWFUL
-    public TextureRegion[] connectedRegions = new TextureRegion[15];
+    public TextureRegion[] connectedRegions = new TextureRegion[16];
     public ConnectedWall(String name){
          super(name);
     }
