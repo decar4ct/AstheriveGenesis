@@ -43,7 +43,7 @@ public class ConnectedWall extends Wall {
             Draw.rect(region, x, y, 0);
             for(int i = 0; i < 4; i ++){
                 if((blending & (1 << i)) == 0){
-                    Draw.rect(i >= 2 ? side2 : side1, x, y, i * 90);
+                    Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
 
                     if((blending & (1 << ((i + 1) % 4))) != 0){
                         Draw.rect(i >= 2 ? sideRegion : sideRegion, x, y, i * 90);
