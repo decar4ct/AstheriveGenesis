@@ -2,7 +2,7 @@ displayName: "Astherive: Genesis"
 name: "astherive-gen"
 author: "Astherive Team"
 main: "astherivegen.AstheriveGenMod"
-description: "The Origin"
+description: "The origin"
 version: 1.0
 minGameVersion: 145
 java: true
