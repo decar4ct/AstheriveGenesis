@@ -17,7 +17,7 @@ public class ElarisEnv {
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
             alyogelFloor,
-            eonstoneBoulder,eonstoneErodedBoulde,;
+            eonstoneBoulder,eonstoneErodedBoulde,
             sporfloreTree;
     public static void load() {
         {
