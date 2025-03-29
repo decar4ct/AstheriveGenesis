@@ -10,7 +10,8 @@ import arc.math.geom.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
 import mindustry.graphics.*;
-import mindustry.world.Tile;
+import mindustry.ui.*;
+import mindustry.world.*;
 
 public class ConnectedWall extends Wall {
     public TextureRegion sideRegion;
