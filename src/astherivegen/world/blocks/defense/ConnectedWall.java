@@ -22,10 +22,9 @@ public class ConnectedWall extends Wall {
         public void load(){
             sideRegion = Core.atlas.find(name + "-side");
         }
-        public void drawPlace(int x, int y, int rotation, boolean valid){
-            drawPlace(x, y, rotation, valid);
-        }
+        @Override
         public void draw(){
+            super.draw();
             for(int i = 0; i < 4; i++){
                 Draw.rect(sideRegion, x, y, (i * 90) - 180);
             }
