@@ -25,7 +25,7 @@ public class ConnectedWall extends Wall {
         @Override
         public void draw(){
             super.draw();
-            Draw.rect(region, x, y);
+            Draw.rect(sideRegion, x, y);
         }
     }
 }
