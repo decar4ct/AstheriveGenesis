@@ -7,9 +7,10 @@ import arc.util.*;
 import mindustry.world.blocks.defense.*;
 
 public class ConnectedWall extends Wall {
+    public @Load("@-side") TextureRegion sideRegion;
     public ConnectedWall(String name){
         super(name);
-    }
+    };
 
     public class ConnectedWallBuild extends WallBuild {
         public void draw(){
@@ -17,5 +18,5 @@ public class ConnectedWall extends Wall {
                 Draw.rect(sideRegion, x, y, (i * 90) - 180);
             }
         }
-    }
+    };
 }
