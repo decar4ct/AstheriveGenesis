@@ -12,7 +12,8 @@ public class ElarisEnv {
     public static Block
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
-            eonstoneWall, eonstoneErodedWall;
+            eonstoneWall, eonstoneErodedWall,
+            alyogel;
     public static void load() {
         {
             {
@@ -24,6 +25,16 @@ public class ElarisEnv {
                 //wall
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
+                //liquid
+                alyogel = new Floor("alyogel"){{
+                    speedMultiplier = 0.4f;
+                    variants = 4;
+                    liquidDrop = Liquids.water;
+                    isLiquid = true;
+                    cacheLayer = CacheLayer.water;
+                    albedo = 0.95f;
+                    supportsOverlay = true;
+                }};
             }
         }
     }
