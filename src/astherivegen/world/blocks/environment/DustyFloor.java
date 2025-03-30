@@ -26,12 +26,13 @@ public class DustyFloor extends Floor {
          dustRegion=Core.atlas.find(name+"-dust");
     }
     @Override
-    public boolean updateRender(Tile tile) 
+    public boolean updateRender(Tile tile){
         return true;
-}
+    }
     @Override
-    public void renderUpdate(UpdateRenderState tile) {
+    public void renderUpdate(UpdateRenderState tile){
         if(tile.block()!=Blocks.air) {
             Draw.rect(dustRegion,tile.x,tile.y);
         }
+    }
 }
