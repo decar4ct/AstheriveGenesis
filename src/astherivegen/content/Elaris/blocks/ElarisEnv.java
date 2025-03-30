@@ -27,13 +27,7 @@ public class ElarisEnv {
                 //cromosand
                 //liquid
                 cromosandFloor = new Floor("cromosand-floor"){{
-                    speedMultiplier = 0.4f;
-                    variants = 4;
-                    liquidDrop = Liquids.water;
-                    isLiquid = true;
-                    cacheLayer = CacheLayer.water;
-                    albedo = 0.3f;
-                    supportsOverlay = true;
+                    variants = 5;
                 }};
                 //floor
                 cromosandLightlyHardenedFloor = new Floor("cromosand-lightly-hardened-floor"){{
