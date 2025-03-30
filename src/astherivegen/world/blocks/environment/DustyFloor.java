@@ -17,7 +17,7 @@ import static mindustry.Vars.*;
 
 public class DustyFloor extends Floor {
     public TextureRegion dustRegion;
-    public ConnectedWall(String name){
+    public DustyFloor(String name){
          super(name);
     }
     @Override
