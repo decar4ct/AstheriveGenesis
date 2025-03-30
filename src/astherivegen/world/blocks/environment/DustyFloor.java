@@ -32,8 +32,6 @@ public class DustyFloor extends Floor {
     }
     @Override
     public void renderUpdate(UpdateRenderState state){
-        if(state.tile.block()!=Blocks.air) {
-            Draw.rect(dustRegion,state.tile.x,state.tile.y);
-        }
+        Draw.rect(dustRegion,state.tile.x,state.tile.y);
     }
 }
