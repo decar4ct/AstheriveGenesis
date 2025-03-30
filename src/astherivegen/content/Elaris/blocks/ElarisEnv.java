@@ -34,7 +34,7 @@ public class ElarisEnv {
                 cromosandLightlyHardenedFloor = new Floor("cromosand-lightly-hardened-floor"){{
                     variants = 5;
                 }};
-                cromosandFloor = new Floor("cromosand-hardened-floor"){{
+                cromosandHardenedFloor = new Floor("cromosand-hardened-floor"){{
                     variants = 5;
                 }};
                 //prop
