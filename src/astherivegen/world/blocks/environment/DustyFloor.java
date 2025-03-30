@@ -32,8 +32,8 @@ public class DustyFloor extends Floor {
         return true;
     }
     @Override
-    public void renderUpdate(UpdateRenderState state){
-        blockAbove=state.tile.block()!=Blocks.air;
+    public void renderUpdate(UpdateRenderState tile){
+        blockAbove=tile.tile.block()!=Blocks.air;
     }
     @Override
     public void drawBase(Tile tile){
@@ -41,6 +41,6 @@ public class DustyFloor extends Floor {
             variants == 0 ? region :
             variantRegions[Mathf.randomSeed(tile.pos(), 0, Math.max(0, variantRegions.length - 1))],
         tile.drawx(), tile.drawy());
-        Draw.rect(dustRegion,tile.drawx(),tile.drawy());
+        if (blockAbove) Draw.rect(dustRegion,tile.drawx(),tile.drawy());
     }
 }
