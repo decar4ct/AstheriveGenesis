@@ -41,6 +41,6 @@ public class DustyFloor extends Floor {
             variants == 0 ? region :
             variantRegions[Mathf.randomSeed(tile.pos(), 0, Math.max(0, variantRegions.length - 1))],
         tile.drawx(), tile.drawy());
-        if (blockAbove) Draw.rect(dustRegion,tile.drawx(),tile.drawy());
+        Draw.rect(dustRegion,tile.drawx(),tile.drawy());
     }
 }
