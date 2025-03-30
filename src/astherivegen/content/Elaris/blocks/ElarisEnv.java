@@ -58,7 +58,7 @@ public class ElarisEnv {
                 }};
                 //cromosand
                 //floor
-                cromosandFloor = new DustyFloor("cromosand-floor"){{
+                cromosandFloor = new Floor("cromosand-floor"){{
                     variants = 5;
                 }};
             }
