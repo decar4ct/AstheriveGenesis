@@ -34,7 +34,7 @@ public class DustyFloor extends Floor {
     @Override
     public void renderUpdate(UpdateRenderState state){
         blockAbove=world.tile(state.tile.x,state.tile.y).block()!=Blocks.air;
-        Log.info(world.tile(state.tile.x,state.tile.y).block());
+        Log.info(world.tile(state.tile.x,state.tile.y).block()!=Blocks.air);
     }
     @Override
     public void drawBase(Tile tile){
