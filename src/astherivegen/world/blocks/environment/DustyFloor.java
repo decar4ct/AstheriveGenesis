@@ -37,8 +37,6 @@ public class DustyFloor extends Floor {
     }
     @Override
     public void drawBase(Tile tile) {
-        if (blockAbove) {
-            super.drawBase(tile);
-        }
+        super.drawBase(tile);
     }
 }
