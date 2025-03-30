@@ -12,6 +12,8 @@ import mindustry.gen.Building;
 import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.*;
+import mindustry.world.tile;
+import mindustry.content.*;
 
 import static mindustry.Vars.*;
 
