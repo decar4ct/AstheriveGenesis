@@ -15,6 +15,7 @@ public class ElarisEnv {
     public static Block
             //cromosand
             cromosandFloor,cromosandLightlyHardenedFloor,cromosandHardenedFloor,
+            cromosandHardenedBoulder,
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
@@ -35,6 +36,11 @@ public class ElarisEnv {
                 }};
                 cromosandFloor = new Floor("cromosand-hardened-floor"){{
                     variants = 5;
+                }};
+                //prop
+                cromosandHardenedBoulder = new Prop("cromosand-hardened-boulder"){{
+                    variants = 2;
+                    cromosandHardenedFloor.asFloor().decoration = this;
                 }};
                 //eonstone
                 //floor
