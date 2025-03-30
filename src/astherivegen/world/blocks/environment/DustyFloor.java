@@ -12,7 +12,6 @@ import mindustry.gen.Building;
 import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.*;
-import mindustry.world.tile;
 import mindustry.content.*;
 
 import static mindustry.Vars.*;
@@ -32,9 +31,9 @@ public class DustyFloor extends Floor {
         return true;
     }
     @Override
-    public void renderUpdate(UpdateRenderState tile){
-        if(tile.block()!=Blocks.air) {
-            Draw.rect(dustRegion,tile.x,tile.y);
+    public void renderUpdate(UpdateRenderState state){
+        if(state.tile.block()!=Blocks.air) {
+            Draw.rect(dustRegion,state.tile.x,state.tile.y);
         }
     }
 }
