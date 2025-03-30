@@ -8,22 +8,41 @@ import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
+import astherivegen.world.blocks.environment.*;
 
 import static mindustry.type.ItemStack.with;
 
 public class ElarisEnv {
     public static Block
+            //cromosand
+            cromosandFloor,cromosandLightlyHardenedFloor,cromosandHardenedFloor,
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
             alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
-            sporfloreTree,
-            //cromosand
-            cromosandFloor;
+            sporfloreTre;
     public static void load() {
         {
             {
+                //cromosand
+                //liquid
+                cromosandFloor = new Floor("cromosand-floor"){{
+                    speedMultiplier = 0.4f;
+                    variants = 4;
+                    liquidDrop = Liquids.water;
+                    isLiquid = true;
+                    cacheLayer = CacheLayer.water;
+                    albedo = 0.3f;
+                    supportsOverlay = true;
+                }};
+                //floor
+                cromosandLightlyHardenedFloor = new Floor("cromosand-lightly-hardened-floor"){{
+                    variants = 5;
+                }};
+                cromosandFloor = new Floor("cromosand-hardened-floor"){{
+                    variants = 5;
+                }};
                 //eonstone
                 //floor
                 eonstoneFloor = new Floor("eonstone-floor", 5);
@@ -54,11 +73,6 @@ public class ElarisEnv {
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                     eonstoneFloor.asFloor().decoration = this;
-                }};
-                //cromosand
-                //floor
-                cromosandFloor = new Floor("cromosand-floor"){{
-                    variants = 5;
                 }};
             }
         }
