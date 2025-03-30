@@ -41,6 +41,7 @@ public class ElarisEnv {
                 cromosandHardenedBoulder = new Prop("cromosand-hardened-boulder"){{
                     variants = 2;
                     cromosandHardenedFloor.asFloor().decoration = this;
+                    cromosandLightlyHardenedFloor.asFloor().decoration = this;
                 }};
                 //eonstone
                 //floor
@@ -64,6 +65,7 @@ public class ElarisEnv {
                 eonstoneBoulder = new Prop("eonstone-boulder"){{
                     variants = 2;
                     eonstoneLightlyErodedFloor.asFloor().decoration = this;
+                    eonstoneFloor.asFloor().decoration = this;
                 }};
                 eonstoneErodedBoulder = new Prop("eonstone-eroded-boulder"){{
                     variants = 2;
@@ -71,7 +73,6 @@ public class ElarisEnv {
                 }};
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
-                    eonstoneFloor.asFloor().decoration = this;
                 }};
             }
         }
