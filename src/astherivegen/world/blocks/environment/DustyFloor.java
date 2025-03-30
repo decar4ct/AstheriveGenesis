@@ -18,6 +18,7 @@ import static mindustry.Vars.*;
 
 public class DustyFloor extends Floor {
     public TextureRegion dustRegion;
+    public boolean blockAbove;
     public DustyFloor(String name){
          super(name);
     }
@@ -32,6 +33,12 @@ public class DustyFloor extends Floor {
     }
     @Override
     public void renderUpdate(UpdateRenderState state){
-        Draw.rect(dustRegion,state.tile.x,state.tile.y);
+        blockAbove=state.tile.block()!=Blocks.air;
+    }
+    @Override
+    public void drawBase(Tile tile) {
+        if (blockAbove) {
+            super.drawBase(tile);
+        }
     }
 }
