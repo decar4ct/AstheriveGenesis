@@ -22,6 +22,7 @@ public class ElarisEnv {
             eonstoneWall, eonstoneErodedWall,
             alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
+            sporfloreFern,
             sporfloreTree;
     public static void load() {
         {
@@ -74,6 +75,7 @@ public class ElarisEnv {
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
                 }};
+                sporfloreFern = new SeaBush("sporflore-fern");
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                 }};
