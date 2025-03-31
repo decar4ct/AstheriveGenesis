@@ -12,7 +12,7 @@ import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisDefense {
+public class ElarisStorage {
     public static Block
             coreProtocol;
     public static void load() {
