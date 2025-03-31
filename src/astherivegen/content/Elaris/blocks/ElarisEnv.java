@@ -75,7 +75,12 @@ public class ElarisEnv {
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
                 }};
-                sporfloreFern = new SeaBush("sporflore-fern");
+                sporfloreFern = new SeaBush("sporflore-fern"){{
+                    lobesMin = 4;
+                    lobesMax = 6;
+                    magMin = 4;
+                    magMax = 6;
+                }};
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                 }};
