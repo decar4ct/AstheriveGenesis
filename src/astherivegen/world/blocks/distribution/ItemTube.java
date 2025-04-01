@@ -40,7 +40,7 @@ public class ItemTube extends Conveyor {
     }
     @Override
     public TextureRegion icons(){
-        return previewRegion
+        return previewRegion;
     }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
