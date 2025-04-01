@@ -45,7 +45,7 @@ public class ItemTube extends Conveyor {
         boolean blends(Tile other){
             return other.build != null &&
                 (other.build.block.outputsItems() || (other.build.block == block &&
-                                                      lookingAt(other, other.build.rotation, tile.x, tile.y, block)))
+                                                      lookingAtEither(tile, rotation, other.x, other.y, other.build.rotation, other.build.block)))
                 && other.build.tileX() == other.x && other.build.tileY() == other.y;
         }
         @Override
