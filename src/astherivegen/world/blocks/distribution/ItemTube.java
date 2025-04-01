@@ -57,9 +57,7 @@ public class ItemTube extends Conveyor {
             for(int i = 0; i < 4; i++){
                 if((blending & (1 << i)) != 0){
                     int dir = rotation - i;
-                    float rot = i == 0 ? rotation * 90 : (dir)*90;
-
-                    Draw.rect(sliced(topRegions[drawbits][drawrot], i != 0 ? SliceMode.bottom : SliceMode.top), x + Geometry.d4x(dir) * tilesize*0.75f, y + Geometry.d4y(dir) * tilesize*0.75f, rot);
+                    Draw.rect(sliced(topRegions[drawbits][drawrot], i != 0 ? SliceMode.bottom : SliceMode.top), x + Geometry.d4x(dir) * tilesize*0.75f, y + Geometry.d4y(dir) * tilesize*0.75f);
                 }
             }
             Draw.z(Layer.block);
