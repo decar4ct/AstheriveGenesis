@@ -2,13 +2,14 @@ package astherivegen.content.Elaris.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.distribution.*;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
+import astherivegen.world.blocks.distribution.*;
 
 import static mindustry.type.ItemStack.with;
 
