@@ -40,7 +40,7 @@ public class ItemTube extends Conveyor {
         public void draw(){
             super.draw();
             //Draw.rect(topRegions[blending], x, y, 0);
-            Log.info(String.valueof(blendsclx)+" and "+String.valueOf(blendscly));
+            Log.info(String.valueof(blendsclx)+" and "+String.valueOf(blendscly)+" blending "+String.valueOf(blending));
         }
     }
 }
