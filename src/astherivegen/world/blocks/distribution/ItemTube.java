@@ -47,8 +47,19 @@ public class ItemTube extends Conveyor {
             if (blendbits==4) drawrot-=1;
             drawrot%=4;
             if (drawrot<0) drawrot+=4;
+            int drawbits = blendbits==4?2:blendbits;
+            //draw extra conveyors facing this one for non-square tiling purposes
+            Draw.z(Layer.blockUnder);
+            for(int i = 0; i < 4; i++){
+                if((blending & (1 << i)) != 0){
+                    int dir = rotation - i;
+                    float rot = i == 0 ? rotation * 90 : (dir)*90;
+
+                    Draw.rect(sliced(topRegions[drawbits][drawrot], i != 0 ? SliceMode.bottom : SliceMode.top), x + Geometry.d4x(dir) * tilesize*0.75f, y + Geometry.d4y(dir) * tilesize*0.75f, rot);
+                }
+            }
             Draw.z(Layer.block);
-            Draw.rect(topRegions[blendbits==4?2:blendbits][drawrot], x, y, 0);
+            Draw.rect(topRegions[drawbits][drawrot], x, y, 0);
         }
     }
 }
