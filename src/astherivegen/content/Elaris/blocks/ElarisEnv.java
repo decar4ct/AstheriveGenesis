@@ -20,7 +20,7 @@ public class ElarisEnv {
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
-            alyogelFloor,
+            alyogelDeepFloor,alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
             sporfloreFern,
             sporfloreTree;
@@ -56,6 +56,15 @@ public class ElarisEnv {
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
                 //liquid
+                alyogelDeepFloor = new Floor("alyogel-deep-floor"){{
+                    speedMultiplier = 0.2f;
+                    variants = 0;
+                    liquidDrop = Liquids.water;
+                    isLiquid = true;
+                    cacheLayer = CacheLayer.water;
+                    albedo = 0.95f;
+                    supportsOverlay = false;
+                }};
                 alyogelFloor = new Floor("alyogel-floor"){{
                     speedMultiplier = 0.4f;
                     variants = 4;
