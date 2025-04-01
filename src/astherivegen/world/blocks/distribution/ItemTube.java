@@ -47,6 +47,7 @@ public class ItemTube extends Conveyor {
             if (blendbits==4) drawrot-=1;
             drawrot%=4;
             if (drawrot<0) drawrot+=4;
+            Draw.z(Layer.block);
             Draw.rect(topRegions[blendbits==4?2:blendbits][drawrot], x, y, 0);
         }
     }
