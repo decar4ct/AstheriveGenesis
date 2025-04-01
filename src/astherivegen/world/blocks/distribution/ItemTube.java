@@ -38,7 +38,7 @@ public class ItemTube extends Conveyor {
     }
     @Override
     public TextureRegion icons(){
-        return new TextureRegion{Core.atlas.find(name+"-preview");};
+        return new TextureRegion{(Core.atlas.find(name+"-preview"));};
     }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
