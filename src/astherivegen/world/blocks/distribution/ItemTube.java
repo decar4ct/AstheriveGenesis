@@ -33,25 +33,15 @@ public class ItemTube extends Conveyor {
     public class ItemTubeBuild extends ConveyorBuild {
         public int blending;
         @Override
-        public void onProximityUpdate(){
-            super.onProximityUpdate();
-            blending = 0;
-            for(int i = 0; i < 4; i++){
-                if(blends(world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
-                    blending |= (1 << i);
-                }
-            }
-        }
-        boolean blends(Tile other){
-            return other.build != null &&
-                (other.build.block.outputsItems() || (other.build.block == block &&
-                                                      lookingAtEither(tile, rotation, other.x, other.y, other.build.rotation, other.build.block)))
-                && other.build.tileX() == other.x && other.build.tileY() == other.y;
+        public boolean blends(Tile tile, int rotation, int otherx, int othery, int otherrot, Block otherblock){
+            return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
+            && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
         }
         @Override
         public void draw(){
             super.draw();
-            Draw.rect(topRegions[blending], x, y, 0);
+            //Draw.rect(topRegions[blending], x, y, 0);
+            Log.info(blendbits);
         }
     }
 }
