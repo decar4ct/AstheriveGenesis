@@ -42,9 +42,6 @@ public class ItemTube extends Conveyor {
                 }
             }
         }
-        boolean blends(Tile other){
-            return other != null && other.build != null && other.build.block == block && other.build.tileX() == other.x && other.build.tileY() == other.y;
-        }
         @Override
         public void draw(){
             super.draw();
