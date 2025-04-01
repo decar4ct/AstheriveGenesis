@@ -41,7 +41,7 @@ public class ItemTube extends Conveyor {
         @Override
         public void draw(){
             super.draw();
-            Draw.rect(topRegions[blendbits==4?2:blendbits][rotation], x, y, 0)
+            Draw.rect(topRegions[blendbits==4?2:blendbits][rotation], x, y, 0);
         }
     }
 }
