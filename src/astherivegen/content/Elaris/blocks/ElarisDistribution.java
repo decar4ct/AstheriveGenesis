@@ -18,7 +18,7 @@ public class ElarisDistribution {
     public static void load() {
         {
             {
-                itemTube = new DuctConveyor("item-tube"){{
+                itemTube = new ItemTube("item-tube"){{
                     requirements(Category.distribution, with(Items.copper, 1));
                 }};
             }
