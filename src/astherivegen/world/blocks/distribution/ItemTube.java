@@ -31,17 +31,6 @@ public class ItemTube extends Conveyor {
     }
     //permanently borrowed from canvasblock.java :troll:
     public class ItemTubeBuild extends ConveyorBuild {
-        public int blending;
-        @Override
-        public void onProximityUpdate(){
-            super.onProximityUpdate();
-            blending = 0;
-            for(int i = 0; i < 4; i++){
-                if(blends(world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
-                    blending |= (1 << i);
-                }
-            }
-        }
         @Override
         public void draw(){
             super.draw();
