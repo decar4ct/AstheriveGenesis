@@ -18,7 +18,7 @@ import static mindustry.Vars.*;
 
 public class ItemTube extends Conveyor {
     //AWFUL
-    public TextureRegion[] topRegions = new TextureRegion[4][4];
+    public TextureRegion[][] topRegions = new TextureRegion[4][4];
     public ItemTube(String name){
          super(name);
     }
