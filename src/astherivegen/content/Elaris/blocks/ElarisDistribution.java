@@ -21,7 +21,7 @@ public class ElarisDistribution {
             {
                 itemTube = new ItemTube("item-tube"){{
                     requirements(Category.distribution, with(Items.copper, 1));
-                    speed = 8;
+                    speed = 0.5;
                 }};
             }
         }
