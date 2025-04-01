@@ -38,9 +38,8 @@ public class ItemTube extends Conveyor {
         return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
         && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
     }
-    @Override
-    public TextureRegion icons(){
-        return previewRegion;
+    public TextureRegion[] icons(){
+        return [previewRegion];
     }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
