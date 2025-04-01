@@ -19,14 +19,14 @@ import static mindustry.Vars.*;
 public class ItemTube extends Conveyor {
     //AWFUL
     public TextureRegion[] topRegions = new TextureRegion[16];
-    public ConnectedWall(String name){
+    public ItemTube(String name){
          super(name);
     }
     @Override
     public void load(){
         super.load();
         for (int i=0;i<16;i++){
-            topRegions[i]=Core.atlas.find(name+"-top-"+String.valueOf(i+1));
+            topRegions[i]=Core.atlas.find(name+"-top"+String.valueOf(i+1));
         }
     }
     //permanently borrowed from canvasblock.java :troll:
