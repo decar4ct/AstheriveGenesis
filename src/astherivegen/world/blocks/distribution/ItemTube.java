@@ -7,7 +7,7 @@ import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
 import arc.math.geom.*;
-import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.distribution.*;
 import mindustry.gen.Building;
 import mindustry.graphics.*;
 import mindustry.ui.*;
