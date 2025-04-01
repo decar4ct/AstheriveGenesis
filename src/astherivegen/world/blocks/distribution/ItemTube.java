@@ -36,6 +36,10 @@ public class ItemTube extends Conveyor {
         return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
         && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
     }
+    @Override
+    public TextureRegion icons(){
+        return new TextureRegion{Core.atlas.find(name+"-preview")};
+    }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
         public void draw(){
