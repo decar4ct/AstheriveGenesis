@@ -19,7 +19,6 @@ import static mindustry.Vars.*;
 public class ItemTube extends Conveyor {
     //AWFUL
     public TextureRegion[][] topRegions = new TextureRegion[4][4];
-    public TextureRegion previewRegion;
     public ItemTube(String name){
          super(name);
     }
@@ -31,15 +30,11 @@ public class ItemTube extends Conveyor {
                 topRegions[i][j]=Core.atlas.find(name+"-top-"+String.valueOf(i)+"-"+String.valueOf(j));
             }
         }
-        previewRegion=Core.atlas.find(name+"-preview");
     }
     @Override
     public boolean blends(Tile tile, int rotation, int otherx, int othery, int otherrot, Block otherblock){
         return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
         && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
-    }
-    public TextureRegion[] icons(){
-        return [previewRegion];
     }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
