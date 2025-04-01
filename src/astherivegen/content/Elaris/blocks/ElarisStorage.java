@@ -20,7 +20,7 @@ public class ElarisStorage {
             {
                 coreProtocol = new CoreBlock("core-protocol"){{
                     requirements(Category.effect, with(Items.copper, 6));
-                    size = 3;
+                    size = 4;
                     isFirstTier = true;
                     squareSprite = false;
                 }};
