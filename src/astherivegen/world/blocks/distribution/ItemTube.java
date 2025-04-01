@@ -32,6 +32,20 @@ public class ItemTube extends Conveyor {
     //permanently borrowed from canvasblock.java :troll:
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
+        public void onProximityUpdate(){
+            super.onProximityUpdate();
+            blending = 0;
+            for(int i = 0; i < 4; i++){
+                if(blends(world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
+                    blending |= (1 << i);
+                }
+            }
+        }
+        boolean blends(Tile tile, int rotation, int otherx, int othery, int otherrot, Block otherblock){
+            return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
+            && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
+        }
+        @Override
         public void draw(){
             super.draw();
             Draw.rect(topRegions[blending], x, y, 0);
