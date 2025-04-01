@@ -36,12 +36,18 @@ public class ItemTube extends Conveyor {
         return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
         && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
     }
-    //permanently borrowed from canvasblock.java :troll:
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
         public void draw(){
             super.draw();
-            Draw.rect(topRegions[blendbits==4?2:blendbits][rotation], x, y, 0);
+            //if it work it works
+            drawrot = (blendbits==2?(blendscly!=-1?rotation:rotation-1)
+                        :blendbits==4?(blendscly!=-1?rotation:rotation-2)
+                        :rotation);
+            if (blendbits==4) drawrot-=1;
+            drawrot%=4;
+            if (drawrot<0) drawrot+=4;
+            Draw.rect(topRegions[blendbits==4?2:blendbits][drawrot], x, y, 0);
         }
     }
 }
