@@ -41,7 +41,7 @@ public class ItemTube extends Conveyor {
         public void draw(){
             super.draw();
             //if it work it works
-            drawrot = (blendbits==2?(blendscly!=-1?rotation:rotation-1)
+            int drawrot = (blendbits==2?(blendscly!=-1?rotation:rotation-1)
                         :blendbits==4?(blendscly!=-1?rotation:rotation-2)
                         :rotation);
             if (blendbits==4) drawrot-=1;
