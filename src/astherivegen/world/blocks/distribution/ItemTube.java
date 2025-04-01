@@ -18,15 +18,17 @@ import static mindustry.Vars.*;
 
 public class ItemTube extends Conveyor {
     //AWFUL
-    public TextureRegion[] topRegions = new TextureRegion[16];
+    public TextureRegion[] topRegions = new TextureRegion[4][4];
     public ItemTube(String name){
          super(name);
     }
     @Override
     public void load(){
         super.load();
-        for (int i=0;i<16;i++){
-            topRegions[i]=Core.atlas.find(name+"-top"+String.valueOf(i+1));
+        for (int i=0;i<4;i++){
+            for (int j=0;j<4;j++) {
+                topRegions[i][j]=Core.atlas.find(name+"-top-"+String.valueOf(i)+"-"+String.valueOf(j));
+            }
         }
     }
     @Override
@@ -39,8 +41,7 @@ public class ItemTube extends Conveyor {
         @Override
         public void draw(){
             super.draw();
-            //Draw.rect(topRegions[blending], x, y, 0);
-            Log.info(String.valueOf(blendbits)+" rot: "+String.valueOf(rotation));
+            Draw.rect(topRegions[blendbits==4?2:blendbits][rotation], x, y, 0)
         }
     }
 }
