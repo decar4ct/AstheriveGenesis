@@ -35,7 +35,7 @@ public class ItemTube extends Conveyor {
         public void draw(){
             super.draw();
             Draw.rect(topRegions[blending], x, y, 0);
-            Log.info(super.blendbits);
+            Log.info(blendbits,blendsclx,blendscly,blending);
         }
     }
 }
