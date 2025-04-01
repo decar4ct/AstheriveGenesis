@@ -43,7 +43,7 @@ public class ItemTube extends Conveyor {
             }
         }
         boolean blends(Tile other){
-            return other.build != null && (other.build.block == block || other.build.block.outputsItems()) || (lookingAt(tile, rotation, other.x, other.y, other.build.block)) && other.build.tileX() == other.x && other.build.tileY() == other.y;
+            return other.build != null && (other.build.block.outputsItems() || (other.build.block == block && lookingAt(tile, rotation, other.x, other.y, other.build.block))) && other.build.tileX() == other.x && other.build.tileY() == other.y;
         }
         @Override
         public void draw(){
