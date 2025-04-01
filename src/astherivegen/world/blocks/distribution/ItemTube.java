@@ -29,14 +29,13 @@ public class ItemTube extends Conveyor {
             topRegions[i]=Core.atlas.find(name+"-top"+String.valueOf(i+1));
         }
     }
+    @Override
+    public boolean blends(Tile tile, int rotation, int otherx, int othery, int otherrot, Block otherblock){
+        return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
+        && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
+    }
     //permanently borrowed from canvasblock.java :troll:
     public class ItemTubeBuild extends ConveyorBuild {
-        public int blending;
-        @Override
-        public boolean blends(Tile tile, int rotation, int otherx, int othery, int otherrot, Block otherblock){
-            return (otherblock.outputsItems() || (lookingAt(tile, rotation, otherx, othery, otherblock) && otherblock.hasItems))
-            && lookingAtEither(tile, rotation, otherx, othery, otherrot, otherblock);
-        }
         @Override
         public void draw(){
             super.draw();
