@@ -50,8 +50,14 @@ public class Root extends Wall {
         public void draw(){
             Draw.rect(connectedRegions[blending], x, y, 0);
         }
+        @Override
+        public void updateTile() {
+            for (int i=0;i<4;i++) {
+                Building advroot = build.nearby(Geometry.d4(i).x,Geometry.d4(i).y);
+            }
+        }
         public void pulse(int amount){
-            biopulse = amount
+            biopulse = amount;
         }
     }
 }
