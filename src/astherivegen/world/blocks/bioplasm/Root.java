@@ -54,7 +54,14 @@ public class Root extends Wall {
         public void updateTile() {
             for (int i=0;i<4;i++) {
                 Building advroot = build.nearby(Geometry.d4(i).x,Geometry.d4(i).y);
+                if (advroot.getPulse()>0){
+                    advroot.pulse(biopulse-1)
+                }
             }
+            biopulse>0?biopulse=-1:biopulse=0;
+        }
+        public void getPulse(){
+            return biopulse;
         }
         public void pulse(int amount){
             biopulse = amount;
