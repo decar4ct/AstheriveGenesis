@@ -6,5 +6,6 @@ public class ElarisBlocks{
         ElarisDefense.load();
         ElarisDistribution.load();
         ElarisStorage.load();
+        Bioplasm.load();
     }
 }
