@@ -1,5 +1,5 @@
 package astherivegen.content.Elaris.blocks;
-import astherivegen.content.bioplasm;
+import astherivegen.content.bioplasm.*;
 
 public class ElarisBlocks{
     public static void load(){
