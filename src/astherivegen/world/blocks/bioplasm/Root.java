@@ -16,7 +16,7 @@ import mindustry.world.Tile;
 
 import static mindustry.Vars.*;
 
-public class Root extends Block {
+public class Root extends Wall {
     //AWFUL
     public TextureRegion[] connectedRegions = new TextureRegion[16];
     public Root(String name){
