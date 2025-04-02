@@ -19,6 +19,7 @@ import static mindustry.Vars.*;
 public class Root extends Wall {
     //AWFUL
     public TextureRegion[] connectedRegions = new TextureRegion[16];
+    public int biopulse = 0;
     public Root(String name){
          super(name);
     }
@@ -48,6 +49,9 @@ public class Root extends Wall {
         @Override
         public void draw(){
             Draw.rect(connectedRegions[blending], x, y, 0);
+        }
+        public void pulse(int amount){
+            biopulse = amount
         }
     }
 }
