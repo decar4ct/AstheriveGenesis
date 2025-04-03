@@ -19,7 +19,7 @@ import mindustry.content.*;
 import static mindustry.Vars.*;
 
 public class PulseSource extends Block {
-    public Root(String name){
+    public PulseSource(String name){
         super(name);
         update=true;
     }
