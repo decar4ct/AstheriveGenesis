@@ -18,12 +18,12 @@ import mindustry.content.*;
 
 import static mindustry.Vars.*;
 
-public class PulseSource extends Block {
+public class PulseSource extends BioBlock {
     public PulseSource(String name){
         super(name);
         update=true;
     }
-    public class PulseSourceBuild extends Building {
+    public class PulseSourceBuild extends BioBuilding {
         @Override
         public void updateTile() {
             for (int i=0;i<4;i++) {
