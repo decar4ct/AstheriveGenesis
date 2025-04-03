@@ -33,7 +33,6 @@ public class PulseSource extends BioBlock {
                         advbuild.biopulse=16;
                         advbuild.pulsed=true;
                         Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
-                        }
                     }
                 }
             }
