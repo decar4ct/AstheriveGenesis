@@ -24,13 +24,13 @@ public class BioBlock extends Block {
         update=true;
     }
     public class BioBuilding extends Building {
-        public float pulseDelay=0;
+        public float pulseProgress=0;
         public int biopulse=0;
         @Override
         public void updateTile() {
-            pulseDelay+=delta()
-            if (pulseDelay>20){
-                pulseDelay=0;
+            pulseProgress+=getProgressIncrease(30)
+            if (pulseProgress>=1f){
+                pulseProgress=0;
                 updatePulse();
             }
         }
