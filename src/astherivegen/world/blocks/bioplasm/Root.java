@@ -34,6 +34,7 @@ public class Root extends Wall {
         }
     }
     public class RootBuild extends Building {
+        public int biopulse=0;
         public int blending;
         @Override
         public void onProximityUpdate(){
@@ -55,7 +56,7 @@ public class Root extends Wall {
         @Override
         public void updateTile() {
             for (int i=0;i<4;i++) {
-                Building advroot = nearbyBuild(i);
+                Building advroot = tile.nearbyBuild(i);
                 if (advroot instanceof RootBuild) {
                     if (advroot.biopulse>0){
                         advroot.biopulse=biopulse-1;
