@@ -1,4 +1,4 @@
-/*package astherivegen.world.blocks.bioplasm;
+package astherivegen.world.blocks.bioplasm;
 
 import arc.Core;
 import arc.graphics.*;
@@ -19,18 +19,10 @@ import mindustry.content.*;
 import static mindustry.Vars.*;
 
 public class BioBlock extends Block {
-    public int biopulse = 0;
     public BioBlock(String name){
         super(name);
         update=true;
     }
     public class BioBuilding extends Building {
-        public int getPulse() {
-            return biopulse;
-        }
-        public int setPulse(int amount) {
-            biopulse=amount;
-        }
     }
 }
-*/
