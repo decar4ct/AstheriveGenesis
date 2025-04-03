@@ -13,6 +13,7 @@ import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.Tile;
+import mindustry.graphics.*;
 
 import static mindustry.Vars.*;
 
@@ -62,9 +63,9 @@ public class Root extends Wall {
                     }
                 }
             }
-            biopulse>0?biopulse=-1:biopulse=0;
+            biopulse>0?-1:0;
         }
-        public void getPulse(){
+        public int getPulse(){
             return biopulse;
         }
         public void pulse(int amount){
