@@ -57,8 +57,8 @@ public class Root extends Block {
             for (int i=0;i<4;i++) {
                 Building advroot = tile.nearbyBuild(i);
                 if (advroot instanceof Building) {
-                    if (advroot.getPulse()>0){
-                        advroot.setPulse(biopulse-1);
+                    if (advroot.block.getPulse()>0){
+                        advroot.block.getPulse(biopulse-1);
                         Fx.healBlockFull.at(advroot.x, advroot.y, advroot.block().size, Color.valueOf("84f491"), advroot.block());
                     }
                 }
