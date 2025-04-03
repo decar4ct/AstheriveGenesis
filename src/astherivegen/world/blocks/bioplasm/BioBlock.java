@@ -26,27 +26,32 @@ public class BioBlock extends Block {
     public class BioBuilding extends Building {
         public float pulseProgress=0;
         public int biopulse=0;
-        public int currentpulse;
         @Override
         public void updateTile() {
-            pulseProgress+=getProgressIncrease(30);
-            if (pulseProgress>=1f){
-                pulseProgress=0;
-                updatePulse();
+            pulseProgress+=delta();
+            if (pulseProgress>=5f){
+                if (biopulse!=-1) {
+                    updatePulse();
+                }
+            }
+            if (pulseProgress>=10f){
+                pulseProgress=0f;
+                biopulse=0;
             }
         }
         public void updatePulse() {
-            currentpulse=biopulse;
-            for (int i=0;i<4;i++) {
-                Building advroot = tile.nearbyBuild(i);
-                if (advroot instanceof BioBuilding advbuild) {
-                    if (advbuild.biopulse>=0&&currentpulse>0){
-                        advbuild.biopulse=currentpulse-1;
-                        Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
+            if (biopulse>0) {
+                for (int i=0;i<4;i++) {
+                    Building advroot = tile.nearbyBuild(i);
+                    if (advroot instanceof BioBuilding advbuild) {
+                        if (advbuild.biopulse>=0&&biopulse>0){
+                            advbuild.biopulse=biopulse-1;
+                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
+                        }
                     }
                 }
+                biopulse=-1;
             }
-            biopulse=biopulse>0?-1:0;
         }
     }
 }
