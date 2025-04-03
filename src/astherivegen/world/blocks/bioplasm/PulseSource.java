@@ -21,17 +21,15 @@ import static mindustry.Vars.*;
 public class PulseSource extends BioBlock {
     public PulseSource(String name){
         super(name);
-        update=true;
     }
     public class PulseSourceBuild extends BioBuilding {
         @Override
         public void updatePulse() {
-            for (int i=0;i<4;i++) {
-                Building advroot = tile.nearbyBuild(i);
-                if (advroot instanceof BioBuilding advbuild) {
-                    if (advbuild.biopulse>=0&&!advbuild.pulsed&&biopulse>0){
-                        advbuild.biopulse=16;
-                        advbuild.pulsed=true;
+            if (true) {
+                for (int i=0;i<4;i++) {
+                    Building advroot = tile.nearbyBuild(i);
+                    if (advroot instanceof BioBuilding advbuild) {
+                        advbuild.nextBiopulse=Math.max(advbuild.biopulse,16);
                         Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                     }
                 }
