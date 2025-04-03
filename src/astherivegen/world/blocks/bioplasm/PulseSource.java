@@ -25,14 +25,12 @@ public class PulseSource extends BioBlock {
     }
     public class PulseSourceBuild extends BioBuilding {
         @Override
-        public void updateTile() {
+        public void updatePulse() {
             for (int i=0;i<4;i++) {
                 Building advroot = tile.nearbyBuild(i);
                 if (advroot instanceof BioBuilding advbuild) {
                     if (advbuild.biopulse>=0){
-                        advbuild.biopulse=12;
-                        Log.info(advbuild);
-                        Log.info(advbuild.biopulse);
+                        advbuild.biopulse=16;
                         Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                     }
                 }
