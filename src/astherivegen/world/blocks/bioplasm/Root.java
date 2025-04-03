@@ -18,7 +18,7 @@ import mindustry.content.*;
 
 import static mindustry.Vars.*;
 
-public class Root extends Wall {
+public class Root extends BioBlock {
     //AWFUL
     public TextureRegion[] connectedRegions = new TextureRegion[16];
     public int biopulse = 0;
