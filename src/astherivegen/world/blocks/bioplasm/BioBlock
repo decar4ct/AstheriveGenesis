@@ -1,4 +1,4 @@
-package astherivegen.world.blocks.bioplasm;
+/*package astherivegen.world.blocks.bioplasm;
 
 import arc.Core;
 import arc.graphics.*;
@@ -33,3 +33,4 @@ public class BioBlock extends Block {
         }
     }
 }
+*/
