@@ -24,5 +24,6 @@ public class BioBlock extends Block {
         update=true;
     }
     public class BioBuilding extends Building {
+        public int biopulse=0;
     }
 }
