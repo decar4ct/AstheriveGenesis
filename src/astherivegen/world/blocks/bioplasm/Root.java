@@ -56,7 +56,7 @@ public class Root extends BioBlock {
             for (int i=0;i<4;i++) {
                 Building advroot = tile.nearbyBuild(i);
                 if (advroot instanceof BioBuilding advbuild) {
-                    if (advbuild.biopulse>0){
+                    if (advbuild.biopulse>=0){
                         advbuild.biopulse=biopulse-1;
                         Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                     }
