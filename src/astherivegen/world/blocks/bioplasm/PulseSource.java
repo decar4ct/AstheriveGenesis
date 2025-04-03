@@ -19,6 +19,7 @@ import mindustry.content.*;
 import static mindustry.Vars.*;
 
 public class PulseSource extends BioBlock {
+    public int biopulse=0;
     public PulseSource(String name){
         super(name);
         update=true;
