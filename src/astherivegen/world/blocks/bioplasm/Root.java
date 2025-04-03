@@ -63,7 +63,7 @@ public class Root extends Wall {
                     }
                 }
             }
-            biopulse>0?-1:0;
+            biopulse=biopulse>0?-1:0;
         }
         public int getPulse(){
             return biopulse;
