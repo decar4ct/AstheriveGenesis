@@ -33,6 +33,12 @@ public class Root extends Wall {
             connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
         }
     }
+    public int getPulse(){
+        return biopulse;
+    }
+    public void pulse(int amount){
+        biopulse = amount;
+    }
     //permanently borrowed from canvasblock.java :troll:
     public class RootBuild extends Building {
         public int blending;
@@ -65,12 +71,6 @@ public class Root extends Wall {
                 }
             }
             biopulse=biopulse>0?-1:0;
-        }
-        public int getPulse(){
-            return biopulse;
-        }
-        public void pulse(int amount){
-            biopulse = amount;
         }
     }
 }
