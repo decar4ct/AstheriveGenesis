@@ -32,7 +32,7 @@ public class BioBlock extends Block {
             pulseProgress+=delta();
             if (pulseProgress>=5f){
                 if (!pulsed) {
-                    pulsed=true;
+                    if (biopulse>0) pulsed=true;
                     updatePulse();
                     biopulse=0;
                 }
