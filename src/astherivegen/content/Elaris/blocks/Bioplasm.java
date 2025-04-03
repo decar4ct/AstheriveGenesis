@@ -23,7 +23,7 @@ public class Bioplasm {
                 root = new Root("root"){{
                     requirements(Category.distribution, with(Items.copper, 1));
                 }};
-                pulseSource = new pulseSource("pulse-source"){{
+                pulseSource = new PulseSource("pulse-source"){{
                     requirements(Category.distribution, with(Items.copper, 1));
                 }};
             }
