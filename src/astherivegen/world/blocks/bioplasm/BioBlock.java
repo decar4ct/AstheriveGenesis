@@ -28,7 +28,7 @@ public class BioBlock extends Block {
         public int biopulse=0;
         @Override
         public void updateTile() {
-            pulseProgress+=getProgressIncrease(30)
+            pulseProgress+=getProgressIncrease(30);
             if (pulseProgress>=1f){
                 pulseProgress=0;
                 updatePulse();
