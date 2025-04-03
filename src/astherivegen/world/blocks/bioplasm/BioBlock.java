@@ -49,10 +49,8 @@ public class BioBlock extends Block {
                 for (int i=0;i<4;i++) {
                     Building advroot = tile.nearbyBuild(i);
                     if (advroot instanceof BioBuilding advbuild) {
-                        if (advbuild.biopulse>=0&&!advbuild.pulsed&&biopulse>0){
-                            advbuild.nextBiopulse=Math.max(advbuild.biopulse,biopulse-1);
-                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
-                        }
+                        advbuild.nextBiopulse=Math.max(advbuild.biopulse,biopulse-1);
+                        Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                     }
                 }
             }
