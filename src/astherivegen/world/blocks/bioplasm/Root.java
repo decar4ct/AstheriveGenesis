@@ -56,7 +56,7 @@ public class Root extends Wall {
         @Override
         public void updateTile() {
             for (int i=0;i<4;i++) {
-                Tile advroot = tile.nearby(i)
+                Tile advroot = tile.nearby(i);
                 if (advroot.build instanceof RootBuild) {
                     if (advroot.block().getPulse()>0){
                         advroot.block().pulse(biopulse-1);
