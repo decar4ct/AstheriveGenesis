@@ -33,7 +33,6 @@ public class Root extends BioBlock {
         }
     }
     public class RootBuild extends BioBuilding {
-        public int biopulse=0;
         public int blending;
         @Override
         public void onProximityUpdate(){
