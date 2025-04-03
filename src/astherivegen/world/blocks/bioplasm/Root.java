@@ -21,7 +21,8 @@ public class Root extends Wall {
     public TextureRegion[] connectedRegions = new TextureRegion[16];
     public int biopulse = 0;
     public Root(String name){
-         super(name);
+        super(name);
+        update=true;
     }
     @Override
     public void load(){
@@ -54,9 +55,11 @@ public class Root extends Wall {
         public void updateTile() {
             for (int i=0;i<4;i++) {
                 Building advroot = build.nearby(Geometry.d4(i).x,Geometry.d4(i).y);
-                if (advroot.getPulse()>0){
-                    advroot.pulse(biopulse-1)
-                    Fx.healBlockFull.at(advroot.x, advroot.y, advroot.block.size, Color.valueOf("84f491"), advroot.block);
+                if (advroot instanceof RootBuild) {
+                    if (advroot.getPulse()>0){
+                        advroot.pulse(biopulse-1);
+                        Fx.healBlockFull.at(advroot.x, advroot.y, advroot.block.size, Color.valueOf("84f491"), advroot.block);
+                    }
                 }
             }
             biopulse>0?biopulse=-1:biopulse=0;
