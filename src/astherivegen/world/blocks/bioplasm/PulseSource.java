@@ -29,7 +29,7 @@ public class PulseSource extends BioBlock {
             for (int i=0;i<4;i++) {
                 Building advroot = tile.nearbyBuild(i);
                 if (advroot instanceof BioBuilding advbuild) {
-                    if (advbuild.biopulse>0){
+                    if (advbuild.biopulse>=0){
                         advbuild.biopulse=12;
                         Log.info(advbuild);
                         Log.info(advbuild.biopulse);
