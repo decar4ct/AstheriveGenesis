@@ -25,14 +25,6 @@ public class PulseSource extends BioBlock {
     }
     public class PulseSourceBuild extends BioBuilding {
         @Override
-        public void updateTile() {
-            pulseProgress+=delta();
-            if (pulseProgress>=30f){
-                pulseProgress=0f;
-                updatePulse();
-            }
-        }
-        @Override
         public void updatePulse() {
             if (biopulse>0) {
                 for (int i=0;i<4;i++) {
