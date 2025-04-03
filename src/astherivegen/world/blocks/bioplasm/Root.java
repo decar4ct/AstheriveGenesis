@@ -62,6 +62,9 @@ public class Root extends BioBlock {
                     }
                 }
             }
+            if (biopulse>0) {
+                Log.info("pulsed: "+String.valueOf(biopulse));
+            }
             biopulse=biopulse>0?-1:0;
         }
     }
