@@ -36,6 +36,7 @@ public class BioBlock extends Block {
                     nextBiopulse=0;
                     updatePulse();
                     biopulse=0;
+                    pulsed=true;
                 }
             }
             if (pulseProgress>=15f){
