@@ -18,7 +18,7 @@ import mindustry.content.*;
 
 import static mindustry.Vars.*;
 
-public class Root extends Block {
+public class Root extends BioBlock {
     //AWFUL
     public TextureRegion[] connectedRegions = new TextureRegion[16];
     public Root(String name){
@@ -32,7 +32,7 @@ public class Root extends Block {
             connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
         }
     }
-    public class RootBuild extends Building {
+    public class RootBuild extends BioBuilding {
         public int biopulse=0;
         public int blending;
         @Override
@@ -56,7 +56,7 @@ public class Root extends Block {
         public void updateTile() {
             for (int i=0;i<4;i++) {
                 Building advroot = tile.nearbyBuild(i);
-                if (advroot instanceof RootBuild advbuild) {
+                if (advroot instanceof BioBuilding advbuild) {
                     if (advbuild.biopulse>0){
                         advbuild.biopulse=biopulse-1;
                         Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
