@@ -49,11 +49,7 @@ public class Root extends BioBlock {
         }
         @Override
         public void draw(){
-            if (drawPulseScale>0.01f) {
-                drawPulse(connectedRegions[blending],drawPulseScale+1);
-            } else {
-                Draw.rect(connectedRegions[blending], x, y, 0);
-            }
+            drawPulse(connectedRegions[blending],drawPulseScale);
         }
     }
 }
