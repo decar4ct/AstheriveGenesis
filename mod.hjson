@@ -1,8 +1,9 @@
 displayName: "Astherive: Genesis"
 name: "astherive-gen"
-author: "Astherive Team"
+author: "_AstheriveTeam_" #cringe ahh
 main: "astherivegen.AstheriveGenMod"
-description: "The origin"
+description: "Play me, i dare you"
+subtitle: "The origin"
 version: 1.0
 minGameVersion: 145
 java: true
