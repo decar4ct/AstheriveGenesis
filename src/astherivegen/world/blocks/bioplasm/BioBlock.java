@@ -28,6 +28,8 @@ public class BioBlock extends Block {
         public int biopulse=0;
         public float pulseTimer=0;
         public float resetPulseTimer=0;
+        public float deathTimer=0;
+        public float deathTimerLimit=70f;
         public boolean pulsed=false;
 
         public float drawPulseScale=0;
@@ -35,6 +37,7 @@ public class BioBlock extends Block {
         public void updateTile() {
             //TODO try syncing invididually?
             if (biopulse>0&&!pulsed){
+                deathTimer=0f;
                 if (pulseTimer<4f) {
                     pulseTimer+=delta();
                 } else {
@@ -52,6 +55,12 @@ public class BioBlock extends Block {
                     resetPulseTimer=0;
                     pulsed=false;
                 }
+            }
+            if (biopulse>=0&&deathTimer<deathTimerLimit){
+                deathTimer+=delta();
+            }
+            if (deathTimer>=deathTimerLimit){
+                this.damage(4);
             }
             
             if (drawPulseScale>0.01f) {
