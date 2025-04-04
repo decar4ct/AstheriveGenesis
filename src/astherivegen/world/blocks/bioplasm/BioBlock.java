@@ -15,6 +15,8 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+//i had to use logic...dont you dare give me PTSD wproc
+import mindustry.logic;
 
 import static mindustry.Vars.*;
 
@@ -31,8 +33,8 @@ public class BioBlock extends Block {
         public boolean removePulse=false;
         @Override
         public void updateTile() {
-            pulseProgress+=delta();
-            if (pulseProgress>=5f){
+            //TODO sync with world time
+            if (varTick%20==0){
                 if (!pulsed) {
                     if (biopulse>0) hasPulse=true;
                     updatePulse();
@@ -42,8 +44,6 @@ public class BioBlock extends Block {
                         removePulse=false;
                     }
                 }
-            }
-            if (pulseProgress>=15f){
                 pulseProgress=0f;
                 if (hasPulse=true) {
                     removePulse=true;
