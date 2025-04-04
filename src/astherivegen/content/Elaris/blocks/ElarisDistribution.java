@@ -15,7 +15,7 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisDistribution {
     public static Block
-            itemTube, itemBridge, splitter;
+            itemTube, itemOverpass, splitter;
     public static void load() {
         {
             {
@@ -23,9 +23,9 @@ public class ElarisDistribution {
                     requirements(Category.distribution, with(Items.copper, 1));
                     speed = 0.05f;
                 }};
-                itemOverpass = new DuctBridge("item-overpass"){{
+                itemOverpass = new ItemOverpass("item-overpass"){{
                     requirements(Category.distribution, with(Items.copper, 1));
-                    range=3;
+                    range=4;
                 }};
                 splitter = new Router("splitter"){{
                     requirements(Category.distribution, with(Items.copper, 1));
