@@ -84,7 +84,7 @@ public class BioBlock extends Block {
         }
         @Override
         public void draw() {
-            drawPulse(/
+            drawPulse(region,drawPulseScale);
         }
     }
 }
