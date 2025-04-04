@@ -39,7 +39,7 @@ public class ItemOverpass extends DuctBridge {
             } else {
                 Draw.rect(dir2, x, y, rotation*90);
             }
-            Draw.rect(side, x, y, rotation%2==0?0:90);
+            Draw.rect(side, x, y, rotation%2==0?0:270);
             var link = findLink();
             if(link != null){
                 Draw.z(Layer.power - 1);
