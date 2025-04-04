@@ -28,7 +28,7 @@ public class ItemOverpass extends DuctBridge {
         super.load();
         dir1=Core.atlas.find(name+"-dir1");
         dir2=Core.atlas.find(name+"-dir2");
-        side=Core.atlas.find(name+"-side");
+        side=Core.atlas.find(name+"-dir-side");
     }
     public class ItemOverpassBuild extends DuctBridgeBuild {
         @Override
