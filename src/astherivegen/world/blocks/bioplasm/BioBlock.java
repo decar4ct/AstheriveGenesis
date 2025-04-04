@@ -29,6 +29,8 @@ public class BioBlock extends Block {
         public float pulseTimer=0;
         public float resetPulseTimer=0;
         public boolean pulsed=false;
+
+        public float drawPulseScale=0;
         @Override
         public void updateTile() {
             //TODO try syncing invididually?
@@ -40,6 +42,7 @@ public class BioBlock extends Block {
                     pulseTimer=0;
                     biopulse=0;
                     pulsed=true;
+                    drawPulseScale=1;
                 }
             }
             if (pulsed) {
@@ -49,6 +52,10 @@ public class BioBlock extends Block {
                     resetPulseTimer=0;
                     pulsed=false;
                 }
+            }
+            
+            if (drawPulseScale>0.01f) {
+                drawPulseScale*=0.75
             }
         }
         public void updatePulse() {
@@ -65,8 +72,8 @@ public class BioBlock extends Block {
                 }
             }
         }
-        public void updateAfterPulse() {
-            //Overriden by subclass
+        public void drawPulse() {
+            Draw.rect(region,x,y,rotation)
         }
     }
 }
