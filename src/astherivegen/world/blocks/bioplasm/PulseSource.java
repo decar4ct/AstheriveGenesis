@@ -28,14 +28,14 @@ public class PulseSource extends BioBlock {
         public void updatePulse() {
             if (pulseDelay>=4) {
                 pulseDelay=0;
-                bioPulse=16;
+                biopulse=16;
             } else {
                 pulseDelay++;
             }
         }
         @Override
         public void updateAfterPulse() {
-            bioPulse=0;
+            biopulse=0;
         }
     }
 }
