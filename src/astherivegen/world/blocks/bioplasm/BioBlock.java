@@ -41,6 +41,7 @@ public class BioBlock extends Block {
                     biopulse=0;
                     pulsed=true;
                 }
+            }
             if (pulsed) {
                 if (resetPulseTimer<30f) {
                     resetPulseTimer+=delta();
