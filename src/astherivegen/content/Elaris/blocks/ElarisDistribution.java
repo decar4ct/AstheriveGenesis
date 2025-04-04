@@ -15,13 +15,16 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisDistribution {
     public static Block
-            itemTube;
+            itemTube, splitter;
     public static void load() {
         {
             {
                 itemTube = new ItemTube("item-tube"){{
                     requirements(Category.distribution, with(Items.copper, 1));
                     speed = 0.05f;
+                }};
+                splitter = new Router("splitter"){{
+                    requirements(Category.distribution, with(Items.copper, 1));
                 }};
             }
         }
