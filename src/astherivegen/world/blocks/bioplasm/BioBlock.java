@@ -74,8 +74,8 @@ public class BioBlock extends Block {
         public void drawPulse(TextureRegion sprite,float scale) {
             scale+=1f;
             if (scale>0.01f) {
-                float sx=x-scale*0.5;
-                float sy=y-scale*0.5;
+                float sx=x-scale*0.5f;
+                float sy=y-scale*0.5f;
                 Draw.scl(scale,scale);
                 Draw.rect(sprite,sx,sy);
             } else {
