@@ -35,9 +35,9 @@ public class BioBlock extends Block {
             if (pulseProgress>=5f){
                 if (!pulsed) {
                     nextBiopulse=0;
-                    hasPulsed=false;
                     if (biopulse>0) hasPulsed=true;
                     updatePulse();
+                    hasPulsed=false;
                     biopulse=0;
                     pulsed=true;
                 }
