@@ -66,7 +66,10 @@ public class BioBlock extends Block {
                     }
                 }
             }
-            Fx.healBlockFull.at(x, y, block.size, Color.valueOf("84f491"), block);
+            if (maxPulse>0) {
+                Fx.healBlockFull.at(x, y, block.size, Color.valueOf("84f491"), block);
+                biopulse=maxPulse;
+            }
         }
         public void updateAfterPulse() {
             //Overriden by subclass
