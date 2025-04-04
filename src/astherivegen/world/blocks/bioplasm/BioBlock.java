@@ -33,7 +33,7 @@ public class BioBlock extends Block {
         public boolean removePulse=false;
         @Override
         public void updateTile() {
-            //TODO sync with world time
+            //TODO sync with world time...or no?
             if (varTick%20==0){
                 if (!pulsed) {
                     if (biopulse>0) hasPulse=true;
