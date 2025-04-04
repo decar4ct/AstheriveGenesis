@@ -55,7 +55,7 @@ public class BioBlock extends Block {
             }
             
             if (drawPulseScale>0.01f) {
-                drawPulseScale*=0.75
+                drawPulseScale*=0.75;
             }
         }
         public void updatePulse() {
