@@ -33,9 +33,9 @@ public class ItemOverpass extends DuctBridge {
         public void draw(){
             Draw.rect(block.region, x, y);
             if (rotation<2){
-                Draw.rect(dir1, x, y, rotdeg());
+                Draw.rect(dir1, x, y, rotation*90);
             } else {
-                Draw.rect(dir2, x, y, rotDeg());
+                Draw.rect(dir2, x, y, rotation*90);
             }
             var link = findLink();
             if(link != null){
