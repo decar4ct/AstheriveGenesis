@@ -23,19 +23,30 @@ public class PulseSource extends BioBlock {
         super(name);
     }
     public class PulseSourceBuild extends BioBuilding {
-        public int pulseDelay=0;
         @Override
-        public void updatePulse() {
-            if (pulseDelay>=4) {
-                pulseDelay=0;
-                biopulse=16;
-            } else {
-                pulseDelay++;
+        public void updateTile() {
+            if (true){
+                if (pulseTimer<80f) {
+                    pulseTimer+=delta();
+                } else {
+                    updatePulse();
+                    pulseTimer=0;
+                }
             }
         }
-        @Override
-        public void updateAfterPulse() {
-            biopulse=0;
+        public void updatePulse() {
+            //TODO rework back to this->pulse
+            if (true) {
+                for (int i=0;i<4;i++) {
+                    Building advroot = tile.nearbyBuild(i);
+                    if (advroot instanceof BioBuilding advbuild) {
+                        if (!advbuild.pulsed) {                        
+                            advbuild.biopulse=Math.max(advbuild.biopulse,32);
+                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
+                        }
+                    }
+                }
+            }
         }
     }
 }
