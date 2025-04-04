@@ -31,7 +31,7 @@ public class ItemOverpass extends DuctBridge {
     public class ItemOverpassBuild extends DuctBridgeBuild {
         @Override
         public void draw(){
-            Draw.rect(block.region, x, y);
+            Draw.rect(region, x, y);
             if (rotation<2){
                 Draw.rect(dir1, x, y, rotation*90);
             } else {
@@ -40,7 +40,7 @@ public class ItemOverpass extends DuctBridge {
             var link = findLink();
             if(link != null){
                 Draw.z(Layer.power - 1);
-                drawBridge(rotation%2, x, y, link.x, link.y, null);
+                drawBridge(rotation, x, y, link.x, link.y, null);
             }
         }
     }
