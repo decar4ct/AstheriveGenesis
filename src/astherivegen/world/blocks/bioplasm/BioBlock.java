@@ -33,7 +33,7 @@ public class BioBlock extends Block {
         public void updateTile() {
             //TODO try syncing invididually?
             if (biopulse>0&&!pulsed){
-                if (pulseTimer<30f) {
+                if (pulseTimer<5f) {
                     pulseTimer+=delta();
                 } else {
                     updatePulse();
@@ -43,7 +43,7 @@ public class BioBlock extends Block {
                 }
             }
             if (pulsed) {
-                if (resetPulseTimer<30f) {
+                if (resetPulseTimer<8f) {
                     resetPulseTimer+=delta();
                 } else {
                     resetPulseTimer=0;
