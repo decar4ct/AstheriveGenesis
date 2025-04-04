@@ -26,40 +26,46 @@ public class BioBlock extends Block {
     public class BioBuilding extends Building {
         public float pulseProgress=0;
         public int biopulse=0;
-        public int nextBiopulse=0;
         public boolean pulsed=false;
-        public boolean hasPulsed=false;
+        public boolean hasPulse=false;
+        public boolean removePulse=false;
         @Override
         public void updateTile() {
             pulseProgress+=delta();
             if (pulseProgress>=5f){
                 if (!pulsed) {
-                    nextBiopulse=0;
-                    if (biopulse>0) hasPulsed=true;
+                    if (biopulse>0) hasPulse=true;
                     updatePulse();
-                    hasPulsed=false;
-                    biopulse=0;
                     pulsed=true;
+                    if (removePulse) {
+                        hasPulse=false;
+                        removePulse=false;
+                    }
                 }
             }
             if (pulseProgress>=15f){
                 pulseProgress=0f;
-                biopulse=nextBiopulse;
+                if (hasPulse=true) {
+                    removePulse=true;
+                    biopulse=0;
+                }
                 pulsed=false;
             }
         }
         public void updatePulse() {
-            if (biopulse>0) {
+            //TODO rework from this->pulse to pulse->this
+            int maxPulse=0;
+            if (!hasPulse) {
                 for (int i=0;i<4;i++) {
                     Building advroot = tile.nearbyBuild(i);
                     if (advroot instanceof BioBuilding advbuild) {
-                        if (!advbuild.hasPulsed) {
-                            advbuild.nextBiopulse=Math.max(advbuild.nextBiopulse,biopulse-1);
-                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
+                        if (true) {                        
+                            maxPulse=Math.max(advbuild.biopulse,maxPulse);
                         }
                     }
                 }
             }
+            Fx.healBlockFull.at(x, y, block.size, Color.valueOf("84f491"), block);
         }
     }
 }
