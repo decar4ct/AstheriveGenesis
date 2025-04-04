@@ -79,7 +79,7 @@ public class BioBlock extends Block {
                 Draw.scl(scale,scale);
                 Draw.rect(sprite,sx,sy);
             } else {
-                Draw.rect(sprite,x,y,rotation)
+                Draw.rect(sprite,x,y,rotation);
             }
         }
         @Override
