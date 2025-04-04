@@ -28,16 +28,14 @@ public class PulseSource extends BioBlock {
         public void updatePulse() {
             if (pulseDelay>=4) {
                 pulseDelay=0;
-                for (int i=0;i<4;i++) {
-                    Building advroot = tile.nearbyBuild(i);
-                    if (advroot instanceof BioBuilding advbuild) {
-                        advbuild.nextBiopulse=Math.max(advbuild.biopulse,16);
-                        Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
-                    }
-                }
+                bioPulse=16;
             } else {
                 pulseDelay++;
             }
+        }
+        @Override
+        public void updateAfterPulse() {
+            bioPulse=0;
         }
     }
 }
