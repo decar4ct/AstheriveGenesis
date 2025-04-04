@@ -19,6 +19,7 @@ import static mindustry.Vars.*;
 public class ItemOverpass extends DuctBridge {
     public TextureRegion dir1;
     public TextureRegion dir2;
+    public TextureRegion side;
     public ItemOverpass(String name){
          super(name);
     }
@@ -27,6 +28,7 @@ public class ItemOverpass extends DuctBridge {
         super.load();
         dir1=Core.atlas.find(name+"-dir1");
         dir2=Core.atlas.find(name+"-dir2");
+        side=Core.atlas.find(name+"-side");
     }
     public class ItemOverpassBuild extends DuctBridgeBuild {
         @Override
