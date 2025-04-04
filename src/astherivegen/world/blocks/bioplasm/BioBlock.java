@@ -72,18 +72,19 @@ public class BioBlock extends Block {
             }
         }
         public void drawPulse(TextureRegion sprite,float scale) {
-            float sx=x-block.size*scale*0.5;
-            float sy=y-block.size*scale*0.5;
-            Draw.scl(scale,scale);
-            Draw.rect(sprite,sx,sy);
+            scale+=1f;
+            if (scale>0.01f) {
+                float sx=x-scale*0.5;
+                float sy=y-scale*0.5;
+                Draw.scl(scale,scale);
+                Draw.rect(sprite,sx,sy);
+            } else {
+                Draw.rect(sprite,x,y,rotation)
+            }
         }
         @Override
         public void draw() {
-            if (drawPulseScale>0.01f) {
-                drawPulse(region,drawPulseScale+1);
-            } else {
-                super.draw();
-            }
+            drawPulse(/
         }
     }
 }
