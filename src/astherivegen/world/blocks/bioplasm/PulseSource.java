@@ -26,7 +26,7 @@ public class PulseSource extends BioBlock {
         @Override
         public void updateTile() {
             if (true){
-                if (pulseTimer<80f) {
+                if (pulseTimer<20f) {
                     pulseTimer+=delta();
                 } else {
                     updatePulse();
@@ -42,7 +42,6 @@ public class PulseSource extends BioBlock {
                     if (advroot instanceof BioBuilding advbuild) {
                         if (!advbuild.pulsed) {                        
                             advbuild.biopulse=Math.max(advbuild.biopulse,32);
-                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                         }
                     }
                 }
