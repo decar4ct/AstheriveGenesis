@@ -42,7 +42,7 @@ public class BioBlock extends Block {
                     pulseTimer=0;
                     biopulse=0;
                     pulsed=true;
-                    drawPulseScale=1;
+                    drawPulseScale=0.7f;
                 }
             }
             if (pulsed) {
