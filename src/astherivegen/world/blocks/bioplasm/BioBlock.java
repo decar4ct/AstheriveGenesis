@@ -66,14 +66,24 @@ public class BioBlock extends Block {
                     if (advroot instanceof BioBuilding advbuild) {
                         if (!advbuild.pulsed) {                        
                             advbuild.biopulse=Math.max(advbuild.biopulse,biopulse-1);
-                            Fx.healBlockFull.at(advbuild.x, advbuild.y, advbuild.block().size, Color.valueOf("84f491"), advbuild.block());
                         }
                     }
                 }
             }
         }
-        public void drawPulse() {
-            Draw.rect(region,x,y,rotation)
+        public void drawPulse(sprite,scale) {
+            float sx=x-block.size*scale*0.5;
+            float sy=y-block.size*scale*0.5;
+            Draw.scl(scale,scale);
+            Draw.rect(sprite,sx,sy);
+        }
+        @Override
+        public void draw() {
+            if (drawPulseScale>0.01f) {
+                drawPulse(region,drawPulseScale);
+            } else {
+                super.draw();
+            }
         }
     }
 }
