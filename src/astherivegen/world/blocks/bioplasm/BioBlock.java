@@ -88,7 +88,7 @@ public class BioBlock extends Block {
                         possibleGrowDir.add(i);
                     }
                 }
-                if (!pulseEnd&&isRoot&&possibleGrowDir.size()>0){
+                if (pulseEnd&&isRoot&&possibleGrowDir.size()>0){
                     growRoot();
                 }
             }
