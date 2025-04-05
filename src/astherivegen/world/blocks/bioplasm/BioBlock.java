@@ -78,12 +78,12 @@ public class BioBlock extends Block {
                 possibleGrowDir.clear();
                 for (int i=0;i<4;i++) {
                     Building advroot = tile.nearbyBuild(i);
+                    Tile advtile = tile.nearby(i);
                     if (advroot instanceof BioBuilding advbuild) {
                         if (!advbuild.pulsed) {                        
                             advbuild.biopulse=Math.max(advbuild.biopulse,biopulse-1);
                             pulseEnd=false;
                         }
-                    Tile advtile = tile.nearby(i);
                     } else if (advtile.block() == Blocks.air) {
                         possibleGrowDir.add(i);
                     }
