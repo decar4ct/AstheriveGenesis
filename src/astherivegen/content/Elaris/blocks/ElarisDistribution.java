@@ -30,6 +30,9 @@ public class ElarisDistribution {
                 splitter = new Router("splitter"){{
                     requirements(Category.distribution, with(Items.copper, 1));
                 }};
+                filter = new Sorter("filter"){{
+                    requirements(Category.distribution, with(Items.copper, 1));
+                }};
             }
         }
     }
