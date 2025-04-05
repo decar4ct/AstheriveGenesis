@@ -83,7 +83,8 @@ public class BioBlock extends Block {
                             advbuild.biopulse=Math.max(advbuild.biopulse,biopulse-1);
                             pulseEnd=false;
                         }
-                    } else if (advroot.block() == Blocks.air) {
+                    Tile advtile = tile.nearby(i);
+                    } else if (advtile.block() == Blocks.air) {
                         possibleGrowDir.add(i);
                     }
                 }
