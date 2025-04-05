@@ -15,6 +15,8 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 import static mindustry.Vars.*;
 
@@ -94,7 +96,7 @@ public class BioBlock extends Block {
             Random random = new Random();
             int randomIndex = random.nextInt(list.size());
             int growDir = possibleGrowDir.get(randomIndex);
-            Tile targetTile = nearby(growDir);
+            Tile targetTile = tile.nearby(growDir);
             targetTile.setBlock(block,team);
         }
         public void drawPulse(TextureRegion sprite,float scale) {
