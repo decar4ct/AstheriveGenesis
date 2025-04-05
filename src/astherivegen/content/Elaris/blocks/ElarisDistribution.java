@@ -15,7 +15,7 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisDistribution {
     public static Block
-            itemTube, itemOverpass, splitter;
+            itemTube, itemOverpass, filter, splitter;
     public static void load() {
         {
             {
