@@ -35,8 +35,8 @@ public class ItemOverpass extends DuctBridge {
         Draw.alpha(Renderer.bridgeOpacity);
         float
         angle = rotation==0||rotation==2?0:270; //i copied entire drawBridge() just to change this lol
-        cx = (x1 + x2)/2f,
-        cy = (y1 + y2)/2f,
+        cx = (x1 + x2)/2f;
+        cy = (y1 + y2)/2f;
         len = Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2)) - size * tilesize;
 
         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
