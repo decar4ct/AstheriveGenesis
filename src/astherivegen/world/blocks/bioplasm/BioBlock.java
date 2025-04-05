@@ -35,7 +35,7 @@ public class BioBlock extends Block {
         public float deathTimerLimit=70f;
         public boolean pulsed=false;
 
-        public ArrayList<int> possibleGrowDir = new ArrayList<>();
+        public ArrayList<Int> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
         @Override
         public void updateTile() {
@@ -94,7 +94,7 @@ public class BioBlock extends Block {
         }
         public void growRoot() {
             Random random = new Random();
-            int randomIndex = random.nextInt(list.size());
+            int randomIndex = random.nextInt(possibleGrowDir.size());
             int growDir = possibleGrowDir.get(randomIndex);
             Tile targetTile = tile.nearby(growDir);
             targetTile.setBlock(block,team);
