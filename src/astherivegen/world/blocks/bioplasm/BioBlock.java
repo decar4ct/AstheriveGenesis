@@ -19,6 +19,7 @@ import mindustry.content.*;
 import static mindustry.Vars.*;
 
 public class BioBlock extends Block {
+    public boolean isRoot=false;
     public BioBlock(String name){
         super(name);
         update=true;
@@ -33,9 +34,6 @@ public class BioBlock extends Block {
         public boolean pulsed=false;
 
         public ArrayList<int> possibleGrowDir = new ArrayList<>();
-
-        public boolean isRoot = false;
-
         public float drawPulseScale=0;
         @Override
         public void updateTile() {
