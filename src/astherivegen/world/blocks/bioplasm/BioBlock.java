@@ -35,7 +35,7 @@ public class BioBlock extends Block {
         public float deathTimerLimit=70f;
         public boolean pulsed=false;
 
-        public ArrayList<Int> possibleGrowDir = new ArrayList<>();
+        public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
         @Override
         public void updateTile() {
