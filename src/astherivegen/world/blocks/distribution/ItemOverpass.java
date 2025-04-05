@@ -18,6 +18,8 @@ import mindustry.core.*;
 import static mindustry.Vars.*;
 
 public class ItemOverpass extends DuctBridge {
+    private static BuildPlan otherReq;
+    
     public TextureRegion dir1;
     public TextureRegion dir2;
     public TextureRegion side;
