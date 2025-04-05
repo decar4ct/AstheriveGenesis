@@ -32,6 +32,16 @@ public class ItemOverpass extends DuctBridge {
         side=Core.atlas.find(name+"-dir-side");
     }
     @Override
+    public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
+        Draw.rect(region, plan.drawx(), plan.drawy());
+        Draw.rect(dir1, plan.drawx(), plan.drawy(), plan.rotation * 90);
+        Draw.rect(side, plan.drawx(), plan.drawy(), plan.rotation * 90);
+    }
+    @Override
+    public TextureRegion[] icons(){
+        return new TextureRegion[]{region, dir1, side};
+    }
+    @Override
     public void drawBridge(int rotation, float x1, float y1, float x2, float y2, @Nullable Color liquidColor){
         Draw.alpha(Renderer.bridgeOpacity);
         float
