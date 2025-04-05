@@ -24,6 +24,7 @@ public class Root extends BioBlock {
     public Root(String name){
         super(name);
         update=true;
+        isRoot=true;
     }
     @Override
     public void load(){
@@ -34,7 +35,6 @@ public class Root extends BioBlock {
     }
     public class RootBuild extends BioBuilding {
         public int blending;
-        isRoot = true;
         @Override
         public void onProximityUpdate(){
             super.onProximityUpdate();
