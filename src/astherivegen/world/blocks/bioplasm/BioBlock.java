@@ -32,6 +32,8 @@ public class BioBlock extends Block {
         public float deathTimerLimit=70f;
         public boolean pulsed=false;
 
+        public ArrayList<int> possibleGrowDir = new ArrayList<>();
+
         public float drawPulseScale=0;
         @Override
         public void updateTile() {
@@ -70,15 +72,23 @@ public class BioBlock extends Block {
         public void updatePulse() {
             //TODO rework back to this->pulse
             if (true) {
+                possibleGrowDir.clear();
                 for (int i=0;i<4;i++) {
                     Building advroot = tile.nearbyBuild(i);
                     if (advroot instanceof BioBuilding advbuild) {
                         if (!advbuild.pulsed) {                        
                             advbuild.biopulse=Math.max(advbuild.biopulse,biopulse-1);
                         }
+                    } else if (advroot.block == Blocks.air) {
+                        possibleGrowDir.add(i);
                     }
                 }
             }
+        }
+        public void growRoot() {
+            Random random = new Random();
+            int randomIndex = random.nextInt(list.size());
+            int growDir = possibleGrowDir.get(randomIndex);
         }
         public void drawPulse(TextureRegion sprite,float scale) {
             scale+=1f;
