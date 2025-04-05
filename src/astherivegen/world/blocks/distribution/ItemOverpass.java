@@ -14,12 +14,11 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.core.*;
+import mindustry.entities.units.*;
 
 import static mindustry.Vars.*;
 
 public class ItemOverpass extends DuctBridge {
-    private static BuildPlan otherReq;
-    
     public TextureRegion dir1;
     public TextureRegion dir2;
     public TextureRegion side;
