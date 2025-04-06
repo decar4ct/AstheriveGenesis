@@ -8,12 +8,13 @@ import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.gen.*;
 import mindustry.type.*;
+import astherivegen.type.unit.*;
 
 public class ElarisUnitTypes{
     public static UnitType
     sentry;
     public static void load(){
-        sentry = new ErekirUnitType("sentry"){{
+        sentry = new ElarisUnitType("sentry"){{
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, coreFleeRange);
             isEnemy = false;
@@ -70,7 +71,7 @@ public class ElarisUnitTypes{
             weapons.add(new Weapon(sentry-weapon){{
                 reload = 20f;
                 x = 0f;
-                y = 7f
+                y = 7f;
                 rotate = false;
                 shootY = 0f;
                 shootCone = 15f;
