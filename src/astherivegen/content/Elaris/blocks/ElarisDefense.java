@@ -20,7 +20,7 @@ public class ElarisDefense {
         {
             {
                 quartzWall = new ConnectedWall("quartz-wall"){{
-                    requirements(Category.defense, with(Items.copper, 6));
+                    requirements(Category.defense, with(ElarisItems.quartz, 6));
                 }};
             }
         }
