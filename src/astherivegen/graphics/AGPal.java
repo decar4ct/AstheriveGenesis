@@ -1,4 +1,4 @@
-package astherivegen;
+package astherivegen.graphics;
 
 import arc.graphics.Color;
 
