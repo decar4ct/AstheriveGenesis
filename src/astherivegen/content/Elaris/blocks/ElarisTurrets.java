@@ -12,8 +12,15 @@ import astherivegen.world.blocks.defense.*;
 import astherivegen.graphics;
 import astherivegen.content.*;
 import mindustry.content.*;
+import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.part.DrawPart;
+import mindustry.entities.part.RegionPart;
+import mindustry.entities.pattern.*;
+import mindustry.content.Fx;
 
 import static mindustry.type.ItemStack.with;
+import static mindustry.Vars.*;
 
 public class ElarisTurrets {
     public static Block
@@ -35,7 +42,18 @@ public class ElarisTurrets {
                     rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.cannon;
-  
+
+                    ammo(
+                        ElarisItems.quartz, new BasicBulletType(2.5f, 90) {{
+                            width = 10f;
+                            height = 16f;
+                            lifetime = 60f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = Fx.hitBulletColor;
+                            hitColor = backColor = trailColor = Color.valueOf("d39169");
+                            frontColor = Color.valueOf("eac1a8");
+                        }}
+                    );
                     drawer = new DrawTurret("elaris-"){{
                         parts.add(
                             new RegionPart("-side"){{
