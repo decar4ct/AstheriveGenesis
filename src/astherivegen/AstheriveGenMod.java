@@ -23,6 +23,7 @@ public class AstheriveGenMod extends Mod{
                 dialog.cont.add("behold").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
                 dialog.cont.image(Core.atlas.find("astherive-gen-frog")).pad(20f).row();
+                dialog.cont.add("yes i still keep this from the example java mod its funny").row();
                 dialog.cont.button("I see", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
@@ -31,6 +32,7 @@ public class AstheriveGenMod extends Mod{
 
     @Override
     public void loadContent(){
+        ElarisItems.load();
         ElarisBlocks.load();
     }
 
