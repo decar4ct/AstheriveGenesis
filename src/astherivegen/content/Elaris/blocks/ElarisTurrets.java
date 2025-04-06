@@ -29,6 +29,7 @@ import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.consumers.ConsumeLiquid;
 import mindustry.world.consumers.ConsumeLiquids;
 import mindustry.world.draw.DrawTurret;
+import mindustry.entities.effect.*;
 
 import static mindustry.type.ItemStack.with;
 import static mindustry.Vars.*;
@@ -68,7 +69,7 @@ public class ElarisTurrets {
                             frontColor = Color.valueOf("eac1a8");
                             trailWidth = 2.1f;
                             trailLength = 7;
-                            shootEffect = MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
