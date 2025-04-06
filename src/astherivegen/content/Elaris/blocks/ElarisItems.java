@@ -1,4 +1,4 @@
-package astherive-gen.content;
+package astherivegen.content;
 
 import arc.graphics.*;
 import arc.struct.*;
