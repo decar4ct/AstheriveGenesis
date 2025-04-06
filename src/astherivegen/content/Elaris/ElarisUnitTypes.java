@@ -1,5 +1,4 @@
-package epsilon.content.Kallistea;
-
+package astherivegen.content.Elaris;
 
 import arc.graphics.Color;
 import arc.math.Interp;
