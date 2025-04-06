@@ -29,10 +29,10 @@ public class ElarisDistribution {
                     requirements(Category.distribution, with(ElarisItems.quartz, 6, ElarisItems.magnetite, 3));
                     range=4;
                 }};
-                splitter = new Router("splitter"){{
+                filter = new Sorter("filter"){{
                     requirements(Category.distribution, with(ElarisItems.quartz, 1));
                 }};
-                filter = new Sorter("filter"){{
+                splitter = new Router("splitter"){{
                     requirements(Category.distribution, with(ElarisItems.quartz, 1));
                 }};
             }
