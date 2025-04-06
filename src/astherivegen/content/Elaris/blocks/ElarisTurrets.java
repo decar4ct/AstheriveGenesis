@@ -37,11 +37,12 @@ public class ElarisDefense {
                     drawer = new DrawTurret("elaris-"){{
                         parts.add(
                             new RegionPart("-side"){{
-                            progress = PartProgress.warmup;
-                            mirror = true;
-                            under = false;
-                            moveRot = -10;
-                        }};
+                                progress = PartProgress.warmup;
+                                mirror = true;
+                                under = false;
+                                moveRot = -10;
+                            }};
+                        );
                     }};
                 }};
             }
