@@ -53,8 +53,8 @@ public class ElarisTurrets {
                     rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.cannon;
-                    minWarmup: 0.8
-                    shootWarmupSpeed: 0.07
+                    minWarmup = 0.8f;
+                    shootWarmupSpeed = 0.07f;
 
                     ammo(
                         ElarisItems.quartz, new BasicBulletType(2.5f, 90) {{
