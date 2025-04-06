@@ -10,6 +10,7 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
 import astherivegen.world.blocks.distribution.*;
+import astherivegen.content.Elaris.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -20,18 +21,19 @@ public class ElarisDistribution {
         {
             {
                 itemTube = new ItemTube("item-tube"){{
-                    requirements(Category.distribution, with(Items.copper, 1));
+                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
                     speed = 0.05f;
+                    bridgeReplacement=itemOverpass
                 }};
                 itemOverpass = new ItemOverpass("item-overpass"){{
-                    requirements(Category.distribution, with(Items.copper, 1));
+                    requirements(Category.distribution, with(ElarisItems.quartz, 6, ElarisItems.magnetite, 3));
                     range=4;
                 }};
                 splitter = new Router("splitter"){{
-                    requirements(Category.distribution, with(Items.copper, 1));
+                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
                 }};
                 filter = new Sorter("filter"){{
-                    requirements(Category.distribution, with(Items.copper, 1));
+                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
                 }};
             }
         }
