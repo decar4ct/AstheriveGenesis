@@ -23,7 +23,7 @@ public class ElarisDistribution {
                 itemTube = new ItemTube("item-tube"){{
                     requirements(Category.distribution, with(ElarisItems.quartz, 1));
                     speed = 0.05f;
-                    bridgeReplacement=itemOverpass
+                    bridgeReplacement=itemOverpass;
                 }};
                 itemOverpass = new ItemOverpass("item-overpass"){{
                     requirements(Category.distribution, with(ElarisItems.quartz, 6, ElarisItems.magnetite, 3));
