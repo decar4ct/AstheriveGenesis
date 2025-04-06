@@ -53,16 +53,23 @@ public class ElarisTurrets {
                     rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.cannon;
+                    minWarmup: 0.8
+                    shootWarmupSpeed: 0.07
 
                     ammo(
                         ElarisItems.quartz, new BasicBulletType(2.5f, 90) {{
+                            lifetime = 60f;
+                            
                             width = 10f;
                             height = 16f;
-                            lifetime = 60f;
                             weaveMag = 2;
                             hitEffect = despawnEffect = Fx.hitBulletColor;
                             hitColor = backColor = trailColor = Color.valueOf("d39169");
                             frontColor = Color.valueOf("eac1a8");
+                            trailWidth = 2.1f;
+                            trailLength = 7;
+                            shootEffect = MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
+                            smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
                     drawer = new DrawTurret("elaris-"){{
