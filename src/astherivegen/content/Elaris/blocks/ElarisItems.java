@@ -4,7 +4,7 @@ import arc.graphics.*;
 import arc.struct.*;
 import mindustry.type.*;
 
-public class Items{
+public class ElarisItems{
     public static Item
     quartz, magnetite, polterite;
     public static final Seq<Item> serpuloItems = new Seq<>()
