@@ -41,8 +41,8 @@ public class ElarisDefense {
                                 mirror = true;
                                 under = false;
                                 moveRot = -10;
-                            }};
-                        );
+                            }}
+                        )
                     }};
                 }};
             }
