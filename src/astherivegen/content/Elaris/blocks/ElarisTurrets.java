@@ -25,7 +25,7 @@ public class ElarisDefense {
                     researchCost = with(ElarisItems.quartz, 100, ElarisItems.magnetite, 75);
   
                     health = 700;
-                    outlineColor = AGPal.outline;
+                    outlineColor = AGPal.elarisOutline;
                     reload = 80f;
                     inaccuracy = 2f;
                     size = 3;
