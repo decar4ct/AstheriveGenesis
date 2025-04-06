@@ -10,7 +10,7 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import astherivegen.world.blocks.defense.*;
 import astherivegen.graphics;
-import astherivegen.content.*;
+import astherivegen.content.Elaris.*;
 import mindustry.content.*;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.entities.effect.MultiEffect;
