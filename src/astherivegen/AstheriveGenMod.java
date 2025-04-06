@@ -3,7 +3,7 @@ package astherivegen;
 import arc.*;
 import arc.util.*;
 import astherivegen.content.Elaris.blocks.*;
-import astherivegen.content.Elaris.ElarisItems.*;
+import astherivegen.content.Elaris.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
