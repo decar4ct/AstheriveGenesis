@@ -14,9 +14,9 @@ import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisDefense {
+public class ElarisTurrets {
     public static Block
-            quartzWall;
+            fracture;
     public static void load() {
         {
             {
