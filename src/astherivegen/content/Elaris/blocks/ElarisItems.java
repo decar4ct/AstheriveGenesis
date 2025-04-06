@@ -7,7 +7,7 @@ import mindustry.type.*;
 public class ElarisItems{
     public static Item
     quartz, magnetite, polterite;
-    public static final Seq<Item> serpuloItems = new Seq<>()
+    public static final Seq<Item> ElarisItems = new Seq<>();
 
     public static void load(){
         quartz = new Item("quartz", Color.valueOf("BCC3BF")){{
@@ -26,7 +26,7 @@ public class ElarisItems{
             cost = 0.8f;
         }};
         
-        elarisItems.addAll(
+        ElarisItems.addAll(
         quartz, magnetite, polterite
         );
     }
