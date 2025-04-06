@@ -1,4 +1,4 @@
-package astherivegen.content;
+package astherivegen.content.Elaris;
 
 import arc.graphics.*;
 import arc.struct.*;
