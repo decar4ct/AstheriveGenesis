@@ -2,11 +2,15 @@ package astherivegen.content.Elaris;
 
 import arc.graphics.*;
 import arc.math.Interp;
+import arc.graphics.g2d.*;
+import arc.graphics.util.*;
 import mindustry.ai.types.BuilderAI;
 import mindustry.content.Fx;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.*;
+import mindustry.graphics.Layer;
+import mindustry.graphics.Pal;
 import mindustry.gen.*;
 import mindustry.type.*;
 import astherivegen.type.unit.*;
