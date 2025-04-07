@@ -1,11 +1,12 @@
 package astherivegen.content.Elaris;
 
-import arc.graphics.Color;
+import arc.graphics.*;
 import arc.math.Interp;
 import mindustry.ai.types.BuilderAI;
 import mindustry.content.Fx;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
+import mindustry.entities.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import astherivegen.type.unit.*;
@@ -16,7 +17,7 @@ public class ElarisUnitTypes{
     public static void load(){
         sentry = new ElarisUnitType("sentry"){{
             coreUnitDock = true;
-            controller = u -> new BuilderAI(true, coreFleeRange);
+            controller = u -> new BuilderAI(true, 500f);
             isEnemy = false;
             envDisabled = 0;
 
@@ -68,7 +69,7 @@ public class ElarisUnitTypes{
                 new UnitEngine(23 / 4f, -22 / 4f, 2.2f, 315f)
             );
 
-            weapons.add(new Weapon(sentry-weapon){{
+            weapons.add(new Weapon("sentry-weapon"){{
                 reload = 20f;
                 x = 0f;
                 y = 7f;
