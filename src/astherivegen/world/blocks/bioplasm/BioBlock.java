@@ -37,7 +37,7 @@ public class BioBlock extends Block {
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
-        public @Nullable Tile advNearby(int rotation, int branchRotation){
+        public Tile advNearby(int rotation, int branchRotation){
             //terrible mess, but if it work it work
             float bx = switch(branchRotation){
                 case 0 -> x+1;
@@ -58,7 +58,6 @@ public class BioBlock extends Block {
                 case 1 -> world.tile((int)bx, (int)by + 1);
                 case 2 -> world.tile((int)bx - 1, (int)by);
                 case 3 -> world.tile((int)bx, (int)by - 1);
-                default -> null;
             };
         }
         @Override
