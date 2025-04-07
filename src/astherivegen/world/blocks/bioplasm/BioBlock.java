@@ -44,14 +44,14 @@ public class BioBlock extends Block {
                 case 1 -> x;
                 case 2 -> x-1;
                 case 3 -> x;
-                default -> null;
+                default -> x;
             };
             int by = switch(branchRotation){
                 case 0 -> y;
                 case 1 -> y+1;
                 case 2 -> y;
                 case 3 -> y-1;
-                default -> null;
+                default -> y;
             };
             return switch(rotation){
                 case 0 -> world.tile(bx + 1, by);
@@ -111,7 +111,7 @@ public class BioBlock extends Block {
                     } else if (neartile.block() == Blocks.air) {
                         int nearnearcount=0;
                         for (int i2=0;i2<4;i2++) {
-                            Tile nearneartile = tile.advNearby(i,i2); //stoopid variable naming lol
+                            Tile nearneartile = advNearby(i,i2); //stoopid variable naming lol
                             if (nearneartile.block() != Blocks.air) {
                                 nearnearcount++;
                             }
