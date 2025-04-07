@@ -24,6 +24,7 @@ public class ElarisUnitTypes{
     sentry;
     public static void load(){
         sentry = new ElarisUnitType("sentry"){{
+            constructor = MechUnit::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, 500f);
             isEnemy = false;
