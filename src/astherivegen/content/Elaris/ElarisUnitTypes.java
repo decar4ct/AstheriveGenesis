@@ -21,16 +21,17 @@ import static arc.graphics.g2d.Lines.*;
 
 public class ElarisUnitTypes{
     public static UnitType
-    sentry;
+    ward;
     public static void load(){
-        sentry = new ElarisUnitType("sentry"){{
-            constructor = MechUnit::create;
+        ward = new ElarisUnitType("ward"){{
+            constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, 500f);
+            flying = true;
             isEnemy = false;
             envDisabled = 0;
 
-            range = 60f;
+            range = 120f;
             faceTarget = true;
             mineWalls = true;
             mineFloor = false;
@@ -48,44 +49,21 @@ public class ElarisUnitTypes{
             hitSize = 9f;
             engineSize = 0;
             fogRadius = 0f;
-
-            legStraightness = 0.4f;
-            stepShake = 0f;
-            shadowElevation = 0.1f;
-            groundLayer = Layer.legUnit - 1f;
-            targetAir = false;
-
-            legCount = 4;
-            legLength = 8f;
-            lockLegBase = true;
-            legContinuousMove = true;
-            legExtension = -2f;
-            legBaseOffset = 3f;
-            legMaxLength = 1.1f;
-            legMinLength = 0.2f;
-            legLengthScl = 0.96f;
-            legForwardScl = 1.1f;
-            legGroupSize = 2;
-            rippleScale = 0.2f;
-
-            legMoveSpace = 1f;
-            allowLegStep = true;
-            hovering = true;
-            legPhysicsLayer = false;
           
             setEnginesMirror(
                 new UnitEngine(21 / 4f, 19 / 4f, 2.2f, 45f),
                 new UnitEngine(23 / 4f, -22 / 4f, 2.2f, 315f)
             );
 
-            weapons.add(new Weapon("sentry-weapon"){{
+            weapons.add(new Weapon("ward-weapon"){{
                 reload = 20f;
-                x = 0f;
-                y = 7f;
+                x = 14f / 8;
+                y = 0f;
                 rotate = false;
                 shootY = 0f;
                 shootCone = 15f;
                 mirror = true;
+                recoil = 3f
 
                 bullet = new ArtilleryBulletType(){{
                     shootEffect = new MultiEffect(Fx.shootSmallColor, new Effect(9, e -> {
@@ -104,6 +82,7 @@ public class ElarisUnitTypes{
                     width = height = 9f;
                     splashDamageRadius = 19f;
                     splashDamage = 30f;
+                    speed = 6.5f;
 
                     trailLength = 27;
                     trailWidth = 2.5f;
