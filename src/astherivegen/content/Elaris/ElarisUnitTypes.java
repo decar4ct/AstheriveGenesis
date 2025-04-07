@@ -63,7 +63,7 @@ public class ElarisUnitTypes{
                 shootY = 0f;
                 shootCone = 15f;
                 mirror = true;
-                recoil = 3f
+                recoil = 3f;
 
                 bullet = new ArtilleryBulletType(){{
                     shootEffect = new MultiEffect(Fx.shootSmallColor, new Effect(9, e -> {
