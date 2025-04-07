@@ -34,7 +34,7 @@ public class AstheriveGenMod extends Mod{
     @Override
     public void loadContent(){
         ElarisItems.load();
+        ElarisUnitTypes.load();
         ElarisBlocks.load();
     }
-
 }
