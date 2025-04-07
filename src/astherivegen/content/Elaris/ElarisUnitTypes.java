@@ -17,6 +17,7 @@ import mindustry.type.*;
 import astherivegen.type.unit.*;
 
 import static arc.graphics.g2d.Draw.*;
+import static arc.graphics.g2d.Lines.*;
 
 public class ElarisUnitTypes{
     public static UnitType
