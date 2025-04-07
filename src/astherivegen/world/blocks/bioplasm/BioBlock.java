@@ -26,30 +26,6 @@ public class BioBlock extends Block {
         super(name);
         update=true;
     }
-    public @Nullable Tile advNearby(int rotation, int branchRotation){
-        //terrible mess, but if it work it work
-        int bx = switch(branchRotation){
-            case 0 -> x+1;
-            case 1 -> x;
-            case 2 -> x-1;
-            case 3 -> x;
-            default -> null;
-        };
-        int by = switch(branchRotation){
-            case 0 -> y;
-            case 1 -> y+1;
-            case 2 -> y;
-            case 3 -> y-1;
-            default -> null;
-        };
-        return switch(rotation){
-            case 0 -> world.tile(bx + 1, by);
-            case 1 -> world.tile(bx, by + 1);
-            case 2 -> world.tile(bx - 1, by);
-            case 3 -> world.tile(bx, by - 1);
-            default -> null;
-        };
-    }
     public class BioBuilding extends Building {
         public float pulseProgress=0;
         public int biopulse=0;
@@ -61,6 +37,30 @@ public class BioBlock extends Block {
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
+        public @Nullable Tile advNearby(int rotation, int branchRotation){
+            //terrible mess, but if it work it work
+            int bx = switch(branchRotation){
+                case 0 -> x+1;
+                case 1 -> x;
+                case 2 -> x-1;
+                case 3 -> x;
+                default -> null;
+            };
+            int by = switch(branchRotation){
+                case 0 -> y;
+                case 1 -> y+1;
+                case 2 -> y;
+                case 3 -> y-1;
+                default -> null;
+            };
+            return switch(rotation){
+                case 0 -> world.tile(bx + 1, by);
+                case 1 -> world.tile(bx, by + 1);
+                case 2 -> world.tile(bx - 1, by);
+                case 3 -> world.tile(bx, by - 1);
+                default -> null;
+            };
+        }
         @Override
         public void updateTile() {
             //TODO try syncing invididually?
