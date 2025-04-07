@@ -16,6 +16,8 @@ import mindustry.gen.*;
 import mindustry.type.*;
 import astherivegen.type.unit.*;
 
+import static arc.graphics.g2d.Draw.*;
+
 public class ElarisUnitTypes{
     public static UnitType
     sentry;
