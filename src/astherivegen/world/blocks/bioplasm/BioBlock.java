@@ -101,15 +101,24 @@ public class BioBlock extends Block {
             if (true) {
                 possibleGrowDir.clear();
                 for (int i=0;i<4;i++) {
-                    Building advroot = tile.nearbyBuild(i);
-                    Tile advtile = tile.nearby(i);
-                    if (advroot instanceof BioBuilding advbuild) {
-                        if (!advbuild.pulsed) {                        
-                            advbuild.biopulse=Math.max(advbuild.biopulse,biopulse-1);
+                    Building nearroot = tile.nearbyBuild(i);
+                    Tile neartile = tile.nearby(i);
+                    if (nearroot instanceof BioBuilding nearbuild) {
+                        if (!nearbuild.pulsed) {                      
+                            nearbuild.biopulse=Math.max(nearbuild.biopulse,biopulse-1);
                             pulseEnd=false;
                         }
-                    } else if (advtile.block() == Blocks.air) {
-                        possibleGrowDir.add(i);
+                    } else if (neartile.block() == Blocks.air) {
+                        int nearnearcount=0;
+                        for (int i2=0;i2<4;i2++) {
+                            Tile nearneartile = tile.advNearby(i,i2); //stoopid variable naming lol
+                            if (nearneartile.block() != Blocks.air) {
+                                nearnearcount++;
+                            }
+                        }
+                        if (nearnearcount<2) {
+                            possibleGrowDir.add(i);
+                        }
                     }
                 }
                 if (pulseEnd&&isRoot&&possibleGrowDir.size()>0){
