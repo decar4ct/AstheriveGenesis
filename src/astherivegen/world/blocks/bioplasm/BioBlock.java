@@ -54,10 +54,10 @@ public class BioBlock extends Block {
                 default -> y;
             };
             return switch(rotation){
-                case 0 -> world.tile((int)bx + 1, by);
-                case 1 -> world.tile((int)bx, by + 1);
-                case 2 -> world.tile((int)bx - 1, by);
-                case 3 -> world.tile((int)bx, by - 1);
+                case 0 -> world.tile((int)bx + 1, (int)by);
+                case 1 -> world.tile((int)bx, (int)by + 1);
+                case 2 -> world.tile((int)bx - 1, (int)by);
+                case 3 -> world.tile((int)bx, (int)by - 1);
                 default -> null;
             };
         }
