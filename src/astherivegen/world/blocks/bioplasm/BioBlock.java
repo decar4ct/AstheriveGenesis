@@ -39,14 +39,14 @@ public class BioBlock extends Block {
         public float drawPulseScale=0;
         public Tile advNearby(int rotation, int branchRotation){
             //terrible mess, but if it work it work
-            float bx = switch(branchRotation){
+            int bx = switch(branchRotation){
                 case 0 -> x+1;
                 case 1 -> x;
                 case 2 -> x-1;
                 case 3 -> x;
                 default -> x;
             };
-            float by = switch(branchRotation){
+            int by = switch(branchRotation){
                 case 0 -> y;
                 case 1 -> y+1;
                 case 2 -> y;
@@ -54,10 +54,10 @@ public class BioBlock extends Block {
                 default -> y;
             };
             return switch(rotation){
-                case 0 -> world.tile((int)bx + 1, (int)by);
-                case 1 -> world.tile((int)bx, (int)by + 1);
-                case 2 -> world.tile((int)bx - 1, (int)by);
-                case 3 -> world.tile((int)bx, (int)by - 1);
+                case 0 -> world.tile(bx + 1, by);
+                case 1 -> world.tile(bx, by + 1);
+                case 2 -> world.tile(bx - 1, by);
+                case 3 -> world.tile(bx, by - 1);
                 default -> null;
             };
         }
