@@ -109,7 +109,7 @@ public class BioBlock extends Block {
                         }
                     }
                 }
-                if (pulseEnd&&isRoot&&possibleGrowDir.size()>0){
+                if ((pulseEnd||random.nextInt>0.25)&&isRoot&&possibleGrowDir.size()>0){
                     growRoot();
                 }
             }
