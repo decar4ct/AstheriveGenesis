@@ -40,20 +40,13 @@ public class ElarisUnitTypes{
             mineTier = 3;
             buildSpeed = 1.2f;
             drag = 0.08f;
-            speed = 5.6f;
+            speed = 2.6f;
             rotateSpeed = 7f;
             accel = 0.09f;
             itemCapacity = 30;
             health = 300f;
-            armor = 1f;
             hitSize = 9f;
-            engineSize = 0;
             fogRadius = 0f;
-          
-            setEnginesMirror(
-                new UnitEngine(21 / 4f, 19 / 4f, 2.2f, 45f),
-                new UnitEngine(23 / 4f, -22 / 4f, 2.2f, 315f)
-            );
 
             weapons.add(new Weapon("ward-weapon"){{
                 reload = 20f;
