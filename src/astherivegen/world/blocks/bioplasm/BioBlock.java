@@ -58,6 +58,7 @@ public class BioBlock extends Block {
                 case 1 -> world.tile((int)bx, (int)by + 1);
                 case 2 -> world.tile((int)bx - 1, (int)by);
                 case 3 -> world.tile((int)bx, (int)by - 1);
+                default -> null;
             };
         }
         @Override
@@ -111,8 +112,10 @@ public class BioBlock extends Block {
                         int nearnearcount=0;
                         for (int i2=0;i2<4;i2++) {
                             Tile nearneartile = advNearby(i,i2); //stoopid variable naming lol
-                            if (nearneartile.block() != Blocks.air) {
-                                nearnearcount++;
+                            if (nearneartile!=null) {
+                                if (nearneartile.block() != Blocks.air) {
+                                    nearnearcount++;
+                                }
                             }
                         }
                         if (nearnearcount<2) {
