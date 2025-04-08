@@ -37,27 +37,13 @@ public class BioBlock extends Block {
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
-        public Tile advNearby(int rotation, int branchRotation){
+        public Tile nearbyTile(int rotation, Tile tile){
             //terrible mess, but if it work it work
-            short bx = switch(branchRotation){
-                case 0 -> x+1;
-                case 1 -> x;
-                case 2 -> x-1;
-                case 3 -> x;
-                default -> x;
-            };
-            short by = switch(branchRotation){
-                case 0 -> y;
-                case 1 -> y+1;
-                case 2 -> y;
-                case 3 -> y-1;
-                default -> y;
-            };
             return switch(rotation){
-                case 0 -> world.tile(bx + 1, by);
-                case 1 -> world.tile(bx, by + 1);
-                case 2 -> world.tile(bx - 1, by);
-                case 3 -> world.tile(bx, by - 1);
+                case 0 -> world.tile(tile.x + 1, tile.y);
+                case 1 -> world.tile(tile.x, tile.y + 1);
+                case 2 -> world.tile(tile.x - 1, tile.y);
+                case 3 -> world.tile(tile.x, tile.y - 1);
                 default -> null;
             };
         }
@@ -111,7 +97,7 @@ public class BioBlock extends Block {
                     } else if (neartile.block() == Blocks.air) {
                         int nearnearcount=0;
                         for (int i2=0;i2<4;i2++) {
-                            Tile nearneartile = advNearby(i,i2); //stoopid variable naming lol
+                            Tile nearneartile = nearbyTile(i2,neartile); //stoopid variable naming lol
                             if (nearneartile!=null) {
                                 if (nearneartile.block() != Blocks.air) {
                                     nearnearcount++;
