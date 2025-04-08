@@ -25,6 +25,8 @@ public class BioBlock extends Block {
     public BioBlock(String name){
         super(name);
         update=true;
+        rebuildable = false;
+        drawTeamOverlay = false;
     }
     public class BioBuilding extends Building {
         public float pulseProgress=0;
@@ -110,7 +112,7 @@ public class BioBlock extends Block {
                     }
                 }
                 Random random = new Random();
-                if ((pulseEnd||random.nextInt()>0.05)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if ((pulseEnd||random.nextInt()>0.02)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
                     growRoot();
                 }
             }
