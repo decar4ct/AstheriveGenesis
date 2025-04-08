@@ -24,7 +24,7 @@ public class ElarisStorage {
                     size = 4;
                     isFirstTier = true;
                     squareSprite = false;
-                    unit = ElarisUnitTypes.ward;
+                    unitType = ElarisUnitTypes.ward;
                 }};
             }
         }
