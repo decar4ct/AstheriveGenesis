@@ -21,11 +21,8 @@ public class AstheriveGenMod extends Mod{
             //show dialog upon startup
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("behold").row();
-                //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("astherive-gen-frog")).pad(20f).row();
-                dialog.cont.add("yes i still keep this from the java mod template its funny").row();
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
+                dialog.cont.add("bruv i just told u this mod is unplayable").row();
+                dialog.cont.button("get out", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
         });
