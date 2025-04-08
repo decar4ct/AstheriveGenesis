@@ -9,7 +9,7 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
-import astherivegen.content.Elaris.ElarisUnitTypes.*;
+import astherivegen.content.Elaris.ElarisUnitTypes;
 
 import static mindustry.type.ItemStack.with;
 
