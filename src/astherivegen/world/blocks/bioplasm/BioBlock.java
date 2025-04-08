@@ -39,14 +39,14 @@ public class BioBlock extends Block {
         public float drawPulseScale=0;
         public Tile advNearby(int rotation, int branchRotation){
             //terrible mess, but if it work it work
-            int bx = switch(branchRotation){
+            short bx = switch(branchRotation){
                 case 0 -> x+1;
                 case 1 -> x;
                 case 2 -> x-1;
                 case 3 -> x;
                 default -> x;
             };
-            int by = switch(branchRotation){
+            short by = switch(branchRotation){
                 case 0 -> y;
                 case 1 -> y+1;
                 case 2 -> y;
