@@ -9,12 +9,12 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
-import astherivegen.world.blocks.distribution.*;
+import astherivegen.world.blocks.production.*;
 import astherivegen.content.Elaris.ElarisItems;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisDistribution {
+public class ElarisProduction {
     public static Block
             cliffBore;
     public static void load() {
