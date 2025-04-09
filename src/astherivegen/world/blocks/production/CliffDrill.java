@@ -19,10 +19,8 @@ import mindustry.entities.units.*;
 import static mindustry.Vars.*;
 
 public class CliffDrill extends BeamDrill {
-    public TextureRegion dir1;
-    public TextureRegion dir2;
-    public TextureRegion side;
-    public ItemOverpass(String name){
+    public TextureRegion dir1, di2, side, bore, boreEnd, rotator;
+    public CliffDrill(String name){
          super(name);
     }
     @Override
@@ -31,6 +29,9 @@ public class CliffDrill extends BeamDrill {
         dir1=Core.atlas.find(name+"-dir1");
         dir2=Core.atlas.find(name+"-dir2");
         side=Core.atlas.find(name+"-dir-side");
+        bore=Core.atlas.find(name+"-bore");
+        boreEnd=Core.atlas.find(name+"-bore-end");
+        rotator=Core.atlas.find(name+"-bore-rotator");
     }
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
@@ -43,5 +44,36 @@ public class CliffDrill extends BeamDrill {
         return new TextureRegion[]{region, dir1, side};
     }
     public class CliffDrillBuild extends BeamDrillBuild {
+        @Override
+        public void draw(){
+            Draw.rect(block.region, x, y);
+            Draw.rect(topRegion, x, y, rotdeg());
+
+            if(isPayload()) return;
+
+            var dir = Geometry.d4(rotation);
+            int ddx = Geometry.d4x(rotation + 1), ddy = Geometry.d4y(rotation + 1);
+
+            for(int i = 0; i < size; i++){
+                Tile face = facing[i];
+                if(face != null){
+                    Point2 p = lasers[i];
+                    float lx = face.worldx() - (dir.x/2f)*tilesize, ly = face.worldy() - (dir.y/2f)*tilesize;
+
+                    float width = (laserWidth + Mathf.absin(Time.time + i*5 + (id % 9)*9, glowScl, pulseIntensity)) * warmup;
+
+                    Draw.z(Layer.power - 1);
+                    Draw.mixcol(glowColor, Mathf.absin(Time.time + i*5 + id*9, glowScl, glowIntensity));
+                    if(Math.abs(p.x - face.x) + Math.abs(p.y - face.y) == 0){
+                        Draw.scl(width);
+                        Draw.rect(rotator, lx, ly);
+                        Draw.scl();
+                    }else{
+                        float lsx = (p.x - dir.x/2f) * tilesize, lsy = (p.y - dir.y/2f) * tilesize;
+                        Drawf.laser(bore, boreEnd, lsx, lsy, lx, ly, width);
+                    }
+                }
+            }
+        }
     }
 }
