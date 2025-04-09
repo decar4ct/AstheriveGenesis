@@ -67,9 +67,7 @@ public class CliffDrill extends BeamDrill {
 
                     Draw.z(Layer.power - 1);
                     if(Math.abs(p.x - face.x) + Math.abs(p.y - face.y) == 0){
-                        Draw.scl(width);
                         Draw.rect(rotator, lx, ly);
-                        Draw.scl();
                     }else{
                         float lsx = (p.x - dir.x/2f) * tilesize, lsy = (p.y - dir.y/2f) * tilesize;
                         Drawf.laser(bore, boreEnd, lsx, lsy, lx, ly, laserWidth);
