@@ -22,6 +22,7 @@ public class ElarisProduction {
             {
                 cliffBore = new CliffDrill("cliff-bore"){{
                     requirements(Category.production, with(ElarisItems.quartz, 20));
+                    size=3;
                 }};
             }
         }
