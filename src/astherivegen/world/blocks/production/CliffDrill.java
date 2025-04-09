@@ -46,8 +46,13 @@ public class CliffDrill extends BeamDrill {
     public class CliffDrillBuild extends BeamDrillBuild {
         @Override
         public void draw(){
-            Draw.rect(block.region, x, y);
-            Draw.rect(topRegion, x, y, rotdeg());
+            Draw.rect(region, x, y);
+            if (rotation<2){
+                Draw.rect(dir1, x, y, rotation*90);
+            } else {
+                Draw.rect(dir2, x, y, rotation*90);
+            }
+            Draw.rect(side, x, y, rotation%2==0?0:270);
 
             if(isPayload()) return;
 
