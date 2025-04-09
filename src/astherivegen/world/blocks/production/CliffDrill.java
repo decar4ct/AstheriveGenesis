@@ -19,7 +19,7 @@ import mindustry.entities.units.*;
 import static mindustry.Vars.*;
 
 public class CliffDrill extends BeamDrill {
-    public TextureRegion dir1, di2, side, bore, boreEnd, rotator;
+    public TextureRegion dir1, dir2, side, bore, boreEnd, rotator;
     public CliffDrill(String name){
          super(name);
     }
