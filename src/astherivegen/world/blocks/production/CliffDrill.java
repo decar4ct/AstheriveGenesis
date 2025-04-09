@@ -28,7 +28,7 @@ public class CliffDrill extends BeamDrill {
         super.load();
         dir1=Core.atlas.find(name+"-dir1");
         dir2=Core.atlas.find(name+"-dir2");
-        side=Core.atlas.find(name+"-dir-side");
+        side=Core.atlas.find(name+"-side");
         bore=Core.atlas.find(name+"-bore");
         boreEnd=Core.atlas.find(name+"-bore-end");
         rotator=Core.atlas.find(name+"-bore-rotator");
@@ -65,17 +65,14 @@ public class CliffDrill extends BeamDrill {
                     Point2 p = lasers[i];
                     float lx = face.worldx() - (dir.x/2f)*tilesize, ly = face.worldy() - (dir.y/2f)*tilesize;
 
-                    float width = (laserWidth + Mathf.absin(Time.time + i*5 + (id % 9)*9, glowScl, pulseIntensity)) * warmup;
-
                     Draw.z(Layer.power - 1);
-                    Draw.mixcol(glowColor, Mathf.absin(Time.time + i*5 + id*9, glowScl, glowIntensity));
                     if(Math.abs(p.x - face.x) + Math.abs(p.y - face.y) == 0){
                         Draw.scl(width);
                         Draw.rect(rotator, lx, ly);
                         Draw.scl();
                     }else{
                         float lsx = (p.x - dir.x/2f) * tilesize, lsy = (p.y - dir.y/2f) * tilesize;
-                        Drawf.laser(bore, boreEnd, lsx, lsy, lx, ly, width);
+                        Drawf.laser(bore, boreEnd, lsx, lsy, lx, ly, laserWidth);
                     }
                 }
             }
