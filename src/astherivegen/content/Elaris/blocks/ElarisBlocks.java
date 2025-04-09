@@ -5,7 +5,7 @@ public class ElarisBlocks{
     public static void load(){
         ElarisEnv.load();
         ElarisTurrets.load();
-        ElarisProduction.load()
+        ElarisProduction.load();
         ElarisDistribution.load();
         ElarisDefense.load();
         ElarisStorage.load();
