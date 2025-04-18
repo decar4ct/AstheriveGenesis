@@ -62,19 +62,9 @@ public class CliffDrill extends BeamDrill {
             for(int i = 0; i < size; i++){
                 Tile face = facing[i];
                 if(face != null){
-                    Point2 p = lasers[i];
-                    float lx = face.worldx() - (dir.x/2f)*tilesize, ly = face.worldy() - (dir.y/2f)*tilesize;
-
-                    Draw.z(Layer.power - 1);
-                    if(Math.abs(p.x - face.x) + Math.abs(p.y - face.y) == 0){
-                        Draw.rect(rotator, lx, ly);
-                    }else{
-                        float lsx = (p.x - dir.x/2f) * tilesize, lsy = (p.y - dir.y/2f) * tilesize;
-                        Drawf.laser(bore, boreEnd, lsx, lsy, lx, ly, laserWidth);
-                    }
                     float len = Math.max(Math.abs(face.worldx() - (dir.x/2f)*tilesize), Math.abs(face.worldy() - (dir.y/2f)*tilesize;
                                                                                                 )) - size * tilesize;
-                    for(float i = 6f; i <= len + size; i += tilesize){
+                    for(float i = 8f; i <= len + size; i += tilesize){
                         Draw.rect(bore, face.worldx() + Geometry.d4x(rotation) * i, face.worldy() + Geometry.d4y(rotation) * i, angle);
                     }
                 }
