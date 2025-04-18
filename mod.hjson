@@ -5,5 +5,5 @@ main: "astherivegen.AstheriveGenMod"
 description: "THIS MOD IS CURRENTLY UNPLAYABLE. Do not play except you want to see the development of this mod."
 subtitle: "why did you install me"
 version: 1.0
-minGameVersion: 147
+minGameVersion: 146
 java: true
