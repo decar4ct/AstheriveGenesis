@@ -54,7 +54,7 @@ public class CliffDrill extends BeamDrill {
             }
             Draw.rect(side, x, y, rotation%2==0?0:270);
 
-            ifif(isPayload()) return;
+            if(isPayload()) return;
 
             var dir = Geometry.d4(rotation);
             int ddx = Geometry.d4x(rotation + 1), ddy = Geometry.d4y(rotation + 1);
