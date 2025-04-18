@@ -48,7 +48,7 @@ public class ElarisUnitTypes{
             hitSize = 9f;
             fogRadius = 0f;
 
-            weapons.add(new Weapon("ward-weapon"){{
+            weapons.add(new Weapon("astherivegen-ward-weapon"){{
                 reload = 20f;
                 x = 14f / 8;
                 y = 0f;
