@@ -47,7 +47,7 @@ public class ElarisUnitTypes{
             health = 300f;
             hitSize = 9f;
             fogRadius = 0f;
-            engineOffset = -8f;
+            engineOffset = 10f;
 
             weapons.add(new Weapon("astherive-gen-ward-weapon"){{
                 reload = 20f;
