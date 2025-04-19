@@ -95,7 +95,9 @@ public class ElarisEnv {
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                 }};
-                eonstoneHugeVent = new HugeSteamVent("eonstone-huge-vent");
+                eonstoneHugeVent = new HugeSteamVent("eonstone-huge-vent"){{
+                    variants = -1;
+                }};
             }
         }
     }
