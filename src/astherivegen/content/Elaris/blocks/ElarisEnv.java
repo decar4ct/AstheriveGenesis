@@ -8,6 +8,7 @@ import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
+import astherivegen.world.blocks.environment.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -23,7 +24,8 @@ public class ElarisEnv {
             alyogelDeepFloor,alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
             sporfloreFern,
-            sporfloreTree;
+            sporfloreTree,
+            eonstoneHugeVent;
     public static void load() {
         {
             {
@@ -93,6 +95,7 @@ public class ElarisEnv {
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                 }};
+                eonstoneHugeVent = new HugeSteamVent("eonstone-huge-vent");
             }
         }
     }
