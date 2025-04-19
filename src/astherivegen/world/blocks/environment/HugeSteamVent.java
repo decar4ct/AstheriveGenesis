@@ -57,7 +57,7 @@ public class HugeSteamVent extends Floor{
         }
     }
 
-    public SteamVent(String name){
+    public HugeSteamVent(String name){
         super(name);
         variants = 2;
         flags = EnumSet.of(BlockFlag.steamVent);
