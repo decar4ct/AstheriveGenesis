@@ -22,7 +22,14 @@ public class ElarisProduction {
             {
                 cliffBore = new CliffDrill("cliff-bore"){{
                     requirements(Category.production, with(ElarisItems.quartz, 20));
-                    size=3;
+                    consumePower(0.15f);
+
+                    drillTime = 200f;
+                    tier = 3;
+                    size = 3;
+                    range = 5;
+                    fogRadius = 3;
+                    researchCost = with(ElarisItems.quartz, 10);
                 }};
             }
         }
