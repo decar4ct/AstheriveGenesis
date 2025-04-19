@@ -50,13 +50,14 @@ public class ElarisUnitTypes{
 
             weapons.add(new Weapon("astherive-gen-ward-weapon"){{
                 reload = 20f;
-                x = 14f / 8;
+                x = 14f / 4;
                 y = 0f;
                 rotate = false;
                 shootY = 0f;
                 shootCone = 15f;
                 mirror = true;
                 recoil = 3f;
+                top = false;
 
                 bullet = new ArtilleryBulletType(){{
                     shootEffect = new MultiEffect(Fx.shootSmallColor, new Effect(9, e -> {
