@@ -7,8 +7,7 @@ import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
-import mindustry.gen.Sounds;
-import astherivegen.world.blocks.environment.*;
+import mindustry.gen.Sounds.*;
 
 import static mindustry.type.ItemStack.with;
 
