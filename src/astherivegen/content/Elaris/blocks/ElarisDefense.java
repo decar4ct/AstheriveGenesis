@@ -17,12 +17,19 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisDefense {
     public static Block
-            quartzWall;
+            quartzWall,
+            renewer;
     public static void load() {
         {
             {
                 quartzWall = new ConnectedWall("quartz-wall"){{
                     requirements(Category.defense, with(ElarisItems.quartz, 6));
+                }};
+                renewer = new RegenProjector("renewer"){{
+                    requirements(Category.effect, with(ElarisItems.quartz, 30, ElarisItems.magnetite, 30, ElarisItems.polterite, 20));
+                    size = 3;
+                    health = 400;
+                    drawer = new DrawMulti(new DrawDefault, new DrawRegion("-mid", -1, true), new DrawRegion("-top", 2, true), new DrawPulseShape(false));
                 }};
             }
         }
