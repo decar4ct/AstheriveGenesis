@@ -29,7 +29,7 @@ public class ElarisDefense {
                     requirements(Category.effect, with(ElarisItems.quartz, 30, ElarisItems.magnetite, 30, ElarisItems.polterite, 20));
                     size = 3;
                     health = 400;
-                    drawer = new DrawMulti(new DrawDefault, new DrawRegion("-mid", -1, true), new DrawRegion("-top", 2, true), new DrawPulseShape());
+                    drawer = new DrawMulti(new DrawDefault, new DrawRegion("-mid", -1, true), new DrawRegion("-top", 2, true));
                 }};
             }
         }
