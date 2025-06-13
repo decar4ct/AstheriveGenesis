@@ -95,7 +95,7 @@ public class ElarisEnv {
                     variants = 2;
                 }};
                 eonstoneHugeVent = new SteamVent("eonstone-huge-vent"){{
-                    variants = -1;
+                    variants = 2;
                 }};
             }
         }
