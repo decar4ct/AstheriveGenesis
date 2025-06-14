@@ -36,7 +36,7 @@ public class Root extends BioBlock {
         }
         leafRegion=Core.atlas.find(name+"-leaf");
     }
-    public static float xyRand(int x,int y) {
+    public static float xyRand(float x,float y) {
         int xi=Float.floatToIntBits(x);
         int xi=Float.floatToIntBits(y);
         long seed=((long)xi*179424691)^((long)yi*19349663);
