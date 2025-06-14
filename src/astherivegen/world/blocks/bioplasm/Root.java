@@ -54,6 +54,7 @@ public class Root extends BioBlock {
         public void draw(){
             drawPulse(connectedRegions[blending],drawPulseScale);
             Draw.rect(leafRegion,x,y,rotation);
+            Log.info(leafRegion);
         }
     }
 }
