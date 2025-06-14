@@ -32,7 +32,7 @@ public class Root extends BioBlock {
         for (int i=0;i<16;i++){
             connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
         }
-        leafRegion=Core.atlas.find(name+"-leaf")
+        leafRegion=Core.atlas.find(name+"-leaf");
     }
     public class RootBuild extends BioBuilding {
         public int blending;
