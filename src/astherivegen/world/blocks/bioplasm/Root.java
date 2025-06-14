@@ -21,6 +21,7 @@ import static mindustry.Vars.*;
 public class Root extends BioBlock {
     //AWFUL
     public TextureRegion[] connectedRegions = new TextureRegion[16];
+    public TextureRegion leafRegion;
     public Root(String name){
         super(name);
         update=true;
