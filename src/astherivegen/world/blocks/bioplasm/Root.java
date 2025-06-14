@@ -52,7 +52,7 @@ public class Root extends BioBlock {
         @Override
         public void draw(){
             drawPulse(connectedRegions[blending],drawPulseScale);
-            Draw.rect(leafRegion,x,y,rotation)
+            Draw.rect(leafRegion,x,y,rotation);
         }
     }
 }
