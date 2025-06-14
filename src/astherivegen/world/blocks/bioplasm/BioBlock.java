@@ -17,7 +17,8 @@ import mindustry.graphics.*;
 import mindustry.content.*;
 import java.util.ArrayList;
 import java.util.Random;
-import mindustry.core.*;
+import mindustry.gen.*;
+
 
 import static mindustry.Vars.*;
 
