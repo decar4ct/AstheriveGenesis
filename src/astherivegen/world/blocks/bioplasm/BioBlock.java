@@ -112,7 +112,7 @@ public class BioBlock extends Block {
                     }
                 }
                 Random random = new Random();
-                if ((pulseEnd||random.nextInt()>0.003)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if ((pulseEnd||random.nextInt()>0.0003)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
                     growRoot();
                 }
             }
@@ -150,7 +150,9 @@ public class BioBlock extends Block {
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
-            biopulse = read.i(biopulse);
+            biopulse=read.i();
+            pulseTimer=read.f();
+            deathTimer=read.f();
         }
     }
 }
