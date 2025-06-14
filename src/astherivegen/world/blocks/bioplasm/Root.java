@@ -63,7 +63,7 @@ public class Root extends BioBlock {
         @Override
         public void draw(){
             drawPulse(connectedRegions[blending],drawPulseScale);
-            if (xyRand(x,y)<0.3f) {
+            if (xyRand(x,y)<0.08f) {
                 Draw.z(Layer.power-1.1f);
                 Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
