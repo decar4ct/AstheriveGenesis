@@ -15,6 +15,7 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+import java.util.Random;
 
 import static mindustry.Vars.*;
 
@@ -35,8 +36,6 @@ public class Root extends BioBlock {
         }
         leafRegion=Core.atlas.find(name+"-leaf");
     }
-    import java.util.Random;
-
     public static float xyRand(int x,int y) {
         long seed=((long)x*179424691)^((long)y*19349663);
         Random rand=new Random(seed);
