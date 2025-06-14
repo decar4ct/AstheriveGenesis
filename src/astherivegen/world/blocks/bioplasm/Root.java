@@ -35,7 +35,7 @@ public class Root extends BioBlock {
             connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
         }
         for (int i=0;i<2;i++){
-            leafRegion=Core.atlas.find(name+"-leaf"+String.valueOf(i+1));
+            leafRegion[i]=Core.atlas.find(name+"-leaf"+String.valueOf(i+1));
         }
     }
     public static float xyRand(float x,float y) {
@@ -65,7 +65,7 @@ public class Root extends BioBlock {
             drawPulse(connectedRegions[blending],drawPulseScale);
             if (xyRand(x,y)<0.3f) {
                 Draw.z(Layer.power-1.1f);
-                Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5)?0:1],x,y,xyRand(x+17f,y+11f)*360);
+                Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
         }
     }
