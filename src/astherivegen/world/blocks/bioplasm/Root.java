@@ -37,7 +37,9 @@ public class Root extends BioBlock {
         leafRegion=Core.atlas.find(name+"-leaf");
     }
     public static float xyRand(int x,int y) {
-        long seed=((long)x*179424691)^((long)y*19349663);
+        int xi=Float.floatToIntBits(x);
+        int xi=Float.floatToIntBits(y);
+        long seed=((long)xi*179424691)^((long)yi*19349663);
         Random rand=new Random(seed);
         return rand.nextFloat();
     }
@@ -59,8 +61,8 @@ public class Root extends BioBlock {
         @Override
         public void draw(){
             drawPulse(connectedRegions[blending],drawPulseScale);
-            if (xyRand(x,y)<0.3) {
-                Draw.rect(leafRegion,x,y,xyRand(x+17,y+11)*360);
+            if (xyRand(x,y)<0.3f) {
+                Draw.rect(leafRegion,x,y,xyRand(x+17f,y+11f)*360);
             }
         }
     }
