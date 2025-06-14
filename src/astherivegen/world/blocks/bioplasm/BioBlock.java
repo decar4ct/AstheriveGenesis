@@ -34,7 +34,7 @@ public class BioBlock extends Block {
         public float pulseTimer=0;
         public float resetPulseTimer=0;
         public float deathTimer=0;
-        public float deathTimerLimit=70f;
+        public float deathTimerLimit=120f;
         public boolean pulsed=false;
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
@@ -138,6 +138,19 @@ public class BioBlock extends Block {
         @Override
         public void draw() {
             drawPulse(region,drawPulseScale);
+        }
+        @Override
+        public void write(Writes write){
+            super.write(write);
+            write.i(biopulse);
+            write.f(pulseTimer);
+            write.f(deathTimer);
+        }
+
+        @Override
+        public void read(Reads read, byte revision){
+            super.read(read, revision);
+            biopulse = read.i(biopulse);
         }
     }
 }
