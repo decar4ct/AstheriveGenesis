@@ -38,7 +38,7 @@ public class Root extends BioBlock {
     }
     public static float xyRand(float x,float y) {
         int xi=Float.floatToIntBits(x);
-        int xi=Float.floatToIntBits(y);
+        int yi=Float.floatToIntBits(y);
         long seed=((long)xi*179424691)^((long)yi*19349663);
         Random rand=new Random(seed);
         return rand.nextFloat();
