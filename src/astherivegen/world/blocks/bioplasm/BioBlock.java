@@ -147,7 +147,7 @@ public class BioBlock extends Block {
             write.i(biopulse);
             write.f(pulseTimer);
             write.f(deathTimer);
-            write.b(pulsed);
+            write.i((pulsed)?1:0);
         }
 
         @Override
@@ -156,7 +156,7 @@ public class BioBlock extends Block {
             biopulse=read.i();
             pulseTimer=read.f();
             deathTimer=read.f();
-            pulsed=read.b();
+            pulsed=(read.i()==1)?true:false;
         }
     }
 }
