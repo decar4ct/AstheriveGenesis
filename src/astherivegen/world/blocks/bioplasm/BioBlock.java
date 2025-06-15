@@ -6,6 +6,7 @@ import arc.graphics.g2d.*;
 import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
+import arc.util.io.*;
 import arc.math.geom.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
@@ -17,8 +18,6 @@ import mindustry.graphics.*;
 import mindustry.content.*;
 import java.util.ArrayList;
 import java.util.Random;
-import mindustry.gen.*;
-
 
 import static mindustry.Vars.*;
 
