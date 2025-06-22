@@ -16,15 +16,15 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisProduction {
     public static Block
-            cliffBore;
+            mechanicalAuger;
     public static void load() {
         {
             {
-                cliffBore = new CliffDrill("cliff-bore"){{
-                    requirements(Category.production, with(ElarisItems.quartz, 20));
-                    consumePower(0.15f);
+                mechanicalAuger = new Drill("mechanical-auger"){{
+                    requirements(Category.production, with(ElarisItems.quartz, 40));
+                    consumePower(0.2f);
 
-                    drillTime = 200f;
+                    drillTime = 200;
                     tier = 3;
                     size = 3;
                     range = 5;
