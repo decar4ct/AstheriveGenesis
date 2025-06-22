@@ -16,7 +16,7 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisProduction {
     public static Block
-            mechanicalAuger;
+            mechanicalAuger, advancedAuger;
     public static void load() {
         {
             {
@@ -24,8 +24,22 @@ public class ElarisProduction {
                     requirements(Category.production, with(ElarisItems.quartz, 40));
                     consumePower(0.2f);
 
-                    drillTime = 200;
+                    squareSprite = false;
+                    drillTime = 1000;
                     tier = 3;
+                    size = 3;
+                    fogRadius = 3;
+                    researchCost = with(ElarisItems.quartz, 10);
+                }};
+            }
+            {
+                advancedAuger = new Drill("advanced-auger"){{
+                    requirements(Category.production, with(ElarisItems.quartz, 80));
+                    consumePower(1);
+
+                    squareSprite = false;
+                    drillTime = 600;
+                    tier = 5;
                     size = 3;
                     fogRadius = 3;
                     researchCost = with(ElarisItems.quartz, 10);
