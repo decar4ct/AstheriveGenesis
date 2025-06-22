@@ -27,7 +27,6 @@ public class ElarisProduction {
                     drillTime = 200;
                     tier = 3;
                     size = 3;
-                    range = 5;
                     fogRadius = 3;
                     researchCost = with(ElarisItems.quartz, 10);
                 }};
