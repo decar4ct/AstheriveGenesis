@@ -62,7 +62,7 @@ public class ElarisEnv {
                 //liquid
                 alyogelDeepFloor = new Floor("alyogel-deep-floor"){{
                     speedMultiplier = 0.2f;
-                    variants = 0;
+                    variants = 3;
                     liquidDrop = Liquids.water;
                     isLiquid = true;
                     cacheLayer = CacheLayer.water;
