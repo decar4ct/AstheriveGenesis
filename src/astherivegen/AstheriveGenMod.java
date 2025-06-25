@@ -21,8 +21,8 @@ public class AstheriveGenMod extends Mod{
             //show dialog upon startup
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("bruv i just told u this mod is unplayable").row();
-                dialog.cont.button("get out", dialog::hide).size(100f, 50f);
+                dialog.cont.add("hi").row();
+                dialog.cont.button("ok", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
         });
