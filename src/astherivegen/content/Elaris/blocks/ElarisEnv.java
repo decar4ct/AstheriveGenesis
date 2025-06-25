@@ -20,6 +20,9 @@ public class ElarisEnv {
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
+            //ranston
+            ranston, platedRanston,
+            //idk
             alyogelDeepFloor,alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
             sporfloreFern,
@@ -85,6 +88,11 @@ public class ElarisEnv {
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
                 }};
+                //ranston wow very creative name omg
+                //floor
+                ranston = new Floor("ranston",4);
+                platedRanston = new Floor("plated-ranston",4);
+                //anything else
                 sporfloreFern = new SeaBush("sporflore-fern"){{
                     lobesMin = 4;
                     lobesMax = 6;
@@ -95,7 +103,7 @@ public class ElarisEnv {
                     variants = 2;
                 }};
                 eonstoneHugeVent = new SteamVent("eonstone-huge-vent"){{
-                    variants = 2;
+                    variants = 0;
                 }};
             }
         }
