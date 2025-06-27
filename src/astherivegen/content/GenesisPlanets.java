@@ -93,7 +93,7 @@ public class GenesisPlanets{
                     new HexMesh(this, 5)
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f);                
+                    new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
     }
