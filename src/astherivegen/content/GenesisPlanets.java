@@ -60,7 +60,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        verdara = new Planet("verdara", thessar, 1f, 3){{
+        verdara = new Planet("verdara", orrin, 1f, 3){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -70,7 +70,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 6f;
+            orbitRadius = 20f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = orrin;
             alwaysUnlocked = clearSectorOnLose = true;
