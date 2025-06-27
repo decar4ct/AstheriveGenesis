@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris.blocks;
+package astherivegen.content.Verdara.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
@@ -16,7 +16,7 @@ import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisDefense {
+public class VerdaraDefense {
     public static Block
             quartzWall,
             renewer;
