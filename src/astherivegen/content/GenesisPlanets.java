@@ -27,7 +27,7 @@ public class GenesisPlanets{
 
     public static void load(){
         // regions stars
-        orrin = new Planet("orrin", null, 7.5f, 0){{
+        orrin = new Planet("orrin", null, 4f, 0){{
             bloom = true;
             accessible = true;
             hasAtmosphere = true;
@@ -43,7 +43,7 @@ public class GenesisPlanets{
                     Color.valueOf("FFFFFF")
             );
         }};
-        thessar = new Planet("thessar", orrin, 7.5f, 0){{
+        thessar = new Planet("thessar", orrin, 3f, 0){{
             bloom = true;
             accessible = true;
             hasAtmosphere = true;
@@ -61,7 +61,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        verdara = new Planet("verdara", thessar, 0.82f, 1){{
+        verdara = new Planet("verdara", thessar, 1f, 1){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
