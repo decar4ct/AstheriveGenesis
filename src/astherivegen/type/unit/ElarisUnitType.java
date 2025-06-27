@@ -5,16 +5,16 @@ import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.type.ammo.*;
 import mindustry.world.meta.*;
-import astherivegen.content.Elaris.ElarisItems;
+import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
 
-/** Config class for special Elaris unit properties. */
-public class ElarisUnitType extends UnitType{
+/** Config class for special uwu unit properties. */
+public class VerdaraUnitType extends UnitType{
 
-    public ElarisUnitType(String name){
+    public VerdaraUnitType(String name){
         super(name);
-        outlineColor = AGPal.elarisOutline;
-        ammoType = new ItemAmmoType(ElarisItems.quartz);
+        outlineColor = AGPal.verdaraOutline;
+        ammoType = new ItemAmmoType(VerdaraItems.quartz);
         researchCostMultiplier = 8f;
     }
 }
