@@ -46,7 +46,7 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 22f;
+            orbitRadius = 35f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -70,7 +70,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 15f;
+            orbitRadius = 10f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = orrin;
             alwaysUnlocked = clearSectorOnLose = true;
