@@ -11,7 +11,7 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import astherivegen.world.blocks.defense.*;
 import astherivegen.content.*;
-import astherivegen.content.Elaris.ElarisItems;
+import astherivegen.content.Verdara.VerdaraItems;
 import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
@@ -24,10 +24,10 @@ public class VerdaraDefense {
         {
             {
                 quartzWall = new ConnectedWall("quartz-wall"){{
-                    requirements(Category.defense, with(ElarisItems.quartz, 6));
+                    requirements(Category.defense, with(VerdaraItems.quartz, 6));
                 }};
                 renewer = new RegenProjector("renewer"){{
-                    requirements(Category.effect, with(ElarisItems.quartz, 30, ElarisItems.magnetite, 30, ElarisItems.polterite, 20));
+                    requirements(Category.effect, with(VerdaraItems.quartz, 30, VerdaraItems.magnetite, 30, VerdaraItems.polterite, 20));
                     size = 3;
                     health = 400;
                     drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-mid", -1, true), new DrawRegion("-top", 2, true), new DrawPulseShape(false));
