@@ -48,7 +48,7 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 20f
+            orbitRadius = 20f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
