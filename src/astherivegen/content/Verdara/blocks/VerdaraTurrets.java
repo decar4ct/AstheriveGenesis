@@ -10,7 +10,7 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import astherivegen.world.blocks.defense.*;
 import astherivegen.graphics.*;
-import astherivegen.content.Elaris.*;
+import astherivegen.content.Verdara.*;
 import mindustry.content.*;
 import mindustry.entities.effect.MultiEffect.*;
 import mindustry.entities.part.DrawPart.*;
