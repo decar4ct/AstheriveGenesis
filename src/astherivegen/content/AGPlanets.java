@@ -53,11 +53,11 @@ public class GenesisPlanets{
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
-                    Color.valueOf("6c72c4"),
-                    Color.valueOf("60749e"),
-                    Color.valueOf("7b8ad4"),
-                    Color.valueOf("8d9ff7"),
-                    Color.valueOf("b4c7de")
+                    Color.valueOf("A2615D"),
+                    Color.valueOf("BD7771"),
+                    Color.valueOf("D09287"),
+                    Color.valueOf("EFC4B1"),
+                    Color.valueOf("FFDFCB")
             );
         }};
         
