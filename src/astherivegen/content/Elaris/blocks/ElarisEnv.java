@@ -13,6 +13,9 @@ import static mindustry.type.ItemStack.with;
 
 public class ElarisEnv {
     public static Block
+            //h
+            //this code is so messy lmao
+            shallowWatergel, deepWatergel,
             //cromosand
             cromosandFloor,cromosandLightlyHardenedFloor,cromosandHardenedFloor,
             cromosandHardenedWall,
@@ -31,6 +34,26 @@ public class ElarisEnv {
     public static void load() {
         {
             {
+                //h
+                //liquid
+                deepWatergel = new Floor("deep-watergel"){{
+                    speedMultiplier = 0.2f;
+                    variants = 3;
+                    liquidDrop = Liquids.water;
+                    isLiquid = true;
+                    cacheLayer = CacheLayer.water;
+                    albedo = 0.95f;
+                    supportsOverlay = false;
+                }};
+                shallowWatergel = new Floor("shallow-watergel"){{
+                    speedMultiplier = 0.4f;
+                    variants = 4;
+                    liquidDrop = Liquids.water;
+                    isLiquid = true;
+                    cacheLayer = CacheLayer.water;
+                    albedo = 0.95f;
+                    supportsOverlay = true;
+                }};
                 //cromosand
                 //liquid
                 cromosandFloor = new Floor("cromosand-floor"){{
