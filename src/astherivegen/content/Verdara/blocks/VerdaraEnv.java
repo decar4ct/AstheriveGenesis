@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris.blocks;
+package astherivegen.content.Verdara.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
@@ -11,7 +11,7 @@ import mindustry.gen.Sounds.*;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisEnv {
+public class VerdaraEnv {
     public static Block
             //h
             //this code is so messy lmao
