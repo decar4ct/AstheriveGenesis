@@ -71,7 +71,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 3;
+            orbitRadius = 3f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = thessar;
             alwaysUnlocked = clearSectorOnLose = true;
@@ -87,7 +87,6 @@ public class GenesisPlanets{
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 10;
-            sectorSize = 1f;
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
