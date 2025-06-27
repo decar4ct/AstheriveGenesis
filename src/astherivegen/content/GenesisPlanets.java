@@ -72,7 +72,7 @@ public class GenesisPlanets{
             orbitSpacing = 1;
             orbitRadius = 6f;
             iconColor = Color.valueOf("9AC0DB");
-            solarSystem = orrim;
+            solarSystem = orrin;
             alwaysUnlocked = clearSectorOnLose = true;
             allowLaunchLoadout = allowLaunchSchematics = false;
             defaultCore = VerdaraStorage.coreProtocol;
