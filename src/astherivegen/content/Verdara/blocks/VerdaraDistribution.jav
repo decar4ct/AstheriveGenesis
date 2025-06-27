@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris.blocks;
+package astherivegen.content.Verdara.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
@@ -10,11 +10,11 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
 import astherivegen.world.blocks.distribution.*;
-import astherivegen.content.Elaris.ElarisItems;
+import astherivegen.content.Verdara.VerdaraItems;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisDistribution {
+public class VerdaraDistribution {
     public static Block
             itemTube, itemOverpass, filter, splitter;
     public static void load() {
