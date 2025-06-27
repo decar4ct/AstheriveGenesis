@@ -21,7 +21,7 @@ public class VerdaraProduction {
         {
             {
                 mechanicalAuger = new Drill("mechanical-auger"){{
-                    requirements(Category.production, with(ElarisItems.quartz, 40));
+                    requirements(Category.production, with(VerdaraItems.quartz, 40));
                     consumePower(0.2f);
 
                     squareSprite = false;
@@ -29,12 +29,12 @@ public class VerdaraProduction {
                     tier = 3;
                     size = 3;
                     fogRadius = 3;
-                    researchCost = with(ElarisItems.quartz, 10);
+                    researchCost = with(VerdaraItems.quartz, 10);
                 }};
             }
             {
                 advancedAuger = new Drill("advanced-auger"){{
-                    requirements(Category.production, with(ElarisItems.quartz, 80));
+                    requirements(Category.production, with(VerdaraItems.quartz, 80));
                     consumePower(1);
 
                     squareSprite = false;
@@ -42,7 +42,7 @@ public class VerdaraProduction {
                     tier = 5;
                     size = 3;
                     fogRadius = 3;
-                    researchCost = with(ElarisItems.quartz, 10);
+                    researchCost = with(VerdaraItems.quartz, 10);
                 }};
             }
         }
