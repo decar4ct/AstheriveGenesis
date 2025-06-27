@@ -30,7 +30,7 @@ public class GenesisPlanets{
         orrin = new Planet("orrin", null, 6f, 0){{
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = orrin;
+            solarSystem = this;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
