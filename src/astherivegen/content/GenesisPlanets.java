@@ -27,7 +27,7 @@ public class GenesisPlanets{
 
     public static void load(){
         // regions stars
-        orrin = new Planet("orrin", null, 4f, 0){{
+        orrin = new Planet("orrin", null, 6f, 0){{
             bloom = true;
             accessible = true;
             hasAtmosphere = true;
@@ -47,7 +47,8 @@ public class GenesisPlanets{
             bloom = true;
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = this;
+            solarSystem = orrin;
+            orbitRadius = 20f
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -61,7 +62,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        verdara = new Planet("verdara", thessar, 1f, 1){{
+        verdara = new Planet("verdara", thessar, 1f, 3){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -70,7 +71,7 @@ public class GenesisPlanets{
             atmosphereRadOut = 0.1f;
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
-            orbitRadius = 40f;
+            orbitRadius = 10f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = thessar;
             alwaysUnlocked = clearSectorOnLose = true;
@@ -92,8 +93,7 @@ public class GenesisPlanets{
                     new HexMesh(this, 5)
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("DBF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f),
-                    new HexSkyMesh(this, 1, 2f, 0.16f, 5, Color.valueOf("DBF3FF").a(0.55f), 3, 0.42f, 1.2f, 0.45f)
+                    new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f);                
             );
         }};
     }
