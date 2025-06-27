@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris;
+package astherivegen.content.Verdara;
 
 import arc.graphics.*;
 import arc.math.Interp;
@@ -19,11 +19,11 @@ import astherivegen.type.unit.*;
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
 
-public class ElarisUnitTypes{
+public class VerdaraUnitTypes{
     public static UnitType
     ward;
     public static void load(){
-        ward = new ElarisUnitType("ward"){{
+        ward = new VerdaraUnitType("ward"){{
             constructor = UnitEntity::create;
             coreUnitDock = true;
             controller = u -> new BuilderAI(true, 500f);
