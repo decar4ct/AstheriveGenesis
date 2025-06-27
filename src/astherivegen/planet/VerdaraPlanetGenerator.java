@@ -11,7 +11,7 @@ import mindustry.maps.generators.PlanetGenerator;
 import mindustry.world.Block;
 
 public class VerdaraPlanetGenerator extends PlanetGenerator {
-    public float heightScl = 1.2f, octaves = 4, persistence = 0.7f, heightPow = 2.2f, heightMult = 1.1f;
+    public float heightScl = 1.8f, octaves = 4, persistence = 0.7f, heightPow = 2.2f, heightMult = 1.1f;
 
     @Override
     public float getHeight(Vec3 position){
@@ -20,7 +20,8 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
 
     float rawHeight(Vec3 position){
         float poles = Math.abs(position.y);
-        if (poles<0.3) {return 0;} else return Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, 10f + position.x, 10f + position.y, 10f + position.z);
+        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, 10f + position.x, 10f + position.y, 10f + position.z);
+        if (poles<0.1||height<0.2) {return 0;} else return height;
     }
 
     @Override
