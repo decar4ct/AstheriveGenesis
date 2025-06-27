@@ -46,7 +46,7 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 12f;
+            orbitRadius = 22f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -60,7 +60,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        verdara = new Planet("verdara", orrin, 1f, 3){{
+        verdara = new Planet("verdara", thessar, 1f, 3){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -70,7 +70,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 20f;
+            orbitRadius = 15f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = orrin;
             alwaysUnlocked = clearSectorOnLose = true;
