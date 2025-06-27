@@ -46,7 +46,7 @@ public class GenesisPlanets{
         thessar = new Planet("thessar", orrin, 3f, 0){{
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = orrin;
+            solarSystem = this;
             orbitRadius = 10f;
 
             meshLoader = () -> new SunMesh(
