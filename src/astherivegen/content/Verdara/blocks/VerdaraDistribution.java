@@ -21,19 +21,19 @@ public class VerdaraDistribution {
         {
             {
                 itemTube = new ItemTube("item-tube"){{
-                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                     speed = 0.05f;
                     bridgeReplacement=itemOverpass;
                 }};
                 itemOverpass = new ItemOverpass("item-overpass"){{
-                    requirements(Category.distribution, with(ElarisItems.quartz, 6, ElarisItems.magnetite, 3));
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 6, VerdaraItems.magnetite, 3));
                     range=4;
                 }};
                 filter = new Sorter("filter"){{
-                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                 }};
                 splitter = new Router("splitter"){{
-                    requirements(Category.distribution, with(ElarisItems.quartz, 1));
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                 }};
             }
         }
