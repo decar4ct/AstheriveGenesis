@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris.blocks;
+package astherivegen.content.Verdara.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
@@ -9,11 +9,11 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
-import astherivegen.content.Elaris.ElarisUnitTypes;
+import astherivegen.content.Verdara.VerdaraUnitTypes;
 
 import static mindustry.type.ItemStack.with;
 
-public class ElarisStorage {
+public class VerdaraStorage {
     public static Block
             coreProtocol;
     public static void load() {
