@@ -6,10 +6,9 @@ import arc.math.Rand;
 import arc.math.geom.Mat3D;
 import arc.util.Tmp;
 import arc.struct.Seq;
-import epsilon.EpsilonVars;
 import astherivegen.content.Verdara.blocks.VerdaraEnv;
 import astherivegen.content.Verdara.blocks.VerdaraStorage;
-import epsilon.planet.*;
+import astherivegen.planet.*;
 import mindustry.content.Blocks;
 import mindustry.graphics.g3d.*;
 import mindustry.maps.planet.AsteroidGenerator;
@@ -76,7 +75,7 @@ public class GenesisPlanets{
             solarSystem = thessar;
             alwaysUnlocked = clearSectorOnLose = true;
             allowLaunchLoadout = allowLaunchSchematics = false;
-            defaultCore = KallisteaStorage.coreObscurity;
+            defaultCore = VerdaraStorage.coreProtocol;
             ruleSetter = r -> {
               r.fog = true;
               r.staticFog = false;
