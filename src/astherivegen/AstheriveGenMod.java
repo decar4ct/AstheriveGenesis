@@ -2,8 +2,8 @@ package astherivegen;
 
 import arc.*;
 import arc.util.*;
-import astherivegen.content.Elaris.blocks.*;
-import astherivegen.content.Elaris.*;
+import astherivegen.content.Verdara.blocks.*;
+import astherivegen.content.Verdara.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
@@ -30,8 +30,8 @@ public class AstheriveGenMod extends Mod{
 
     @Override
     public void loadContent(){
-        ElarisItems.load();
-        ElarisUnitTypes.load();
-        ElarisBlocks.load();
+        VerdaraItems.load();
+        VerdaraUnitTypes.load();
+        VerdaraBlocks.load();
     }
 }
