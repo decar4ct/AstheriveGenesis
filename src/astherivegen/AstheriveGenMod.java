@@ -33,5 +33,6 @@ public class AstheriveGenMod extends Mod{
         VerdaraItems.load();
         VerdaraUnitTypes.load();
         VerdaraBlocks.load();
+        GenesisPlanets.load();
     }
 }
