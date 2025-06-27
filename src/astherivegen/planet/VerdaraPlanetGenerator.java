@@ -11,7 +11,7 @@ import mindustry.maps.generators.PlanetGenerator;
 import mindustry.world.Block;
 
 public class VerdaraPlanetGenerator extends PlanetGenerator {
-    public float heightScl = 1.8f, octaves = 4, persistence = 0.7f, heightPow = 2.2f, heightMult = 1.1f;
+    public float heightScl = 0.9f, octaves = 4, persistence = 0.9f, heightPow = 2.2f, heightMult = 1.3f;
 
     @Override
     public float getHeight(Vec3 position){
