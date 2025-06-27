@@ -44,11 +44,10 @@ public class GenesisPlanets{
             );
         }};
         thessar = new Planet("thessar", orrin, 3f, 0){{
-            bloom = true;
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 20f;
+            orbitRadius = 10f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -68,10 +67,11 @@ public class GenesisPlanets{
             landCloudColor = Color.valueOf("DBF3FF");
             atmosphereColor = Color.valueOf("9AC0DB");
             atmosphereRadIn = 0.01f;
-            atmosphereRadOut = 0.1f;
+            atmosphereRadOut = 0.3f;
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
-            orbitRadius = 10f;
+            orbitSpacing = 1;
+            orbitRadius = 3;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = thessar;
             alwaysUnlocked = clearSectorOnLose = true;
@@ -87,6 +87,7 @@ public class GenesisPlanets{
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 10;
+            sectorSize = 1f;
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
