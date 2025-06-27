@@ -19,6 +19,8 @@ import mindustry.world.meta.Env;
 
 public class GenesisPlanets{
     public static Planet
+    //barycenter
+    barycenter,
             //star
             orrin, thessar,
 
@@ -26,12 +28,20 @@ public class GenesisPlanets{
     verdara;
 
     public static void load(){
+        // region barycenter
+        barycenter = new Planet("barycenter", null, 1f, 0){{
+            bloom = true;
+            accessible = true;
+            hidden = true;
+            solarSystem = this;
+        }};
         // regions stars
         orrin = new Planet("orrin", null, 6f, 0){{
             bloom = true;
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = this;
+            solarSystem = barycenter;
+            orbitRadius = 3f
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -43,11 +53,11 @@ public class GenesisPlanets{
                     Color.valueOf("FFFFFF")
             );
         }};
-        thessar = new Planet("thessar", orrin, 3f, 0){{
+        thessar = new Planet("thessar", barycenter, 3f, 0){{
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = this;
-            orbitRadius = 10f;
+            solarSystem = barycenter;
+            orbitRadius = 6f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -71,7 +81,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 3f;
+            orbitRadius = 20f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = thessar;
             alwaysUnlocked = clearSectorOnLose = true;
