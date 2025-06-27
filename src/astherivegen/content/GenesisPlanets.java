@@ -32,7 +32,7 @@ public class GenesisPlanets{
         barycenter = new Planet("barycenter", null, 1f, 0){{
             bloom = true;
             accessible = true;
-            hidden = true;
+            visible = false;
             solarSystem = this;
         }};
         // regions stars
