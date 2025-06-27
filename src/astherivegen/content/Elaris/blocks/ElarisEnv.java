@@ -44,10 +44,11 @@ public class ElarisEnv {
                     cacheLayer = CacheLayer.water;
                     albedo = 0.95f;
                     supportsOverlay = false;
+                    drownTime: 120;
                 }};
                 shallowWatergel = new Floor("shallow-watergel"){{
                     speedMultiplier = 0.4f;
-                    variants = 4;
+                    variants = 3;
                     liquidDrop = Liquids.water;
                     isLiquid = true;
                     cacheLayer = CacheLayer.water;
