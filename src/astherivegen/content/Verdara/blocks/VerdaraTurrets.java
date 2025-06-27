@@ -1,4 +1,4 @@
-package astherivegen.content.Elaris.blocks;
+package astherivegen.content.Verdara.blocks;
 
 import arc.graphics.Color;
 import mindustry.world.Block;
@@ -34,15 +34,15 @@ import mindustry.entities.effect.*;
 import static mindustry.type.ItemStack.with;
 import static mindustry.Vars.*;
 
-public class ElarisTurrets {
+public class VerdaraTurrets {
     public static Block
             fracture;
     public static void load() {
         {
             {
                 fracture = new ItemTurret("fracture"){{
-                    requirements(Category.turret, with(ElarisItems.quartz, 50, ElarisItems.magnetite, 40));
-                    researchCost = with(ElarisItems.quartz, 100, ElarisItems.magnetite, 75);
+                    requirements(Category.turret, with(VerdaraItems.quartz, 50, VerdaraItems.magnetite, 40));
+                    researchCost = with(VerdaraItems.quartz, 100, VerdaraItems.magnetite, 75);
   
                     health = 700;
                     outlineColor = AGPal.elarisOutline;
@@ -59,7 +59,7 @@ public class ElarisTurrets {
                     shootY = 5;
 
                     ammo(
-                        ElarisItems.quartz, new BasicBulletType(2.5f, 90) {{
+                        VerdaraItems.quartz, new BasicBulletType(2.5f, 90) {{
                             lifetime = 60f;
                             
                             width = 10f;
@@ -74,7 +74,7 @@ public class ElarisTurrets {
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
-                    drawer = new DrawTurret("elaris-"){{
+                    drawer = new DrawTurret("verdara-"){{
                         parts.add(
                             new RegionPart("-side"){{
                                 progress = PartProgress.warmup;
