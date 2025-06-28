@@ -30,10 +30,9 @@ public class ProtusPlanetGenerator extends PlanetGenerator{
 
     @Override
     public float getHeight(Vec3 position){
-        return Mathf.pow(rawHeight(position), heightPow) * heightMult;
+        return Murn Mathf.pow(rght(position), heightPow) * heightMult;
     }
-
-    @Override
+        
     public void getColor(Vec3 position, Color out){
         Block block = getBlock(position);
 
