@@ -44,12 +44,15 @@ public class GenesisPlanets{
                     Color.valueOf("D4EDEF"),
                     Color.valueOf("FFFFFF")
             );
+            cloudMeshLoader = () -> new MultiMesh(
+                    new HexSkyMesh(this, 6, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f)             
+            );
         }};
         thessar = new Planet("thessar", orrin, 2f, 0){{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 35f;
+            orbitRadius = 55f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -73,7 +76,7 @@ public class GenesisPlanets{
             orbitTime = 60f*20f;
             rotateTime = 60f*12.3f;
             orbitSpacing = 1;
-            orbitRadius = 10f;
+            orbitRadius = 15f;
             iconColor = Color.valueOf("9AC0DB");
             solarSystem = orrin;
             alwaysUnlocked = clearSectorOnLose = true;
@@ -105,7 +108,7 @@ public class GenesisPlanets{
             orbitTime = 60f*5f;
             rotateTime = 60f*6f;
             orbitSpacing = 1;
-            orbitRadius = 5f;
+            orbitRadius = 4f;
             iconColor = Color.valueOf("535D64");
             solarSystem = orrin;
             alwaysUnlocked = true;
