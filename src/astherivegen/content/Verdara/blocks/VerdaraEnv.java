@@ -8,6 +8,8 @@ import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds.*;
+import mindustry.content.Fx;
+import astherivegen.content.Verdara.VerdaraItems;
 
 import static mindustry.type.ItemStack.with;
 
@@ -143,7 +145,7 @@ public class VerdaraEnv {
                 //ore thing
                 eonstoneQuartzCluster = new SteamVent("eonstone-quartz-cluster"){{
                     parent = eonstoneErodedFloor;
-                    effect = none;
+                    effect = Fx.none;
                     itemDrop = VerdaraItems.quartz;
                 }};
             }
