@@ -23,7 +23,10 @@ public class GenesisPlanets{
             orrin, thessar,
 
     // planets
-    verdara;
+    verdara,
+
+    // muns
+    protus;
 
     public static void load(){
         // regions stars
