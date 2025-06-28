@@ -95,8 +95,8 @@ public class GenesisPlanets{
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
-                new NoiseMesh(this,7,5,Color.valueOf("313439"),0.95f,4,1,1,0.1f),
-                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.93f,7,3,0.5f,0.3f)
+                new NoiseMesh(this,7,5,Color.valueOf("313439"),1f,4,1,1,0.1f),
+                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.96f,7,3,2.5f,0.5f)
             );
             cloudMeshLoader = () -> new MultiMesh(
                     new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
@@ -116,7 +116,7 @@ public class GenesisPlanets{
             generator = new ProtusPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,4,1,1,0.1f),
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,7,3,0.5f,0.6f)
+                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,7,3,2f,1f)
             );
         }};
     }
