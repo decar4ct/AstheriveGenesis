@@ -33,13 +33,13 @@ public class ProtusPlanetGenerator extends PlanetGenerator{
         return Mathf.pow(rawHeight(position), heightPow) * heightMult;
     }
         
-    public void getColor(Vec3 position, Color out){
+    public Color getColor(Vec3 position){
         Block block = getBlock(position);
 
         //more obvious color
         if(block == Blocks.crystallineStone) block = Blocks.crystalFloor;
 
-        out.set(block.mapColor).a(1f - block.albedo);
+        return Color.red //.set(block.mapColor).a(1f - block.albedo);
     }
 
     @Override
