@@ -96,7 +96,7 @@ public class GenesisPlanets{
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,7,5,Color.valueOf("313439"),0.9f,4,1,1,0.1f),
-                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),1,7,2,0.9,0.8f)
+                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),1,7,2,1.5f,0.8f)
             );
             cloudMeshLoader = () -> new MultiMesh(
                     new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
