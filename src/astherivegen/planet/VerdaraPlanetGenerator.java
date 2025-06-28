@@ -28,12 +28,12 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
             if (poles<0.1f||height<seaLevel) {return seaLevel;} else return height;
         } else {
             //poles specific for ice
-            return height+poles*0.8
+            return height+poles*0.8;
         }
     }
     @Override
     public Color getColor(Vec3 position){
-        height = rawHeight(position)
+        height = rawHeight(position);
         block = Blocks.water;
         return (block.mapColor).write(out).a(1f - block.albedo);
     }
