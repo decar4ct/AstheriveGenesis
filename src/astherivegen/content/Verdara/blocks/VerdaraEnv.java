@@ -28,7 +28,7 @@ public class VerdaraEnv {
             //idk
             alyogelDeepFloor,alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
-            sporfloreFern,
+            smallSporfloreFern, sporfloreFern,
             sporfloreTree,
             eonstoneHugeVent;
     public static void load() {
@@ -122,6 +122,12 @@ public class VerdaraEnv {
                     lobesMax = 6;
                     magMin = 4;
                     magMax = 6;
+                }};
+                smallSporfloreFern = new SeaBush("small-sporflore-fern"){{
+                    lobesMin = 4;
+                    lobesMax = 5;
+                    magMin = 5;
+                    magMax = 7;
                 }};
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
