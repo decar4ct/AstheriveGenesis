@@ -85,7 +85,7 @@ public class GenesisPlanets{
             allowLaunchToNumbered = false;
             updateLighting = true;
             campaignRuleDefaults.fog = true;
-            startSector = 10;
+            startSector = 100;
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
