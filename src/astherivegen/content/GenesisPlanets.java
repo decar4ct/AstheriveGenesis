@@ -116,7 +116,7 @@ public class GenesisPlanets{
             generator = new ProtusPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.7f,4,1,1,0.1f),
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.6.5f,7,3,0.7f,1.5f)
+                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.65f,7,3,0.7f,1.5f)
             );
         }};
     }
