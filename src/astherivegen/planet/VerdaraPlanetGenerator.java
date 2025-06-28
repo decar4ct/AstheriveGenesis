@@ -34,7 +34,8 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
     @Override
     public Color getColor(Vec3 position){
         height = rawHeight(position)
-        return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
+        block = Blocks.water;
+        return (block.mapColor).write(out).a(1f - block.albedo);
     }
     Block getBlock(Vec3 position){
         float height = rawHeight(position);
