@@ -39,7 +39,7 @@ public class ProtusPlanetGenerator extends PlanetGenerator{
         //more obvious color
         if(block == Blocks.crystallineStone) block = Blocks.crystalFloor;
 
-        return Color.red //.set(block.mapColor).a(1f - block.albedo);
+        return Color.red; //.set(block.mapColor).a(1f - block.albedo);
     }
 
     @Override
