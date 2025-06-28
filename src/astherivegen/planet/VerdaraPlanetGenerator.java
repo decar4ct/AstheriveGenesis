@@ -24,7 +24,6 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
         if (poles<0.1f||height<0.6f) {return 0+height*0.2f;} else return height;
     }
 
-    @Override
     public void getColor(Vec3 position, Color out){
         Block block = getBlock(position);
         out.set(block.mapColor).a(1f - block.albedo);
