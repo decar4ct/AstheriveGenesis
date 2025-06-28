@@ -132,6 +132,9 @@ public class VerdaraEnv {
                 sporfloreTree = new TallBlock("sporflore-tree"){{
                     variants = 2;
                 }};
+                largeSporfloreTree = new TallBlock("large-sporflore-tree"){{
+                    variants = 2;
+                }};
                 eonstoneHugeVent = new SteamVent("eonstone-huge-vent"){{
                     variants = 0;
                 }};
