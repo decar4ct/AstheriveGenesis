@@ -20,8 +20,8 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
 
     float rawHeight(Vec3 position){
         float poles = Math.abs(position.y);
-        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, position.x, position.y, position.z);
-        if (poles<0.1f||height<0.4f) {return 0+height*0.4f;} else return height;
+        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, position.x, position.y, position.z)*1.2f;
+        if (poles<0.1f||height<0.4f) {return 0+height*0.2f;} else return height;
     }
 
     @Override
