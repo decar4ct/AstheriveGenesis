@@ -1,4 +1,4 @@
-package biotech.maps.planets;
+package astherivegen.planet;
 
 import arc.graphics.*;
 import arc.math.*;
