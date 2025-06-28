@@ -30,7 +30,9 @@ public class VerdaraEnv {
             eonstoneBoulder,eonstoneErodedBoulder,
             smallSporfloreFern, sporfloreFern,
             sporfloreTree, largeSporfloreTree,
-            eonstoneHugeVent;
+            eonstoneHugeVent,
+            //this code is so messy lmao
+            eonstoneQuartzCluster;
     public static void load() {
         {
             {
@@ -137,6 +139,11 @@ public class VerdaraEnv {
                 }};
                 eonstoneHugeVent = new SteamVent("eonstone-huge-vent"){{
                     variants = 0;
+                }};
+                //ore thing
+                eonstoneQuartzCluster = SteamVent("eonstone-quartz-cluster"){{
+                    parent = eonstoneErodedFloor;
+                    effect = none
                 }};
             }
         }
