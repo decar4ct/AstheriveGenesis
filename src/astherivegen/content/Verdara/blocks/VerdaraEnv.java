@@ -29,7 +29,7 @@ public class VerdaraEnv {
             alyogelDeepFloor,alyogelFloor,
             eonstoneBoulder,eonstoneErodedBoulder,
             smallSporfloreFern, sporfloreFern,
-            sporfloreTree,
+            sporfloreTree, largeSporfloreTree,
             eonstoneHugeVent;
     public static void load() {
         {
