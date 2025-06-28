@@ -20,13 +20,33 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
 
     float rawHeight(Vec3 position){
         float poles = Math.abs(position.y);
-        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, 10f + position.x, 10f + position.y, 10f + position.z)*1.1f;
-        if (poles<0.1f||height<0.6f) {return 0;} else return height;
+        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, position.x, position.y, position.z);
+        if (poles<0.1f||height<0.4f) {return 0+height*0.4f;} else return height;
     }
 
     @Override
     public Color getColor(Vec3 position){
-        Block block = rawHeight(position) < 0.35f ? VerdaraEnv.deepWatergel : rawHeight(position) < 0.4f ? VerdaraEnv.shallowWatergel : rawHeight(position) < 0.45f ? VerdaraEnv.alyogelFloor : rawHeight(position) < 0.55f ? VerdaraEnv.eonstoneFloor : rawHeight(position) < 0.6f ? VerdaraEnv.eonstoneErodedFloor : Blocks.ferricStone;
+        Block block = getHeight(position) < 0.4f ? VerdaraEnv.deepWatergel : getHeight(position) < 0.5f ? VerdaraEnv.shallowWatergel : getHeight(position) < 0.55f ? VerdaraEnv.alyogelFloor : getHeight(position) < 0.65f ? VerdaraEnv.eonstoneFloor : getHeight(position) < 0.8f ? VerdaraEnv.eonstoneErodedFloor : Blocks.ferricStone;
         return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
+    }
+    @Override
+    public Color getColor(Vec3 position){
+        float height = getHeight(position);
+
+        if (height <= 0.2f) {
+            // Ocean color
+            return c1.write(out).lerp(c2, height / 0.2f).a(0.8f);
+        } else if (height <= 0.4f) {
+            // Coastal/low spots near water
+            return c7.write(out).lerp(c8, (height - 0.2f) / 0.2f).a(0.9f);
+        } else {
+            // Land color
+            return c5.write(out).lerp(c6, (height - 0.4f) / 0.6f).a(1f);
+        }
+    }
+
+    float rawHeight(Vec3 position){
+        // Noise function for raw height data
+        return Simplex.noise3d(seed, 8, 0.7f, 1f, position.x, position.y, position.z);
     }
 }
