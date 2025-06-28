@@ -25,7 +25,7 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
     }
 
     @Override
-    public void getColor(Vec3 position){
+    public void getColor(Vec3 position, Color out){
         Block block = rawHeight(position) < 0.5f ? VerdaraEnv.deepWatergel : rawHeight(position) < 0.55f ? VerdaraEnv.shallowWatergel : rawHeight(position) < 0.6f ? VerdaraEnv.alyogelFloor : rawHeight(position) < 0.7f ? VerdaraEnv.eonstoneFloor : rawHeight(position) < 0.8f ? VerdaraEnv.eonstoneErodedFloor : Blocks.ferricStone;
         out.set(block.mapColor).a(1f - block.albedo);
     }
