@@ -19,5 +19,5 @@ import static mindustry.Vars.*;
 
 public class ProtusPlanetGenerator extends ErekirPlanetGenerator {
 
-    Block[] terrain = {Blocks.water, Blocks.darkSandWater, Blocks.darkSandWater, Blocks.darkSandWater, Blocks.darkSan, Blocks.darkSand, Blocks.darkSand, Blocks.darkSand};
+    Block[] terrain = {Blocks.water, Blocks.darksandWater, Blocks.darksandWater, Blocks.darksandWater, Blocks.darksand, Blocks.darksand, Blocks.darksand, Blocks.darksand};
 }
