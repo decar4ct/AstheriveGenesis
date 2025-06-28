@@ -91,18 +91,18 @@ public class GenesisPlanets{
             allowLaunchToNumbered = false;
             updateLighting = true;
             campaignRuleDefaults.fog = true;
-            startSector = 100;
+            startSector = 150;
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,7,5,Color.valueOf("313439"),0.9f,4,1,1,0.1f),
-                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.89f,7,3,1.4f,0.8f)
+                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.85f,7,3,0.7f,0.8f)
             );
             cloudMeshLoader = () -> new MultiMesh(
                     new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
-        protus = new Planet("protus", verdara, 0.5f, 3){{
+        protus = new Planet("protus", verdara, 0.7f, 3){{
             accessible = true;
             hasAtmosphere = false;
             landCloudColor = Color.valueOf("535D64");
@@ -115,8 +115,8 @@ public class GenesisPlanets{
             alwaysUnlocked = true;
             generator = new ProtusPlanetGenerator();
             meshLoader = () -> new MultiMesh(
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.9f,4,1,1,0.1f),
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.9f,7,3,1.3f,1.5f)
+                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.7f,4,1,1,0.1f),
+                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.6.5f,7,3,0.7f,1.5f)
             );
         }};
     }
