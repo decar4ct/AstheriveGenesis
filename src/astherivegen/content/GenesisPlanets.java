@@ -94,14 +94,12 @@ public class GenesisPlanets{
             startSector = 100;
             minZoom = 0.75f;
             generator = new VerdaraPlanetGenerator();
-            meshLoader = () -> new MultiMesh(
-                    new HexMesh(this, 5)
-            );
+            meshLoader = () -> new HexMesh(this, 5);
             cloudMeshLoader = () -> new MultiMesh(
                     new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
-        protus = new Planet("protus", verdara, 0.3f, 3){{
+        protus = new Planet("protus", verdara, 0.5f, 3){{
             accessible = true;
             hasAtmosphere = false;
             landCloudColor = Color.valueOf("535D64");
@@ -113,9 +111,7 @@ public class GenesisPlanets{
             solarSystem = orrin;
             alwaysUnlocked = true;
             generator = new ProtusPlanetGenerator();
-            meshLoader = () -> new MultiMesh(
-                    new HexMesh(this, 5)
-            );
+            meshLoader = () -> new HexMesh(this, 5);
         }};
     }
 }
