@@ -95,5 +95,21 @@ public class GenesisPlanets{
                     new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
+        protus = new Planet("protus", verdara, 0.3f, 3){{
+            accessible = true;
+            hasAtmosphere = false;
+            landCloudColor = Color.valueOf("535D64");
+            orbitTime = 60f*5f;
+            rotateTime = 60f*6f;
+            orbitSpacing = 1;
+            orbitRadius = 5f;
+            iconColor = Color.valueOf("535D64");
+            solarSystem = orrin;
+            alwaysUnlocked = true;
+            generator = new ProtusPlanetGenerator();
+            meshLoader = () -> new MultiMesh(
+                    new HexMesh(this, 5)
+            );
+        }};
     }
 }
