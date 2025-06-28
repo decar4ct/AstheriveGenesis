@@ -13,6 +13,8 @@ import mindustry.world.Block;
 public class VerdaraPlanetGenerator extends PlanetGenerator {
     public float heightScl = 2f, octaves = 4, persistence = 0.9f, heightPow = 2.2f, heightMult = 1.3f;
 
+    float seaLevel = 0f;
+
     @Override
     public float getHeight(Vec3 position){
         return Mathf.pow(rawHeight(position), heightPow) * heightMult;
@@ -20,26 +22,23 @@ public class VerdaraPlanetGenerator extends PlanetGenerator {
 
     float rawHeight(Vec3 position){
         float poles = Math.abs(position.y);
-        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, position.x, position.y, position.z);
-        if (poles<0.1f||height<0.6f) {return 0+height*0.2f;} else return height;
+        float height = Simplex.noise3d(seed, octaves, persistence, 1f/heightScl, position.x, position.y, position.z)-0.5;
+        if (poles<0.8f) {
+            //any other
+            if (poles<0.1f||height<seaLevel) {return seaLevel;} else return height;
+        } else {
+            //poles specific for ice
+            return height+poles*0.8
+        }
     }
-    /*
     @Override
     public Color getColor(Vec3 position){
-        Block block = getBlock(position);
-        block = Blocks.water;
+        height = rawHeight(position)
         return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
     }
     Block getBlock(Vec3 position){
         float height = rawHeight(position);
         Block result = height < 0.5f ? VerdaraEnv.deepWatergel : height < 0.55f ? VerdaraEnv.shallowWatergel : height < 0.6f ? VerdaraEnv.alyogelFloor : height < 0.7f ? VerdaraEnv.eonstoneFloor : height < 0.8f ? VerdaraEnv.eonstoneErodedFloor : Blocks.ferricStone;
         return result;
-    }
-    */
-    //borrowing :3
-    @Override
-    public Color getColor(Vec3 position){
-        Block block = rawHeight(position) < 0.35f ? Blocks.water : rawHeight(position) < 0.4f ? Blocks.sand : rawHeight(position) < 0.64f ? Blocks.grass : Blocks.ferricStone;
-        return Tmp.c1.set(block.mapColor).a(1f - block.albedo);
     }
 }
