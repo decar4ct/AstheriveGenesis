@@ -34,62 +34,43 @@ public class VerdaraUnitTypes{
             range = 120f;
             faceTarget = true;
             mineWalls = true;
-            mineFloor = false;
+            mineFloor = true;
             mineHardnessScaling = false;
             mineSpeed = 6f;
             mineTier = 3;
             buildSpeed = 1.2f;
-            drag = 0.08f;
+            drag = 0.04f;
             speed = 2.6f;
             rotateSpeed = 7f;
             accel = 0.09f;
             itemCapacity = 30;
             health = 300f;
             hitSize = 9f;
-            fogRadius = 0f;
-            engineOffset = 10f;
+            fogRadius = 0f;            
 
-            weapons.add(new Weapon("astherive-gen-ward-weapon"){{
+            weapons.add(new RepairBeamWeapon(){{
+                widthSinMag = 0.11f;
                 reload = 20f;
-                x = 14f / 4;
-                y = 0f;
+                x = 0f;
+                y = 6.5f;
                 rotate = false;
                 shootY = 0f;
+                beamWidth = 0.7f;
+                repairSpeed = 3.1f;
+                fractionRepairSpeed = 0.06f;
+                aimDst = 0f;
                 shootCone = 15f;
-                mirror = true;
-                recoil = 1f;
-                top = false;
+                mirror = false;
 
-                bullet = new ArtilleryBulletType(){{
-                    shootEffect = new MultiEffect(Fx.shootSmallColor, new Effect(9, e -> {
-                        color(Color.white, e.color, e.fin());
-                        stroke(0.8f + e.fout());
-                        Lines.square(e.x, e.y, e.fin() * 5f, e.rotation + 90f);
+                targetUnits = false;
+                targetBuildings = true;
+                autoTarget = false;
+                controllable = true;
+                laserColor = Pal.accent;
+                healColor = Pal.accent;
 
-                        Drawf.light(e.x, e.y, 23f, e.color, e.fout() * 0.7f);
-                    }));
-                    collidesTiles = true;
-                    backColor = hitColor = Pal.accent;
-                    frontColor = Color.white;
-
-                    knockback = 0.8f;
-                    lifetime = 50f;
-                    width = height = 9f;
-                    splashDamageRadius = 19f;
-                    splashDamage = 30f;
-                    speed = 6.5f;
-
-                    trailLength = 27;
-                    trailWidth = 2.5f;
-                    trailEffect = Fx.none;
-                    trailColor = backColor;
-
-                    trailInterp = Interp.slope;
-
-                    shrinkX = 0.6f;
-                    shrinkY = 0.2f;
-
-                    hitEffect = despawnEffect = Fx.hitSquaresColor;
+                bullet = new BulletType(){{
+                    maxRange = 60f;
                 }};
             }});
         }};
