@@ -24,9 +24,9 @@ import mindustry.world.blocks.production.Drill;
 
 import static mindustry.Vars.*;
 
-//a drill that can only work if all its tiles is fully covered with ores
-public class FullDrill extends Drill{
-    public FullDrill(String name){
+//drill that can only work with cluster ores
+public class ClusterDrill extends Drill{
+    public ClusterDrill(String name){
         super(name);
         update = true;
         solid = true;
