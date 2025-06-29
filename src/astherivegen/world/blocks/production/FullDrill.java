@@ -25,9 +25,9 @@ import astherivegen.world.blocks.environment.OreCluster;
 
 import static mindustry.Vars.*;
 
-//drill that can only work with cluster ores
-public class ClusterDrill extends Drill{
-    public ClusterDrill(String name){
+//drill that can only work when its fully covered by ores
+public class FullDrill extends Drill{
+    public FullDrill(String name){
         super(name);
         update = true;
         solid = true;
@@ -57,14 +57,5 @@ public class ClusterDrill extends Drill{
         }else{
             return canMine(tile);
         }
-    }
-    @Override
-    public boolean canMine(Tile tile){
-        if(tile == null || tile.block().isStatic()) return false;
-        Log.info(tile.floor().build);
-        if(tile.floor().build instanceof OreCluster){
-            Item drops = tile.drop();
-            return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
-        } else {return false;}
     }
 }
