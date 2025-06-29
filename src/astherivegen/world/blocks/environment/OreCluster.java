@@ -18,13 +18,13 @@ import static mindustry.Vars.*;
 
 //can't use an overlay for this because it spans multiple tiles
 public class OreCluster extends SteamVent{
-    public SteamVent(String name){
+    public SteamVent(String name, Item clusterItem){
         super(name);
         variants = 2;
         effect = Fx.none;
         flags = EnumSet.of(BlockFlag.steamVent);
     }
     public Item drop(){
-        return this.itemDrop;
+        return lusterItem;
     }
 }
