@@ -65,5 +65,6 @@ public class ClusterDrill extends Drill{
             Item drops = tile.drop();
             return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
         } else {return false;}
+        Log.info(tile.overlay());
     }
 }
