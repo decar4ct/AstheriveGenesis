@@ -143,10 +143,8 @@ public class VerdaraEnv {
                     variants = 0;
                 }};
                 //ore thing
-                eonstoneQuartzCluster = new SteamVent("eonstone-quartz-cluster"){{
+                eonstoneQuartzCluster = new OreCluster("eonstone-quartz-cluster", VerdaraItems.quartz){{
                     parent = blendGroup = eonstoneErodedFloor;
-                    effect = Fx.none;
-                    itemDrop = VerdaraItems.quartz;
                 }};
                 oreQuartz = new OreBlock("ore-quartz", VerdaraItems.quartz);
             }
