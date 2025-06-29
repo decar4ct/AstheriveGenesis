@@ -85,7 +85,7 @@ public class GenesisPlanets{
             ruleSetter = r -> {
               r.fog = true;
               r.staticFog = false;
-              r.ambientLight = Color.valueOf("E3EB54");
+              r.ambientLight = Color.valueOf("BDE0EA34");
               r.onlyDepositCore = true;
             };
             allowLaunchToNumbered = false;
