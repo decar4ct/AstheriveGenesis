@@ -20,7 +20,7 @@ public class VerdaraProduction {
     public static void load() {
         {
             {
-                clusterDrill = new FullDrill("cluster-drill"){{
+                clusterDrill = new ClusterDrill("cluster-drill"){{
                     requirements(Category.production, with(VerdaraItems.quartz, 40));
                     consumePower(0.5f);
                     consumeLiquid(Liquids.hydrogen, 0.05f).boost();
