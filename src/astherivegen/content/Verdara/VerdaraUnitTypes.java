@@ -40,14 +40,15 @@ public class VerdaraUnitTypes{
             mineSpeed = 6f;
             mineTier = 3;
             buildSpeed = 1.2f;
-            drag = 0.04f;
-            speed = 2.6f;
+            drag = 0.03f;
+            speed = 3.2f;
             rotateSpeed = 7f;
-            accel = 0.09f;
+            accel = 0.15f;
             itemCapacity = 30;
             health = 300f;
             hitSize = 9f;
-            fogRadius = 0f;            
+            fogRadius = 0f;
+            engineOffset = 12f;
 
             weapons.add(new RepairBeamWeapon(){{
                 widthSinMag = 0.11f;
@@ -55,7 +56,7 @@ public class VerdaraUnitTypes{
                 x = 0f;
                 y = 6.5f;
                 rotate = false;
-                shootY = 0f;
+                shootY = -2.5f;
                 beamWidth = 0.7f;
                 repairSpeed = 3.1f;
                 fractionRepairSpeed = 0.06f;
