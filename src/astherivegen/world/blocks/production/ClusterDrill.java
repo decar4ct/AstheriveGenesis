@@ -22,7 +22,7 @@ import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.production.Drill;
 import astherivegen.world.blocks.environment.OreCluster;
-import astherivegen.content.Verdata.blocks.VerdaraEnv;
+import astherivegen.content.Verdara.blocks.VerdaraEnv;
 
 import static mindustry.Vars.*;
 
