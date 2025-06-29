@@ -22,7 +22,7 @@ import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.production.Drill;
 import astherivegen.world.blocks.environment.OreCluster;
-import astherivegen.content.blocks.Verdata.VerdaraEnv;
+import astherivegen.content.Verdata.blocks.VerdaraEnv;
 
 import static mindustry.Vars.*;
 
@@ -59,7 +59,7 @@ public class ClusterDrill extends Drill{
             return canMine(tile);
         }
     }
-    @override
+    @Override
     public boolean canMine(Tile tile){
         if(tile == null || tile.block().isStatic()) return false;
         Item drops = tile.drop();
