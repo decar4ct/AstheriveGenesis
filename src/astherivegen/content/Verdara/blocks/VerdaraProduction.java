@@ -16,11 +16,11 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraProduction {
     public static Block
-            mechanicalAuger, advancedAuger;
+            clusterDrill;
     public static void load() {
         {
             {
-                mechanicalAuger = new FullDrill("mechanical-auger"){{
+                clusterDrill = new ClusterDrill("cluster-drill"){{
                     requirements(Category.production, with(VerdaraItems.quartz, 40));
                     consumePower(0.5f);
                     consumeLiquid(Liquids.hydrogen, 0.05f).boost();
@@ -28,19 +28,6 @@ public class VerdaraProduction {
                     squareSprite = false;
                     drillTime = 1000;
                     tier = 3;
-                    size = 3;
-                    fogRadius = 3;
-                    researchCost = with(VerdaraItems.quartz, 10);
-                }};
-            }
-            {
-                advancedAuger = new FullDrill("advanced-auger"){{
-                    requirements(Category.production, with(VerdaraItems.quartz, 80));
-                    consumePower(1);
-
-                    squareSprite = false;
-                    drillTime = 600;
-                    tier = 5;
                     size = 3;
                     fogRadius = 3;
                     researchCost = with(VerdaraItems.quartz, 10);
