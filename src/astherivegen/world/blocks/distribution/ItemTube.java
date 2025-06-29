@@ -46,9 +46,9 @@ public class ItemTube extends Conveyor {
 
         if(bits == null) return;
 
-        TextureRegion region = TextureRegion[]{Core.atlas.find(name+"-preview")};
+        TextureRegion region = Core.atlas.find(name+"-preview");
         Draw.rect(region, plan.drawx(), plan.drawy(), region.width * bits[1] * region.scl(), region.height * bits[2] * region.scl(), plan.rotation * 90);
-    }c 
+    }
     public class ItemTubeBuild extends ConveyorBuild {
         @Override
         public void draw(){
