@@ -48,15 +48,15 @@ public class VerdaraUnitTypes{
             health = 300f;
             hitSize = 9f;
             fogRadius = 0f;
-            engineOffset = 12f;
+            engineOffset = 6f;
 
             weapons.add(new RepairBeamWeapon(){{
                 widthSinMag = 0.11f;
                 reload = 20f;
                 x = 0f;
-                y = 6.5f;
+                y = 1f;
                 rotate = false;
-                shootY = -2.5f;
+                shootY = 0f;
                 beamWidth = 0.7f;
                 repairSpeed = 3.1f;
                 fractionRepairSpeed = 0.06f;
