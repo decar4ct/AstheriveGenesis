@@ -13,6 +13,7 @@ import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.environment.SteamVent;
+import mindustry.type.Item;
 
 import static mindustry.Vars.*;
 
@@ -25,6 +26,6 @@ public class OreCluster extends SteamVent{
         flags = EnumSet.of(BlockFlag.steamVent);
     }
     public Item drop(){
-        return lusterItem;
+        return clusterItem;
     }
 }
