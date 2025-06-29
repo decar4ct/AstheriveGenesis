@@ -17,16 +17,13 @@ import mindustry.type.Item;
 
 import static mindustry.Vars.*;
 
-//can't use an overlay for this because it spans multiple tiles
+//i aint got no idea how this even work dont ask me code digger 🥀
 public class OreCluster extends SteamVent{
-    public Item clusterItem;
+    public static Item clusterItem;
     public OreCluster(String name, Item clusterItem){
         super(name);
         variants = 2;
         effect = Fx.none;
         flags = EnumSet.of(BlockFlag.steamVent);
-    }
-    public Item drop(){
-        return clusterItem;
     }
 }
