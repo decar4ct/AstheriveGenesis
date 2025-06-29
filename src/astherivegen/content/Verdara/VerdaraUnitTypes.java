@@ -15,6 +15,7 @@ import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import astherivegen.type.unit.*;
+import mindustry.type.weapons.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
