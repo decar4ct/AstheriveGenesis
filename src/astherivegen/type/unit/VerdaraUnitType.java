@@ -13,7 +13,7 @@ public class VerdaraUnitType extends UnitType{
 
     public VerdaraUnitType(String name){
         super(name);
-        outlineColor = AGPal.verdaraOutline;
+        outlineColor = GenesisPal.verdaraOutline;
         ammoType = new ItemAmmoType(VerdaraItems.quartz);
         researchCostMultiplier = 8f;
     }
