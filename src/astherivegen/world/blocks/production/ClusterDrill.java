@@ -22,12 +22,13 @@ import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.production.Drill;
 import astherivegen.world.blocks.environment.OreCluster;
+import astherivegen.content.blocks.Verdata.VerdaraEnv;
 
 import static mindustry.Vars.*;
 
-//drill that can only work when its fully covered by ores
-public class FullDrill extends Drill{
-    public FullDrill(String name){
+//drill that can only work when its fully covered by ores AND with specific hardcoded floor (Horrendous, TODO: dynamic)
+public class ClusterDrill extends Drill{
+    public ClusterDrill(String name){
         super(name);
         update = true;
         solid = true;
@@ -57,5 +58,13 @@ public class FullDrill extends Drill{
         }else{
             return canMine(tile);
         }
+    }
+    @override
+    public boolean canMine(Tile tile){
+        if(tile == null || tile.block().isStatic()) return false;
+        Item drops = tile.drop();
+        if(tile.floor() == VerdaraEnv.eonstoneQuartzCluster){
+            return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
+        } else {return false;}
     }
 }
