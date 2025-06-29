@@ -34,7 +34,7 @@ public class VerdaraEnv {
             sporfloreTree, largeSporfloreTree,
             eonstoneHugeVent,
             //this code is so messy lmao
-            eonstoneQuartzCluster;
+            eonstoneQuartzCluster, quartzOre;
     public static void load() {
         {
             {
@@ -148,6 +148,7 @@ public class VerdaraEnv {
                     effect = Fx.none;
                     itemDrop = VerdaraItems.quartz;
                 }};
+                oreQuartz = new OreBlock("ore-quartz", VerdaraItems.quartz);
             }
         }
     }
