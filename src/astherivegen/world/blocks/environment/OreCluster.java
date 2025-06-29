@@ -19,6 +19,7 @@ import static mindustry.Vars.*;
 
 //can't use an overlay for this because it spans multiple tiles
 public class OreCluster extends SteamVent{
+    public Item clusterItem;
     public OreCluster(String name, Item clusterItem){
         super(name);
         variants = 2;
