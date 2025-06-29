@@ -146,7 +146,7 @@ public class VerdaraEnv {
                 //ore thing
                 eonstoneQuartzCluster = new OreCluster("eonstone-quartz-cluster"){{
                     parent = blendGroup = eonstoneErodedFloor;
-                    itemDrop = verdaraitems.quartz;
+                    itemDrop = VerdaraItems.quartz;
                 }};
                 oreQuartz = new OreBlock("ore-quartz", VerdaraItems.quartz);
             }
