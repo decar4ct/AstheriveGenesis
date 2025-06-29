@@ -13,6 +13,7 @@ import mindustry.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.Tile;
+import mindustry.entities.units.BuildPlan;
 
 import static mindustry.Vars.*;
 
