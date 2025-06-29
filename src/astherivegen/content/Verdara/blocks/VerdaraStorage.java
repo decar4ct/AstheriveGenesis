@@ -24,6 +24,7 @@ public class VerdaraStorage {
                     size = 4;
                     isFirstTier = true;
                     squareSprite = false;
+                    itemCapacity = 4000;
                     unitType = VerdaraUnitTypes.ward;
                 }};
             }
