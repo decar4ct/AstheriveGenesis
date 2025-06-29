@@ -21,6 +21,7 @@ import mindustry.world.blocks.environment.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.production.Drill;
+import astherivegen.world.blocks.environment.OreCluster;
 
 import static mindustry.Vars.*;
 
@@ -60,7 +61,9 @@ public class ClusterDrill extends Drill{
     @Override
     public boolean canMine(Tile tile){
         if(tile == null || tile.block().isStatic()) return false;
-        Item drops = tile.drop();
-        return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
+        if(tile.overlay() instanceof OreCluster){
+            Item drops = tile.drop();
+            return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
+        } else {return false;}
     }
 }
