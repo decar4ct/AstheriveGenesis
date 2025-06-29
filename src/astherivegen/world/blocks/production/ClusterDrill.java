@@ -57,4 +57,10 @@ public class ClusterDrill extends Drill{
             return canMine(tile);
         }
     }
+    @Override
+    public boolean canMine(Tile tile){
+        if(tile == null || tile.block().isStatic()) return false;
+        Item drops = tile.overlay.drop();
+        return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
+    }
 }
