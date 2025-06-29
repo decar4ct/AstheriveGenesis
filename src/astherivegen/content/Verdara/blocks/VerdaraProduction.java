@@ -22,7 +22,8 @@ public class VerdaraProduction {
             {
                 mechanicalAuger = new FullDrill("mechanical-auger"){{
                     requirements(Category.production, with(VerdaraItems.quartz, 40));
-                    consumePower(0.2f);
+                    consumePower(0.5f);
+                    consumeLiquid(Liquids.hydrogen, 0.05f).boost();
 
                     squareSprite = false;
                     drillTime = 1000;
