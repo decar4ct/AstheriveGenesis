@@ -17,10 +17,9 @@ import mindustry.type.Item;
 
 import static mindustry.Vars.*;
 
-//i aint got no idea how this even work dont ask me code digger 🥀
+//literally just steamvent without fx lmao
 public class OreCluster extends SteamVent{
-    public static Item clusterItem;
-    public OreCluster(String name, Item clusterItem){
+    public OreCluster(String name){
         super(name);
         variants = 2;
         effect = Fx.none;
