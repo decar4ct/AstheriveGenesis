@@ -61,7 +61,7 @@ public class ClusterDrill extends Drill{
     @Override
     public boolean canMine(Tile tile){
         if(tile == null || tile.block().isStatic()) return false;
-        Log.info(tile.floor());
+        Log.info(tile.floor().clusterItem);
         if(tile.floor() instanceof OreCluster){
             Item drops = tile.drop();
             return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
