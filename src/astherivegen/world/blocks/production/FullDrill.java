@@ -26,6 +26,21 @@ import static mindustry.Vars.*;
 
 //a drill that can only work if all its tiles is fully covered with ores
 public class FullDrill extends Drill{
+    public FullDrill(String name){
+        super(name);
+        update = true;
+        solid = true;
+        group = BlockGroup.drills;
+        hasLiquids = true;
+        liquidCapacity = 5f;
+        hasItems = true;
+        ambientSound = Sounds.drill;
+        ambientSoundVolume = 0.018f;
+        //sure anuke drills do work in space
+        envEnabled |= Env.space;
+        flags = EnumSet.of(BlockFlag.drill);
+    }
+    
     @Override
     public boolean canPlaceOn(Tile tile, Team team, int rotation){
         countOre(tile);
