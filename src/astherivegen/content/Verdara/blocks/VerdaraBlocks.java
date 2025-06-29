@@ -8,6 +8,7 @@ public class VerdaraBlocks{
         VerdaraProduction.load();
         VerdaraDistribution.load();
         VerdaraDefense.load();
+        VerdaraPower.load();
         VerdaraStorage.load();
         Bioplasm.load();
     }
