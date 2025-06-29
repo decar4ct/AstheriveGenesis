@@ -20,7 +20,7 @@ public class VerdaraProduction {
     public static void load() {
         {
             {
-                mechanicalAuger = new Drill("mechanical-auger"){{
+                mechanicalAuger = new FullDrill("mechanical-auger"){{
                     requirements(Category.production, with(VerdaraItems.quartz, 40));
                     consumePower(0.2f);
 
@@ -33,7 +33,7 @@ public class VerdaraProduction {
                 }};
             }
             {
-                advancedAuger = new Drill("advanced-auger"){{
+                advancedAuger = new FullDrill("advanced-auger"){{
                     requirements(Category.production, with(VerdaraItems.quartz, 80));
                     consumePower(1);
 
