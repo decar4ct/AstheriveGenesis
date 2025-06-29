@@ -45,7 +45,7 @@ public class VerdaraTurrets {
                     researchCost = with(VerdaraItems.quartz, 100, VerdaraItems.magnetite, 75);
   
                     health = 700;
-                    outlineColor = AGPal.verdaraOutline;
+                    outlineColor = GenesisPal.verdaraOutline;
                     reload = 80f;
                     inaccuracy = 2f;
                     size = 3;
