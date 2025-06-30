@@ -24,7 +24,8 @@ public class WindTurbine extends PowerGenerator{
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
     public Color obstructionColor = Pal.remove;
-    public float efficiencyDecreasion = (float) 1.0/8;
+    public int maxObstruction = 12;
+    public boolean displayEfficiency = true;
 
     public WindTurbine(String name){
         super(name);
@@ -49,15 +50,25 @@ public class WindTurbine extends PowerGenerator{
         y += offset;
 
         Drawf.dashSquare(baseColor, x, y, range * tilesize);
+        int bcount = 0;
         int frange = (int) Math.floor(range/2);
         for(int xm = -frange+1;xm<=frange;xm++){
             for(int ym = -frange+1;ym<=frange;ym++){
                 Tile other = world.tile(ox+xm,oy+ym);
-                if(other.solid()&&other.build!=world.tile(ox,oy).build) {
+                if(other.block().solid&&other.build!=world.tile(ox,oy).build) {
                     Drawf.selected(other.x, other.y, Blocks.router, obstructionColor);
+                    bcount++;
                 }
             }
         }
+        
+        if(displayEfficiency){
+            drawPlaceText(Core.bundle.formatFloat("bar.efficiency", getObstructionEfficiency(bcount) * 100, 1), x, y, valid);
+        }
+    }
+
+    public float getObstructionEfficiency(int obsCount){
+        return obstructionCount<maxObstruction?Math.max(0,Math.sin((Math.PI/maxObstruction*2)*obstructionCount+Math.PI)):0;
     }
 
     @Override
@@ -115,7 +126,7 @@ public class WindTurbine extends PowerGenerator{
                 lastChange = world.tileChanges;
                 obstructionCount = eachTile(range);
             }
-            productionEfficiency = Math.max(0,1-efficiencyDecreasion*obstructionCount);
+            productionEfficiency = getObstructionEfficiency(obstructionCount);
             totalProgress += productionEfficiency * Time.delta;
         }
 
