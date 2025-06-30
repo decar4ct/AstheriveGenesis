@@ -89,6 +89,7 @@ public class WindTurbine extends PowerGenerator{
         stats.add(generationType, powerProduction * 60.0f, StatUnit.powerSecond);
     }
     public class WindTurbineBuild extends GeneratorBuild{
+        public float totalProgress;
         public int lastChange = -2;
         public int obstructionCount = 0;
 
@@ -115,6 +116,7 @@ public class WindTurbine extends PowerGenerator{
                 obstructionCount = eachTile(range);
             }
             productionEfficiency = Math.max(0,1-efficiencyDecreasion*obstructionCount);
+            totalProgress += productionEfficiency * Time.delta
         }
 
         @Override
@@ -142,6 +144,11 @@ public class WindTurbine extends PowerGenerator{
         public void drawLight(){
             super.drawLight();
             drawer.drawLight(this);
+        }
+
+        @Override
+        public float totalProgress(){
+            return totalProgress;
         }
     }
 }
