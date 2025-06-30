@@ -14,31 +14,24 @@ import mindustry.world.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
+import mindustry.world.blocks.power.*;
 
 import static mindustry.Vars.*;
 
-public class WindTurbine extends Block{
-    private static final IntSet taken = new IntSet();
-    //map building pos to mend amount (TODO just use buildings as keys? no lookup)
-    private static final IntFloatMap mendMap = new IntFloatMap();
-    private static long lastUpdateFrame = -1;
-
+public class WindTurbine extends PowerGenerator{
     public int range = 14;
-
     public DrawBlock drawer = new DrawDefault();
+    public Color baseColor = Pal.accent;
 
     public WindTurbine(String name){
         super(name);
         solid = true;
         update = true;
-        group = BlockGroup.projectors;
         hasPower = true;
-        hasItems = true;
-        emitLight = true;
-        suppressable = true;
-        envEnabled |= Env.space;
-        rotateDraw = false;
-        flags = EnumSet.of(BlockFlag.blockRepair);
+        hasItems = false;
+        emitLight = false;
+        //...wind turbine dont work in space
+        envEnabled ^= Env.space;
     }
 
     @Override
@@ -52,7 +45,7 @@ public class WindTurbine extends Block{
 
         Drawf.dashSquare(baseColor, x, y, range * tilesize);
         indexer.eachBlock(player.team(), Tmp.r1.setCentered(x, y, range * tilesize), b -> true, t -> {
-            Drawf.selected(t, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+            Drawf.selected(t, Tmp.c1.set(Pal.red).a(Mathf.absin(4f, 1f)));
         });
     }
 
@@ -95,8 +88,8 @@ public class WindTurbine extends Block{
         }
     }
 
-    public class WindTurbine extends Building{
-        public <Building> obstructions = new Seq<>();
+    public class WindTurbine extends GeneratorBuild{
+        public <Building> obstructions = new seq<>();
 
         public void updateObstructions(){
             targets.clear();
@@ -124,7 +117,7 @@ public class WindTurbine extends Block{
 
             Drawf.dashSquare(baseColor, x, y, range * tilesize);
             for(var target : targets){
-                Drawf.selected(target, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+                Drawf.selected(target, Tmp.c1.set(Pal.red).a(Mathf.absin(4f, 1f)));
             }
         }
 
