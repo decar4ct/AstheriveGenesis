@@ -63,13 +63,13 @@ public class WindTurbine extends PowerGenerator{
             }
         }
         
-        if(displayEfficiency){
+        if(true){
             drawPlaceText(Core.bundle.formatFloat("bar.efficiency", getObstructionEfficiency(bcount) * 100, 1), x, y, valid);
         }
     }
 
     public float getObstructionEfficiency(int obsCount){
-        return (float) obsCount<maxObstruction?Math.max(0,1+(float)Math.sin((float) (Math.PI/maxObstruction*2)*obsCount+Math.PI)):(float)0;
+        return (float) obsCount<maxObstruction?Math.max(0,1+(float)Math.sin((float) (Math.PI/(maxObstruction*2))*obsCount+Math.PI)):(float)0;
     }
 
     @Override
