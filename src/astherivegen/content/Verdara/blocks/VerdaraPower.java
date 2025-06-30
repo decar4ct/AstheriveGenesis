@@ -25,7 +25,7 @@ public class VerdaraPower{
             requirements(Category.power, with(VerdaraItems.quartz, 40));
             size = 2;
             squareSprite = false;
-            powerProduction = 1
+            powerProduction = 1;
             drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator", 3, true));
         }};
     }
