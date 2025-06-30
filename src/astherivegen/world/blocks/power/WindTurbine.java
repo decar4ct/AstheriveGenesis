@@ -36,8 +36,8 @@ public class WindTurbine extends PowerGenerator{
     }
 
     //screw it im making my own indexer
-    public eachTile(Int range){
-        Int rcount = 0;
+    public int eachTile(int range){
+        int rcount = 0;
         for(let xm = x-range;xm<range+y;xm++){
             for(let ym = y-range;ym<range+y;ym++){
                 Tile tile = world.tile(xm,ym);
