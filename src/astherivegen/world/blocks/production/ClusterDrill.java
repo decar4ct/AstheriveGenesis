@@ -63,7 +63,7 @@ public class ClusterDrill extends Drill{
     public boolean canMine(Tile tile){
         if(tile == null || tile.block().isStatic()) return false;
         Item drops = tile.drop();
-        if(tile.floor() == VerdaraEnv.eonstoneQuartzCluster){
+        if(tile.floor() == VerdaraEnv.eonstoneQuartzCluster||tile.floor() == VerdaraEnv.eonstoneMagnetiteCluster){
             return drops != null && drops.hardness <= tier && (blockedItems == null || !blockedItems.contains(drops));
         } else {return false;}
     }
