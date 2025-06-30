@@ -123,7 +123,7 @@ public class WindTurbine extends PowerGenerator{
             for(int xm = -frange+1;xm<=frange;xm++){
                 for(int ym = -frange+1;ym<=frange;ym++){
                     Tile other = tile.nearby(xm,ym);
-                    if(other.solid()&&other.build!=world.tile(x,y).build) {
+                    if(other.solid()&&other.build!=this) {
                         Drawf.selected(other.x, other.y, Blocks.router, obstructionColor);
                     }
                 }
