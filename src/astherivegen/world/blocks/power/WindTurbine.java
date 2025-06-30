@@ -115,7 +115,8 @@ public class WindTurbine extends PowerGenerator{
                 obstructionCount = eachTile(range);
             }
             productionEfficiency = Math.max(0,1-efficiencyDecreasion*obstructionCount);
-            Log.info(1-efficiencyDecreasion*obstructionCount);
+            Log.info(efficiencyDecreasion);
+            Log.info(obstructionCount);
         }
 
         @Override
