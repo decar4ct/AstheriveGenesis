@@ -39,8 +39,8 @@ public class WindTurbine extends PowerGenerator{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
-        int ox = x
-        int oy = y
+        int ox = x;
+        int oy = y;
 
         x *= tilesize;
         y *= tilesize;
