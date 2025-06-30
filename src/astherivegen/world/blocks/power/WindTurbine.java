@@ -76,14 +76,13 @@ public class WindTurbine extends PowerGenerator{
         super.setStats();
     }
 
-    public class WindTurbine extends GeneratorBuild{
+    public class WindTurbineBuild extends GeneratorBuild{
         public Seq<Building> obstructions = new Seq<>();
         public int lastChange = -2;
         public int obstructionCount;
 
         public void updateObstructions(){
-            targets.clear();
-            taken.clear();
+            obstructions.clear();
             indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
         }
 
