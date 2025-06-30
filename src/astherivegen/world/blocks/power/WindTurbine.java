@@ -85,7 +85,7 @@ public class WindTurbine extends PowerGenerator{
         public int eachTile(int range){
             int rcount = 0;
             for(int xm = -range;xm<range;xm++){
-                for(int ym = -range;ym<rangey;ym++){
+                for(int ym = -range;ym<range;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other.solid()) rcount++;
                 }
