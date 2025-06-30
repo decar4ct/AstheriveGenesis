@@ -84,8 +84,8 @@ public class WindTurbine extends PowerGenerator{
         //screw it im making my own indexer
         public int eachTile(int range){
             int rcount = 0;
-            for(int xm = x-range;xm<range+x;xm++){
-                for(int ym = y-range;ym<range+y;ym++){
+            for(int xm = (int)x-range;xm<range+(int)x;xm++){
+                for(int ym = (int)y-range;ym<range+(int)y;ym++){
                     Tile tile = world.tile(xm,ym);
                     if(tile.block()==Blocks.air) rcount++;
                 }
