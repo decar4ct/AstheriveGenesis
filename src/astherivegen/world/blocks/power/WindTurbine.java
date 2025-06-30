@@ -68,7 +68,7 @@ public class WindTurbine extends PowerGenerator{
     }
 
     public float getObstructionEfficiency(int obsCount){
-        return obstructionCount<maxObstruction?Math.max(0,Math.sin((Math.PI/maxObstruction*2)*obstructionCount+Math.PI)):0;
+        return obstructionCount<maxObstruction?Math.max(0,Math.sin((Math.PI/maxObstruction*2)*obsCount+Math.PI)):0;
     }
 
     @Override
