@@ -45,9 +45,15 @@ public class WindTurbine extends PowerGenerator{
         y += offset;
 
         Drawf.dashSquare(baseColor, x, y, range * tilesize);
-        indexer.eachBlock(player.team(), Tmp.r1.setCentered(x, y, range * tilesize), b -> true, t -> {
-            Drawf.selected(t, Tmp.c1.set(obstructionColor).a(Mathf.absin(4f, 1f)));
-        });
+        int frange = (int) Math.floor(range/2);
+        for(int xm = -frange+1;xm<frange;xm++){
+            for(int ym = -frange+1;ym<frange;ym++){
+                Tile other = tile.nearby(xm,ym);
+                if(other.solid()) {
+                    Drawf.cross(other.x, other.y, 1*tilesize, obstructionColor);
+                }
+            }
+        }
     }
 
     @Override
@@ -88,10 +94,12 @@ public class WindTurbine extends PowerGenerator{
             for(int xm = -frange+1;xm<frange;xm++){
                 for(int ym = -frange+1;ym<frange;ym++){
                     Tile other = tile.nearby(xm,ym);
-                    if(other.solid()) rcount++;
+                    if(other.solid()) {
+                        rcount++;
+                    }
                 }
             }
-            //subtract by the block itself
+            //subtract with the block itself
             return rcount-size*size;
         }
         
@@ -115,8 +123,14 @@ public class WindTurbine extends PowerGenerator{
             super.drawSelect();
 
             Drawf.dashSquare(baseColor, x, y, range * tilesize);
-            for(var obstruction : obstructions){
-                Drawf.selected(obstruction, Tmp.c1.set(obstructionColor).a(Mathf.absin(4f, 1f)));
+            int frange = (int) Math.floor(range/2);
+            for(int xm = -frange+1;xm<frange;xm++){
+                for(int ym = -frange+1;ym<frange;ym++){
+                    Tile other = tile.nearby(xm,ym);
+                    if(other.solid()) {
+                        Drawf.cross(other.x, other.y, 1*tilesize, obstructionColor);
+                    }
+                }
             }
         }
 
