@@ -80,6 +80,19 @@ public class WindTurbine extends PowerGenerator{
         public Seq<Building> obstructions = new Seq<>();
         public int lastChange = -2;
         public int obstructionCount = 0;
+
+        //screw it im making my own indexer
+        public int eachTile(int range){
+            int rcount = 0;
+            for(int xm = -range;xm<range;xm++){
+                for(int ym = -range;ym<rangey;ym++){
+                    Tile other = tile.nearby(xm,ym);
+                    if(other.solid()) rcount++;
+                }
+            }
+            return rcount;
+        }
+        
         public void updateObstructions(){
             obstructions.clear();
             indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
@@ -91,11 +104,7 @@ public class WindTurbine extends PowerGenerator{
                 lastChange = world.tileChanges;
                 updateObstructions();
             }
-            obstructionCount = 0;
-            for(var build : obstructions){
-                if(build.solid) continue;
-                obstructionCount=obstructionCount+build.size*build.size;
-            }
+            obstructionCount = eachTile(range);
             Log.info(obstructionCount);
         }
 
