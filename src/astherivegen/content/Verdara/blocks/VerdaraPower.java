@@ -4,6 +4,7 @@ import astherivegen.content.Verdara.VerdaraItems;
 import mindustry.type.Category;
 import mindustry.world.Block;
 import mindustry.world.blocks.power.*;
+import mindustry.world.draw.*;
 import astherivegen.world.blocks.power.*;
 
 import static mindustry.type.ItemStack.with;
