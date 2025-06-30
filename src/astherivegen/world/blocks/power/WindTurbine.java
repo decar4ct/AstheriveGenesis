@@ -15,6 +15,7 @@ import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.power.*;
+import mindustry.content.Blocks;
 
 import static mindustry.Vars.*;
 
@@ -22,7 +23,7 @@ public class WindTurbine extends PowerGenerator{
     public int range = 10;
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
-    public Color obstructionColor = Pal.redLight;
+    public Color obstructionColor = Pal.removeBack;
 
     public WindTurbine(String name){
         super(name);
@@ -38,6 +39,8 @@ public class WindTurbine extends PowerGenerator{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+        int ox = x
+        int oy = y
 
         x *= tilesize;
         y *= tilesize;
@@ -48,9 +51,9 @@ public class WindTurbine extends PowerGenerator{
         int frange = (int) Math.floor(range/2);
         for(int xm = -frange+1;xm<frange;xm++){
             for(int ym = -frange+1;ym<frange;ym++){
-                Tile other = world.tile(x+xm,y+ym);
+                Tile other = world.tile(ox+xm,oy+ym);
                 if(other.solid()) {
-                    Drawf.selected(other, obstructionColor);
+                    Drawf.selected(other.x, other.y, Blocks.router, obstructionColor);
                 }
             }
         }
@@ -121,7 +124,7 @@ public class WindTurbine extends PowerGenerator{
                 for(int ym = -frange+1;ym<frange;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other.solid()) {
-                        Drawf.selected(other, obstructionColor);
+                        Drawf.selected(other.x, other.y, Blocks.router, obstructionColor);
                     }
                 }
             }
