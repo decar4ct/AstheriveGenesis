@@ -23,7 +23,7 @@ public class VerdaraPower{
             maxNodes = 8;
         }};
         windTurbine = new WindTurbine("wind-turbine"){{
-            requirements(Category.power, with(VerdaraItems.quartz, 40));
+            requirements(Category.power, with(VerdaraItems.quartz, 30, VerdaraItems.magnetite, 20));
             size = 2;
             squareSprite = false;
             powerProduction = (float) 1.0/3;
