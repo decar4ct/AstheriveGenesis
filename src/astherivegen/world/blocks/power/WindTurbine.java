@@ -1,0 +1,142 @@
+package astherivegen.world.blocks.power;
+
+import arc.graphics.*;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.struct.*;
+import arc.util.*;
+import mindustry.content.*;
+import mindustry.entities.*;
+import mindustry.entities.units.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.world.*;
+import mindustry.world.consumers.*;
+import mindustry.world.draw.*;
+import mindustry.world.meta.*;
+
+import static mindustry.Vars.*;
+
+public class WindTurbine extends Block{
+    private static final IntSet taken = new IntSet();
+    //map building pos to mend amount (TODO just use buildings as keys? no lookup)
+    private static final IntFloatMap mendMap = new IntFloatMap();
+    private static long lastUpdateFrame = -1;
+
+    public int range = 14;
+
+    public DrawBlock drawer = new DrawDefault();
+
+    public WindTurbine(String name){
+        super(name);
+        solid = true;
+        update = true;
+        group = BlockGroup.projectors;
+        hasPower = true;
+        hasItems = true;
+        emitLight = true;
+        suppressable = true;
+        envEnabled |= Env.space;
+        rotateDraw = false;
+        flags = EnumSet.of(BlockFlag.blockRepair);
+    }
+
+    @Override
+    public void drawPlace(int x, int y, int rotation, boolean valid){
+        super.drawPlace(x, y, rotation, valid);
+
+        x *= tilesize;
+        y *= tilesize;
+        x += offset;
+        y += offset;
+
+        Drawf.dashSquare(baseColor, x, y, range * tilesize);
+        indexer.eachBlock(player.team(), Tmp.r1.setCentered(x, y, range * tilesize), b -> true, t -> {
+            Drawf.selected(t, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+        });
+    }
+
+    @Override
+    public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
+        drawer.drawPlan(this, plan, list);
+    }
+
+    @Override
+    public boolean outputsItems(){
+        return false;
+    }
+
+    @Override
+    public TextureRegion[] icons(){
+        return drawer.finalIcons(this);
+    }
+
+    @Override
+    public void load(){
+        super.load();
+        drawer.load(this);
+    }
+
+    @Override
+    public void setStats(){
+        stats.timePeriod = optionalUseTime;
+        super.setStats();
+
+        stats.add(Stat.repairTime, (int)(1f / (healPercent / 100f) / 60f), StatUnit.seconds);
+        stats.add(Stat.range, range, StatUnit.blocks);
+
+        if(findConsumer(c -> c instanceof ConsumeItems) instanceof ConsumeItems cons){
+            stats.remove(Stat.booster);
+            stats.add(Stat.booster, StatValues.itemBoosters(
+                "{0}" + StatUnit.timesSpeed.localized(),
+                stats.timePeriod, optionalMultiplier, 0f,
+                cons.items)
+            );
+        }
+    }
+
+    public class WindTurbine extends Building{
+        public <Building> obstructions = new Seq<>();
+
+        public void updateObstructions(){
+            targets.clear();
+            taken.clear();
+            indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
+        }
+
+        @Override
+        public void updateTile(){
+            if(lastChange != world.tileChanges){
+                lastChange = world.tileChanges;
+                updateObstructions();
+            }
+            obstructionsCount = 0;
+            if(efficiency > 0){
+                for(var build : obstructions){
+                    obstructionsCount++;
+                }
+            }
+        }
+
+        @Override
+        public void drawSelect(){
+            super.drawSelect();
+
+            Drawf.dashSquare(baseColor, x, y, range * tilesize);
+            for(var target : targets){
+                Drawf.selected(target, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+            }
+        }
+
+        @Override
+        public void draw(){
+            drawer.draw(this);
+        }
+
+        @Override
+        public void drawLight(){
+            super.drawLight();
+            drawer.drawLight(this);
+        }
+    }
+}
