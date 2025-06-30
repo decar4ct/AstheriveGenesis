@@ -24,7 +24,7 @@ public class WindTurbine extends PowerGenerator{
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
     public Color obstructionColor = Pal.remove;
-    public float efficiencyDecreasion = 1.0/8.0;
+    public float efficiencyDecreasion = (float) 1.0/8;
 
     public WindTurbine(String name){
         super(name);
