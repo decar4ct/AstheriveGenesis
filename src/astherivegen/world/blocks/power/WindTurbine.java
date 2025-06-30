@@ -22,7 +22,7 @@ public class WindTurbine extends PowerGenerator{
     public int range = 14;
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
-    public Color obstructionColor = Pal.redSpark;
+    public Color obstructionColor = Pal.redLight;
 
     public WindTurbine(String name){
         super(name);
@@ -35,6 +35,17 @@ public class WindTurbine extends PowerGenerator{
         envEnabled ^= Env.space;
     }
 
+    //screw it im making my own indexer
+    public eachTile(Int range){
+        Int rcount = 0;
+        for(let xm = x-range;xm<range+y;xm++){
+            for(let ym = y-range;ym<range+y;ym++){
+                Tile tile = world.tile(xm,ym);
+                if(tile.block()==Blocks.air) rcount++;
+            }
+        }
+        return rcount;
+    }
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
@@ -83,7 +94,9 @@ public class WindTurbine extends PowerGenerator{
 
         public void updateObstructions(){
             obstructions.clear();
+            obstructionCount = 0;
             indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
+            obstructionCount = eachTile(range);
         }
 
         @Override
@@ -91,12 +104,6 @@ public class WindTurbine extends PowerGenerator{
             if(lastChange != world.tileChanges){
                 lastChange = world.tileChanges;
                 updateObstructions();
-            }
-            obstructionCount = 0;
-            if(efficiency > 0){
-                for(var build : obstructions){
-                    obstructionCount++;
-                }
             }
             Log.info(obstructionCount);
         }
