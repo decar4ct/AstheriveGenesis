@@ -9,13 +9,19 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraPower{
     public static Block
-    relay;
+    relay, windTurbine;
 
     public static void load(){
         relay = new PowerNode("relay"){{
             requirements(Category.power, with(VerdaraItems.quartz, 5));
             health = 20;
             size = 1;
+            squareSprite = false;
+            laserRange = 10f;
+        }};
+        windTurbine = new WindTurbine("wind-turbine"){{
+            requirements(Category.power, with(VerdaraItems.quartz, 40));
+            size = 2;
             squareSprite = false;
         }};
     }
