@@ -79,24 +79,10 @@ public class WindTurbine extends PowerGenerator{
     public class WindTurbineBuild extends GeneratorBuild{
         public Seq<Building> obstructions = new Seq<>();
         public int lastChange = -2;
-        public int obstructionCount;
-
-        //screw it im making my own indexer
-        public int eachTile(int range){
-            int rcount = 0;
-            for(int xm = (int)x-range;xm<range+(int)x;xm++){
-                for(int ym = (int)y-range;ym<range+(int)y;ym++){
-                    Tile tile = world.tile(xm,ym);
-                    if(tile.block()==Blocks.air) rcount++;
-                }
-            }
-            return rcount;
-        }
+        public int obstructionCount = 0;
         public void updateObstructions(){
             obstructions.clear();
-            obstructionCount = 0;
             indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
-            obstructionCount = eachTile(range);
         }
 
         @Override
@@ -104,6 +90,11 @@ public class WindTurbine extends PowerGenerator{
             if(lastChange != world.tileChanges){
                 lastChange = world.tileChanges;
                 updateObstructions();
+            }
+            obstructionCount = 0;
+            for(var build : obstructions){
+                if(build.solid) continue;
+                obstructionCount=obstructionCount+build.size*build.size;
             }
             Log.info(obstructionCount);
         }
