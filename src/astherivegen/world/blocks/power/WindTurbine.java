@@ -22,6 +22,7 @@ public class WindTurbine extends PowerGenerator{
     public int range = 14;
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
+    public Color obstructionColor = Pal.redSpark;
 
     public WindTurbine(String name){
         super(name);
@@ -45,7 +46,7 @@ public class WindTurbine extends PowerGenerator{
 
         Drawf.dashSquare(baseColor, x, y, range * tilesize);
         indexer.eachBlock(player.team(), Tmp.r1.setCentered(x, y, range * tilesize), b -> true, t -> {
-            Drawf.selected(t, Tmp.c1.set(Pal.red).a(Mathf.absin(4f, 1f)));
+            Drawf.selected(t, Tmp.c1.set(obstructionColor).a(Mathf.absin(4f, 1f)));
         });
     }
 
@@ -72,24 +73,12 @@ public class WindTurbine extends PowerGenerator{
 
     @Override
     public void setStats(){
-        stats.timePeriod = optionalUseTime;
         super.setStats();
-
-        stats.add(Stat.repairTime, (int)(1f / (healPercent / 100f) / 60f), StatUnit.seconds);
-        stats.add(Stat.range, range, StatUnit.blocks);
-
-        if(findConsumer(c -> c instanceof ConsumeItems) instanceof ConsumeItems cons){
-            stats.remove(Stat.booster);
-            stats.add(Stat.booster, StatValues.itemBoosters(
-                "{0}" + StatUnit.timesSpeed.localized(),
-                stats.timePeriod, optionalMultiplier, 0f,
-                cons.items)
-            );
-        }
     }
 
     public class WindTurbine extends GeneratorBuild{
         public Seq<Building> obstructions = new Seq<>();
+        public int lastChange = -2;
         public int obstructionCount;
 
         public void updateObstructions(){
@@ -104,13 +93,13 @@ public class WindTurbine extends PowerGenerator{
                 lastChange = world.tileChanges;
                 updateObstructions();
             }
-            obstructionsCount = 0;
+            obstructionCount = 0;
             if(efficiency > 0){
                 for(var build : obstructions){
-                    obstructionsCount++;
+                    obstructionCount++;
                 }
             }
-            Log.info(obstructionsCount);
+            Log.info(obstructionCount);
         }
 
         @Override
@@ -118,8 +107,8 @@ public class WindTurbine extends PowerGenerator{
             super.drawSelect();
 
             Drawf.dashSquare(baseColor, x, y, range * tilesize);
-            for(var target : targets){
-                Drawf.selected(target, Tmp.c1.set(Pal.red).a(Mathf.absin(4f, 1f)));
+            for(var obstruction : obstructions){
+                Drawf.selected(obstruction, Tmp.c1.set(obstructionColor).a(Mathf.absin(4f, 1f)));
             }
         }
 
