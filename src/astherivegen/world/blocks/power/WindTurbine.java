@@ -19,7 +19,7 @@ import mindustry.world.blocks.power.*;
 import static mindustry.Vars.*;
 
 public class WindTurbine extends PowerGenerator{
-    public int range = 14;
+    public int range = 10;
     public DrawBlock drawer = new DrawDefault();
     public Color baseColor = Pal.accent;
     public Color obstructionColor = Pal.redLight;
@@ -85,13 +85,14 @@ public class WindTurbine extends PowerGenerator{
         public int eachTile(int range){
             int rcount = 0;
             int frange = (int) Math.floor(range/2);
-            for(int xm = -frange;xm<frange;xm++){
-                for(int ym = -frange;ym<frange;ym++){
+            for(int xm = -frange+1;xm<frange;xm++){
+                for(int ym = -frange+1;ym<frange;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other.solid()) rcount++;
                 }
             }
-            return rcount;
+            //subtract by the block itself
+            return rcount-size*size;
         }
         
         public void updateObstructions(){
