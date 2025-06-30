@@ -84,7 +84,7 @@ public class WindTurbine extends PowerGenerator{
         //screw it im making my own indexer
         public int eachTile(int range){
             int rcount = 0;
-            int frange = Math.floor(range/2)
+            int frange = Math.floor(range/2);
             for(int xm = -frange;xm<frange;xm++){
                 for(int ym = -frange;ym<frange;ym++){
                     Tile other = tile.nearby(xm,ym);
