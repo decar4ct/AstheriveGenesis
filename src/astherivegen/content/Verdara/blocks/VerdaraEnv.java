@@ -35,7 +35,8 @@ public class VerdaraEnv {
             sporfloreTree, largeSporfloreTree,
             eonstoneHugeVent,
             //this code is so messy lmao
-            eonstoneQuartzCluster, oreQuartz;
+            eonstoneQuartzCluster, oreQuartz,
+            eonstoneMagnetiteCluster, oreMagnetite;
     public static void load() {
         {
             {
