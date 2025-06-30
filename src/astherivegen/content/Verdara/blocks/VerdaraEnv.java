@@ -148,7 +148,11 @@ public class VerdaraEnv {
                     parent = blendGroup = eonstoneErodedFloor;
                     itemDrop = VerdaraItems.quartz;
                 }};
-                oreQuartz = new OreBlock("ore-quartz", VerdaraItems.quartz);
+                eonstoneMagnetiteCluster = new OreCluster("eonstone-magnetite-cluster"){{
+                    parent = blendGroup = eonstoneErodedFloor;
+                    itemDrop = VerdaraItems.magnetite;
+                }};
+                oreMagnetite = new OreBlock("ore-magnetite", VerdaraItems.magnetite);
             }
         }
     }
