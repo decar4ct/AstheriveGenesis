@@ -50,7 +50,7 @@ public class WindTurbine extends PowerGenerator{
             for(int ym = -frange+1;ym<frange;ym++){
                 Tile other = world.tile(x+xm,y+ym);
                 if(other.solid()) {
-                    Drawf.cross((float) other.x, (float) other.y, (float) 1, obstructionColor);
+                    Drawf.selected(other, obstructionColor);
                 }
             }
         }
@@ -83,7 +83,6 @@ public class WindTurbine extends PowerGenerator{
     }
 
     public class WindTurbineBuild extends GeneratorBuild{
-        public Seq<Block> obstructions = new Seq<>();
         public int lastChange = -2;
         public int obstructionCount = 0;
 
@@ -102,19 +101,13 @@ public class WindTurbine extends PowerGenerator{
             //subtract with the block itself
             return rcount-size*size;
         }
-        
-        public void updateObstructions(){
-            obstructions.clear();
-            indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, obstructions::add);
-        }
 
         @Override
         public void updateTile(){
             if(lastChange != world.tileChanges){
                 lastChange = world.tileChanges;
-                updateObstructions();
+                obstructionCount = eachTile(range);
             }
-            obstructionCount = eachTile(range);
             Log.info(obstructionCount);
         }
 
@@ -128,7 +121,7 @@ public class WindTurbine extends PowerGenerator{
                 for(int ym = -frange+1;ym<frange;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other.solid()) {
-                        Drawf.cross((float) other.x, (float) other.y, (float) 1, obstructionColor);
+                        Drawf.selected(other, obstructionColor);
                     }
                 }
             }
