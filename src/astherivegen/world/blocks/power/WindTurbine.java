@@ -89,7 +89,8 @@ public class WindTurbine extends PowerGenerator{
     }
 
     public class WindTurbine extends GeneratorBuild{
-        public <Building> obstructions = new Seq<>();
+        public Seq<Building> obstructions = new Seq<>();
+        public int obstructionCount;
 
         public void updateObstructions(){
             targets.clear();
@@ -109,6 +110,7 @@ public class WindTurbine extends PowerGenerator{
                     obstructionsCount++;
                 }
             }
+            Log.info(obstructionsCount);
         }
 
         @Override
