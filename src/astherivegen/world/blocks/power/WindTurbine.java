@@ -35,17 +35,6 @@ public class WindTurbine extends PowerGenerator{
         envEnabled ^= Env.space;
     }
 
-    //screw it im making my own indexer
-    public int eachTile(int range){
-        int rcount = 0;
-        for(int xm = x-range;xm<range+x;xm++){
-            for(int ym = y-range;ym<range+y;ym++){
-                Tile tile = world.tile(xm,ym);
-                if(tile.block()==Blocks.air) rcount++;
-            }
-        }
-        return rcount;
-    }
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
@@ -92,6 +81,17 @@ public class WindTurbine extends PowerGenerator{
         public int lastChange = -2;
         public int obstructionCount;
 
+        //screw it im making my own indexer
+        public int eachTile(int range){
+            int rcount = 0;
+            for(int xm = x-range;xm<range+x;xm++){
+                for(int ym = y-range;ym<range+y;ym++){
+                    Tile tile = world.tile(xm,ym);
+                    if(tile.block()==Blocks.air) rcount++;
+                }
+            }
+            return rcount;
+        }
         public void updateObstructions(){
             obstructions.clear();
             obstructionCount = 0;
