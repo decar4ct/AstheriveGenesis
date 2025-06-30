@@ -18,12 +18,15 @@ public class VerdaraPower{
             health = 20;
             size = 1;
             squareSprite = false;
-            laserRange = 10f;
+            laserRange = 12f;
+            maxNodes = 8;
         }};
         windTurbine = new WindTurbine("wind-turbine"){{
             requirements(Category.power, with(VerdaraItems.quartz, 40));
             size = 2;
             squareSprite = false;
+            powerProduction = 1
+            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator", 3, true));
         }};
     }
 }
