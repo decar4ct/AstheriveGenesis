@@ -21,12 +21,12 @@ public class VerdaraProduction {
         {
             {
                 clusterDrill = new ClusterDrill("cluster-drill"){{
-                    requirements(Category.production, with(VerdaraItems.quartz, 40));
+                    requirements(Category.production, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
                     consumePower(0.5f);
                     consumeLiquid(Liquids.hydrogen, 0.05f).boost();
 
                     squareSprite = false;
-                    drillTime = 1000;
+                    drillTime = 700;
                     tier = 3;
                     size = 3;
                     fogRadius = 3;
