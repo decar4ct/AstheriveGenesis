@@ -26,7 +26,7 @@ public class CamouflageUnitType extends BioUnitType{
     }
     @Override
     public void draw(Unit unit){
-        Draw.mixcol(unit.floorOn().mapColor.write(Tmp.c1).mul(0.8f), 1f);
+        Draw.mixcol(unit.floorOn().mapColor, 1f);
         super.draw(unit);
         Draw.reset();
     }
