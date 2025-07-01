@@ -25,7 +25,7 @@ public class VerdaraDefense {
             {
                 quartzWall = new ConnectedWall("quartz-wall"){{
                     requirements(Category.defense, with(VerdaraItems.quartz, 6));
-                    health = 340
+                    health = 340;
                 }};
                 renewer = new RegenProjector("renewer"){{
                     requirements(Category.effect, with(VerdaraItems.quartz, 30, VerdaraItems.magnetite, 30, VerdaraItems.polterite, 20));
