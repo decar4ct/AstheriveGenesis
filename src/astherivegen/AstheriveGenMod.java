@@ -5,6 +5,7 @@ import arc.util.*;
 import astherivegen.content.Verdara.blocks.*;
 import astherivegen.content.Verdara.*;
 import astherivegen.content.*;
+import astherivegen.content.bioplasm.*;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
@@ -33,6 +34,7 @@ public class AstheriveGenMod extends Mod{
     public void loadContent(){
         VerdaraItems.load();
         VerdaraUnitTypes.load();
+        BioUnitTypes.load();
         VerdaraBlocks.load();
         GenesisPlanets.load();
     }
