@@ -7,6 +7,7 @@ import mindustry.type.ammo.*;
 import mindustry.world.meta.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
+import mindustry.entities.abilities.*;
 
 /** Config class for special uwu unit properties. */
 public class BioUnitType extends UnitType{
