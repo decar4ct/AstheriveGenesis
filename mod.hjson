@@ -2,8 +2,12 @@ displayName: "Astherive: Genesis"
 name: "astherive-gen"
 author: "Astherive Team" #dont ask why its a team
 main: "astherivegen.AstheriveGenMod"
-description: "THIS MOD IS CURRENTLY UNPLAYABLE. Do not play except you want to see the development of this mod."
-subtitle: "uwu"
+description: '''
+A Mindustry Java mod.
+
+Note: Unfinished. There's one map you can play, barely.
+'''
+subtitle: "thx for playing:3"
 version: 1.0
 minGameVersion: 147
 java: true
