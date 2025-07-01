@@ -25,7 +25,7 @@ public class BioUnitTypes{
     public static UnitType
     canopy;
     public static void load(){
-        canopy = new VerdaraUnitType("canopy"){{
+        canopy = new BioUnitType("canopy"){{
             constructor = LegsUnit::create;
             speed = 0.8f;
             drag = 0.3f;
@@ -35,7 +35,7 @@ public class BioUnitTypes{
             health = 140;
             
             legCount = 3;
-            legLength = 18f;
+            legLength = 28f;
             legForwardScl = 0.6f;
             legMoveSpace = 1.4f;
             hovering = true;
