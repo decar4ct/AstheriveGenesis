@@ -27,7 +27,7 @@ public class CamouflageUnitType extends BioUnitType{
     @Override
     public void applyColor(Unit unit){
         Draw.color();
-        Draw.mixcol(Tmp.c1.set(unit.floorOn().mapColor).mul(0.8f),1f)
+        Draw.mixcol(Tmp.c1.set(unit.floorOn().mapColor).mul(0.8f),1f);
         if(healFlash){
             Tmp.c1.set(Color.white).lerp(healColor, Mathf.clamp(unit.healTime - unit.hitTime));
         }
