@@ -31,7 +31,6 @@ public class CamouflageUnitType extends BioUnitType{
     @Override
     public void applyColor(Unit unit){
         Draw.color();
-        Draw.mixcol(Tmp.c1.set(unit.floorOn().mapColor).mul(0.8f),1f);
         if(healFlash){
             Tmp.c1.set(Color.white).lerp(healColor, Mathf.clamp(unit.healTime - unit.hitTime));
         }
@@ -40,7 +39,9 @@ public class CamouflageUnitType extends BioUnitType{
         if(unit.drownTime > 0 && unit.lastDrownFloor != null){
             Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
         }
+        Draw.mixcol(Tmp.c1.set(unit.floorOn().mapColor).mul(0.8f),1f);
         //this is horribly scuffed.
+        //i know anuke.
         if(renderer != null && renderer.overlays != null){
             renderer.overlays.checkApplySelection(unit);
         }
