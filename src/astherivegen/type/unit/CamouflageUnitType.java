@@ -1,5 +1,7 @@
 package astherivegen.type.unit;
 
+import arc.graphics.g2d.*;
+import arc.util.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
@@ -17,7 +19,7 @@ public class CamouflageUnitType extends BioUnitType{
     @Override
     public void draw(Unit unit){
         Draw.mixcol(unit.floorOn().mapColor.write(Tmp.c1).mul(0.8f), 1f);
-        super.draw();
+        super.draw(unit);
         Draw.reset();
     }
 }
