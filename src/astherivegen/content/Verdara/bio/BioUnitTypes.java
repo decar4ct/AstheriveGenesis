@@ -25,7 +25,7 @@ public class BioUnitTypes{
     public static UnitType
     canopy;
     public static void load(){
-        canopy = new BioUnitType("canopy"){{
+        canopy = new CamouflageUnitType("canopy"){{
             constructor = LegsUnit::create;
             speed = 0.9f;
             drag = 0.3f;
