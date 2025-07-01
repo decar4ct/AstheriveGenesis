@@ -21,6 +21,8 @@ import mindustry.world.*;
 import mindustry.world.blocks.*;
 import mindustry.world.meta.*;
 
+import static mindustry.Vars.*;
+
 /** BioUnitType but camouflage, yay. */
 public class CamouflageUnitType extends BioUnitType{
     public CamouflageUnitType(String name){
