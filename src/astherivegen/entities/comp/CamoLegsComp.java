@@ -249,7 +249,7 @@ abstract class CamoLegsComp implements Posc, Rotc, Hitboxc, Unitc{
         if(deeps != legs.length || !floorOn().isDeep()){
             lastDeepFloor = null;
         }
-        lastCamoColor = Vars.world.floorWorld(x,y).mapColor
+        lastCamoColor = Vars.world.floorWorld(x,y).mapColor;
         camouflaging = health>=maxHealth;
         this.targetable = !camouflaging;
     }
