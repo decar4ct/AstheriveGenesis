@@ -25,8 +25,18 @@ import static mindustry.Vars.*;
 
 /** BioUnitType but camouflage, yay. */
 public class CamouflageUnitType extends BioUnitType{
+    public boolean camouflaging;
+    public Color lastCamoColor;
     public CamouflageUnitType(String name){
         super(name);
+    }
+    @Override
+    public void update(Unit unit){
+        if(unit.floorOn().mapColor!=Color.valueOf("000000"){
+            lastCamoColor = unit.floorOn().mapColor;
+        }
+        camouflaging = unit.health>=unit.maxHealth;
+        targetable = !camouflaging;
     }
     @Override
     public void applyColor(Unit unit){
@@ -39,7 +49,9 @@ public class CamouflageUnitType extends BioUnitType{
         if(unit.drownTime > 0 && unit.lastDrownFloor != null){
             Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
         }
-        Draw.mixcol(Tmp.c1.set(unit.floorOn().mapColor).mul(0.8f),1f);
+        if(camouflaging){
+            Draw.mixcol(Tmp.c1.set(lastCamoColor).mul(0.8f),0.75f);
+        }
         //this is horribly scuffed.
         //i know anuke.
         if(renderer != null && renderer.overlays != null){
