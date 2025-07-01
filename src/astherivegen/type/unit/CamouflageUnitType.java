@@ -26,7 +26,7 @@ public class CamouflageUnitType extends BioUnitType{
     }
     @Override
     public void draw(Unit unit){
-        Draw.tint(Pal.remove, 1f);
+        Draw.tint(Pal.remove);
         Log.info(unit.floorOn().mapColor);
         super.draw(unit);
         Draw.reset();
