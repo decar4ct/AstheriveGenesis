@@ -27,7 +27,7 @@ public class BioUnitTypes{
     public static void load(){
         canopy = new BioUnitType("canopy"){{
             constructor = LegsUnit::create;
-            speed = 0.8f;
+            speed = 0.9f;
             drag = 0.3f;
             hitSize = 11f;
             rotateSpeed = 3f;
@@ -46,16 +46,16 @@ public class BioUnitTypes{
             weapons.add(new Weapon("canopy-weapon"){{
                 top = false;
                 shootY = 3f;
-                reload = 23f;
+                reload = 6f;
                 ejectEffect = Fx.none;
                 recoil = 1f;
                 x = 6f;
                 shootSound = Sounds.flame;
 
                 bullet = new LiquidBulletType(Liquids.water){{
-                    damage = 18;
+                    damage = 10;
                     speed = 2.8f;
-                    drag = 0.004f;
+                    drag = 0.05f;
                     shootEffect = Fx.shootSmall;
                     lifetime = 73f;
                     collidesAir = false;
