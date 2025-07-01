@@ -30,7 +30,7 @@ public class CamouflageUnitType extends BioUnitType{
     }
     @Override
     public void update(Unit unit){
-        targetable = !unit.health>=unit.maxHealth;
+        targetable = !(unit.health>=unit.maxHealth);
     }
     @Override
     public void applyColor(Unit unit){
@@ -44,10 +44,10 @@ public class CamouflageUnitType extends BioUnitType{
             Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
         }
         if(unit.health>=unit.maxHealth){
-            Draw.mixcol(Tmp.c1.set(lastCamoColor = Vars.world.floorWorld(unit.x,unit.y).mapColor).mul(0.8f),0.75f);
+            Draw.mixcol(Tmp.c1.set(Vars.world.floorWorld(unit.x,unit.y).mapColor).mul(0.8f),0.65f);
         }
         //this is horribly scuffed.
-        //i know anuke.
+        //i know, anuke.
         if(renderer != null && renderer.overlays != null){
             renderer.overlays.checkApplySelection(unit);
         }
