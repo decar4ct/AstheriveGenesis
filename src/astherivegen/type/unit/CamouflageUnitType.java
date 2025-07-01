@@ -2,6 +2,7 @@ package astherivegen.type.unit;
 
 import arc.graphics.g2d.*;
 import arc.util.*;
+import arc.graphics.*;
 import mindustry.entities.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
@@ -11,6 +12,7 @@ import mindustry.world.meta.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
 import mindustry.entities.abilities.*;
+import mindustry.core.*;
 //idk what to import bro 🙏
 import arc.math.*;
 import mindustry.gen.*;
