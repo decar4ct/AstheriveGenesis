@@ -32,7 +32,7 @@ public class CamouflageUnitType extends BioUnitType{
     }
     @Override
     public void update(Unit unit){
-        if(unit.floorOn().mapColor!=Color.valueOf("000000"){
+        if(unit.floorOn().mapColor!=Color.valueOf("000000")){
             lastCamoColor = unit.floorOn().mapColor;
         }
         camouflaging = unit.health>=unit.maxHealth;
