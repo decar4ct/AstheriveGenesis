@@ -2,6 +2,7 @@ package astherivegen.type.unit;
 
 import arc.graphics.g2d.*;
 import arc.util.*;
+import mindustry.entities.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
