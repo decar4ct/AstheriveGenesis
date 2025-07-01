@@ -11,6 +11,13 @@ import mindustry.world.meta.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
 import mindustry.entities.abilities.*;
+//idk what to import bro 🙏
+import arc.math.*;
+import mindustry.gen.*;
+import mindustry.type.*;
+import mindustry.world.*;
+import mindustry.world.blocks.*;
+import mindustry.world.meta.*;
 
 /** BioUnitType but camouflage, yay. */
 public class CamouflageUnitType extends BioUnitType{
