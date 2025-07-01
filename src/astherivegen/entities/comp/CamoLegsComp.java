@@ -34,6 +34,7 @@ abstract class CamoLegsComp implements Posc, Rotc, Hitboxc, Unitc{
     transient float baseRotation;
     transient Floor lastDeepFloor;
     transient Color lastCamoColor;
+    transient boolean camouflaging;
     transient Vec2 curMoveOffset = new Vec2();
 
     @Replace
@@ -109,7 +110,26 @@ abstract class CamoLegsComp implements Posc, Rotc, Hitboxc, Unitc{
         }
         totalLength = Mathf.random(100f);
     }
+    @Override
+    public void applyColor(Unit unit){
+        Draw.color();
+        if(healFlash){
+            Tmp.c1.set(Color.white).lerp(healColor, Mathf.clamp(unit.healTime - unit.hitTime));
+        }
+        Draw.mixcol(Tmp.c1, Math.max(unit.hitTime, !healFlash ? 0f : Mathf.clamp(unit.healTime)));
 
+        if(unit.drownTime > 0 && unit.lastDrownFloor != null){
+            Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
+        }
+        if(camouflaging){
+            Draw.mixcol(Tmp.c1.set(lastCamoColor).mul(0.8f),0.75f);
+        }
+        //this is horribly scuffed.
+        //i know anuke.
+        if(renderer != null && renderer.overlays != null){
+            renderer.overlays.checkApplySelection(unit);
+        }
+    }
     @Override
     public void update(){
         if(Mathf.dst(deltaX(), deltaY()) > 0.001f){
@@ -229,6 +249,9 @@ abstract class CamoLegsComp implements Posc, Rotc, Hitboxc, Unitc{
         if(deeps != legs.length || !floorOn().isDeep()){
             lastDeepFloor = null;
         }
+        lastCamoColor = Vars.world.floorWorld(x,y).mapColor
+        camouflaging = health>=maxHealth;
+        this.targetable = !camouflaging;
     }
 
     Vec2 legOffset(Vec2 out, int index){
