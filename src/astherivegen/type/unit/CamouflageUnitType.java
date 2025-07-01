@@ -13,11 +13,11 @@ import mindustry.entities.abilities.*;
 public class CamouflageUnitType extends BioUnitType{
     public CamouflageUnitType(String name){
         super(name);
-        @Override
-        public void draw(Unit unit){
-            Draw.mixcol(unit.floorOn().mapColor.write(Tmp.c1).mul(0.8f), 1f);
-            super.draw();
-            Draw.reset();
-        }
+    }
+    @Override
+    public void draw(Unit unit){
+        Draw.mixcol(unit.floorOn().mapColor.write(Tmp.c1).mul(0.8f), 1f);
+        super.draw();
+        Draw.reset();
     }
 }
