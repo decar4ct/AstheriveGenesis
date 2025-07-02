@@ -57,7 +57,8 @@ public class CamouflageUnitType extends BioUnitType{
                     fcount++;
                 }
             }
-            Draw.mixcol(Tmp.c1.set(Color.set(red/fcount,green/fcount,blue/fcount)).mul(0.95f),0.72f);
+            Color c = new Color();
+            Draw.mixcol(Tmp.c1.set(c.set(red/fcount,green/fcount,blue/fcount)).mul(0.95f),0.72f);
         }
         //this is horribly scuffed.
         //i know, anuke.
