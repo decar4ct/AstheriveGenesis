@@ -44,10 +44,21 @@ public class CamouflageUnitType extends BioUnitType{
             Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
         }
         if(unit.health>=unit.maxHealth){
-            Draw.mixcol(Tmp.c1.set(unit.tileOn().floor().mapColor).mul(0.8f),0.72f);
+            float red;
+            float green;
+            float blue;
+            int fcount;
+            for(int xm = -3+1;xm<=3;xm++){
+                for(int ym = -3+1;ym<=3;ym++){
+                    Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
+                    red+=other.floor().mapColor.r;
+                    green+=other.floor().mapColor.r;
+                    blue+=other.floor().mapColor.r;
+                    fcount++;
+                }
+            }
+            Draw.mixcol(Tmp.c1.set(Color(red/fcount,green/fcount,blue/fcount).mul(0.8f),0.72f);
         }
-        Log.info(unit.x);
-        Log.info(unit.y);
         //this is horribly scuffed.
         //i know, anuke.
         if(renderer != null && renderer.overlays != null){
