@@ -44,10 +44,10 @@ public class CamouflageUnitType extends BioUnitType{
             Draw.mixcol(Tmp.c1.set(unit.lastDrownFloor.mapColor).mul(0.83f), unit.drownTime * 0.9f);
         }
         if(unit.health>=unit.maxHealth){
-            float red;
-            float green;
-            float blue;
-            int fcount;
+            float red = 0;
+            float green = 0;
+            float blue = 0;
+            int fcount = 0;
             for(int xm = -3+1;xm<=3;xm++){
                 for(int ym = -3+1;ym<=3;ym++){
                     Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
