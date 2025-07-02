@@ -46,6 +46,8 @@ public class CamouflageUnitType extends BioUnitType{
         if(unit.health>=unit.maxHealth){
             Draw.mixcol(Tmp.c1.set(unit.tileOn().floor().mapColor).mul(0.8f),0.72f);
         }
+        Log.info(unit.x);
+        Log.info(unit.y);
         //this is horribly scuffed.
         //i know, anuke.
         if(renderer != null && renderer.overlays != null){
