@@ -52,8 +52,8 @@ public class CamouflageUnitType extends BioUnitType{
                 for(int ym = -3+1;ym<=3;ym++){
                     Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
                     red+=other.floor().mapColor.r;
-                    green+=other.floor().mapColor.r;
-                    blue+=other.floor().mapColor.r;
+                    green+=other.floor().mapColor.g;
+                    blue+=other.floor().mapColor.b;
                     fcount++;
                 }
             }
