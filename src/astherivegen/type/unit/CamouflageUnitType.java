@@ -29,8 +29,8 @@ public class CamouflageUnitType extends BioUnitType{
         super(name);
     }
     @Override
-    public void update(Unit unit){
-        targetable = !(unit.health>=unit.maxHealth);
+    public boolean targetable(Unit unit, Team targeter){
+        return (targetable || (vulnerableWithPayloads && unit instanceof Payloadc p && p.hasPayload()))&&!unit.health>=unit.maxHealth;
     }
     @Override
     public void applyColor(Unit unit){
