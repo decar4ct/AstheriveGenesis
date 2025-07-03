@@ -15,6 +15,7 @@ import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import astherivegen.type.unit.*;
+import astherivegen.content.*;
 import mindustry.type.weapons.*;
 import mindustry.content.*;
 
@@ -46,18 +47,18 @@ public class BioUnitTypes{
             weapons.add(new Weapon("canopy-weapon"){{
                 top = false;
                 shootY = 3f;
-                reload = 6f;
+                reload = 4f;
                 ejectEffect = Fx.none;
                 recoil = 1f;
                 x = 6f;
                 shootSound = Sounds.flame;
 
-                bullet = new LiquidBulletType(Liquids.water){{
-                    damage = 10;
+                bullet = new LiquidBulletType(VerdaraLiquids.biomass){{
+                    damage = 7;
                     speed = 2.8f;
-                    drag = 0.05f;
+                    drag = 0.08f;
                     shootEffect = Fx.shootSmall;
-                    lifetime = 73f;
+                    lifetime = 50f;
                     collidesAir = false;
                 }};
             }});
