@@ -44,7 +44,7 @@ public class BioUnitTypes{
             shadowElevation = 0.2f;
             groundLayer = Layer.legUnit - 1f;
 
-            weapons.add(new Weapon("canopy-weapon"){{
+            weapons.add(new Weapon("astherive-gen-canopy-weapon"){{
                 top = false;
                 shootY = 3f;
                 reload = 4f;
