@@ -53,7 +53,7 @@ public class BioUnitTypes{
                 x = 6f;
                 shootSound = Sounds.flame;
 
-                bullet = new LiquidBulletType(VerdaraLiquids.biomass){{
+                bullet = new LiquidBulletType(GenesisLiquids.biomass){{
                     damage = 7;
                     speed = 2.8f;
                     drag = 0.08f;
