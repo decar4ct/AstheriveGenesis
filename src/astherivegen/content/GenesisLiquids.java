@@ -4,7 +4,7 @@ import arc.graphics.*;
 import mindustry.type.*;
 import mindustry.content.*;
 
-public class VerdaraLiquids{
+public class GenesisLiquids{
     public static Liquid watergel, biomass, oxygen;
     public static void load(){
 
