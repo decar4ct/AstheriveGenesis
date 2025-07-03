@@ -26,7 +26,7 @@ public class VerdaraLiquids{
             moveThroughBlocks = true;
             incinerable = false;
             blockReactive = false;
-            canStayOn.addAll(water, watergel, oil, cryofluid);
+            canStayOn.addAll(Liquids.water, watergel, Liquids.oil, Liquids.cryofluid);
 
             colorFrom = Color.valueOf("524809");
             colorTo = Color.valueOf("D4C98A");
