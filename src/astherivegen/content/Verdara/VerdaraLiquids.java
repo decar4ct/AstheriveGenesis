@@ -2,8 +2,9 @@ package astherivegen.content;
 
 import arc.graphics.*;
 import mindustry.type.*;
+import mindustry.content.*;
 
-public class Liquids{
+public class VerdaraLiquids{
     public static Liquid watergel, biomass, oxygen;
     public static void load(){
 
