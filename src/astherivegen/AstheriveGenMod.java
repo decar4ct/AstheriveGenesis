@@ -33,7 +33,7 @@ public class AstheriveGenMod extends Mod{
     @Override
     public void loadContent(){
         VerdaraItems.load();
-        VerdaraLiquids.load();
+        GenesisLiquids.load();
         VerdaraUnitTypes.load();
         BioUnitTypes.load();
         VerdaraBlocks.load();
