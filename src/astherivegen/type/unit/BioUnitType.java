@@ -7,6 +7,7 @@ import mindustry.type.ammo.*;
 import mindustry.world.meta.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
+import astherivegen.content.*;
 import mindustry.entities.abilities.*;
 
 /** Config class for special uwu unit properties. */
@@ -23,7 +24,9 @@ public class BioUnitType extends UnitType{
         }});
 
         abilities.add(new LiquidExplodeAbility(){{
-            liquid = Liquids.water;
+            liquid = GenesisLiquids.biomass;
         }});
+
+        healFlash = false;
     }
 }
