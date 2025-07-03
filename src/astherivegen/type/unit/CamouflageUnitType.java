@@ -13,6 +13,7 @@ import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.graphics.*;
 import mindustry.entities.abilities.*;
 import mindustry.core.*;
+import mindustry.game.*;
 //idk what to import bro 🙏
 import arc.math.*;
 import mindustry.gen.*;
@@ -30,7 +31,7 @@ public class CamouflageUnitType extends BioUnitType{
     }
     @Override
     public boolean targetable(Unit unit, Team targeter){
-        return (targetable || (vulnerableWithPayloads && unit instanceof Payloadc p && p.hasPayload()))&&!unit.health>=unit.maxHealth;
+        return (targetable || (vulnerableWithPayloads && unit instanceof Payloadc p && p.hasPayload()))&&!(unit.health>=unit.maxHealth);
     }
     @Override
     public void applyColor(Unit unit){
