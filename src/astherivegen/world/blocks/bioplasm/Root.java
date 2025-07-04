@@ -21,7 +21,7 @@ import static mindustry.Vars.*;
 
 public class Root extends BioBlock {
     //AWFUL
-    public TextureRegion[] connectedRegions = new TextureRegion[16];
+    public TextureRegion[][] atlasRegion = new TextureRegion[][];
     public TextureRegion[] leafRegion = new TextureRegion[2];
     public Root(String name){
         super(name);
@@ -31,9 +31,7 @@ public class Root extends BioBlock {
     @Override
     public void load(){
         super.load();
-        for (int i=0;i<16;i++){
-            connectedRegions[i]=Core.atlas.find(name+String.valueOf(i+1));
-        }
+        atlasRegion = TextureRegion.split(Core.atlas.find(name+"-atlas"),32,32);
         for (int i=0;i<2;i++){
             leafRegion[i]=Core.atlas.find(name+"-leaf"+String.valueOf(i+1));
         }
@@ -51,15 +49,9 @@ public class Root extends BioBlock {
         public void onProximityUpdate(){
             super.onProximityUpdate();
             blending = 0;
-            for(int i = 0; i < 4; i++){
-                if(blends(world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y)){
-                    blending |= (1 << i);
-                }
-            }
             for(int i = 0; i < 8; i++){
-                Tile other = world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y);
-                if(other != null){
-                    renderer.blocks.floor.recacheTile(other);
+                if(blends(world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y))){
+                    blending |= (1 << i);
                 }
             }
         }
@@ -71,7 +63,8 @@ public class Root extends BioBlock {
             drawPulse(connectedRegions[blending],drawPulseScale);
             if (xyRand(x,y)<0.08f) {
                 Draw.z(Layer.power-1.1f);
-                Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
+                // SHUT UP
+                //Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
         }
     }
