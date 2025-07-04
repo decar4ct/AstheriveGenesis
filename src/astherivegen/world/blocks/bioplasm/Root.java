@@ -20,7 +20,7 @@ import java.util.Random;
 import static mindustry.Vars.*;
 
 public class Root extends BioBlock {
-    public TextureRegion[][] atlasRegion = new TextureRegion[][];
+    public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[] leafRegion = new TextureRegion[2];
     //SUFFERING
     public int[] horBitmask = {
@@ -40,7 +40,7 @@ public class Root extends BioBlock {
         3,0,3,0,3,4,3,0,3,0,3,0,3,4,3,0,2,1,2,1,5,5,5,7,2,1,2,1,2,9,1,
         //7 bit v
         3,4,3,4,3,4,3,8,3,4,3,4,3,4,3,8,5,4,5,4,5,10,5,11,5,4,5,4,7,11,7,8,3
-    }
+    };
     public int[] verBitmask = {
         //0 bif
         3,
@@ -58,7 +58,7 @@ public class Root extends BioBlock {
         3,3,3,3,2,1,2,2,3,3,3,3,2,1,2,2,3,3,3,3,1,3,1,3,3,3,3,3,2,1,3,
         //7 bit v
         0,0,0,0,1,3,1,1,0,0,0,0,1,3,1,1,0,2,0,2,2,0,2,1,0,2,0,2,2,2,0,2,2,0
-    }
+    };
     public Root(String name){
         super(name);
         update=true;
