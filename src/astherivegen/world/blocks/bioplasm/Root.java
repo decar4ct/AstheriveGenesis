@@ -24,12 +24,12 @@ public class Root extends BioBlock {
     public TextureRegion[] leafRegion = new TextureRegion[2];
     //SUFFERING
     public int[] horBitmask = {
-        0,3,0,3,4,3,0,3,0,3,0,0,2,1,1,7,2,1,3,1,2,9,1,
-        3
+        3,0,3,0,3,4,3,0,3,0,3,0,0,2,1,1,7,2,1,3,1,2,9,1,
+        3,0,3,0,3,4,3,0,3,0,3,0,0,2,1,1,7,2,1,3,1,2,9,1
     }
     public int[] verBitmask = {
-        3,3,3,2,1,2,2,3,3,3,3,2,3,3,3,3,3,3,3,3,2,1,2,
-        3
+        3,3,3,3,2,1,2,2,3,3,3,3,2,3,3,3,3,3,3,3,3,2,1,2,
+        3,3,3,3,2,1,2,2,3,3,3,3,2,3,3,3,3,3,3,3,3,2,1,2
     }
     public Root(String name){
         super(name);
