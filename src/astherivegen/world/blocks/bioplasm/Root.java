@@ -35,7 +35,7 @@ public class Root extends BioBlock {
         //4 bit <^
         3,0,3,0,3,4,3,0,
         //5 bit <
-        2
+        2,1,2,1,5,5,5,7
     }
     public int[] verBitmask = {
         //0 bif
@@ -49,7 +49,7 @@ public class Root extends BioBlock {
         //4 bit <^
         3,3,3,3,2,1,2,2,
         //8 bit <
-        3
+        3,3,3,3,1,3,1,3
     }
     public Root(String name){
         super(name);
