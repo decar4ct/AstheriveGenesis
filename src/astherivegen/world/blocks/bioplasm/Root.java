@@ -67,7 +67,7 @@ public class Root extends BioBlock {
     @Override
     public void load(){
         super.load();
-        atlasRegion.split(Core.atlas.find(name+"-atlas"),32,32);
+        atlasRegion[][] = TextureRegion.split(Core.atlas.find(name+"-atlas"),32,32);
         for (int i=0;i<2;i++){
             leafRegion[i]=Core.atlas.find(name+"-leaf"+String.valueOf(i+1));
         }
