@@ -52,8 +52,14 @@ public class Root extends BioBlock {
             super.onProximityUpdate();
             blending = 0;
             for(int i = 0; i < 4; i++){
-                if(blends(world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y))){
+                if(blends(world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y)){
                     blending |= (1 << i);
+                }
+            }
+            for(int i = 0; i < 8; i++){
+                Tile other = world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y);
+                if(other != null){
+                    renderer.blocks.floor.recacheTile(other);
                 }
             }
         }
