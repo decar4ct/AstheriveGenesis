@@ -20,9 +20,13 @@ import java.util.Random;
 import static mindustry.Vars.*;
 
 public class Root extends BioBlock {
-    //AWFUL
     public TextureRegion[][] atlasRegion = new TextureRegion[][];
     public TextureRegion[] leafRegion = new TextureRegion[2];
+    //SUFFERING
+    public int[] horBitmask = {
+    }
+    public int[] verBitmask = {
+    }
     public Root(String name){
         super(name);
         update=true;
