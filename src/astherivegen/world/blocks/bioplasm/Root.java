@@ -67,7 +67,7 @@ public class Root extends BioBlock {
     @Override
     public void load(){
         super.load();
-        atlasRegion = TextureRegion.split(Core.atlas.find(name+"-atlas"),32,32);
+        atlasRegion.split(Core.atlas.find(name+"-atlas"),32,32);
         for (int i=0;i<2;i++){
             leafRegion[i]=Core.atlas.find(name+"-leaf"+String.valueOf(i+1));
         }
@@ -86,7 +86,7 @@ public class Root extends BioBlock {
             super.onProximityUpdate();
             blending = 0;
             for(int i = 0; i < 8; i++){
-                if(blends(world.tile(x + Geometry.d8[i].x, y + Geometry.d8[i].y))){
+                if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
                     blending |= (1 << i);
                 }
             }
