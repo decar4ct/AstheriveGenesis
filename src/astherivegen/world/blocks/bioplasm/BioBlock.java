@@ -33,7 +33,7 @@ public class BioBlock extends Block {
         update=true;
         rebuildable = false;
         drawTeamOverlay = false;
-        destroySound = Sounds.boom;
+        destroySound = Sounds.splash;
     }
     public class BioBuilding extends Building {
         public float pulseProgress=0;
@@ -164,7 +164,7 @@ public class BioBlock extends Block {
             targetTile.setBlock(block,team);
         }
         public void drawPulse(TextureRegion sprite,float scale) {
-            scale+=1f;
+            scale+=1f+growProgress;
             if (scale>0.01f) {
                 float sx=x-scale*0.5f;
                 float sy=y-scale*0.5f;
@@ -180,7 +180,7 @@ public class BioBlock extends Block {
             Draw.scl(1,1);
         }
         public void onDestroyed(){
-            splashLiquid(GenesisLiquids.biomass,15*size);
+            splashLiquid(GenesisLiquids.biomass,40*size);
         }
         @Override
         public void write(Writes write){
