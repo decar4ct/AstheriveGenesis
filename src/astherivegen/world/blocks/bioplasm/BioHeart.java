@@ -28,7 +28,8 @@ public class BioHeart extends BioBlock {
     public class BioHeartBuild extends BioBuilding {        
         @Override
         public void updateTile() {
-            if (true){
+            if (fullyGrown){
+                growProgress=0f;
                 if (pulseTimer<45f) {
                     pulseTimer+=delta();
                 } else {
@@ -39,6 +40,15 @@ public class BioHeart extends BioBlock {
                 }
                 if (drawPulseScale>0.01f) {
                     drawPulseScale*=0.9;
+                }
+            }
+            if(!fullyGrown){
+                growProgress+=0.02;
+                pulsed=true; //prevents from getting pulse when still growing
+                if(growProgress>-0.05){
+                    growProgress=0;
+                    fullyGrown=true;
+                    pulsed=false;
                 }
             }
         }
