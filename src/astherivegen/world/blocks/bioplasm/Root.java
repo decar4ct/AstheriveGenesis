@@ -107,8 +107,8 @@ public class Root extends BioBlock {
             }
         }
         boolean blends(Tile other){
-            if(other.build instanceof BioBuilding){
-                return other != null && other.build != null && other.build.tileX() == other.x && other.build.tileY() == other.y && other.build.fullyGrown;
+            if(other.build instanceof BioBuilding otherbuild){
+                return other != null && other.build != null && other.build.tileX() == other.x && other.build.tileY() == other.y && otherbuild.fullyGrown;
             }
         }
         @Override
