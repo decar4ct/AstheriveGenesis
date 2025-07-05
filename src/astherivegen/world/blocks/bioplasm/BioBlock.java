@@ -19,6 +19,7 @@ import mindustry.graphics.*;
 import mindustry.content.*;
 import java.util.ArrayList;
 import java.util.Random;
+import astherivegen.content.*;
 
 import static mindustry.Vars.*;
 
