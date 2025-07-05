@@ -15,6 +15,7 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+import mindustry.entities.*;
 import java.util.Random;
 import astherivegen.graphics.*;
 
@@ -70,6 +71,7 @@ public class Root extends BioBlock {
         update=true;
         isRoot=true;
         pulseScale=0.5f;
+        priority = TargetPriority.under;
     }
     @Override
     public void load(){
@@ -105,7 +107,9 @@ public class Root extends BioBlock {
             }
         }
         boolean blends(Tile other){
-            return other != null && other.build != null && other.build.block == block && other.build.tileX() == other.x && other.build.tileY() == other.y;
+            if(other.build instanceof BioBuilding){
+                return other != null && other.build != null && && other.build.tileX() == other.x && other.build.tileY() == other.y && other.fullyGrown;
+            }
         }
         @Override
         public void draw(){
