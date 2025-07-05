@@ -88,6 +88,7 @@ public class BioBlock extends Block {
         public void updatePulse() {
             //TODO rework back to this->pulse
             boolean pulseEnd=true;
+            int neartileCount=0;
             if (true) {
                 possibleGrowDir.clear();
                 for (int i=0;i<4;i++) {
@@ -98,11 +99,14 @@ public class BioBlock extends Block {
                             nearbuild.biopulse=Math.max(nearbuild.biopulse,biopulse-1);
                             pulseEnd=false;
                         }
-                    } else if (neartile.block() == Blocks.air) {
+                    } else if (!neartile.solid()) {
                         /*
-                        int nearnearcount=0;
-                        for (int i2=0;i2<4;i2++) {
-                            Tile nearneartile = nearbyTile(i2,neartile); //stoopid variable naming lol
+                        int nearneaarcount=0;
+                        for (int i2=0;i2<4;i2++) 
+                            Tile nearneartile = nearbyTile() {
+                                    Drawf.selected
+                                }
+                         i2,neartile); //stoopid variable naming lol
                             if (nearneartile!=null) {
                                 if (nearneartile.block() != Blocks.air) {
                                     nearnearcount++;
@@ -113,11 +117,19 @@ public class BioBlock extends Block {
                             possibleGrowDir.add(i);
                         }
                         */
+                        for(int xm = -1;xm<=1;xm++){
+                            for(int ym = -1;ym<=1;ym++){
+                                Tile other = tile.nearby(xm,ym);
+                                if(other.block==block) {
+                                    neartileCount++;
+                                }
+                            }
+                        }
                         possibleGrowDir.add(i);
                     }
                 }
                 Random random = new Random();
-                if (pulseEnd&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if (isRoot&&possibleGrowDir.size()>0&&neartileCount<4&&biopulse>1){
                     growRoot();
                 }
             }
