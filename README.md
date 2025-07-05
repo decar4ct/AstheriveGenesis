@@ -10,4 +10,4 @@ Some crazy delusional goals may include:
 
 # Current progress
 
-Not much, really. There's one map you can play...and dont even look at my embarassingly horrendous unfinished planet
+Bioplasm is somewhat working, finally. content is still sparse
