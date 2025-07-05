@@ -33,6 +33,7 @@ public class BioHeart extends BioBlock {
                     updatePulse();
                     pulseTimer=0;
                     drawPulseScale=pulseScale;
+                    growRoots();
                 }
                 if (drawPulseScale>0.01f) {
                     drawPulseScale*=0.9;
@@ -57,10 +58,11 @@ public class BioHeart extends BioBlock {
             //well who cares lmao
             for(int i=0;i<4;i++){
                 for(int j=-1;j<=1;j++){
+                    Tile adj;
                     if(i==0||i==2){
-                        Tile adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j);
+                        adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j);
                     } else {
-                        Tile adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2);
+                        adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2);
                     }
                     adj.setBlock(Bioplasm.root,team);
                 }
