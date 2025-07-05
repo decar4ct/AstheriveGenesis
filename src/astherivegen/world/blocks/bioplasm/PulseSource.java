@@ -22,12 +22,11 @@ public class PulseSource extends BioBlock {
     public PulseSource(String name){
         super(name);
     }
-    public class PulseSourceBuild extends BioBuilding {
-        pulseScale = 0.4;
+    public class PulseSourceBuild extends BioBuilding {        
         @Override
         public void updateTile() {
             if (true){
-                if (pulseTimer<20f) {
+                if (pulseTimer<45f) {
                     pulseTimer+=delta();
                 } else {
                     updatePulse();
