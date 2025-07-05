@@ -115,7 +115,11 @@ public class Root extends BioBlock {
         @Override
         public void draw(){
             Draw.z(Layer.blockUnder);
-            drawPulse(atlasRegion[horBitmask[blending]][verBitmask[blending]],drawPulseScale);
+            if(fullyGrown){
+                drawPulse(atlasRegion[horBitmask[blending]][verBitmask[blending]],drawPulseScale);
+            } else {
+                drawPulse(atlasRegion[3][3],drawPulseScale);
+            }
             Fx.healBlockFull.at(tile.x, tile.y, tile.block().size, GenesisPal.bioGreen, tile.block());
             if (xyRand(x,y)<0.08f) {
                 Draw.z(Layer.power-1.1f);
