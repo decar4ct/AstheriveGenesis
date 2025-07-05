@@ -117,6 +117,7 @@ public class BioBlock extends Block {
                             possibleGrowDir.add(i);
                         }
                         */
+                        neartileCount=0;
                         for(int xm = -1;xm<=1;xm++){
                             for(int ym = -1;ym<=1;ym++){
                                 Tile other = tile.nearby(xm+Geometry.d4(i).x,ym+Geometry.d4(i).y);
@@ -127,11 +128,13 @@ public class BioBlock extends Block {
                                 }
                             }
                         }
-                        possibleGrowDir.add(i);
+                        if(neartileCount<4){
+                            possibleGrowDir.add(i);
+                        }
                     }
                 }
                 Random random = new Random();
-                if (isRoot&&possibleGrowDir.size()>0&&neartileCount<4&&biopulse>1){
+                if (isRoot&&possibleGrowDir.size()>0&&biopulse>1){
                     growRoot();
                 }
             }
