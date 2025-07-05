@@ -68,6 +68,7 @@ public class Root extends BioBlock {
         super(name);
         update=true;
         isRoot=true;
+        pulseScale = 0.4;
     }
     @Override
     public void load(){
