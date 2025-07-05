@@ -63,7 +63,7 @@ public class BioBlock extends Block {
                     pulseTimer=0;
                     biopulse=0;
                     pulsed=true;
-                    drawPulseScale=0.7f;
+                    drawPulseScale=pulseScale;
                 }
             }
             if (pulsed) {
@@ -82,7 +82,7 @@ public class BioBlock extends Block {
             }
             
             if (drawPulseScale>0.01f) {
-                drawPulseScale*=pulseScale;
+                drawPulseScale*=0.9;
             }
         }
         public void updatePulse() {
@@ -119,7 +119,7 @@ public class BioBlock extends Block {
                         */
                         for(int xm = -1;xm<=1;xm++){
                             for(int ym = -1;ym<=1;ym++){
-                                Tile other = tile.nearby(xm,ym);
+                                Tile other = tile.nearby(xm+Geometry.d4(i).x,ym+Geometry.d4(i).y);
                                 if(other.build!=null){
                                     if(other.build.block==block) {
                                         neartileCount++;
