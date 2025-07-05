@@ -62,6 +62,7 @@ public class BioBlock extends Block {
         public void updateTile() {
             //TODO try syncing invididually?
             if (biopulse>0&&!pulsed&&fullyGrown){
+                growProgress=0f;
                 deathTimer=0f;
                 if (pulseTimer<4f) {
                     pulseTimer+=delta();
