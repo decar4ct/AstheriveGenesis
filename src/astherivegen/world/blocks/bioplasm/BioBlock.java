@@ -1,6 +1,7 @@
 package astherivegen.world.blocks.bioplasm;
 
 import arc.Core;
+import arc.audio.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.graphics.g2d.TextureRegion;
@@ -29,6 +30,7 @@ public class BioBlock extends Block {
         update=true;
         rebuildable = false;
         drawTeamOverlay = false;
+        destroySound = Sounds.boom;
     }
     public class BioBuilding extends Building {
         public float pulseProgress=0;
@@ -89,9 +91,11 @@ public class BioBlock extends Block {
 
             if(!fullyGrown){
                 growProgress+=0.05;
+                pulsed=true; //prevents from getting pulse when still growing
                 if(growProgress>-0.2){
                     growProgress=0;
                     fullyGrown=true;
+                    pulsed=false;
                 }
             }
         }
@@ -171,6 +175,9 @@ public class BioBlock extends Block {
         public void draw() {
             drawPulse(region,drawPulseScale);
             Draw.scl(1,1);
+        }
+        public void onDestroyed(){
+            splashLiquid(GenesisLiquids.biomass,15*size);
         }
         @Override
         public void write(Writes write){
