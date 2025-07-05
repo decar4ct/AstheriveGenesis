@@ -44,16 +44,17 @@ public class BioHeart extends BioBlock {
             //TODO rework back to this->pulse
             if (true) {
                 for(int i=0;i<4;i++){
-                for(int j=-1;j<=1;j++){
-                    Building adj;
-                    if(i==0||i==2){
-                        adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
-                    } else {
-                        adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
-                    }
-                    if (adj instanceof BioBuilding adjbuild) {
-                        if (!adjbuild.pulsed) {                        
-                            adjbuild.biopulse=Math.max(adjbuild.biopulse,32);
+                    for(int j=-1;j<=1;j++){
+                        Building adj;
+                        if(i==0||i==2){
+                            adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
+                        } else {
+                            adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
+                        }
+                        if (adj instanceof BioBuilding adjbuild) {
+                            if (!adjbuild.pulsed) {                        
+                                adjbuild.biopulse=Math.max(adjbuild.biopulse,32);
+                            }
                         }
                     }
                 }
