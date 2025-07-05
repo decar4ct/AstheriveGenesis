@@ -110,6 +110,7 @@ public class Root extends BioBlock {
             if(other.build instanceof BioBuilding otherbuild){
                 return other != null && other.build != null && other.build.tileX() == other.x && other.build.tileY() == other.y && otherbuild.fullyGrown;
             }
+            return false;
         }
         @Override
         public void draw(){
