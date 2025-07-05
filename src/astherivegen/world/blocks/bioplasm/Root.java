@@ -16,6 +16,7 @@ import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
 import java.util.Random;
+import astherivegen.graphics.*;
 
 import static mindustry.Vars.*;
 
@@ -68,7 +69,7 @@ public class Root extends BioBlock {
         super(name);
         update=true;
         isRoot=true;
-        pulseScale=0.3f;
+        pulseScale=0.5f;
     }
     @Override
     public void load(){
@@ -109,6 +110,7 @@ public class Root extends BioBlock {
         @Override
         public void draw(){
             drawPulse(atlasRegion[horBitmask[blending]][verBitmask[blending]],drawPulseScale);
+            Fx.healBlockFull.at(tile.x, tile.y, tile.block.size, GenesisPal.bioGreen, tile.block);
             if (xyRand(x,y)<0.08f) {
                 Draw.z(Layer.power-1.1f);
                 // SHUT UP
