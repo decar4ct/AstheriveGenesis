@@ -43,11 +43,17 @@ public class BioHeart extends BioBlock {
         public void updatePulse() {
             //TODO rework back to this->pulse
             if (true) {
-                for (int i=0;i<4;i++) {
-                    Building advroot = tile.nearbyBuild(i);
-                    if (advroot instanceof BioBuilding advbuild) {
-                        if (!advbuild.pulsed) {                        
-                            advbuild.biopulse=Math.max(advbuild.biopulse,32);
+                for(int i=0;i<4;i++){
+                for(int j=-1;j<=1;j++){
+                    Building adj;
+                    if(i==0||i==2){
+                        adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
+                    } else {
+                        adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
+                    }
+                    if (adj instanceof BioBuilding adjbuild) {
+                        if (!adjbuild.pulsed) {                        
+                            adjbuild.biopulse=Math.max(adjbuild.biopulse,32);
                         }
                     }
                 }
@@ -55,7 +61,7 @@ public class BioHeart extends BioBlock {
         }
         public void growRoots(){
             //only for 3x3 block smh
-            //well who cares lmao
+            //well who cares lmao it works
             for(int i=0;i<4;i++){
                 for(int j=-1;j<=1;j++){
                     Tile adj;
