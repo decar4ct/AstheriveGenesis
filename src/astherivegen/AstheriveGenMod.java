@@ -19,6 +19,7 @@ public class AstheriveGenMod extends Mod{
         Log.info("Loaded AstheriveGenMod constructor.");
 
         //listen for game load event
+        /*
         Events.on(ClientLoadEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
@@ -28,6 +29,7 @@ public class AstheriveGenMod extends Mod{
                 dialog.show();
             });
         });
+        */
     }
 
     @Override
