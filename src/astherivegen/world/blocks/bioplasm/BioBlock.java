@@ -117,7 +117,7 @@ public class BioBlock extends Block {
                     }
                 }
                 Random random = new Random();
-                if ((pulseEnd&&possibleGrowDir.size()>=3)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if (pulseEnd&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
                     growRoot();
                 }
             }
