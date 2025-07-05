@@ -70,7 +70,7 @@ public class BioHeart extends BioBlock {
                     } else {
                         adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2);
                     }
-                    adj.setBlock(Bioplasm.root,team);
+                    if(!adj.solid()) adj.setBlock(Bioplasm.root,team);
                 }
             }
         }
