@@ -38,7 +38,7 @@ public class BioBlock extends Block {
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
 
-        public float pulseScale=0.7;
+        public float pulseScale=0.7f;
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -165,7 +165,7 @@ public class BioBlock extends Block {
             pulseProgress=read.f();
             resetPulseTimer=read.f();
             deathTimer=read.f();
-            pulsed=read.bool(pulsed);
+            pulsed=read.bool();
         }
     }
 }
