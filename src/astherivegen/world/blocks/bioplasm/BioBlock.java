@@ -120,8 +120,10 @@ public class BioBlock extends Block {
                         for(int xm = -1;xm<=1;xm++){
                             for(int ym = -1;ym<=1;ym++){
                                 Tile other = tile.nearby(xm,ym);
-                                if(other.build.block==block) {
-                                    neartileCount++;
+                                if(other.build!=null){
+                                    if(other.build.block==block) {
+                                        neartileCount++;
+                                    }
                                 }
                             }
                         }
