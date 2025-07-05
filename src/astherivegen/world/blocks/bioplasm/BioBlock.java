@@ -23,6 +23,7 @@ import static mindustry.Vars.*;
 
 public class BioBlock extends Block {
     public boolean isRoot=false;
+    public float pulseScale=0.7f;
     public BioBlock(String name){
         super(name);
         update=true;
@@ -37,8 +38,6 @@ public class BioBlock extends Block {
         public float deathTimer=0;
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
-
-        public float pulseScale=0.7f;
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
