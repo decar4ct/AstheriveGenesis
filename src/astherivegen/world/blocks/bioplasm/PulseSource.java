@@ -23,6 +23,7 @@ public class PulseSource extends BioBlock {
         super(name);
     }
     public class PulseSourceBuild extends BioBuilding {
+        pulseScale = 0.4;
         @Override
         public void updateTile() {
             if (true){
