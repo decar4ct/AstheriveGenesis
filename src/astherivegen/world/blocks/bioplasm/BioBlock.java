@@ -38,6 +38,8 @@ public class BioBlock extends Block {
         public float deathTimer=0;
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
+        public boolean fullyGrown=false;
+        public float growProgress=-1;
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -54,7 +56,7 @@ public class BioBlock extends Block {
         @Override
         public void updateTile() {
             //TODO try syncing invididually?
-            if (biopulse>0&&!pulsed){
+            if (biopulse>0&&!pulsed&&fullyGrown){
                 deathTimer=0f;
                 if (pulseTimer<4f) {
                     pulseTimer+=delta();
@@ -83,6 +85,14 @@ public class BioBlock extends Block {
             
             if (drawPulseScale>0.01f) {
                 drawPulseScale*=0.9;
+            }
+
+            if(!fullyGrown){
+                growProgress+=0.05;
+                if(growProgress>-0.2){
+                    growProgress=0;
+                    fullyGrown=true;
+                }
             }
         }
         public void updatePulse() {
@@ -171,6 +181,8 @@ public class BioBlock extends Block {
             write.f(resetPulseTimer);
             write.f(deathTimer);
             write.bool(pulsed);
+            write.bool(fullyGrown);
+            write.f(growProgress);
         }
 
         @Override
@@ -182,6 +194,8 @@ public class BioBlock extends Block {
             resetPulseTimer=read.f();
             deathTimer=read.f();
             pulsed=read.bool();
+            fullyGrown=read.bool();
+            growProgress=read.f();
         }
     }
 }
