@@ -7,5 +7,5 @@ public class GenesisPal{
     verdaraOutline = Color.valueOf("30312E"),
     bioEonstoneOutline = Color.valueOf("1D1409"),
 
-    bioGreen = color.valueOf("91A259");
+    bioGreen = Color.valueOf("91A259");
 }
