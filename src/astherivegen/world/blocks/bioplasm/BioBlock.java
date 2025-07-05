@@ -35,8 +35,10 @@ public class BioBlock extends Block {
         public float pulseTimer=0;
         public float resetPulseTimer=0;
         public float deathTimer=0;
-        public float deathTimerLimit=120f;
+        public float deathTimerLimit=180f;
         public boolean pulsed=false;
+
+        public float pulseScale=0.7
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -81,7 +83,7 @@ public class BioBlock extends Block {
             }
             
             if (drawPulseScale>0.01f) {
-                drawPulseScale*=0.85;
+                drawPulseScale*=pulseScale;
             }
         }
         public void updatePulse() {
@@ -98,6 +100,7 @@ public class BioBlock extends Block {
                             pulseEnd=false;
                         }
                     } else if (neartile.block() == Blocks.air) {
+                        /*
                         int nearnearcount=0;
                         for (int i2=0;i2<4;i2++) {
                             Tile nearneartile = nearbyTile(i2,neartile); //stoopid variable naming lol
@@ -110,10 +113,12 @@ public class BioBlock extends Block {
                         if (nearnearcount<2) {
                             possibleGrowDir.add(i);
                         }
+                        */
+                        possibleGrowDir.add(i);
                     }
                 }
                 Random random = new Random();
-                if ((pulseEnd||random.nextInt()>0.03)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if ((pulseEnd&&possibleGrowDir.size()>=3)&&isRoot&&possibleGrowDir.size()>0&&biopulse>1){
                     growRoot();
                 }
             }
@@ -146,8 +151,10 @@ public class BioBlock extends Block {
             super.write(write);
             write.i(biopulse);
             write.f(pulseTimer);
+            write.f(pulseProgress);
+            write.f(resetPulseTimer);
             write.f(deathTimer);
-            write.i((pulsed)?1:0);
+            write.bool((pulsed);
         }
 
         @Override
@@ -155,8 +162,10 @@ public class BioBlock extends Block {
             super.read(read, revision);
             biopulse=read.i();
             pulseTimer=read.f();
+            pulseProgress=read.f();
+            resetPulseTimer=read.f();
             deathTimer=read.f();
-            pulsed=(read.i()==1)?true:false;
+            pulsed=read.bool(pulsed);
         }
     }
 }
