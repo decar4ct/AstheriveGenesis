@@ -15,6 +15,7 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+import mindustry.entities.*;
 import astherivegen.content.bioplasm.Bioplasm;
 
 import static mindustry.Vars.*;
@@ -22,6 +23,7 @@ import static mindustry.Vars.*;
 public class BioHeart extends BioBlock {
     public BioHeart(String name){
         super(name);
+        priority = TargetPriority.core;
     }
     public class BioHeartBuild extends BioBuilding {        
         @Override
