@@ -5,11 +5,10 @@ main: "astherivegen.AstheriveGenMod"
 description: '''
 A Mindustry Java mod.
 
-Notice: Unfinished. There's one map you can play though, barely.
-
+Under early development.
 Yes. this is what you're looking for.
 '''
-subtitle: "thx for playing:3"
+subtitle: "creatures"
 version: 1.0
 minGameVersion: 147
 java: true
