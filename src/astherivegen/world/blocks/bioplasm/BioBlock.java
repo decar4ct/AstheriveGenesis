@@ -23,7 +23,7 @@ import static mindustry.Vars.*;
 
 public class BioBlock extends Block {
     public boolean isRoot=false;
-    public float pulseScale=0.7f;
+    public float pulseScale=0.5f;
     public BioBlock(String name){
         super(name);
         update=true;
@@ -67,7 +67,7 @@ public class BioBlock extends Block {
                 }
             }
             if (pulsed) {
-                if (resetPulseTimer<7f) {
+                if (resetPulseTimer<25f) {
                     resetPulseTimer+=delta();
                 } else {
                     resetPulseTimer=0;
