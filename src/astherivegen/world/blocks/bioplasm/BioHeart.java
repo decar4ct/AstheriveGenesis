@@ -15,6 +15,7 @@ import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
+import astherivegen.content.bioplasm.Bioplasm;
 
 import static mindustry.Vars.*;
 
@@ -48,6 +49,20 @@ public class BioHeart extends BioBlock {
                             advbuild.biopulse=Math.max(advbuild.biopulse,32);
                         }
                     }
+                }
+            }
+        }
+        public void growRoots(){
+            //only for 3x3 block smh
+            //well who cares lmao
+            for(int i=0;i<4;i++){
+                for(int j=-1;j<=1;j++){
+                    if(i==0||i==2){
+                        Tile adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j);
+                    } else {
+                        Tile adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2);
+                    }
+                    adj.setBlock(Bioplasm.root,team);
                 }
             }
         }
