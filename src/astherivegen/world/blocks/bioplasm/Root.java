@@ -134,7 +134,7 @@ public class Root extends BioBlock {
                 if(clear) tile.setBlock(Bioplasm.harvester,team);
             }
             Building target = pulseSource.build;
-            if(target != null && target.block instanceof BioBuilding && target.acceptItem(this, item)){
+            if(target != null && target.build instanceof BioBuilding && target.acceptItem(this, lastItem)){
                 target.handleItem(this, lastItem);
                 items.remove(lastItem, 1);
                 lastItem = null;
