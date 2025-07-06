@@ -153,7 +153,7 @@ public class Root extends BioBlock {
                 // SHUT UP
                 //Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
-            if(lastItem!=null) Draw.rect(lastItem.fullIcon, ix, iy, itemSize, itemSize);
+            if(lastItem!=null) Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
         }
 
         //item mechanic
