@@ -14,6 +14,7 @@ import mindustry.graphics.Pal;
 import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.*;
+import mindustry.ai.types.*;
 import astherivegen.type.unit.*;
 import astherivegen.content.*;
 import mindustry.type.weapons.*;
@@ -24,7 +25,7 @@ import static arc.graphics.g2d.Lines.*;
 
 public class BioUnitTypes{
     public static UnitType
-    canopy;
+    canopy, turf;
     public static void load(){
         canopy = new CamouflageUnitType("canopy"){{
             constructor = LegsUnit::create;
