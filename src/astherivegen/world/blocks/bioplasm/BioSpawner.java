@@ -44,6 +44,7 @@ public class BioSpawner extends BioBlock {
                     spawnProgress = 0;
                     Unit unit = unitType.create(team);
                 }
+                Log.info(spawnProgress);
             }
         }
         @Override
