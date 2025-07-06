@@ -24,6 +24,9 @@ public class BioHeart extends BioBlock {
     public BioHeart(String name){
         super(name);
         priority = TargetPriority.core;
+        hasItems = true;
+        itemCapacity = 100;
+        unloadable = false;
     }
     public class BioHeartBuild extends BioBuilding {        
         @Override
