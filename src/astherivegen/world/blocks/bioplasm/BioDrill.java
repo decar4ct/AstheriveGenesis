@@ -29,6 +29,32 @@ public class BioDrill extends BioBlock {
     }
     public class BioDrillBuild extends BioBuilding {
         @Override
+        public void updatePulse() {
+            //TODO rework back to this->pulse
+            //ONLY WORK FOR 2x2, smh my head
+            if (true) {
+                for(int i=0;i<4;i++){
+                    for(int j=1;j<=0;j++){
+                        Building adj;
+                        if(i==0){
+                            adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
+                        } else if(i==1) {
+                            adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
+                        } else if(i==2) {
+                            adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y+j).build;
+                        } else if(i==3) {
+                            adj = tile.nearby(Geometry.d4(i).x+j,Geometry.d4(i).y).build;
+                        }
+                        if (adj instanceof BioBuilding adjbuild) {
+                            if (!adjbuild.pulsed) {                        
+                                adjbuild.biopulse=Math.max(adjbuild.biopulse,biopulse-8); //less biopulse because drill ate it
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @Override
         public void draw(){
             drawPulse(block.region,drawPulseScale);
         }
