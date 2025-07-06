@@ -104,8 +104,6 @@ public class Root extends BioBlock {
     public class RootBuild extends BioBuilding {
         public int blending;
         public Item lastItem;
-        public Tile lastInput;
-        public float time;
         
         @Override
         public void updateTile(){
@@ -154,10 +152,16 @@ public class Root extends BioBlock {
                 // SHUT UP
                 //Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
+            Draw.z(Layer.blockUnder+0.1f);
             if(lastItem!=null) Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
         }
 
         //item mechanic
+
+        @Override
+        public int acceptStack(Item item, int amount, Teamc source){
+            return 0;
+        }
 
         @Override
         public boolean acceptItem(Building source, Item item){
@@ -168,8 +172,6 @@ public class Root extends BioBlock {
         public void handleItem(Building source, Item item){
             items.add(item, 1);
             lastItem = item;
-            time = 0f;
-            lastInput = source.tile;
         }
 
         @Override
