@@ -6,6 +6,7 @@ import arc.graphics.g2d.*;
 import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
+import arc.util.io.*;
 import arc.math.geom.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
@@ -132,6 +133,9 @@ public class Root extends BioBlock {
                     }
                 }
                 if(clear) tile.setBlock(Bioplasm.harvester,team);
+            }
+            if(lastItem == null && items.any()){
+                lastItem = items.first();
             }
             if(lastItem != null && pulseSource != null) {
                 Building target = pulseSource.build;
