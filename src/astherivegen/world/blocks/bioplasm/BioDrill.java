@@ -34,7 +34,7 @@ public class BioDrill extends BioBlock {
             //ONLY WORK FOR 2x2, smh my head
             if (true) {
                 for(int i=0;i<4;i++){
-                    for(int j=1;j<=0;j++){
+                    for(int j=0;j<=1;j++){
                         Building adj;
                         if(i==0){
                             adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
