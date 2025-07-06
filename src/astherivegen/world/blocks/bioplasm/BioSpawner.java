@@ -40,7 +40,7 @@ public class BioSpawner extends BioBlock {
                 spawnProgress++;
                 if(spawnProgress >= 10) {
                     spawnProgress = 0;
-                    unit = unitType.create(team);
+                    Unit unit = unitType.create(team);
                 }
             }
         }
