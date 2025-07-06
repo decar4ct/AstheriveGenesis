@@ -38,7 +38,7 @@ public class BioSpawner extends BioBlock {
         public void updatePulse(){
             if (true) {
                 spawnProgress++;
-                if(spawnProgress >= 20) {
+                if(spawnProgress >= 10) {
                     spawnProgress = 0;
                     unitType.create(team);
                 }
