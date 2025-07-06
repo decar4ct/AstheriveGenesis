@@ -22,8 +22,32 @@ import static arc.graphics.g2d.Lines.*;
 
 public class VerdaraUnitTypes{
     public static UnitType
+    saber,
+    
     ward;
     public static void load(){
+        //region ground
+        saber = new UnitType("saber"){{
+            constructor = MechUnit::create;
+            researchCostMultiplier = 0.5f;
+            speed = 0.65f;
+            hitSize = 8f;
+            health = 140;
+            weapons.add(new Weapon("large-weapon"){{
+                reload = 18f;
+                x = 4f;
+                y = 2f;
+                top = false;
+                ejectEffect = Fx.casing1;
+                bullet = new BasicBulletType(2.5f, 9){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                }};
+            }});
+        }};
+
+        //region core
         ward = new VerdaraUnitType("ward"){{
             constructor = UnitEntity::create;
             coreUnitDock = true;
@@ -47,7 +71,7 @@ public class VerdaraUnitTypes{
             itemCapacity = 30;
             health = 300f;
             hitSize = 9f;
-            fogRadius = 0f;
+            fogRadius = -1;
             engineOffset = 6f;
 
             weapons.add(new RepairBeamWeapon(){{
