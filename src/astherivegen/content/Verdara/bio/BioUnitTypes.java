@@ -66,6 +66,7 @@ public class BioUnitTypes{
             }});
         }};
         turf = new CamouflageUnitType("turf"){{
+            constructor = UnitEntity::create;
             health = 100;
             hitSize = 9f;
             omniMovement = false;
