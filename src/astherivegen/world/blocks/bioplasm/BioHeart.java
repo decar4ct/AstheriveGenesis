@@ -66,6 +66,7 @@ public class BioHeart extends BioBlock {
                         if (adj instanceof BioBuilding adjbuild) {
                             if (!adjbuild.pulsed) {                        
                                 adjbuild.biopulse=Math.max(adjbuild.biopulse,32);
+                                adjbuild.pulseSource=tile;
                             }
                         }
                     }
