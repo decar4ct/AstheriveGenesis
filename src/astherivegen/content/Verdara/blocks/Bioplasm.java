@@ -24,7 +24,7 @@ public class Bioplasm {
                 root = new Root("root"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                 }};
-                harvester = new BioDrill("harvested"){{
+                harvester = new BioDrill("harvester"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                     size = 2;
                 }};
