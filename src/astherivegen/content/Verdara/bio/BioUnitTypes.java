@@ -46,6 +46,7 @@ public class BioUnitTypes{
             groundLayer = Layer.legUnit - 1f;
 
             weapons.add(new Weapon("astherive-gen-canopy-weapon"){{
+                constructor = UnitEntity::create
                 top = false;
                 shootY = 3f;
                 reload = 4f;
