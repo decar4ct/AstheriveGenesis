@@ -16,6 +16,9 @@ import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
 import mindustry.entities.*;
+import mindustry.type.*;
+import mindustry.gen.*;
+import mindustry.world.meta.*;
 import astherivegen.content.bioplasm.Bioplasm;
 
 import static mindustry.Vars.*;
