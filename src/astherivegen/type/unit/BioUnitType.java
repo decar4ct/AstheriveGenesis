@@ -18,6 +18,8 @@ public class BioUnitType extends UnitType{
         outlineColor = GenesisPal.bioEonstoneOutline;
         envDisabled = Env.none;
         drawCell = false;
+        useUnitCap = false; //i will regret this
+        lightRadius = 0;
 
         abilities.add(new RegenAbility(){{
             percentAmount = 1f / (80f * 60f) * 100f;
