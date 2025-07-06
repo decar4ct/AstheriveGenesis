@@ -36,6 +36,8 @@ public class BioBlock extends Block {
         destroySound = Sounds.splash;
     }
     public class BioBuilding extends Building {
+        public Tile pulseSource=null;
+        
         public float pulseProgress=0;
         public int biopulse=0;
         public float pulseTimer=0;
@@ -119,6 +121,7 @@ public class BioBlock extends Block {
                     if (nearroot instanceof BioBuilding nearbuild) {
                         if (!nearbuild.pulsed) {                      
                             nearbuild.biopulse=Math.max(nearbuild.biopulse,biopulse-1);
+                            nearbuild.pulseSource=tile;
                             pulseEnd=false;
                         }
                     } else if (!neartile.solid()) {
