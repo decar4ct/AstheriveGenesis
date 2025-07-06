@@ -22,12 +22,53 @@ import astherivegen.graphics.*;
 import static mindustry.Vars.*;
 
 public class BioDrill extends BioBlock {
+    protected final ObjectIntMap<Item> oreCount = new ObjectIntMap<>();
+    protected final Seq<Item> itemArray = new Seq<>();
+    protected @Nullable Item returnItem;
+    protected int returnCount;
+    
     public BioDrill(String name){
         super(name);
         update=true;
         isRoot=false;
     }
+
+    protected void countOre(Tile tile){
+        returnItem = null;
+        returnCount = 0;
+
+        oreCount.clear();
+        itemArray.clear();
+
+        for(Tile other : tile.getLinkedTilesAs(this, tempTiles)){
+            if(canMine(other)){
+                oreCount.increment(getDrop(other), 0, 1);
+            }
+        }
+
+        for(Item item : oreCount.keys()){
+            itemArray.add(item);
+        }
+
+        itemArray.sort((item1, item2) -> {
+            int type = Boolean.compare(!item1.lowPriority, !item2.lowPriority);
+            if(type != 0) return type;
+            int amounts = Integer.compare(oreCount.get(item1, 0), oreCount.get(item2, 0));
+            if(amounts != 0) return amounts;
+            return Integer.compare(item1.id, item2.id);
+        });
+
+        if(itemArray.size == 0){
+            return;
+        }
+
+        returnItem = itemArray.peek();
+        returnCount = oreCount.get(itemArray.peek(), 0);
+    }
+    
     public class BioDrillBuild extends BioBuilding {
+        public int drillProgress = 0;
+        
         @Override
         public void updatePulse() {
             //TODO rework back to this->pulse
@@ -52,11 +93,33 @@ public class BioDrill extends BioBlock {
                         }
                     }
                 }
+                if(drillProgress<4){
+                    drillProgress++;
+                } else {
+                    drillProgress = 0;
+                    if(items.total()<itemCapacity){
+                        countOre(tile);
+                        for(int i = 0; i < returnCount; i++){
+                            offload(returnItem);
+                        }
+                    }
+                }
             }
         }
         @Override
         public void draw(){
-            drawPulse(block.region,drawPulseScale);
+            drregion,drawPulseScale);
+        }
+        @Override
+        public void write(Writes write){
+            super.write(write);
+            write.i(drillProgress)
+        }
+
+        @Override
+        public void read(Reads read, byte revision){
+            super.read(read, revision);
+            drillProgress=read.i();
         }
     }
-}
+ }     
