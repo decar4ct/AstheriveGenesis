@@ -18,6 +18,7 @@ import mindustry.content.*;
 import mindustry.entities.*;
 import java.util.Random;
 import astherivegen.graphics.*;
+import astherivegen.content.bioplasm.Bioplasm;
 
 import static mindustry.Vars.*;
 
@@ -103,6 +104,21 @@ public class Root extends BioBlock {
             for(int i = 0; i < 8; i++){
                 if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
                     blending |= (1 << i);
+                }
+            }
+        }
+        @Override
+        public void updatePulse(){
+            super.updatePulse();
+            if(tile != null && tile.drop() != null){
+                for(int i=0;i<=1;i++){
+                    for(int j=0;j<=1;j++){
+                        Building adj;
+                        adj = tile.nearby(i,j).build;
+                        if (!adj.solid()) {                        
+                            tile.setBlock(Bioplasm.harvester,team);
+                        }
+                    }
                 }
             }
         }
