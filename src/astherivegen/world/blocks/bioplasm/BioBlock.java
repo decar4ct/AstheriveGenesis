@@ -90,7 +90,7 @@ public class BioBlock extends Block {
             }
             
             if (drawPulseScale>0.01f) {
-                drawPulseScale*=0.9;
+                drawPulseScale*=0.85f;
             }
 
             if(!fullyGrown){
