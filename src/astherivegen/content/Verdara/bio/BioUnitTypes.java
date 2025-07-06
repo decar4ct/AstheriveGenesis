@@ -63,5 +63,22 @@ public class BioUnitTypes{
                 }};
             }});
         }};
+        turf = new CamouflageUnitType("turf"){{
+            health = 100;
+            hitSize = 9f;
+            omniMovement = false;
+            rotateSpeed = 2.5f;
+            drownTimeMultiplier = 2f;
+            segments = 3;
+            drawBody = false;
+            crushDamage = 0.5f;
+            aiController = HugAI::new;
+            targetAir = false;
+
+            segmentScl = 3f;
+            segmentPhase = 5f;
+            segmentMag = 0.5f;
+            speed = 1.2f;
+        }};
     }
 }
