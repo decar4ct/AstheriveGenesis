@@ -27,7 +27,7 @@ public class Root extends BioBlock {
     public TextureRegion[] leafRegion = new TextureRegion[2];
     //SUFFERING
     public int[] horBitmask = {
-        //0 bif
+        //0 bit
         3,
         //1 bit >
         0,
@@ -47,7 +47,7 @@ public class Root extends BioBlock {
         3,0,3,0,3,4,3,0,3,0,3,0,3,4,3,0,2,1,2,1,5,5,5,7,2,1,2,1,2,9,2,1,3,0,3,0,3,4,3,0,3,0,3,0,3,4,3,0,2,1,2,1,5,5,5,7,2,1,2,1,2,9,2,1,3,0,3,0,3,6,3,0,3,0,3,0,3,6,3,0,5,8,5,8,5,11,5,9,5,8,5,8,7,10,7,7,3,0,3,0,3,6,3,0,3,0,3,0,3,6,3,0,2,1,2,1,9,9,9,7,2,1,2,1,2,6,2,1
     };
     public int[] verBitmask = {
-        //0 bif
+        //0 bit
         3,
         //1 bit >
         3,
@@ -63,7 +63,7 @@ public class Root extends BioBlock {
         3,3,3,3,2,1,2,2,3,3,3,3,2,1,2,2,3,3,3,3,1,3,1,3,3,3,3,3,2,1,2,2,
         //7 bit v
         0,0,0,0,1,3,1,1,0,0,0,0,1,3,1,1,0,2,0,2,2, 0,2, 1,0,2,0,2,2, 0,2,2,0,0,0,0,1,3,1,1,0,0,0,0,1,3,1,1,0,2,0,2,0, 3,0, 1,0,2,0,2,1,3,1,0,
-        //8 bir >v
+        //8 bit >v
         3,3,3,3,2,1,2,2,3,3,3,3,2,1,2,2,3,3,3,3,1,3,1,3,3,3,3,3,2,1,2,2,3,3,3,3,2,1,2,2,3,3,3,3,2,1,2,2,3,3,3,3,1,3,1,3,3,3,3,3,2,1,2,2,0,0,0,0,1,3,1,1,0,0,0,0,1,3,1,1,0,0,0,0,2,2,2,2,0,0,0,0,2,2,2,0,0,0,0,0,1,3,1,1,0,0,0,0,1,3,1,1,0,0,0,0,0,3,0,1,0,0,0,0,1,1,1,1
         
     };
@@ -73,6 +73,11 @@ public class Root extends BioBlock {
         isRoot=true;
         pulseScale=0.5f;
         priority = TargetPriority.under;
+        solid = false;
+        underBullets = true;
+        hasItems = true;
+        itemCapacity = 1;
+        unloadable = false;
     }
     @Override
     public void load(){
@@ -97,6 +102,10 @@ public class Root extends BioBlock {
     }
     public class RootBuild extends BioBuilding {
         public int blending;
+        public Item lastItem;
+        public Tile lastInput;
+        public float time;
+        
         @Override
         public void updateTile(){
             super.updateTile();
@@ -144,6 +153,31 @@ public class Root extends BioBlock {
                 // SHUT UP
                 //Draw.rect(leafRegion[(xyRand(x+113f,y+197f)>0.5f)?0:1],x,y,xyRand(x+17f,y+11f)*360);
             }
+            if(lastItem!=null) Draw.rect(lastItem.fullIcon, ix, iy, itemSize, itemSize);
+        }
+
+        //item mechanic
+
+        @Override
+        public boolean acceptItem(Building source, Item item){
+            return team == source.team && lastItem == null && items.total() == 0;
+        }
+
+        @Override
+        public void handleItem(Building source, Item item){
+            items.add(item, 1);
+            lastItem = item;
+            time = 0f;
+            lastInput = source.tile;
+        }
+
+        @Override
+        public int removeStack(Item item, int amount){
+            int result = super.removeStack(item, amount);
+            if(result != 0 && item == lastItem){
+                lastItem = null;
+            }
+            return result;
         }
     }
 }
