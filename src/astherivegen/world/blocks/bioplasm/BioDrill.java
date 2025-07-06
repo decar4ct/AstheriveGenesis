@@ -113,7 +113,7 @@ public class BioDrill extends BioBlock {
         @Override
         public void write(Writes write){
             super.write(write);
-            write.i(drillProgress)
+            write.i(drillProgress);
         }
 
         @Override
