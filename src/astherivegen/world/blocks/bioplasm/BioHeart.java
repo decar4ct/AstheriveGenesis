@@ -43,9 +43,9 @@ public class BioHeart extends BioBlock {
                 }
             }
             if(!fullyGrown){
-                growProgress*=0.97;
+                growProgress*=0.95;
                 pulsed=true; //prevents from getting pulse when still growing
-                if(growProgress>-0.01){
+                if(growProgress>-0.05){
                     growProgress=0;
                     fullyGrown=true;
                     pulsed=false;
