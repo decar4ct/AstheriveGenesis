@@ -111,15 +111,17 @@ public class Root extends BioBlock {
         public void updatePulse(){
             super.updatePulse();
             if(tile != null && tile.drop() != null){
+                boolean clear = false;
                 for(int i=0;i<=1;i++){
                     for(int j=0;j<=1;j++){
                         Building adj;
                         adj = tile.nearby(i,j).build;
-                        if (!adj.solid()) {                        
-                            tile.setBlock(Bioplasm.harvester,team);
+                        if (adj == null || (adj instanceof RootBuild)) {                        
+                            clear = true;
                         }
                     }
                 }
+                if(clear) tile.setBlock(Bioplasm.harvester,team);
             }
         }
         boolean blends(Tile other){
