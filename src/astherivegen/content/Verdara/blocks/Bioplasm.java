@@ -27,7 +27,7 @@ public class Bioplasm {
                 harvester = new BioDrill("harvested"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                     size = 2;
-                }}
+                }};
                 heart = new BioHeart("heart"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                     size = 3;
