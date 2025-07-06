@@ -133,11 +133,13 @@ public class Root extends BioBlock {
                 }
                 if(clear) tile.setBlock(Bioplasm.harvester,team);
             }
-            Building target = pulseSource.build;
-            if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
-                target.handleItem(this, lastItem);
-                items.remove(lastItem, 1);
-                lastItem = null;
+            if(lastItem != null && pulseSource != null) {
+                Building target = pulseSource.build;
+                if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
+                    target.handleItem(this, lastItem);
+                    items.remove(lastItem, 1);
+                    lastItem = null;
+                }
             }
         }
         boolean blends(Tile other){
