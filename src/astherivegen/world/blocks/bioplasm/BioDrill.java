@@ -16,15 +16,14 @@ import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
 import mindustry.entities.*;
+import mindustry.type.*;
 import java.util.Random;
 import astherivegen.graphics.*;
 
 import static mindustry.Vars.*;
 
 public class BioDrill extends BioBlock {
-    protected final ObjectIntMap<Item> oreCount = new ObjectIntMap<>();
-    protected final Seq<Item> itemArray = new Seq<>();
-    protected @Nullable Item returnItem;
+    protected Item returnItem;
     protected int returnCount;
     
     public BioDrill(String name){
@@ -36,34 +35,17 @@ public class BioDrill extends BioBlock {
     protected void countOre(Tile tile){
         returnItem = null;
         returnCount = 0;
-
-        oreCount.clear();
-        itemArray.clear();
-
+        
         for(Tile other : tile.getLinkedTilesAs(this, tempTiles)){
             if(canMine(other)){
-                oreCount.increment(getDrop(other), 0, 1);
+                returnCount++;
+                returnItem = other.drop();
             }
         }
-
-        for(Item item : oreCount.keys()){
-            itemArray.add(item);
-        }
-
-        itemArray.sort((item1, item2) -> {
-            int type = Boolean.compare(!item1.lowPriority, !item2.lowPriority);
-            if(type != 0) return type;
-            int amounts = Integer.compare(oreCount.get(item1, 0), oreCount.get(item2, 0));
-            if(amounts != 0) return amounts;
-            return Integer.compare(item1.id, item2.id);
-        });
-
-        if(itemArray.size == 0){
-            return;
-        }
-
-        returnItem = itemArray.peek();
-        returnCount = oreCount.get(itemArray.peek(), 0);
+    }
+    
+    public boolean canMine(Tile other){
+        return other.drop()!=null;
     }
     
     public class BioDrillBuild extends BioBuilding {
