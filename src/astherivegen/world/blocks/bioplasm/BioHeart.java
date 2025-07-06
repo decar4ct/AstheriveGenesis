@@ -95,6 +95,26 @@ public class BioHeart extends BioBlock {
         public void draw(){
             drawPulse(block.region,drawPulseScale);
         }
+        @Override
+        public int acceptStack(Item item, int amount, Teamc source){
+            return 0;
+        }
+
+        @Override
+        public boolean acceptItem(Building source, Item item){
+            return team == source.team && items.total() < itemCapacity;
+        }
+
+        @Override
+        public void handleItem(Building source, Item item){
+            items.add(item, 1);
+        }
+
+        @Override
+        public int removeStack(Item item, int amount){
+            int result = super.removeStack(item, amount);
+            return result;
+        }
     }
 }
 
