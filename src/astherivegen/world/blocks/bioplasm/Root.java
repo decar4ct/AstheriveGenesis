@@ -133,6 +133,12 @@ public class Root extends BioBlock {
                 }
                 if(clear) tile.setBlock(Bioplasm.harvester,team);
             }
+            Building target = pulseSource.build;
+            if(target != null && target.block instanceof BioBuilding && target.acceptItem(this, item){
+                target.handleItem(this, lastItem);
+                items.remove(lastItem, 1);
+                lastItem = null;
+            }
         }
         boolean blends(Tile other){
             if(other.build instanceof BioBuilding otherbuild){
@@ -158,7 +164,6 @@ public class Root extends BioBlock {
             if(lastItem!=null){
                 Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
             }
-            Log.info(lastItem);
         }
 
         //item mechanic
