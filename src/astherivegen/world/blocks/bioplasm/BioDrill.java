@@ -76,7 +76,7 @@ public class BioDrill extends BioBlock {
                     }
                 }
                 countOre(tile);
-                if(pulseSource != null && drillProgress >= 10-returnCount && returnItem != null) {
+                if(pulseSource != null && drillProgress >= 14-returnCount && returnItem != null) {
                     drillProgress = 0;
                     Building target = pulseSource.build;
                     if(target != null && target instanceof BioBuilding && target.acceptItem(this, returnItem)){
