@@ -94,7 +94,7 @@ public class BioBlock extends Block {
             }
 
             if(!fullyGrown){
-                growProgress+=0.02;
+                growProgress*=0.95;
                 pulsed=true; //prevents from getting pulse when still growing
                 if(growProgress>-0.05){
                     growProgress=0;
