@@ -16,6 +16,7 @@ import mindustry.world.Tile;
 import mindustry.graphics.*;
 import mindustry.content.*;
 import mindustry.entities.*;
+import mindustry.type.*;
 import java.util.Random;
 import astherivegen.graphics.*;
 import astherivegen.content.bioplasm.Bioplasm;
