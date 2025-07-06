@@ -42,7 +42,7 @@ public class BioDrill extends BioBlock {
                             adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
                         } else if(i==2) {
                             adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y+j).build;
-                        } else if(i==3) {
+                        } else {
                             adj = tile.nearby(Geometry.d4(i).x+j,Geometry.d4(i).y).build;
                         }
                         if (adj instanceof BioBuilding adjbuild) {
