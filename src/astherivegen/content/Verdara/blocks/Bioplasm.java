@@ -16,7 +16,7 @@ import static mindustry.type.ItemStack.with;
 
 public class Bioplasm {
     public static Block
-            root, heart, harvester,
+            root, heart, harvester, spawningBulb,
             pulseSource;
     public static void load() {
         {
@@ -34,6 +34,11 @@ public class Bioplasm {
                 }};
                 pulseSource = new PulseSource("pulse-source"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
+                }};
+                spawningBulb = new BioSpawner("spawning-bulb"){{
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
+                    size = 3;
+                    unitType = BioUnitTypes.turf;
                 }};
             }
         }
