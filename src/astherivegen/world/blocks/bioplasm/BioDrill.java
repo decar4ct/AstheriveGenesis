@@ -57,6 +57,7 @@ public class BioDrill extends BioBlock {
             //TODO rework back to this->pulse
             //ONLY WORK FOR 2x2, smh my head
             if (true) {
+                drillProgress++;
                 for(int i=0;i<4;i++){
                     for(int j=0;j<=1;j++){
                         Building adj;
@@ -70,21 +71,16 @@ public class BioDrill extends BioBlock {
                             adj = tile.nearby(Geometry.d4(i).x+j,Geometry.d4(i).y).build;
                         }
                         if (adj instanceof BioBuilding adjbuild) {
-                            if (!adjbuild.pulsed) {                        
-                                adjbuild.biopulse=Math.max(adjbuild.biopulse,biopulse-8); //less biopulse because drill ate it
-                            }
+                            //smh
                         }
                     }
                 }
-                if(drillProgress<4){
-                    drillProgress++;
-                } else {
+                countOre(tile);
+                if(lastItem != null && pulseSource != null && drillProgress >= 6-returnCount) {
                     drillProgress = 0;
-                    if(items.total()<itemCapacity){
-                        countOre(tile);
-                        for(int i = 0; i < returnCount; i++){
-                            offload(returnItem);
-                        }
+                    Building target = pulseSource.build;
+                    if(target != null && target instanceof BioBuilding && target.acceptItem(this, returnItem)){
+                        target.handleItem(this, returnItem);
                     }
                 }
             }
