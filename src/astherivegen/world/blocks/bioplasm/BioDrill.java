@@ -6,6 +6,7 @@ import arc.graphics.g2d.*;
 import arc.graphics.g2d.TextureRegion;
 import arc.math.*;
 import arc.util.*;
+import arc.util.io.*;
 import arc.math.geom.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
