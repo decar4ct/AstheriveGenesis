@@ -43,8 +43,10 @@ public class BioSpawner extends BioBlock {
                 if(spawnProgress >= 10) {
                     spawnProgress = 0;
                     Unit unit = unitType.create(team);
+                    unit.set(x, y);
+                    unit.rotation = 90f;
+                    unit.add();
                 }
-                Log.info(spawnProgress);
             }
         }
         @Override
