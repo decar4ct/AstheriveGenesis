@@ -24,7 +24,7 @@ public class VerdaraLiquid{
                     requirements(Category.liquid, with(VerdaraItems.quartz, 2));
                 }};
                 pipePump = new PipePump("pipe-pump"){{
-                    requirements(Category.liquid, with(VerdaraItems.wuartz, 10));
+                    requirements(Category.liquid, with(VerdaraItems.quartz, 10));
                 }};
             }
         }
