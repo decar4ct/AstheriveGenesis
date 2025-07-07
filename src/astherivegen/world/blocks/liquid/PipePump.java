@@ -67,7 +67,7 @@ public class PipePump extends LiquidBlock{
 
         @Override
         public boolean acceptLiquid(Building source, Liquid liquid){
-            return (liquids.current() == liquid || liquids.currentAmount() < 0.2f) && source == back() && source != PipePumpBuild;
+            return (liquids.current() == liquid || liquids.currentAmount() < 0.2f) && source == back() && !(source instanceof PipePumpBuild);
         }
     }
 }
