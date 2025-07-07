@@ -14,7 +14,7 @@ import astherivegen.content.Verdara.VerdaraItems;
 
 import static mindustry.type.ItemStack.with;
 
-public class VerdaraDistribution {
+public class VerdaraLiquid{
     public static Block
             pipe;
     public static void load() {
