@@ -106,7 +106,7 @@ public class LiquidPipe extends GenesisLiquidBlock{
 
         boolean blends(Tile other){
             if(other != null && other.build != null){
-                if(other.build instanceof LiquidPipeBuild || (other.build.block instanceof PipePump && (tile.build == other.build.back() || tile.build == other.build.front())){
+                if(other.build instanceof LiquidPipeBuild || (other.build.block instanceof PipePump && (tile.build == other.build.back() || tile.build == other.build.front()))){
                     return true;
                 }
             }
