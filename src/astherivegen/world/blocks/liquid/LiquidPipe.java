@@ -1,10 +1,15 @@
 package astherivegen.world.blocks.liquid;
 
+import arc.Core;
+import arc.math.geom.*;
 import arc.graphics.g2d.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.graphics.*;
 import mindustry.world.blocks.liquid.*;
+import mindustry.core.*;
+import mindustry.world.*;
+import mindustry.entities.*;
 
 public class LiquidPipe extends LiquidBlock{
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
