@@ -6,7 +6,7 @@ public class GenesisLiquidBlock extends LiquidBlock{
     public GenesisLiquidBlock(String name){
         super(name);
     }
-    public class GenesisLiquidBuild {
+    public class GenesisLiquidBuild extends LiquidBuild{
         //theres literally nothing here lmao, youve been trolled
     }
 }
