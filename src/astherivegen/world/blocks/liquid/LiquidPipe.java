@@ -11,6 +11,8 @@ import mindustry.core.*;
 import mindustry.world.*;
 import mindustry.entities.*;
 
+import static mindustry.Vars.*;
+
 public class LiquidPipe extends LiquidBlock{
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[][] liquidAtlasRegion = new TextureRegion[12][4];
@@ -94,7 +96,7 @@ public class LiquidPipe extends LiquidBlock{
         }
 
         boolean blends(Tile other){
-            if(other.block.hasLiquids){
+            if(other.build.block.hasLiquids){
                 return true;
             }
             return false;
