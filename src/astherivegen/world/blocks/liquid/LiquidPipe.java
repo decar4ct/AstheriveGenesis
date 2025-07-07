@@ -126,5 +126,10 @@ public class LiquidPipe extends GenesisLiquidBlock{
         public boolean acceptLiquid(Building source, Liquid liquid){
             return (source instanceof LiquidPipeBuild || source.block instanceof PipePump) && (liquids.current() == liquid || liquids.currentAmount() < 0.2f);
         }
+
+        @Override
+        public boolean canDumpLiquid(Building to, Liquid liquid){
+            return (to != null && to.block instanceof LiquidPipe);
+        }
     }
 }
