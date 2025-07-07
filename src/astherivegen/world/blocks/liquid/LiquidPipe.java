@@ -129,7 +129,7 @@ public class LiquidPipe extends GenesisLiquidBlock{
 
         @Override
         public boolean canDumpLiquid(Building to, Liquid liquid){
-            return (to != null && to.block instanceof LiquidPipe);
+            return (to != null && (to.block instanceof LiquidPipe || to.block instanceof PipePump));
         }
     }
 }
