@@ -82,11 +82,6 @@ public class LiquidPipe extends LiquidBlock{
             }
         }
     }
-
-    @Override
-    public TextureRegion[] icons(){
-        return new TextureRegion[]{bottomAtlasRegion[1][3], atlasRegion[1][3]};
-    }
     
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
