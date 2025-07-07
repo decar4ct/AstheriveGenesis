@@ -33,7 +33,7 @@ public class PipePump extends LiquidBlock{
     @Override
     public void load(){
         super.load();
-        topRegion = new TextureRegion(Core.atlas.find(name+"-top"));
+        topRegion = Core.atlas.find(name+"-top");
     }
     
     @Override
