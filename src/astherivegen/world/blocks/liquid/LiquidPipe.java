@@ -96,7 +96,7 @@ public class LiquidPipe extends LiquidBlock{
         }
 
         boolean blends(Tile other){
-            if(other != null){
+            if(other != null && other.build != null){
                 if(other.build.block.hasLiquids){
                     return true;
                 }
