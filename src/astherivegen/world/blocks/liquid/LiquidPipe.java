@@ -15,7 +15,7 @@ import static mindustry.Vars.*;
 
 public class LiquidPipe extends LiquidBlock{
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
-    public TextureRegion[][] liquidAtlasRegion = new TextureRegion[12][4];
+    public TextureRegion[][] bottomAtlasRegion = new TextureRegion[12][4];
     
     public int[] horBitmask = {
         //0 bit
@@ -68,7 +68,7 @@ public class LiquidPipe extends LiquidBlock{
         priority = TargetPriority.transport;
     }
 
-  @Override
+    @Override
     public void load(){
         super.load();
         int y = 0;
@@ -76,9 +76,20 @@ public class LiquidPipe extends LiquidBlock{
             int x = 0;
             for(int cx = 0; cx < 12; cx++, x += 32){
                 atlasRegion[cx][cy] = new TextureRegion(Core.atlas.find(name+"-atlas"), x, y, 32, 32);
-                liquidAtlasRegion[cx][cy] = new TextureRegion(Core.atlas.find(name+"-liquid-atlas"), x, y, 32, 32);
+                bottomAtlasRegion[cx][cy] = new TextureRegion(Core.atlas.find(name+"-bottom-atlas"), x, y, 32, 32);
             }
         }
+    }
+
+    @Override
+    public TextureRegion[] icons(){
+        return new TextureRegion[]{bottomAtlasRegion[1][3], atlasRegion[1][3]};
+    }
+    
+    @Override
+    public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
+        Draw.rect(bottomAtlasRegion[3][3], plan.drawx(), plan.drawy());
+        Draw.rect(atlasRegion[3][3], plan.drawx(), plan.drawy());
     }
 
     public class LiquidPipeBuild extends LiquidBuild{
@@ -106,8 +117,11 @@ public class LiquidPipe extends LiquidBlock{
 
         @Override
         public void draw(){
+            Draw.rect(bottomAtlasRegion[horBitmask[blending]][verBitmask[blending]], x, y);
+            if(liquids.currentAmount() > 0.001f){
+                drawTiledFrames(size, x, y, 0, liquids.current(), liquids.currentAmount() / liquidCapacity);
+            }
             Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], x, y);
-            Drawf.liquid(liquidAtlasRegion[horBitmask[blending]][verBitmask[blending]], x, y, liquids.currentAmount() / liquidCapacity, liquids.current().color);
         }
 
         @Override
