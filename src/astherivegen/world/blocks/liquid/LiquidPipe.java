@@ -63,7 +63,8 @@ public class LiquidPipe extends LiquidBlock{
     public LiquidPipe(String name){
         super(name);
         solid = false;
-        noUpdateDisabled = true;
+        //you cant disable liquid bro
+        noUpdateDisabled = false;
         floating = true;
         underBullets = true;
         canOverdrive = false;
