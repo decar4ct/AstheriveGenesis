@@ -16,12 +16,15 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraLiquid{
     public static Block
-            pipe;
+            pipe, pipePump;
     public static void load() {
         {
             {
                 pipe = new LiquidPipe("pipe"){{
                     requirements(Category.liquid, with(VerdaraItems.quartz, 2));
+                }};
+                pipePump = new PipePump("pipe-pump"){{
+                    requirements(Category.liquid, with(VerdaraItems.wuartz, 10));
                 }};
             }
         }
