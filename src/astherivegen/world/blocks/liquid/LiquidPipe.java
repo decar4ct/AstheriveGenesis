@@ -15,7 +15,7 @@ import mindustry.entities.units.*;
 
 import static mindustry.Vars.*;
 
-public class LiquidPipe extends LiquidBlock{
+public class LiquidPipe extends GenesisLiquidBlock{
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[][] bottomAtlasRegion = new TextureRegion[12][4];
     
@@ -90,7 +90,7 @@ public class LiquidPipe extends LiquidBlock{
         Draw.rect(atlasRegion[3][3], plan.drawx(), plan.drawy());
     }
 
-    public class LiquidPipeBuild extends LiquidBuild{
+    public class LiquidPipeBuild extends GenesisLiquidBuild{
         public int blending;
         @Override
         public void updateTile(){
