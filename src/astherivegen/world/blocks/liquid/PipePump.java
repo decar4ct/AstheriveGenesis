@@ -43,7 +43,7 @@ public class PipePump extends LiquidBlock{
     }
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, topRegion, arrowRegion};
+        return new TextureRegion[]{region, topRegion};
     }
 
     public class PipePumpBuild extends LiquidBuild{
@@ -52,9 +52,9 @@ public class PipePump extends LiquidBlock{
         public void updateTile(){
             Building front = front(), back = back();
 
-            if(front != null && back != null && back.hasLiquids && back.liquids != null && front.team == team && back.team == team && back.canUnload()){
+            if(front != null && back != null && back.block.hasLiquids && back.liquids != null && front.team == team && back.team == team){
                 if(liquids.currentAmount() > 0.0001f && timer(timerFlow, 1)){
-                    moveLiquidForward(leaks, liquids.current());
+                    moveLiquidForward(false, liquids.current());
                     noSleep();
                 }else{
                     sleep();
@@ -73,11 +73,8 @@ public class PipePump extends LiquidBlock{
 
         @Override
         public void draw(){
-            Draw.rect(bottomAtlasRegion[horBitmask[blending]][verBitmask[blending]], x, y);
-            if(liquids.currentAmount() > 0.001f){
-                drawTiledFrames(size, x, y, 0, liquids.current(), liquids.currentAmount() / liquidCapacity);
-            }
-            Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], x, y);
+            Draw.rect(region, x, y);
+            Draw.rect(topRegion, x, y, rotation * 90);
         }
 
         @Override
