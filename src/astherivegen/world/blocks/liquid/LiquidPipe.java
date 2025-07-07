@@ -106,7 +106,7 @@ public class LiquidPipe extends LiquidBlock{
 
         boolean blends(Tile other){
             if(other != null && other.build != null){
-                if(other.build.block.hasLiquids){
+                if(other.build == PipeBuild || other.build == PipePumpBuild){
                     return true;
                 }
             }
@@ -124,7 +124,7 @@ public class LiquidPipe extends LiquidBlock{
 
         @Override
         public boolean acceptLiquid(Building source, Liquid liquid){
-            return (liquids.current() == liquid || liquids.currentAmount() < 0.2f);
+            return (source.build == PipeBuild || source.build == PipePumpBuild) && (liquids.current() == liquid || liquids.currentAmount() < 0.2f);
         }
     }
 }
