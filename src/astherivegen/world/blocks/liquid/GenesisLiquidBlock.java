@@ -1,6 +1,6 @@
 package astherivegen.world.blocks.liquid;
 
-import mindustry.world.blocks.liquid;
+import mindustry.world.blocks.liquid.*;
 
 public class GenesisLiquidBlock extends LiquidBlock{
     public GenesisLiquidBlock(String name){
