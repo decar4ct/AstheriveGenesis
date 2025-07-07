@@ -7,6 +7,7 @@ public class VerdaraBlocks{
         VerdaraTurrets.load();
         VerdaraProduction.load();
         VerdaraDistribution.load();
+        VerdaraLiquid.load();
         VerdaraDefense.load();
         VerdaraPower.load();
         VerdaraStorage.load();
