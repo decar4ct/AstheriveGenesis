@@ -54,21 +54,9 @@ public class PipePump extends LiquidBlock{
 
             if(front != null && back != null && back.block.hasLiquids && back.liquids != null && front.team == team && back.team == team){
                 if(liquids.currentAmount() > 0.0001f && timer(timerFlow, 1)){
-                    moveLiquidForward(false, liquids.current());
-                    noSleep();
-                }else{
-                    sleep();
+                    transferLiquid(front, 5, liquids.current());
                 }
             }
-        }
-
-        boolean blends(Tile other){
-            if(other != null && other.build != null){
-                if(other.build.block.hasLiquids){
-                    return true;
-                }
-            }
-            return false;
         }
 
         @Override
@@ -79,7 +67,7 @@ public class PipePump extends LiquidBlock{
 
         @Override
         public boolean acceptLiquid(Building source, Liquid liquid){
-            return (liquids.current() == liquid || liquids.currentAmount() < 0.2f) && source == back();
+            return (liquids.current() == liquid || liquids.currentAmount() < 0.2f) && source == back() && source != PipePumpBuild;
         }
     }
 }
