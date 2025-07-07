@@ -15,7 +15,7 @@ import mindustry.entities.units.*;
 
 import static mindustry.Vars.*;
 
-public class PipePump extends LiquidBlock{
+public class PipePump extends GenesisLiquidBlock{
     public TextureRegion topRegion;
     public final int timerFlow = timers++;
 
@@ -46,7 +46,7 @@ public class PipePump extends LiquidBlock{
         return new TextureRegion[]{region, topRegion};
     }
 
-    public class PipePumpBuild extends LiquidBuild{
+    public class PipePumpBuild extends GenesisLiquidBuild{
 
         @Override
         public void updateTile(){
