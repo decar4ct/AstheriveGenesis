@@ -75,7 +75,7 @@ public class VerdaraProduction {
                 sinScl = 2f;
                 sides = 4;
                 sideOffset = (float) Math.PI / 2f;
-            }}, new DrawLiquidTile(GenesisLiquids.tritagen), new DrawDefault(), new DrawGlowRegion(){{
+            }}, new DrawLiquidTile(GenesisLiquids.tritagen, 8), new DrawDefault(), new DrawGlowRegion(){{
                 alpha = 1f;
                 glowScale = 5f;
                 color = GenesisPal.lightNylon;
