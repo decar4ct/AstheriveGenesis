@@ -87,7 +87,7 @@ public class VerdaraProduction {
             ambientSoundVolume = 0.08f;
 
             consumeLiquids(LiquidStack.with(GenesisLiquids.tritagen, 16f / 60f));
-            liquidCapacity = 30f
+            liquidCapacity = 30f;
 
             researchCostMultiplier = 0.1f;
             consumePower(2f);
