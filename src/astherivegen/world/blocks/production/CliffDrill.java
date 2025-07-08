@@ -19,40 +19,34 @@ import mindustry.entities.units.*;
 import static mindustry.Vars.*;
 
 public class CliffDrill extends BeamDrill {
-    public TextureRegion dir1, dir2, side, bore, boreEnd, rotator;
+    //TODO: make it an array?
+    public TextureRegion[] topRegions = new TextureRegion[4];
     public CliffDrill(String name){
          super(name);
     }
     @Override
     public void load(){
         super.load();
-        dir1=Core.atlas.find(name+"-dir1");
-        dir2=Core.atlas.find(name+"-dir2");
-        side=Core.atlas.find(name+"-side");
-        bore=Core.atlas.find(name+"-bore");
-        boreEnd=Core.atlas.find(name+"-bore-end");
-        rotator=Core.atlas.find(name+"-bore-rotator");
+        //i couldve used for, but it wont because i evil
+        topRegions[0]=Core.atlas.find(name+"-top0");
+        topRegions[1]=Core.atlas.find(name+"-top1");
+        topRegions[2]=Core.atlas.find(name+"-top2");
+        topRegions[3]=Core.atlas.find(name+"-top3");
     }
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
         Draw.rect(region, plan.drawx(), plan.drawy());
-        Draw.rect(dir1, plan.drawx(), plan.drawy(), plan.rotation * 90);
-        Draw.rect(side, plan.drawx(), plan.drawy(), plan.rotation * 90);
+        Draw.rect(topRegions[plan.rotation], plan.drawx(), plan.drawy());
     }
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, dir1, side};
+        return new TextureRegion[]{region, topRegions[0]};
     }
     public class CliffDrillBuild extends BeamDrillBuild {
         @Override
         public void draw(){
-            Draw.rect(region, x, y);
-            if (rotation<2){
-                Draw.rect(dir1, x, y, rotation*90);
-            } else {
-                Draw.rect(dir2, x, y, rotation*90);
-            }
-            Draw.rect(side, x, y, rotation%2==0?0:270);
+            Draw.rect(block.region, x, y);
+            Draw.rect(topRegion[rot], x, y);
 
             if(isPayload()) return;
 
@@ -129,5 +123,6 @@ public class CliffDrill extends BeamDrill {
             Draw.blend();
             Draw.reset();
         }
+
     }
 }
