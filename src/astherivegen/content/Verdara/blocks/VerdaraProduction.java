@@ -30,7 +30,7 @@ public class VerdaraProduction {
             tier = 3;
             size = 2;
             researchCost = with(VerdaraItems.quartz, 50, VerdaraItems.magnetite, 50);
-        }}
+        }};
         clusterDrill = new ClusterDrill("cluster-drill"){{
             requirements(Category.production, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
             consumePower(0.5f);
