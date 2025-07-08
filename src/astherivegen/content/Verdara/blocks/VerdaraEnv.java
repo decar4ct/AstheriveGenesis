@@ -26,6 +26,8 @@ public class VerdaraEnv {
             //eonstone
             eonstoneFloor, eonstoneLightlyErodedFloor, eonstoneErodedFloor,
             eonstoneWall, eonstoneErodedWall,
+            carbonicEonstoneErodedWall,
+            eonstoneErodedVent,
             //ranston
             ranston, platedRanston,
             //idk
@@ -89,6 +91,10 @@ public class VerdaraEnv {
                 //wall
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
+                carbonicEonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{
+                    variants = 3;
+                    itemDrop = VerdaraItems.carbon;
+                }};
                 //liquid
                 alyogelDeepFloor = new Floor("alyogel-deep-floor"){{
                     speedMultiplier = 0.2f;
@@ -117,6 +123,11 @@ public class VerdaraEnv {
                 eonstoneErodedBoulder = new Prop("eonstone-eroded-boulder"){{
                     variants = 2;
                     eonstoneErodedFloor.asFloor().decoration = this;
+                }};
+                //vent
+                eonstoneErodedVent = new SteamVent("eonstone-eroded-vent"){{
+                    parent = blendGroup = eonstoneErodedFloor;
+                    attributes.set(Attribute.steam, 1f);
                 }};
                 //ranston wow very creative name omg
                 //floor
