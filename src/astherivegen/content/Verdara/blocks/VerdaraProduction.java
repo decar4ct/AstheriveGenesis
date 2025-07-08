@@ -27,7 +27,7 @@ public class VerdaraProduction {
             consumeLiquid(Liquids.hydrogen, 0.05f).boost();
 
             squareSprite = false;
-            drillTime = 700;
+            drillTime = 550;
             tier = 3;
             size = 3;
             fogRadius = 3;
@@ -39,8 +39,9 @@ public class VerdaraProduction {
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
                 sinMag = 2.75f;
                 sinScl = 5f;
-                sides = 8;
+                sides = 4;
                 sideOffset = (float) Math.PI / 2f;
+                angleOffset = 45f;
             }}, new DrawDefault());
 
             size = 2;
@@ -51,7 +52,7 @@ public class VerdaraProduction {
             researchCostMultiplier = 0.1f;
             consumePower(1/6f);
             consumeItems(with(VerdaraItems.magnetite, 1, VerdaraItems.carbon, 2));
-            craftTime = 140f;
+            craftTime = 150f;
             outputItem = new ItemStack(VerdaraItems.polterite, 2);
         }};
     }
