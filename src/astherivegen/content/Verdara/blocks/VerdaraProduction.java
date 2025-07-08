@@ -40,7 +40,7 @@ public class VerdaraProduction {
                 sinMag = 2.75f;
                 sinScl = 5f;
                 sides = 8;
-                sideOffset = Mathf.PI / 2f;
+                sideOffset = (float) Math.PI / 2f;
             }}, new DrawDefault());
 
             size = 2;
