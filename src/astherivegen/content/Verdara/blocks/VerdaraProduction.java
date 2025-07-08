@@ -12,6 +12,8 @@ import mindustry.content.*;
 import mindustry.world.draw.*;
 import astherivegen.world.blocks.production.*;
 import astherivegen.content.Verdara.VerdaraItems;
+import astherivegen.content.*;
+import astherivegen.graphics.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -19,7 +21,7 @@ public class VerdaraProduction {
     public static Block
     cliffBore, clusterDrill,
 
-    polteritePress;
+    polteritePress, nylonSynthesizer;
     public static void load() {
         cliffBore = new CliffDrill("cliff-bore"){{
             requirements(Category.production, with(VerdaraItems.quartz, 10, VerdaraItems.magnetite, 20));
@@ -64,6 +66,31 @@ public class VerdaraProduction {
             consumeItems(with(VerdaraItems.magnetite, 1, VerdaraItems.carbon, 2));
             craftTime = 150f;
             outputItem = new ItemStack(VerdaraItems.polterite, 2);
+        }};
+        nylonSynthesizer = new GenericCrafter("nylon-synthesizer"){{
+            requirements(Category.crafting, with(VerdaraItems.quartz, 75, VerdaraItems.magnetite, 100, VerdaraItems.polterite, 50));
+            
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
+                sinMag = 2f;
+                sinScl = 2f;
+                sides = 4;
+                sideOffset = (float) Math.PI / 2f;
+            }}, new DrawLiquidTile(GenesisLiquids.tritagen), new DrawDefault(), new DrawGlowRegion(){{
+                alpha = 1f;
+                glowScale = 5f;
+                color = GenesisPal.lightNylon;
+            }});
+
+            size = 3;
+
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.08f;
+
+            researchCostMultiplier = 0.1f;
+            consumePower(2f);
+            consumeItems(with(VerdaraItems.quartz, 10, VerdaraItems.polterite, 4));
+            craftTime = 300f;
+            outputItem = new ItemStack(VerdaraItems.nylon, 2);
         }};
     }
 }
