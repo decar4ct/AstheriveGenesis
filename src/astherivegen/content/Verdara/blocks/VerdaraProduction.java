@@ -10,6 +10,7 @@ import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
 import mindustry.world.draw.*;
+import mindustry.type.*;
 import astherivegen.world.blocks.production.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.content.*;
