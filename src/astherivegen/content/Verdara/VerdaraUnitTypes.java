@@ -58,7 +58,7 @@ public class VerdaraUnitTypes{
 
             range = 120f;
             faceTarget = true;
-            mineWalls = true;
+            mineWalls = false;
             mineFloor = true;
             mineHardnessScaling = false;
             mineSpeed = 6f;
