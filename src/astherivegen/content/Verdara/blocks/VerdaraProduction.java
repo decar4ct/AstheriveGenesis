@@ -9,6 +9,7 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
 import mindustry.content.*;
+import mindustry.world.draw.*;
 import astherivegen.world.blocks.production.*;
 import astherivegen.content.Verdara.VerdaraItems;
 
@@ -16,23 +17,42 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraProduction {
     public static Block
-            clusterDrill;
-    public static void load() {
-        {
-            {
-                clusterDrill = new ClusterDrill("cluster-drill"){{
-                    requirements(Category.production, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
-                    consumePower(0.5f);
-                    consumeLiquid(Liquids.hydrogen, 0.05f).boost();
+    clusterDrill,
 
-                    squareSprite = false;
-                    drillTime = 700;
-                    tier = 3;
-                    size = 3;
-                    fogRadius = 3;
-                    researchCost = with(VerdaraItems.quartz, 10);
-                }};
-            }
-        }
+    polteritePress;
+    public static void load() {
+        clusterDrill = new ClusterDrill("cluster-drill"){{
+            requirements(Category.production, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
+            consumePower(0.5f);
+            consumeLiquid(Liquids.hydrogen, 0.05f).boost();
+
+            squareSprite = false;
+            drillTime = 700;
+            tier = 3;
+            size = 3;
+            fogRadius = 3;
+            researchCost = with(VerdaraItems.quartz, 10);
+        }};
+        polteritePress = new GenericCrafter("polterite-press"){{
+            requirements(Category.crafting, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
+            
+            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
+                sinMag = 2.75f;
+                sinScl = 5f;
+                sides = 8;
+                sideOffset = Mathf.PI / 2f;
+            }}, new DrawDefault());
+
+            size = 2;
+
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.06f;
+
+            researchCostMultiplier = 0.1f;
+            consumePower(1/6f);
+            consumeItems(with(VerdaraItems.magnetite, 1, VerdaraItems.carbon, 2));
+            craftTime = 140f;
+            outputItem = new ItemStack(VerdaraItems.polterite, 2);
+        }};
     }
 }
