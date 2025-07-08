@@ -5,7 +5,7 @@ import mindustry.type.*;
 import mindustry.content.*;
 
 public class GenesisLiquids{
-    public static Liquid watergel, biomass, oxygen;
+    public static Liquid watergel, biomass, oxygen, tritagen;
     public static void load(){
 
         watergel = new Liquid("watergel", Color.valueOf("4C5757")){{
@@ -37,6 +37,11 @@ public class GenesisLiquids{
             barColor = Color.valueOf("52557F");
             explosiveness = 1f;
             flammability = 1f;
+        }};
+
+        tritagen = new Liquid("tritagen", Color.valueOf("8BE7AF")){{
+            gas = true;
+            barColor = Color.valueOf("8BE7AF");
         }};
     }
 }
