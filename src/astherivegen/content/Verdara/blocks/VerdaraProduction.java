@@ -17,10 +17,20 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraProduction {
     public static Block
-    clusterDrill,
+    cliffBore, clusterDrill,
 
     polteritePress;
     public static void load() {
+        cliffBore = new CliffDrill("cliff-bore"){{
+            requirements(Category.production, with(VerdaraItems.quartz, 10, VerdaraItems.magnetite, 20));
+            consumePower(1/3f);
+            consumeLiquid(Liquids.hydrogen, 0.05f).boost();
+
+            drillTime = 400;
+            tier = 3;
+            size = 2;
+            researchCost = with(VerdaraItems.quartz, 50, VerdaraItems.magnetite, 50);
+        }}
         clusterDrill = new ClusterDrill("cluster-drill"){{
             requirements(Category.production, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
             consumePower(0.5f);
