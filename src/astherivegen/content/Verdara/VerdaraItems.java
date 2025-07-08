@@ -6,7 +6,7 @@ import mindustry.type.*;
 
 public class VerdaraItems{
     public static Item
-    quartz, magnetite, polterite;
+    quartz, magnetite, carbon, polterite, nylon;
     public static final Seq<Item> verdaraItems = new Seq<>();
 
     public static void load(){
@@ -20,14 +20,24 @@ public class VerdaraItems{
             hardness = 2;
             cost = 0.7f;
         }};
-      
+
+        carbon = new Item("carbon", Color.valueOf("808480")){{
+            hardness = 1;
+            cost = 0.5f;
+        }};
+
         polterite = new Item("polterite", Color.valueOf("888283")){{
             hardness = 3;
             cost = 0.8f;
         }};
+
+        nylon = new Item("nylon", Color.valueOf("7AC194")){{
+            hardness = 5;
+            cost = 1.5f;
+        }};
         
         verdaraItems.addAll(
-        quartz, magnetite, polterite
+        quartz, magnetite, carbon, polterite, nylon
         );
     }
 }
