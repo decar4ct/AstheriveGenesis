@@ -26,7 +26,7 @@ public class VerdaraProduction {
             consumePower(1/3f);
             consumeLiquid(Liquids.hydrogen, 0.05f).boost();
 
-            drillTime = 400;
+            drillTime = 280;
             tier = 3;
             size = 2;
             researchCost = with(VerdaraItems.quartz, 50, VerdaraItems.magnetite, 50);
