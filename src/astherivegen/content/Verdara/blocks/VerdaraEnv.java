@@ -9,6 +9,7 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds.*;
 import mindustry.content.Fx;
+import mindustry.world.meta.*;
 import astherivegen.content.Verdara.VerdaraItems;
 import astherivegen.world.blocks.environment.*;
 
