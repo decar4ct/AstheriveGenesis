@@ -24,7 +24,7 @@ public class VerdaraDistribution {
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                     speed = 0.065f;
                     displayedSpeed = 9f;
-                    rotBridgeReplacement=itemOverpass;
+                    bridgeReplacement=itemOverpass;
                 }};
                 itemOverpass = new ItemOverpass("item-overpass"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 6, VerdaraItems.magnetite, 3));
