@@ -71,12 +71,12 @@ public class VerdaraProduction {
         nylonSynthesizer = new GenericCrafter("nylon-synthesizer"){{
             requirements(Category.crafting, with(VerdaraItems.quartz, 75, VerdaraItems.magnetite, 100, VerdaraItems.polterite, 50));
             
-            drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
-                sinMag = 3f;
+            drawer = new DrawMulti(new DrawRegion("-bottom"),  new DrawLiquidTile(GenesisLiquids.tritagen, 0), new DrawPistons(){{
+                sinMag = 2f;
                 sinScl = 12f;
                 sides = 4;
-            }}, new DrawLiquidTile(GenesisLiquids.tritagen, 0), new DrawDefault(), new DrawGlowRegion(){{
-                alpha = 0.75f;
+            }}, new DrawDefault(), new DrawGlowRegion(){{
+                alpha = 0.5f;
                 glowScale = 12f;
                 color = GenesisPal.lightNylon;
             }});
@@ -88,11 +88,11 @@ public class VerdaraProduction {
 
             consumeLiquids(LiquidStack.with(GenesisLiquids.tritagen, 16f / 60f));
             liquidCapacity = 30f;
-            itemCapacity = 20;
+            itemCapacity = 16;
 
             researchCostMultiplier = 0.1f;
             consumePower(2f);
-            consumeItems(with(VerdaraItems.quartz, 10, VerdaraItems.polterite, 4));
+            consumeItems(with(VerdaraItems.quartz, 8, VerdaraItems.polterite, 4));
             craftTime = 300f;
             outputItem = new ItemStack(VerdaraItems.nylon, 2);
         }};
