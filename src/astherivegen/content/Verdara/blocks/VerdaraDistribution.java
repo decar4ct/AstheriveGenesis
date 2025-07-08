@@ -38,6 +38,7 @@ public class VerdaraDistribution {
                 }};
                 itemGate = new OverflowGate("item-gate"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 4, VerdaraItems.magnetite, 2));
+                }};
             }
         }
     }
