@@ -72,13 +72,12 @@ public class VerdaraProduction {
             requirements(Category.crafting, with(VerdaraItems.quartz, 75, VerdaraItems.magnetite, 100, VerdaraItems.polterite, 50));
             
             drawer = new DrawMulti(new DrawRegion("-bottom"), new DrawPistons(){{
-                sinMag = 2f;
-                sinScl = 2f;
+                sinMag = 3f;
+                sinScl = 12f;
                 sides = 4;
-                sideOffset = (float) Math.PI / 2f;
-            }}, new DrawLiquidTile(GenesisLiquids.tritagen, 8), new DrawDefault(), new DrawGlowRegion(){{
-                alpha = 1f;
-                glowScale = 5f;
+            }}, new DrawLiquidTile(GenesisLiquids.tritagen, 0), new DrawDefault(), new DrawGlowRegion(){{
+                alpha = 0.75f;
+                glowScale = 12f;
                 color = GenesisPal.lightNylon;
             }});
 
@@ -89,6 +88,7 @@ public class VerdaraProduction {
 
             consumeLiquids(LiquidStack.with(GenesisLiquids.tritagen, 16f / 60f));
             liquidCapacity = 30f;
+            itemCapacity = 20;
 
             researchCostMultiplier = 0.1f;
             consumePower(2f);
