@@ -92,7 +92,7 @@ public class VerdaraEnv {
                 //wall
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
-                carbonicEonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{
+                carbonicEonstoneErodedWall = new StaticWall("carbonic-eonstone-eroded-wall"){{
                     variants = 3;
                     itemDrop = VerdaraItems.carbon;
                 }};
