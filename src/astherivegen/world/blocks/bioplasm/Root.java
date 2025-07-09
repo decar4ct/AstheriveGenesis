@@ -153,6 +153,8 @@ public class Root extends BioBlock {
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
                     if(adj != null && (adj.block instanceof Root)){
+                        Log.info(itemTargetX);
+                        Log.info(adj.tile.x);
                         float dist = (float)Math.abs(Mathf.dst2(itemTargetX, itemTargetY, adj.tile.x, adj.tile.y));
                         if(dist<bestDist&&adj.acceptItem(this, lastItem)){
                             target = adj;
