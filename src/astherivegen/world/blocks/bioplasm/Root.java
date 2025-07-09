@@ -8,6 +8,7 @@ import arc.math.*;
 import arc.util.*;
 import arc.util.io.*;
 import arc.math.geom.*;
+import arc.struct.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.gen.Building;
 import mindustry.graphics.*;
@@ -198,14 +199,14 @@ public class Root extends BioBlock {
             var buildings = team.data().buildingTree;
             if(buildings == null) return null;
             int range = 50;
-            buildings.intersect(wx - range, wy - range, range*2f, range*2f, b -> {
-                if(b.within(wx, wy, range + b.hitSize() / 2f) && b.block instanceof BioHeart){
+            buildings.intersect(x*tilesize - range, y*tilesize - range, range*2f, range*2f, b -> {
+                if(b.within(x*tilesize, y*tilesize, range + b.hitSize() / 2f) && b.block instanceof BioHeart){
                     heartArray.add(b);
                 }
             });
             int size = heartArray.size;
             for(int i = 0; i < size; i++){
-                dist = getDist(this,heartArray[i]);
+                float dist = getDist(this,heartArray[i]);
                 if(dist < bestDist){
                     bestDist = dist;
                     bestBuild = heartArray[i];
