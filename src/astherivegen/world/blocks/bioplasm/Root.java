@@ -191,12 +191,12 @@ public class Root extends BioBlock {
 
         public Building getNearestHeart() {
             float bestDist = Float.POSITIVE_INFINITY;
-            Tile bestBuild = null;
+            Building bestBuild = null;
             indexer.eachBlock(team, x * tilesize + offset, y * tilesize + offset, 40, other -> other.block instanceof BioHeart, other -> {
-                float dist = getDist(other.build.x,x*tilesize,other.build.y,y*tilesize);
+                float dist = getDist(other.x,x*tilesize,other.y,y*tilesize);
                 if(dist<bestDist){
                     bestDist = dist;
-                    bestBuild = other.build;
+                    bestBuild = other;
                 }
             });
             
