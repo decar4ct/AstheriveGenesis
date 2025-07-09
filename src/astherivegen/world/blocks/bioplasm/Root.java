@@ -107,6 +107,7 @@ public class Root extends BioBlock {
     public class RootBuild extends BioBuilding {
         public int blending;
         public Item lastItem;
+        public int itemTargetX, itemTargetY;
         
         @Override
         public void updateTile(){
@@ -137,8 +138,24 @@ public class Root extends BioBlock {
             if(lastItem == null && items.any()){
                 lastItem = items.first();
             }
-            if(lastItem != null && pulseSource != null) {
-                Building target = pulseSource.build;
+            if(itemTargetX == null || itemTargetY == null){
+                itemTargetX = getNearestHeart().x;
+                itemTargetY = getNearestHeart().y;
+            }
+            if(lastItem != null && itemTargetX != null && itemTargetY != null) {
+                Building target = null;
+                float bestDist = Float.POSITIVE_INFINITY;
+                for(int i=0;i<=1;i++){
+                    Building adj;
+                    adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
+                    if(adj != null && !(adj instanceof RootBuild)){
+                        float dist = getDist(itemTargetX,adj.x,itemTargetY,adj.y);
+                        if(dist<bestDist){
+                            target = adj;
+                            bestDist = dist;
+                        }
+                    }
+                }
                 if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
                     target.handleItem(this, lastItem);
                     items.remove(lastItem, 1);
@@ -170,6 +187,25 @@ public class Root extends BioBlock {
             if(lastItem!=null){
                 Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
             }
+        }
+
+        public Building getNearestHeart() {
+            float bestDist = Float.POSITIVE_INFINITY;
+            Tile bestBuild = null;
+            indexer.eachBlock(player.team(), x * tilesize + offset, y * tilesize + offset, range, other -> other.block instanceof BioHeart, other -> {
+                float dist = getDist(other.build.x,x*tilesize,other.build.y,y*tilesize);
+                if(dist<bestDist){
+                    bestDist = dist;
+                    bestBuild = other.build;
+                }
+            });
+            
+            return bestBuild;
+        }
+
+        public float getDist(x1,x2,y1,y2){
+            //literally just pythagoras
+            return float dist = Math.sqrt(Math.abs(x1-x2)*Math.abs(x1-x2)+Math.abs(y1-y2)*Math.abs(y1-y2));
         }
 
         //item mechanic
