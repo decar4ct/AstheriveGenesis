@@ -107,7 +107,7 @@ public class Root extends BioBlock {
     public class RootBuild extends BioBuilding {
         public int blending;
         public Item lastItem;
-        public int itemTargetX, itemTargetY;
+        public int itemTargetX = -1, itemTargetY = -1;
         
         @Override
         public void updateTile(){
@@ -138,11 +138,11 @@ public class Root extends BioBlock {
             if(lastItem == null && items.any()){
                 lastItem = items.first();
             }
-            if(itemTargetX == null || itemTargetY == null){
+            if(itemTargetX == -1 || itemTargetY == -1){
                 itemTargetX = getNearestHeart().tile.x;
                 itemTargetY = getNearestHeart().tile.y;
             }
-            if(lastItem != null && itemTargetX != null && itemTargetY != null) {
+            if(lastItem != null && itemTargetX != -1 && itemTargetY != -1) {
                 Building target = null;
                 float bestDist = Float.POSITIVE_INFINITY;
                 for(int i=0;i<=1;i++){
