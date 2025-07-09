@@ -213,6 +213,7 @@ public class Root extends BioBlock {
                     bestBuild = items[i];
                 }
             }
+            return bestBuild;
         }
 
         public float getDist(Building build1,Building build2){
