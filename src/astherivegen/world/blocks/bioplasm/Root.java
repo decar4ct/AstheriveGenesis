@@ -29,6 +29,7 @@ import static mindustry.Vars.*;
 public class Root extends BioBlock {
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[] leafRegion = new TextureRegion[2];
+    private Seq<Building> heartArray = new Seq<>(Building.class);
     //SUFFERING
     public int[] horBitmask = {
         //0 bit
@@ -192,16 +193,28 @@ public class Root extends BioBlock {
         public Building getNearestHeart() {
             float bestDist = Float.POSITIVE_INFINITY;
             Building bestBuild = null;
-            indexer.eachBlock(team, x * tilesize + offset, y * tilesize + offset, 40, other -> other.block instanceof BioHeart, other -> compare(other.tile.x,tile.x,other.tile.y,tile.y,other));
-            
-            return bestBuild;
 
-            private void compare(int x1,int x2,int y1,int y2, Building build){
-                float dist = getDist(x1,x2,y1,y2);
-                if(dist<bestDist){
-                    bestDist = dist;
-                    bestBuild = build;
+            heartArray.clear();
+            var buildings = team.data().buildingTree;
+            if(buildings == null) return null;
+            int range = 50;
+            buildings.intersect(wx - range, wy - range, range*2f, range*2f, b -> {
+                if(b.within(wx, wy, range + b.hitSize() / 2f) && b.block instanceof BioHeart){
+                    heartArray.add(b);
                 }
+            });
+            int size = heartArray.size;
+            for(int i = 0; i < size; i++){
+                dist = getDist(this,heartArray[i]);
+                if(dist < bestDist){
+                    bestDist = dist;
+                    bestBuild = heartArray[i];
+                }
+            }
+        }
+
+        public float getDist(Building build1,Building build2){
+            return getDist(build1.tile.x,build2.tile.x,build1.tile.y,build2.tile.y);
         }
 
         public float getDist(int x1,int x2,int y1, int y2){
