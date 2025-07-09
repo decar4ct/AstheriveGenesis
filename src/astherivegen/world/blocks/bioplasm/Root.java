@@ -148,13 +148,13 @@ public class Root extends BioBlock {
             }
             if(lastItem != null && itemTargetX != -1 && itemTargetY != -1) {
                 Building target = null;
-                float bestDist = Float.POSITIVE_INFINITY;
+                float bestDist = Float.NEGATIVE_INFINITY; //FEAR THE INFINITE ABYSS
                 for(int i=0;i<=1;i++){
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
                     if(adj != null && (adj.block instanceof Root)){
                         float dist = getDist(itemTargetX,adj.tile.x,itemTargetY,adj.tile.y);
-                        if(dist<bestDist){
+                        if(dist>bestDist){
                             target = adj;
                             bestDist = dist;
                         }
