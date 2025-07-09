@@ -141,8 +141,10 @@ public class Root extends BioBlock {
                 lastItem = items.first();
             }
             if(itemTargetX == -1 || itemTargetY == -1){
-                itemTargetX = getNearestHeart().tile.x;
-                itemTargetY = getNearestHeart().tile.y;
+                if(getNearestHeart()!=null){
+                    itemTargetX = getNearestHeart().tile.x;
+                    itemTargetY = getNearestHeart().tile.y;
+                }
             }
             if(lastItem != null && itemTargetX != -1 && itemTargetY != -1) {
                 Building target = null;
