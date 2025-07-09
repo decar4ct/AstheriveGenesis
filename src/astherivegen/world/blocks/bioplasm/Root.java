@@ -202,13 +202,14 @@ public class Root extends BioBlock {
             if(buildings == null) return null;
             int range = 50;
             buildings.intersect(x*tilesize - range, y*tilesize - range, range*2f, range*2f, b -> {
-                if(b.within(x*tilesize, y*tilesize, range + b.hitSize() / 2f) && b.block instanceof BioHeart){
+                if(b.within(x*tilesize, y*tilesize, range + b.hitSize() / 2f)){
                     heartArray.add(b);
                 }
             });
             int size = heartArray.size;
             var items = heartArray.items;
             Log.info(items);
+            Log.info(items[0].tile.x);
             for(int i = 0; i < size; i++){
                 float dist = getDist(this, items[i]);
                 if(dist < bestDist){
