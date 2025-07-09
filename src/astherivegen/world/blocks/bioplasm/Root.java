@@ -139,8 +139,8 @@ public class Root extends BioBlock {
                 lastItem = items.first();
             }
             if(itemTargetX == null || itemTargetY == null){
-                itemTargetX = getNearestHeart().x;
-                itemTargetY = getNearestHeart().y;
+                itemTargetX = getNearestHeart().tile.x;
+                itemTargetY = getNearestHeart().tile.y;
             }
             if(lastItem != null && itemTargetX != null && itemTargetY != null) {
                 Building target = null;
@@ -149,7 +149,7 @@ public class Root extends BioBlock {
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
                     if(adj != null && !(adj instanceof RootBuild)){
-                        float dist = getDist(itemTargetX,adj.x,itemTargetY,adj.y);
+                        float dist = getDist(itemTargetX,adj.tile.x,itemTargetY,adj.tile.y);
                         if(dist<bestDist){
                             target = adj;
                             bestDist = dist;
@@ -193,7 +193,7 @@ public class Root extends BioBlock {
             float bestDist = Float.POSITIVE_INFINITY;
             Building bestBuild = null;
             indexer.eachBlock(team, x * tilesize + offset, y * tilesize + offset, 40, other -> other.block instanceof BioHeart, other -> {
-                float dist = getDist(other.x,x*tilesize,other.y,y*tilesize);
+                float dist = getDist(other.tile.x,tile.x,other.tile.y,tile.y);
                 if(dist<bestDist){
                     bestDist = dist;
                     bestBuild = other;
@@ -205,7 +205,7 @@ public class Root extends BioBlock {
 
         public float getDist(int x1,int x2,int y1, int y2){
             //literally just pythagoras
-            return Math.sqrt(Math.abs(x1-x2)*Math.abs(x1-x2)+Math.abs(y1-y2)*Math.abs(y1-y2));
+            return (float)Math.sqrt((float)Math.abs(x1-x2)*Math.abs(x1-x2)+(float)Math.abs(y1-y2)*Math.abs(y1-y2));
         }
 
         //item mechanic
