@@ -148,13 +148,13 @@ public class Root extends BioBlock {
             }
             if(lastItem != null && itemTargetX != -1 && itemTargetY != -1) {
                 Building target = null;
-                float bestDist = Float.NEGATIVE_INFINITY; //FEAR THE INFINITE ABYSS
+                float bestDist = Float.POSITIVE_INFINITY; //FEAR THE INFINITE POWER
                 for(int i=0;i<=1;i++){
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
                     if(adj != null && (adj.block instanceof Root)){
-                        float dist = getDist(itemTargetX,adj.tile.x,itemTargetY,adj.tile.y);
-                        if(dist>bestDist){
+                        float dist = Mathf.dst2(x*tilesize, y*tilesize, adj.worldx(), adj.worldy());
+                        if(dist<bestDist&&adj.acceptItem(this, lastItem)){
                             target = adj;
                             bestDist = dist;
                         }
@@ -195,15 +195,6 @@ public class Root extends BioBlock {
 
         public Building getNearestHeart() {
             return Units.findAllyTile(team, x, y, 1000, b -> b.block instanceof BioHeart);
-        }
-
-        public float getDist(Building build1,Building build2){
-            return getDist(build1.tile.x,build2.tile.x,build1.tile.y,build2.tile.y);
-        }
-
-        public float getDist(int x1,int x2,int y1, int y2){
-            //literally just pythagoras
-            return (float)Math.sqrt((float)Math.abs(x1-x2)*Math.abs(x1-x2)+(float)Math.abs(y1-y2)*Math.abs(y1-y2));
         }
 
         //item mechanic
