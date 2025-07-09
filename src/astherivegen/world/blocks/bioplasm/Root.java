@@ -152,7 +152,7 @@ public class Root extends BioBlock {
                 for(int i=0;i<=1;i++){
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
-                    if(adj != null && !(adj instanceof RootBuild)){
+                    if(adj != null && (adj.block instanceof Root)){
                         float dist = getDist(itemTargetX,adj.tile.x,itemTargetY,adj.tile.y);
                         if(dist<bestDist){
                             target = adj;
@@ -194,7 +194,6 @@ public class Root extends BioBlock {
         }
 
         public Building getNearestHeart() {
-            Log.info(Units.findAllyTile(team, x, y, 1000, b -> b.block instanceof BioHeart));
             return Units.findAllyTile(team, x, y, 1000, b -> b.block instanceof BioHeart);
         }
 
