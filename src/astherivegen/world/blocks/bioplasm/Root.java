@@ -205,11 +205,12 @@ public class Root extends BioBlock {
                 }
             });
             int size = heartArray.size;
+            var items = breturnArray.items;
             for(int i = 0; i < size; i++){
-                float dist = getDist(this,heartArray[i]);
+                float dist = getDist(this, items[i]);
                 if(dist < bestDist){
                     bestDist = dist;
-                    bestBuild = heartArray[i];
+                    bestBuild = items[i];
                 }
             }
         }
