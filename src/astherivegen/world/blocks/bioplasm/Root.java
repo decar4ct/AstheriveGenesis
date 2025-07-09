@@ -205,7 +205,7 @@ public class Root extends BioBlock {
 
         public float getDist(int x1,int x2,int y1, int y2){
             //literally just pythagoras
-            return float dist = Math.sqrt(Math.abs(x1-x2)*Math.abs(x1-x2)+Math.abs(y1-y2)*Math.abs(y1-y2));
+            return Math.sqrt(Math.abs(x1-x2)*Math.abs(x1-x2)+Math.abs(y1-y2)*Math.abs(y1-y2));
         }
 
         //item mechanic
