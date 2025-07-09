@@ -208,6 +208,7 @@ public class Root extends BioBlock {
             });
             int size = heartArray.size;
             var items = heartArray.items;
+            Log.info(items);
             for(int i = 0; i < size; i++){
                 float dist = getDist(this, items[i]);
                 if(dist < bestDist){
