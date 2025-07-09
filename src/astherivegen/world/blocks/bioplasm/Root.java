@@ -192,7 +192,7 @@ public class Root extends BioBlock {
         public Building getNearestHeart() {
             float bestDist = Float.POSITIVE_INFINITY;
             Tile bestBuild = null;
-            indexer.eachBlock(player.team(), x * tilesize + offset, y * tilesize + offset, range, other -> other.block instanceof BioHeart, other -> {
+            indexer.eachBlock(team, x * tilesize + offset, y * tilesize + offset, 40, other -> other.block instanceof BioHeart, other -> {
                 float dist = getDist(other.build.x,x*tilesize,other.build.y,y*tilesize);
                 if(dist<bestDist){
                     bestDist = dist;
@@ -203,7 +203,7 @@ public class Root extends BioBlock {
             return bestBuild;
         }
 
-        public float getDist(x1,x2,y1,y2){
+        public float getDist(int x1,int x2,int y1, int y2){
             //literally just pythagoras
             return float dist = Math.sqrt(Math.abs(x1-x2)*Math.abs(x1-x2)+Math.abs(y1-y2)*Math.abs(y1-y2));
         }
