@@ -109,7 +109,7 @@ public class BioBridge extends BioBlock {
             for(int xm = -6+1;xm<=6;xm++){
                 for(int ym = -6+1;ym<=6;ym++){
                     Tile other = tile.nearby(xm,ym);
-                    if(other != null && other.build.block instanceof BioBridge){
+                    if(other != null && other.build != null && other.build.block instanceof BioBridge){
                         Draw.z(Layer.blockUnder+0.05f);
                         float
                         angle = Angles.angle(x, y, other.build.x, other.build.y),
