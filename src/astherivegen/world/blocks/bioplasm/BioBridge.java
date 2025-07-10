@@ -27,10 +27,10 @@ import astherivegen.content.bioplasm.Bioplasm;
 
 import static mindustry.Vars.*;
 
-public class Root extends BioBlock {
+public class BioBridge extends BioBlock {
     public TextureRegion bridgeRegion = new TextureRegion[2];
     
-    public Root(String name){
+    public BioBridge(String name){
         super(name);
         update=true;
         isRoot=false;
@@ -47,7 +47,7 @@ public class Root extends BioBlock {
         super.load();
         bridgeRegion = Core.atlas.find(name+"-bridge");
     }
-    public class RootBuild extends BioBuilding {
+    public class BioBridgeBuild extends BioBuilding {
         public Item lastItem;
         public int itemTargetX = -1, itemTargetY = -1;
         
