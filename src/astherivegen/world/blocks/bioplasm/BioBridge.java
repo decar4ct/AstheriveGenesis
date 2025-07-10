@@ -28,14 +28,14 @@ import astherivegen.content.bioplasm.Bioplasm;
 import static mindustry.Vars.*;
 
 public class BioBridge extends BioBlock {
-    public TextureRegion bridgeRegion = new TextureRegion[2];
+    public TextureRegion bridgeRegion;
     
     public BioBridge(String name){
         super(name);
         update=true;
         isRoot=false;
         pulseScale=0.5f;
-        priority = TargetPriority.transportation;
+        priority = TargetPriority.distribution;
         solid = true;
         underBullets = false;
         hasItems = true;
@@ -96,14 +96,14 @@ public class BioBridge extends BioBlock {
             drawPulse(block.region,drawPulseScale);
             for(int xm = -6+1;xm<=6;xm++){
                 for(int ym = -6+1;ym<=6;ym++){
-                    Tile other = world.tile(ox+xm,oy+ym);
+                    Tile other = tile.nearby(xm,ym);
                     if(other.block instanceof BioBridge){
                         Draw.z(Layer.blockUnder+0.05f);
                         float
-                        angle = Angles.angle(x, y, other.build.worldx(), other.build.worldy()),
-                        cx = (x + other.build.worldx())/2f,
-                        cy = (y + other.build.worldy())/2f,
-                        len = Math.max(Math.abs(x - other.build.worldx()), Math.abs(y - other.build.worldy())) - size*tilesize;
+                        angle = Angles.angle(x, y, other.build.x, other.build.y),
+                        cx = (x + other.build.x)/2f,
+                        cy = (y + other.build.y)/2f,
+                        len = Math.max(Math.abs(x - other.build.x), Math.abs(y - other.build.y)) - size*tilesize;
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
