@@ -122,7 +122,7 @@ public class BioBridge extends BioBlock {
                         len = Mathf.dst(x,y,other.build.x,other.build.y);
 
                         //flips angle if the shading is facing down, flip thyself
-                        if(angle>180f) angle -= 180f;
+                        angle%=180f;
                         
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
