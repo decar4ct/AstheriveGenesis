@@ -99,6 +99,7 @@ public class Root extends BioBlock {
                     Tile other = world.tile(ox+xm,oy+ym);
                     if(other.block instanceof BioBridge){
                         Draw.z(Layer.blockUnder+0.05f);
+                        float
                         angle = Angles.angle(x1, y1, x2, y2),
                         cx = (x1 + x2)/2f,
                         cy = (y1 + y2)/2f,
