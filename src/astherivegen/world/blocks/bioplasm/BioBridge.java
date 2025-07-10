@@ -104,17 +104,17 @@ public class BioBridge extends BioBlock {
         
         @Override
         public void draw(){
-            Draw.z(Layer.blockUnder+0.051f);
+            Draw.z(Layer.blockUnder+0.2f);
             drawPulse(block.region,drawPulseScale);
             for(int xm = -6+1;xm<=6;xm++){
                 for(int ym = -6+1;ym<=6;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other != null && other.build != null && other.build.block instanceof BioBridge){
                         //skip drawing bridge if this is above or on the right of another bridge (the other one draws it instead as shared bridge (OUR BRIDGE))
-                        if(y>other.build.y) continue;
+                        if(y<other.build.y) continue;
                         if(y==other.build.y && x>other.build.y) continue;
                         
-                        Draw.z(Layer.blockUnder+0.05f);
+                        Draw.z(Layer.blockUnder+0.19f);
                         float
                         angle = Angles.angle(x, y, other.build.x, other.build.y),
                         cx = (x + other.build.x)/2f,
@@ -124,7 +124,7 @@ public class BioBridge extends BioBlock {
                     }
                 }
             }
-            Draw.z(Layer.blockUnder+0.1f);
+            Draw.z(Layer.blockUnder+0.21f);
             if(lastItem!=null){
                 Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
             }
