@@ -35,7 +35,7 @@ public class BioBridge extends BioBlock {
         update=true;
         isRoot=false;
         pulseScale=0.5f;
-        priority = TargetPriority.distribution;
+        priority = TargetPriority.transport;
         solid = true;
         underBullets = false;
         hasItems = true;
@@ -82,6 +82,18 @@ public class BioBridge extends BioBlock {
                         }
                     }
                 }
+                for(int xm = -6+1;xm<=6;xm++){
+                    for(int ym = -6+1;ym<=6;ym++){
+                        Building adj = tile.nearby(xm,ym).build;
+                        if(adj != null && adj.block instanceof BioBridge){
+                            float dist = Mathf.dst(itemTargetX, itemTargetY, adj.tile.x, adj.tile.y);
+                            if(dist<bestDist&&adj.acceptItem(this, lastItem)){
+                                target = adj;
+                                bestDist = dist;
+                            }
+                        }
+                    }
+                }
                 if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
                     target.handleItem(this, lastItem);
                     items.remove(lastItem, 1);
@@ -97,7 +109,7 @@ public class BioBridge extends BioBlock {
             for(int xm = -6+1;xm<=6;xm++){
                 for(int ym = -6+1;ym<=6;ym++){
                     Tile other = tile.nearby(xm,ym);
-                    if(other.block instanceof BioBridge){
+                    if(other.build.block instanceof BioBridge){
                         Draw.z(Layer.blockUnder+0.05f);
                         float
                         angle = Angles.angle(x, y, other.build.x, other.build.y),
