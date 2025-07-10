@@ -55,10 +55,12 @@ public class Root extends BioBlock {
         @Override
         public void updateTile(){
             super.updateTile();
-            blending = 0;
-            for(int i = 0; i < 8; i++){
-                if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
-                    blending |= (1 << i);
+            for(int xm = -6+1;xm<=6;xm++){
+                for(int ym = -6+1;ym<=6;ym++){
+                    Tile other = world.tile(ox+xm,oy+ym);
+                    if(other.block instanceof BioBridge){
+                        //yes
+                    }
                 }
             }
         }
@@ -108,12 +110,7 @@ public class Root extends BioBlock {
                 }
             }
         }
-        boolean blends(Tile other){
-            if(other.build instanceof BioBuilding otherbuild){
-                return other != null && other.build != null && other.build.tileX() == other.x && other.build.tileY() == other.y && otherbuild.fullyGrown;
-            }
-            return false;
-        }
+        
         @Override
         public void draw(){
             Draw.z(Layer.blockUnder);
