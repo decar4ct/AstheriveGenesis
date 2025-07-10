@@ -74,7 +74,7 @@ public class BioBridge extends BioBlock {
                 for(int i=0;i<4;i++){
                     Building adj;
                     adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y).build;
-                    if(adj != null && (adj.block instanceof Root)){
+                    if(adj != null && (adj.block instanceof Root || adj.block instanceof BioHeart)){
                         float dist = Mathf.dst(itemTargetX, itemTargetY, adj.tile.x, adj.tile.y);
                         if(dist<bestDist&&adj.acceptItem(this, lastItem)){
                             target = adj;
@@ -110,16 +110,20 @@ public class BioBridge extends BioBlock {
                 for(int ym = -6+1;ym<=6;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other != null && other.build != null && other.build.block instanceof BioBridge){
+                        //skip drawing bridge if this is above or on the right of another bridge (the other one draws it instead as shared bridge (OUR BRIDGE))
+                        if(y>other.build.y) continue;
+                        if(y==other.build.y && x>other.build.y) continue;
+                        
                         Draw.z(Layer.blockUnder+0.05f);
                         float
                         angle = Angles.angle(x, y, other.build.x, other.build.y),
                         cx = (x + other.build.x)/2f,
                         cy = (y + other.build.y)/2f,
-                        len = Math.max(Math.abs(x - other.build.x), Math.abs(y - other.build.y)) - size*tilesize;
+                        len = Mathf.dst(x,y,other.build.x,other.build.y);
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
-            }
+            }u.
             Draw.z(Layer.blockUnder+0.1f);
             if(lastItem!=null){
                 Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
