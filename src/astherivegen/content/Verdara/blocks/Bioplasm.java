@@ -16,12 +16,15 @@ import static mindustry.type.ItemStack.with;
 
 public class Bioplasm {
     public static Block
-            root, heart, harvester, spawningBulb,
+            root, branchNode, heart, harvester, spawningBulb,
             pulseSource;
     public static void load() {
         {
             {
                 root = new Root("root"){{
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
+                }};
+                branchNode = new BioBridge("branch-node"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                 }};
                 harvester = new BioDrill("harvester"){{
