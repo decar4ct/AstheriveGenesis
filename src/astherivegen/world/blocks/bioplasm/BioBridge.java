@@ -123,7 +123,7 @@ public class BioBridge extends BioBlock {
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
-            }u.
+            }
             Draw.z(Layer.blockUnder+0.1f);
             if(lastItem!=null){
                 Draw.rect(lastItem.fullIcon, x, y, itemSize, itemSize);
