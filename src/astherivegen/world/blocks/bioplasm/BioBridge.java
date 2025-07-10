@@ -110,7 +110,7 @@ public class BioBridge extends BioBlock {
                 for(int ym = -6+1;ym<=6;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other != null && other.build != null && other.build.block instanceof BioBridge){
-                        //skip drawing bridge if this is above or on the right of another bridge (the other one draws it instead as shared bridge (OUR BRIDGE))
+                        //prevent two BioBridges from drawing two bridge at once (only one draws it instead as shared bridge (OUR BRIDGE))
                         if(y<other.build.y) continue;
                         if(y==other.build.y && x>other.build.x) continue;
                         
@@ -120,6 +120,10 @@ public class BioBridge extends BioBlock {
                         cx = (x + other.build.x)/2f,
                         cy = (y + other.build.y)/2f,
                         len = Mathf.dst(x,y,other.build.x,other.build.y);
+
+                        //flips angle if the shading is facing down, flip thyself
+                        if(angle>180f) angle -= 180f;
+                        
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
