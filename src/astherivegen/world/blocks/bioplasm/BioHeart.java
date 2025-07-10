@@ -96,6 +96,7 @@ public class BioHeart extends BioBlock {
         }
         @Override
         public void draw(){
+            Draw.z(Layer.block+0.01f); //just slightly above...
             drawPulse(block.region,drawPulseScale);
         }
         @Override
