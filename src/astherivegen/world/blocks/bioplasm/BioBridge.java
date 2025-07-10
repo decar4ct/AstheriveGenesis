@@ -112,7 +112,7 @@ public class BioBridge extends BioBlock {
                     if(other != null && other.build != null && other.build.block instanceof BioBridge){
                         //skip drawing bridge if this is above or on the right of another bridge (the other one draws it instead as shared bridge (OUR BRIDGE))
                         if(y<other.build.y) continue;
-                        if(y==other.build.y && x>other.build.y) continue;
+                        if(y==other.build.y && x>other.build.x) continue;
                         
                         Draw.z(Layer.blockUnder+0.19f);
                         float
