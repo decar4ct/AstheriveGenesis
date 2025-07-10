@@ -48,7 +48,6 @@ public class Root extends BioBlock {
         bridgeRegion = Core.atlas.find(name+"-bridge");
     }
     public class RootBuild extends BioBuilding {
-        public int blending;
         public Item lastItem;
         public int itemTargetX = -1, itemTargetY = -1;
         
@@ -104,6 +103,7 @@ public class Root extends BioBlock {
                         cx = (x1 + x2)/2f,
                         cy = (y1 + y2)/2f,
                         len = Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2)) - size * tilesize;
+                        Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
             }
