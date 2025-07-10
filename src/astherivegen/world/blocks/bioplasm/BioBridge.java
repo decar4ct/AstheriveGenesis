@@ -100,10 +100,10 @@ public class BioBridge extends BioBlock {
                     if(other.block instanceof BioBridge){
                         Draw.z(Layer.blockUnder+0.05f);
                         float
-                        angle = Angles.angle(x1, y1, x2, y2),
-                        cx = (x1 + x2)/2f,
-                        cy = (y1 + y2)/2f,
-                        len = Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2)) - size * tilesize;
+                        angle = Angles.angle(x, y, other.build.worldx(), other.build.worldy()),
+                        cx = (x + other.build.worldx())/2f,
+                        cy = (y + other.build.worldy())/2f,
+                        len = Math.max(Math.abs(x - other.build.worldx()), Math.abs(y - other.build.worldy())) - size*tilesize;
                         Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl(), angle);
                     }
                 }
