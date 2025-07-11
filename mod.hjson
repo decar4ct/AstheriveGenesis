@@ -1,14 +1,15 @@
-displayName: "Astherive: Genesis"
+displayName: "Genesis"
 name: "astherive-gen"
 author: "Astherive Team" #dont ask why its a team
 main: "astherivegen.AstheriveGenMod"
 description: '''
 A Mindustry Java mod.
 
-Under early development.
+Under very early development.
+
 Yes. this is what you're looking for.
 '''
-subtitle: "creatures"
+subtitle: "neoplasm is dead, rise bioplasm"
 version: 1.0
 minGameVersion: 147
 java: true
