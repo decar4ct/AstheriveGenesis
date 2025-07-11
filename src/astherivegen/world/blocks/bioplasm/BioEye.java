@@ -43,6 +43,7 @@ public class BioEye extends BioBlock {
     public class BioEyeBuild extends BioBuilding {
         public float eyeX = 0;
         public float eyeY = 0;
+        public float tx = x, ty = y;
         @Override
         public void updatePulse(){
             if (true) {
@@ -52,9 +53,10 @@ public class BioEye extends BioBlock {
         @Override
         public void updateTile(){
             super.updateTile();
-            float
-            tx = Units.closestTarget(team, x, y, range).x(),
-            ty = Units.closestTarget(team, x, y, range).y();
+            if(Units.closestTarget(team, x, y, range) != null){
+                tx = Units.closestTarget(team, x, y, range).x();
+                ty = Units.closestTarget(team, x, y, range).y();
+            }
             eyeX = Mathf.lerp(eyeX,(Mathf.clamp((tx-x)/8,-1,1)*2),0.1f);
             eyeY = Mathf.lerp(eyeY,(Mathf.clamp((ty-y)/8,-1,1)*2),0.1f);
         }
