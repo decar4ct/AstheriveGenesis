@@ -1,4 +1,4 @@
-<p align="center"><img src="genesis.jpg" alt="genesis" width="1000"></p>
+<p align="center"><img src="assets/genesis.jpg" alt="genesis" width="1000"></p>
 
 # I am absolutely clueless what to write here
 
