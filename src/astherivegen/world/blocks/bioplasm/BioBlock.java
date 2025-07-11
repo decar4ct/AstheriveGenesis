@@ -153,7 +153,7 @@ public class BioBlock extends Block {
                                 }
                             }
                         }
-                        if(neartileCount<4&&Tile.validPlace(this.block, team, neartile.x, neartile.y, 0)){
+                        if(neartileCount<4&&Build.validPlace(this.block, team, neartile.x, neartile.y, 0)){
                             possibleGrowDir.add(i);
                         }
                     }
