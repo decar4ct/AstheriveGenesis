@@ -157,7 +157,7 @@ public class Root extends BioBlock {
                 }
             }
             if(itemsNearby>6&&!bridgeNearby){
-                tile.setBlock(Bioplasm.bridgeNode,team);
+                tile.setBlock(Bioplasm.branchNode,team);
             }
 
             //item movement
@@ -187,7 +187,11 @@ public class Root extends BioBlock {
                 }
                 if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
                     target.handleItem(this, lastItem);
-                    if(target instanceof RootBuild targetbuild || target instanceof BioBridgeBuild targetbuild){
+                    if(target instanceof RootBuild targetbuild){
+                        targetbuild.itemTargetX = itemTargetX;
+                        targetbuild.itemTargetX = itemTargetX;
+                    }
+                    if(target instanceof BioBridgeBuild targetbuild){
                         targetbuild.itemTargetX = itemTargetX;
                         targetbuild.itemTargetX = itemTargetX;
                     }
