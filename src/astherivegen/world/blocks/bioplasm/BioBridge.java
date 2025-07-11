@@ -126,7 +126,7 @@ public class BioBridge extends BioBlock {
                         if(angle>=90f) angle+=180f;
                         angle%=360f;
                         
-                        Draw.rect(bridgeRegion, cx, cy, len, bridgeRegion.height * bridgeRegion.scl() + growHeight, angle);
+                        Draw.rect(bridgeRegion, cx, cy, len, (bridgeRegion.height * (growHeight+1)) * bridgeRegion.scl(), angle);
                     }
                 }
             }
