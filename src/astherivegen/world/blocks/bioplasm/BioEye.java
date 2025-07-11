@@ -58,8 +58,8 @@ public class BioEye extends BioBlock {
                 ty = Units.closestTarget(team, x, y, range).y();
             }
             float mag = Mathf.dst(x,y,tx,ty);
-            eyeX = Mathf.lerp(eyeX,(tx-x)/8*2,0.1f)/mag;
-            eyeY = Mathf.lerp(eyeY,(ty-y)/8*2,0.1f)/mag;
+            eyeX = Mathf.lerp(eyeX,(tx-x)/8*2/mag,0.1f);
+            eyeY = Mathf.lerp(eyeY,(ty-y)/8*2/mag,0.1f);
         }
         @Override
         public void draw(){
