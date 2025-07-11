@@ -22,6 +22,7 @@ import mindustry.gen.*;
 import mindustry.type.*;
 import java.util.Random;
 import astherivegen.graphics.*;
+import astherivegen.content.*;
 
 import static mindustry.Vars.*;
 
@@ -56,6 +57,9 @@ public class BioEye extends BioBlock {
             if(Units.closestTarget(team, x, y, range) != null){
                 tx = Units.closestTarget(team, x, y, range).x();
                 ty = Units.closestTarget(team, x, y, range).y();
+                if(Units.closestTarget(team, x, y, range) instanceof Unit unit){
+                    unit.apply(GenesisStatusEffects.seen,30f);
+                }
             }
             float mag = Mathf.dst(x,y,tx,ty);
             eyeX = Mathf.lerp(eyeX,(tx-x)/mag*3,0.1f);
