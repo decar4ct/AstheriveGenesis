@@ -192,8 +192,8 @@ public class Root extends BioBlock {
                         targetbuild.itemTargetX = itemTargetX;
                     }
                     if(target.block instanceof BioBridge targetbuild){
-                        targetbuild.itemTargetX = itemTargetX;
-                        targetbuild.itemTargetX = itemTargetX;
+                        targetbuild.build.itemTargetX = itemTargetX;
+                        targetbuild.build.itemTargetX = itemTargetX;
                     }
                     items.remove(lastItem, 1);
                     lastItem = null;
