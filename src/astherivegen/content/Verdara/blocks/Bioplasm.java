@@ -16,7 +16,7 @@ import static mindustry.type.ItemStack.with;
 
 public class Bioplasm {
     public static Block
-            root, branchNode, heart, harvester, spawningBulb,
+            root, branchNode, sighter, heart, harvester, spawningBulb,
             pulseSource;
     public static void load() {
         {
@@ -26,6 +26,10 @@ public class Bioplasm {
                 }};
                 
                 branchNode = new BioBridge("branch-node"){{
+                    requirements(Category.distribution, with(VerdaraItems.quartz, 1));
+                }};
+
+                sighter = new BioEye("sighter"){{
                     requirements(Category.distribution, with(VerdaraItems.quartz, 1));
                 }};
                 
