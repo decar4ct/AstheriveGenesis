@@ -10,4 +10,5 @@ Some crazy delusional goals may include:
 
 # Current progress
 
-Bioplasm is somewhat working, finally. content is still sparse
+Bioplasm is working, roots, bridges, drills, items complete.
+Player content is still somewhat sparse, not playable yet
