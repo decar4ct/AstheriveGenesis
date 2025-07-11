@@ -157,7 +157,7 @@ public class Root extends BioBlock {
                     }
                 }
             }
-            if(itemsNearby>9&&!bridgeNearby){
+            if(itemsNearby>11&&!bridgeNearby){
                 tile.setBlock(Bioplasm.branchNode,team);
             }
 
