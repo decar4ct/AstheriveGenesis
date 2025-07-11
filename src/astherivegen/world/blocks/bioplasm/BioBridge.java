@@ -82,8 +82,8 @@ public class BioBridge extends BioBlock {
                         }
                     }
                 }
-                for(int xm = -6+1;xm<=6;xm++){
-                    for(int ym = -6+1;ym<=6;ym++){
+                for(int xm = -7+1;xm<=7;xm++){
+                    for(int ym = -7+1;ym<=7;ym++){
                         Building adj = tile.nearby(xm,ym).build;
                         if(adj != null && adj.block instanceof BioBridge){
                             float dist = Mathf.dst(itemTargetX, itemTargetY, adj.tile.x, adj.tile.y);
@@ -106,8 +106,8 @@ public class BioBridge extends BioBlock {
         public void draw(){
             Draw.z(Layer.blockUnder+0.2f);
             drawPulse(block.region,drawPulseScale);
-            for(int xm = -6+1;xm<=6;xm++){
-                for(int ym = -6+1;ym<=6;ym++){
+            for(int xm = -7+1;xm<=7;xm++){
+                for(int ym = -7+1;ym<=7;ym++){
                     Tile other = tile.nearby(xm,ym);
                     if(other != null && other.build != null && other.build.block instanceof BioBridge){
                         //prevent two BioBridges from drawing two bridge at once (only one draws it instead as shared bridge (OUR BRIDGE))
