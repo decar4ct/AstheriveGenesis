@@ -1,3 +1,5 @@
+<p align="center"><img src="genesis.jpg" alt="genesis" width="1000"></p>
+
 # I am absolutely clueless what to write here
 
 But anyways, Astherive Genesis is a lore-prequel to the original mod, Astherive, which is also appears to be made by me somehow...
