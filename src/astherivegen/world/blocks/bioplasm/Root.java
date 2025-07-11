@@ -124,6 +124,8 @@ public class Root extends BioBlock {
         @Override
         public void updatePulse(){
             super.updatePulse();
+
+            //growing drill
             if(tile != null && tile.drop() != null){
                 boolean clear = true;
                 for(int i=0;i<=1;i++){
@@ -135,8 +137,31 @@ public class Root extends BioBlock {
                         }
                     }
                 }
+                
                 if(clear) tile.setBlock(Bioplasm.harvester,team);
             }
+
+            //growing bridge
+            boolean bridgeNearby = false;
+            int itemsNearby = 0;
+            for(int i=-5;i<5;i++){
+                for(int j=-5;j<5;j++){
+                    Building adj;
+                    adj = tile.nearby(i,j).build;
+                    if (adj != null && (adj.block instanceof BioBridge)) {                        
+                        bridgeNearby = true;
+                    }
+                    if(adj != null && (adj.block instanceof Root adjbuild) && adjbuild.lastItem != null){
+                        itemsNearby++;
+                    }
+                }
+            }
+            if(itemsNearby>6&&!bridgeNearby){
+                tile.setBlock(Bioplasm.bridgeNode,team);
+            }
+
+            //item movement
+            
             if(lastItem == null && items.any()){
                 lastItem = items.first();
             }
@@ -162,6 +187,10 @@ public class Root extends BioBlock {
                 }
                 if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
                     target.handleItem(this, lastItem);
+                    if(target.block instanceof Root || target.block instanceof BioBridge){
+                        target.itemTargetX = itemTargetX;
+                        target.itemTargetX = itemTargetX;
+                    }
                     items.remove(lastItem, 1);
                     lastItem = null;
                 }
@@ -195,6 +224,10 @@ public class Root extends BioBlock {
 
         public Building getNearestHeart() {
             return Units.findAllyTile(team, x, y, 1000, b -> b.block instanceof BioHeart);
+        }
+
+        public Building getNearestBridge() {
+            return Units.findAllyTile(team, x, y, 1000, b -> b.block instanceof BioBridge);
         }
 
         //item mechanic
