@@ -41,7 +41,8 @@ public class BioEye extends BioBlock {
     }
     
     public class BioEyeBuild extends BioBuilding {
-        public float eyeX = 0, eyeY = 0;
+        public float eyeX = 0;
+        public float eyeY = 0;
         @Override
         public void updatePulse(){
             if (true) {
