@@ -109,7 +109,7 @@ public class BioBridge extends BioBlock {
             for(int xm = -7+1;xm<=7;xm++){
                 for(int ym = -7+1;ym<=7;ym++){
                     Tile other = tile.nearby(xm,ym);
-                    if(other != null && other.build != null && other.build.block instanceof BioBridge){
+                    if(other != null && other.build != null && other.build instanceof BioBridgeBuild otherbuild){
                         //prevent two BioBridges from drawing two bridge at once (only one draws it instead as shared bridge (OUR BRIDGE))
                         if(y<other.build.y) continue;
                         if(y==other.build.y && x>other.build.x) continue;
@@ -120,7 +120,7 @@ public class BioBridge extends BioBlock {
                         cx = (x + other.build.x)/2f,
                         cy = (y + other.build.y)/2f,
                         len = Mathf.dst(x,y,other.build.x,other.build.y),
-                        growHeight = (float)Math.min(growProgress,other.build.growProgress);
+                        growHeight = (float)Math.min(growProgress,otherbuild.growProgress);
 
                         //flips angle if the shading is facing down, flip thyself
                         if(angle>=90f) angle+=180f;
