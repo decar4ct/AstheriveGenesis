@@ -50,7 +50,7 @@ public class BioEye extends BioBlock {
         }
         @Override
         public void updateTile(){
-            super.updateTile()
+            super.updateTile();
             float
             tx = Units.closestTarget(team, x, y, range).x,
             ty = Units.closestTarget(team, x, y, range).y,
