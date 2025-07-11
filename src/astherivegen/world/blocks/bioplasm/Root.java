@@ -31,9 +31,6 @@ public class Root extends BioBlock {
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[] leafRegion = new TextureRegion[2];
     private Seq<Building> heartArray = new Seq<>(Building.class);
-    //fancy way to access inner classes (java suck)
-    BioBridge bioBridge = new BioBridge();
-    BioBridge.BioBridgeBuild bioBridgeBuild = bioBridge.new BioBridgeBuild();
     
     //SUFFERING
     public int[] horBitmask = {
@@ -195,7 +192,7 @@ public class Root extends BioBlock {
                         targetbuild.itemTargetX = itemTargetX;
                         targetbuild.itemTargetX = itemTargetX;
                     }
-                    if(target instanceof bioBridgeBuild targetbuild){
+                    if(target instanceof BioBridge.BioBridgeBuild targetbuild){
                         targetbuild.itemTargetX = itemTargetX;
                         targetbuild.itemTargetX = itemTargetX;
                     }
