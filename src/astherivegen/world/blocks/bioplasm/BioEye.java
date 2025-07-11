@@ -26,7 +26,7 @@ import astherivegen.graphics.*;
 import static mindustry.Vars.*;
 
 public class BioEye extends BioBlock {
-    public float range = 100;
+    public float range = 200;
     public TextureRegion eyeRegion;
     public BioEye(String name){
         super(name);
