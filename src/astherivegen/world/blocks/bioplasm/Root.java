@@ -151,7 +151,7 @@ public class Root extends BioBlock {
                     if (adj != null && (adj.block instanceof BioBridge)) {                        
                         bridgeNearby = true;
                     }
-                    if(adj != null && (adj.block instanceof Root adjbuild) && adjbuild.lastItem != null){
+                    if(adj != null && (adj instanceof RootBuild adjbuild) && adjbuild.lastItem != null){
                         itemsNearby++;
                     }
                 }
@@ -187,9 +187,9 @@ public class Root extends BioBlock {
                 }
                 if(target != null && target instanceof BioBuilding && target.acceptItem(this, lastItem)){
                     target.handleItem(this, lastItem);
-                    if(target.block instanceof Root || target.block instanceof BioBridge){
-                        target.itemTargetX = itemTargetX;
-                        target.itemTargetX = itemTargetX;
+                    if(target instanceof RootBuild targetbuild || target instanceof BioBridgeBuild targetbuild){
+                        targetbuild.itemTargetX = itemTargetX;
+                        targetbuild.itemTargetX = itemTargetX;
                     }
                     items.remove(lastItem, 1);
                     lastItem = null;
