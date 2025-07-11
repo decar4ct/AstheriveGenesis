@@ -52,15 +52,15 @@ public class BioEye extends BioBlock {
         public void updateTile(){
             super.updateTile();
             float
-            tx = Units.closestTarget(team, x, y, range).x,
-            ty = Units.closestTarget(team, x, y, range).y,
-            ex = Mathf.lerp(ex,(Mathf.clamp((tx-x)/8,-1,1)*2),0.1),
-            ey = Mathf.lerp(ey,(Mathf.clamp((ty-y)/8,-1,1)*2),0.1);
+            tx = Units.closestTarget(team, x, y, range).x(),
+            ty = Units.closestTarget(team, x, y, range).y(),
+            eyeX = Mathf.lerp(ex,(Mathf.clamp((tx-x)/8,-1,1)*2),0.1f),
+            eyeY = Mathf.lerp(ey,(Mathf.clamp((ty-y)/8,-1,1)*2),0.1f);
         }
         @Override
         public void draw(){
             drawPulse(block.region,drawPulseScale);
-            Draw.rect(eyeRegion,x+ex,y+ey);
+            Draw.rect(eyeRegion,x+eyeX,y+eyeY);
         }
         @Override
         public void write(Writes write){
