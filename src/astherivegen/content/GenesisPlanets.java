@@ -16,6 +16,7 @@ import mindustry.maps.planet.ErekirPlanetGenerator;
 import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.meta.Env;
+import mindustry.maps.planet.*;
 
 public class GenesisPlanets{
     public static Planet
