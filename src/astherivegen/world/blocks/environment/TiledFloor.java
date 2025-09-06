@@ -72,8 +72,6 @@ public class TiledFloor extends Floor {
     };
     public TiledFloor(String name){
         super(name);
-        drawEdgeIn=false;
-        drawEdgeOut=false;
     }
     @Override
     public void load(){
