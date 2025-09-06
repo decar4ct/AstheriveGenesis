@@ -37,6 +37,8 @@ public class VerdaraEnv {
             smallSporfloreFern, sporfloreFern,
             sporfloreTree, largeSporfloreTree,
             eonstoneHugeVent,
+            //bioplastic
+            bioplasticFloor,
             //this code is so messy lmao
             eonstoneQuartzCluster, oreQuartz,
             eonstoneMagnetiteCluster, oreMagnetite;
@@ -134,6 +136,8 @@ public class VerdaraEnv {
                 //floor
                 ranston = new Floor("ranston",4);
                 platedRanston = new Floor("plated-ranston",4);
+                //bioplastic
+                bioplasticFloor = new TiledFlood("bioplastic-floor");
                 //anything else
                 sporfloreFern = new SeaBush("sporflore-fern"){{
                     lobesMin = 4;
