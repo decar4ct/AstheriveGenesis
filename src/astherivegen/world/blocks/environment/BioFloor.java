@@ -22,6 +22,7 @@ import mindustry.type.*;
 import mindustry.world.meta.*;
 import mindustry.gen.*;
 import mindustry.world.blocks.environment.*;
+import java.util.Random;
 
 import static mindustry.Vars.*;
 
@@ -85,6 +86,7 @@ public class BioFloor extends Floor {
                 atlasRegion[cx][cy] = new TextureRegion(Core.atlas.find(name+"-atlas"), x, y, 32, 32);
             }
         }
+        int x = 0;
         for(int cx = 0; cx < 4; cx++, x += 32){
             edgeRegion[cx] = new TextureRegion(Core.atlas.find(name+"-edge-atlas"), x, 0, 32, 32);
         }
