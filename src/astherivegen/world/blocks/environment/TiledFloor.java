@@ -72,7 +72,8 @@ public class TiledFloor extends Floor {
     };
     public TiledFloor(String name){
         super(name);
-        update=true;
+        drawEdgeIn=false;
+        drawEdgeOut=false
     }
     @Override
     public void load(){
@@ -85,16 +86,14 @@ public class TiledFloor extends Floor {
             }
         }
     }
-    boolean blends(Tile tile,Tile other){
-        return(other.floor().realBlendId(other) > realBlendId(tile));
-    }
     public void drawMain(Tile tile){
         int blending = 0;
-            for(int i = 0; i < 8; i++){
-                if(blends(tile,world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
-                    blending |= (1 << i);
-                }
+        for(int i = 0; i < 8; i++){
+            Tile other = world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y);
+            if(other != null && other.floor().blendGroup == blendGroup){
+                blending |= (1 << i);
             }
+        }
         Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], tile.worldx(), tile.worldy());      
         Draw.alpha(1f);
     }  
