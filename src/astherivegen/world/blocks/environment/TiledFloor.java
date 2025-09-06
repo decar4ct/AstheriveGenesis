@@ -85,13 +85,13 @@ public class TiledFloor extends Floor {
             }
         }
     }
-    boolean blends(Tile other){
-        return other.floor() == tile.floor();
+    boolean blends(Tile tile,Tile other){
+        return(other.floor().realBlendId(other) > realBlendId(tile));
     }
     public void drawMain(Tile tile){
         int blending = 0;
             for(int i = 0; i < 8; i++){
-                if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
+                if(blends(tile,world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y))){
                     blending |= (1 << i);
                 }
             }
