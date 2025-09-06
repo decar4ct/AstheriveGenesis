@@ -109,7 +109,9 @@ public class BioFloor extends Floor {
         for(int i = 0; i < 4; i++){
             Tile other = world.tile(tile.x + Geometry.d4[i].x, tile.y + Geometry.d4[i].y);
             if(other != null && other.floor().blendGroup != blendGroup) {
-                Draw.rect(edgeRegion[Mathf.floor(xyRand((other.worldx()+tile.worldx()),(other.worldy()+tile.worldy()))*4)], other.worldx(), other.worldy(), i*90);
+                Draw.z(0.01f); //just...right above floor
+                Draw.rect(edgeRegion[Mathf.floor(xyRand((other.worldx()+tile.worldx()),(other.worldy()+tile.worldy()))*4)], other.worldx(), other.worldy(), i*90-90);
+                Draw.z(0f);
             }
         }
         Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], tile.worldx(), tile.worldy());      
