@@ -137,10 +137,7 @@ public class VerdaraEnv {
                 ranston = new Floor("ranston",4);
                 platedRanston = new Floor("plated-ranston",4);
                 //bioplastic
-                bioplasticFloor = new TiledFloor("bioplastic-floor"){{
-                    drawEdgeIn=false;
-                    drawEdgeOut=false;
-                }};
+                bioplasticFloor = new TiledFloor("bioplastic-floor");
                 //anything else
                 sporfloreFern = new SeaBush("sporflore-fern"){{
                     lobesMin = 4;
