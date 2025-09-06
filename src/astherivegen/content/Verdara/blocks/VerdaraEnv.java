@@ -139,7 +139,7 @@ public class VerdaraEnv {
                 //bioplastic
                 bioplasticFloor = new TiledFloor("bioplastic-floor"){{
                     drawEdgeIn=false;
-                }}
+                }};
                 //anything else
                 sporfloreFern = new SeaBush("sporflore-fern"){{
                     lobesMin = 4;
