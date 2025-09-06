@@ -86,9 +86,8 @@ public class TiledFloor extends Floor {
         }
     }
     boolean blends(Tile other){
-        return other.floor() == Tile.floor();
+        return other.floor() == tile.floor();
     }
-    @Override
     public void drawMain(Tile tile){
         int blending = 0;
             for(int i = 0; i < 8; i++){
