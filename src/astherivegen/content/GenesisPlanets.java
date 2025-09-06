@@ -93,7 +93,7 @@ public class GenesisPlanets{
             campaignRuleDefaults.fog = true;
             startSector = 150;
             minZoom = 0.75f;
-            generator = new VerdaraPlanetGenerator();
+            generator = new SerpuloPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,7,5,Color.valueOf("313439"),1f,4,1,1,0.1f),
                 new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.96f,7,3,2.5f,0.5f)
@@ -113,7 +113,7 @@ public class GenesisPlanets{
             iconColor = Color.valueOf("535D64");
             solarSystem = orrin;
             alwaysUnlocked = true;
-            generator = new ProtusPlanetGenerator();
+            generator = new SerpuloPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,4,1,1,0.1f),
                 new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,7,3,2f,1f)
