@@ -39,6 +39,8 @@ public class VerdaraEnv {
             eonstoneHugeVent,
             //bioplastic
             bioplasticFloor,
+            //major
+            majorFloor1,
             //this code is so messy lmao
             eonstoneQuartzCluster, oreQuartz,
             eonstoneMagnetiteCluster, oreMagnetite;
@@ -138,6 +140,11 @@ public class VerdaraEnv {
                 platedRanston = new Floor("plated-ranston",4);
                 //bioplastic
                 bioplasticFloor = new BioFloor("bioplastic-floor"){{
+                    drawEdgeOut=false;
+                    drawEdgeIn=false;
+                }};
+                //major
+                majorFloor1= new TiledFloor("major-floor-1"){{
                     drawEdgeOut=false;
                     drawEdgeIn=false;
                 }};
