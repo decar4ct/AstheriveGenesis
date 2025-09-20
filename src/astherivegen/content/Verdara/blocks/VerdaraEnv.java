@@ -40,7 +40,7 @@ public class VerdaraEnv {
             //bioplastic
             bioplasticFloor,
             //major
-            majorFloor1,
+            majorFloor1,majorFloor2,majorFloor3,majorFloor4,
             //this code is so messy lmao
             eonstoneQuartzCluster, oreQuartz,
             eonstoneMagnetiteCluster, oreMagnetite;
@@ -145,6 +145,18 @@ public class VerdaraEnv {
                 }};
                 //major
                 majorFloor1= new TiledFloor("major-floor-1"){{
+                    drawEdgeOut=false;
+                    drawEdgeIn=false;
+                }};
+                majorFloor2= new TiledFloor("major-floor-2"){{
+                    drawEdgeOut=false;
+                    drawEdgeIn=false;
+                }};
+                majorFloor3= new TiledFloor("major-floor-3"){{
+                    drawEdgeOut=false;
+                    drawEdgeIn=false;
+                }};
+                majorFloor4= new TiledFloor("major-floor-4"){{
                     drawEdgeOut=false;
                     drawEdgeIn=false;
                 }};
