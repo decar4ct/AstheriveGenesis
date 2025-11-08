@@ -84,15 +84,16 @@ public class TiledStaticWall extends StaticWall {
             }
         }
     }
-    public void drawMain(Tile tile){
+    @Override
+    public void drawBase(Tile tile){
         int blending = 0;
         for(int i = 0; i < 8; i++){
             Tile other = world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y);
-            if(other != null && other.block() == tile.block()){
+            if(other != null && other.block() == this{
                 blending |= (1 << i);
             }
         }
-        Draw.rect(atlasRegion[0][0], tile.worldx(), tile.worldy());      
+        Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], tile.worldx(), tile.worldy());      
         Draw.alpha(1f);
     }  
 }
