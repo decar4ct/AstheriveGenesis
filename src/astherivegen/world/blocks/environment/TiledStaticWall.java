@@ -92,7 +92,7 @@ public class TiledStaticWall extends StaticWall {
                 blending |= (1 << i);
             }
         }
-        Draw.rect(atlasRegion[horBitmask[blending]][verBitmask[blending]], tile.worldx(), tile.worldy());      
+        Draw.rect(atlasRegion[0][0], tile.worldx(), tile.worldy());      
         Draw.alpha(1f);
     }  
 }
