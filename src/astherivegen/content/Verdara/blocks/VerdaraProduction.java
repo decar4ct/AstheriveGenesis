@@ -3,6 +3,7 @@ package astherivegen.content.Verdara.blocks;
 import arc.graphics.Color;
 import mindustry.world.Block;
 import mindustry.world.blocks.production.*;
+import mindustry.world.meta.*
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
@@ -20,10 +21,21 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraProduction {
     public static Block
-    cliffBore, clusterDrill,
+    jaggedDrill, cliffBore, clusterDrill,
 
     polteritePress, nylonSynthesizer;
     public static void load() {
+        jaggedDrill = new Drill("jagged-drill"){{
+            requirements(Category.production, with(VerdaraItems.quartz, 15, VerdaraItems.magnetite, 5));
+            consumePower(10/60f);
+            consumeLiquid(Liquids.hydrogen, 0.05f).boost();
+
+            drillTime = 550;
+            tier = 2;
+            size = 2;
+            fogRadius = 0f;
+            researchCost = with(VerdaraItems.quartz, 10);
+        }};
         cliffBore = new CliffDrill("cliff-bore"){{
             requirements(Category.production, with(VerdaraItems.quartz, 10, VerdaraItems.magnetite, 20));
             consumePower(1/3f);
@@ -45,6 +57,7 @@ public class VerdaraProduction {
             size = 3;
             fogRadius = 3;
             researchCost = with(VerdaraItems.quartz, 10);
+            buildVisibility = BuildVisibility.editorOnly
         }};
         polteritePress = new GenericCrafter("polterite-press"){{
             requirements(Category.crafting, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
