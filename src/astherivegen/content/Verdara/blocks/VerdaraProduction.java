@@ -3,7 +3,7 @@ package astherivegen.content.Verdara.blocks;
 import arc.graphics.Color;
 import mindustry.world.Block;
 import mindustry.world.blocks.production.*;
-import mindustry.world.meta.*
+import mindustry.world.meta.*;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
@@ -57,7 +57,7 @@ public class VerdaraProduction {
             size = 3;
             fogRadius = 3;
             researchCost = with(VerdaraItems.quartz, 10);
-            buildVisibility = BuildVisibility.editorOnly
+            buildVisibility = BuildVisibility.editorOnly;
         }};
         polteritePress = new GenericCrafter("polterite-press"){{
             requirements(Category.crafting, with(VerdaraItems.quartz, 20, VerdaraItems.magnetite, 15));
