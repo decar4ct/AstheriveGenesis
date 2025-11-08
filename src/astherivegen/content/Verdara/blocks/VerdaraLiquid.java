@@ -4,6 +4,7 @@ import arc.graphics.Color;
 import mindustry.world.Block;
 import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.production.*;
+import mindustry.world.draw.*;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.content.*;
@@ -17,7 +18,7 @@ import static mindustry.type.ItemStack.with;
 
 public class VerdaraLiquid{
     public static Block
-            pipe, outlet;
+            pistonPump, pipe, outlet;
     public static void load() {
         {
             {
