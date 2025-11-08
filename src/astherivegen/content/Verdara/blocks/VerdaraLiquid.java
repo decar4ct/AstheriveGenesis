@@ -37,7 +37,7 @@ public class VerdaraLiquid{
                     hasPower = true;
                     liquidCapacity = 20f;
                     pumpAmount = 8/60f;
-                }}
+                }};
                 pipe = new LiquidPipe("pipe"){{
                     requirements(Category.liquid, with(VerdaraItems.quartz, 2));
                 }};
