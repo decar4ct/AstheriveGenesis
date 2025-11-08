@@ -40,7 +40,7 @@ public class VerdaraEnv {
             //bioplastic
             bioplasticFloor,
             //major
-            majorFloor1,majorFloor2,majorFloor3,majorFloor4,
+            majorFloor1,majorFloor2,majorFloor3,majorFloor4,majorWall,
             //this code is so messy lmao
             eonstoneQuartzCluster, oreQuartz,
             eonstoneMagnetiteCluster, oreMagnetite;
@@ -160,6 +160,8 @@ public class VerdaraEnv {
                     drawEdgeOut=false;
                     drawEdgeIn=false;
                 }};
+                majorWall= new TiledStaticWall("major-wall"){{
+                    }};
                 //anything else
                 sporfloreFern = new SeaBush("sporflore-fern"){{
                     lobesMin = 4;
