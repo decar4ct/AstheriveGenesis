@@ -89,7 +89,7 @@ public class TiledStaticWall extends StaticWall {
         int blending = 0;
         for(int i = 0; i < 8; i++){
             Tile other = world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y);
-            if(other != null && other.block() == this{
+            if(other != null && other.block() == this){
                 blending |= (1 << i);
             }
         }
