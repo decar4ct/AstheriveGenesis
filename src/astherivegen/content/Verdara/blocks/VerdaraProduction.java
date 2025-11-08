@@ -33,7 +33,7 @@ public class VerdaraProduction {
             drillTime = 550;
             tier = 2;
             size = 2;
-            fogRadius = 0f;
+            fogRadius = 0;
             researchCost = with(VerdaraItems.quartz, 10);
         }};
         cliffBore = new CliffDrill("cliff-bore"){{
