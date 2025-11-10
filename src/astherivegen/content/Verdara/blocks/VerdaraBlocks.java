@@ -11,6 +11,7 @@ public class VerdaraBlocks{
         VerdaraDefense.load();
         VerdaraPower.load();
         VerdaraStorage.load();
+        VerdaraUnits.load();
         Bioplasm.load();
     }
 }

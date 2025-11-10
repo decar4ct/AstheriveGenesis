@@ -9,15 +9,14 @@ import mindustry.type.ItemStack;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.gen.Sounds;
-import astherivegen.world.blocks.units.*;
 import astherivegen.content.*;
 import astherivegen.content.Verdara.VerdaraItems;
-import astherivegen.contebt.Verdara.*;
+import astherivegen.content.Verdara.*;
 import mindustry.content.*;
 
 import static mindustry.type.ItemStack.with;
 
-public class VerdaraDefense {
+public class VerdaraUnits {
     public static Block
             mechAssembler;
     public static void load() {
