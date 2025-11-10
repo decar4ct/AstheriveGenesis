@@ -36,7 +36,7 @@ public class VerdaraUnitTypes{
             weapons.add(new Weapon("weapon"){{
                 reload = 18f;
                 x = 6f;
-                y = ,0f;
+                y = 0f;
                 top = false;
                 ejectEffect = Fx.casing1;
                 bullet = new BasicBulletType(2.5f, 9){{
