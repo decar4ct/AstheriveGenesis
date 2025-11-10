@@ -24,8 +24,8 @@ public class VerdaraUnits {
             {
                 mechAssembler = new UnitFactory("mech-assembler"){{
                     requirements(Category.units, with(VerdaraItems.polterite, 15, VerdaraItems.quartz, 30, VerdaraItems.magnetite,25));
-                    plans.add(new UnitPlan(VerdaraUnitTypes.saber, 12 * 60f, with(VerdaraItems.polterite, 15, VerdaraItems.quartz, 10)));
-                    consumePower(10/60f);
+                    plans.add(new UnitPlan(VerdaraUnitTypes.saber, 15 * 60f, with(VerdaraItems.polterite, 15, VerdaraItems.quartz, 10)));
+                    consumePower(60/60f);
                     size = 3;
                 }};
             }
