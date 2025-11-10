@@ -33,10 +33,10 @@ public class VerdaraUnitTypes{
             speed = 0.65f;
             hitSize = 8f;
             health = 140;
-            weapons.add(new Weapon("large-weapon"){{
+            weapons.add(new Weapon("weapon"){{
                 reload = 18f;
-                x = 4f;
-                y = 2f;
+                x = 6f;
+                y = ,0f;
                 top = false;
                 ejectEffect = Fx.casing1;
                 bullet = new BasicBulletType(2.5f, 9){{
