@@ -78,16 +78,7 @@ public class ConnectedWall extends Wall {
     public class ConnectedWallBuild extends WallBuild{
         public int blending;
         
-        boolean blends(Tile other){
-            if(other != null && other.build != null){
-                if(other.build instanceof ConnectedWallBuild || other.build.block instanceof ConnectedWall){
-                    return true;
-                }
-            }
-            return false;
-        }
-        
-        @Override
+         @Override
         public void updateTile(){
             super.updateTile();
             blending = 0;
@@ -96,6 +87,15 @@ public class ConnectedWall extends Wall {
                     blending |= (1 << i);
                 }
             }
+        }
+
+        boolean blends(Tile other){
+            if(other != null && other.build != null){
+                if(other.build instanceof ConnectedWallBuil){
+                    return true;
+                }
+            }
+            return false;
         }
         @Override
         public void draw(){
