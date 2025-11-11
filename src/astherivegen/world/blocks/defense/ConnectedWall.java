@@ -63,6 +63,7 @@ public class ConnectedWall extends Wall {
     };
     public ConnectedWall(String name){
         super(name);
+        update = true;
     }
     @Override
     public void load(){
@@ -78,7 +79,7 @@ public class ConnectedWall extends Wall {
     public class ConnectedWallBuild extends WallBuild{
         public int blending;
         
-         @Override
+        @Override
         public void updateTile(){
             super.updateTile();
             blending = 0;
