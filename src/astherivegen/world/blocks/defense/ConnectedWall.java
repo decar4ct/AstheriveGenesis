@@ -80,7 +80,7 @@ public class ConnectedWall extends Wall {
         
         boolean blends(Tile other){
             if(other != null && other.build != null){
-                if(other.build instanceof this){
+                if(other.build instanceof tile.build){
                     return true;
                 }
             }
