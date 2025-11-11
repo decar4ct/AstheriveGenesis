@@ -77,6 +77,16 @@ public class ConnectedWall extends Wall {
     }
     public class ConnectedWallBuild extends WallBuild{
         public int blending;
+        
+        boolean blends(Tile other){
+            if(other != null && other.build != null){
+                if(other.build instanceof this){
+                    return true;
+                }
+            }
+            return false;
+        }
+        
         @Override
         public void updateTile(){
             super.updateTile();
