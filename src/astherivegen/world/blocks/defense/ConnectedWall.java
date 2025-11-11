@@ -78,9 +78,9 @@ public class ConnectedWall extends Wall {
     public class ConnectedWallBuild extends WallBuild{
         public int blending;
         
-        boolean blends(Tile other, Tile tile){
+        boolean blends(Tile other, Tile thistile){
             if(other != null && other.build != null){
-                if(other.build instanceof tile.build){
+                if(other.build instanceof thistile.build){
                     return true;
                 }
             }
@@ -92,7 +92,7 @@ public class ConnectedWall extends Wall {
             super.updateTile();
             blending = 0;
             for(int i = 0; i < 8; i++){
-                if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y),tile)){
+                if(blends(world.tile(tile.x + Geometry.d8[i].x, tile.y + Geometry.d8[i].y), world.tile(tile.x, tile.y))){
                     blending |= (1 << i);
                 }
             }
